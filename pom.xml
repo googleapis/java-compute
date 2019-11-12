@@ -80,7 +80,7 @@
     <api-client.version>1.30.5</api-client.version>
 
     <!-- test dependency versions -->
-    <easymock.version>3.6</easymock.version>
+    <easymock.version>4.1</easymock.version>
     <objenesis.version>2.6</objenesis.version>
   </properties>
 
