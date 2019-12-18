@@ -16,10 +16,9 @@
 package com.google.cloud.compute.v1.it;
 
 import static com.google.common.truth.Truth.assertThat;
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertNotNull;
-import static junit.framework.TestCase.assertTrue;
-import static junit.framework.TestCase.fail;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.FixedCredentialsProvider;
@@ -30,12 +29,10 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.compute.v1.AcceleratorType;
 import com.google.cloud.compute.v1.AcceleratorTypeClient;
-import com.google.cloud.compute.v1.AcceleratorTypeClient.AggregatedListAcceleratorTypesPagedResponse;
 import com.google.cloud.compute.v1.AcceleratorTypeSettings;
 import com.google.cloud.compute.v1.AcceleratorTypesScopedList;
 import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressClient;
-import com.google.cloud.compute.v1.AddressClient.ListAddressesPagedResponse;
 import com.google.cloud.compute.v1.AddressSettings;
 import com.google.cloud.compute.v1.AddressesScopedList;
 import com.google.cloud.compute.v1.Allowed;
@@ -197,16 +194,13 @@ import com.google.cloud.compute.v1.TargetHttpProxyClient;
 import com.google.cloud.compute.v1.TargetHttpProxySettings;
 import com.google.cloud.compute.v1.TargetHttpsProxy;
 import com.google.cloud.compute.v1.TargetHttpsProxyClient;
-import com.google.cloud.compute.v1.TargetHttpsProxyClient.ListTargetHttpsProxiesPagedResponse;
 import com.google.cloud.compute.v1.TargetHttpsProxySettings;
 import com.google.cloud.compute.v1.TargetInstance;
 import com.google.cloud.compute.v1.TargetInstanceClient;
-import com.google.cloud.compute.v1.TargetInstanceClient.ListTargetInstancesPagedResponse;
 import com.google.cloud.compute.v1.TargetInstanceSettings;
 import com.google.cloud.compute.v1.TargetInstancesScopedList;
 import com.google.cloud.compute.v1.TargetPool;
 import com.google.cloud.compute.v1.TargetPoolClient;
-import com.google.cloud.compute.v1.TargetPoolClient.ListTargetPoolsPagedResponse;
 import com.google.cloud.compute.v1.TargetPoolSettings;
 import com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest;
 import com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest;
@@ -214,33 +208,25 @@ import com.google.cloud.compute.v1.TargetPoolsScopedList;
 import com.google.cloud.compute.v1.TargetReference;
 import com.google.cloud.compute.v1.TargetSslProxy;
 import com.google.cloud.compute.v1.TargetSslProxyClient;
-import com.google.cloud.compute.v1.TargetSslProxyClient.ListTargetSslProxiesPagedResponse;
 import com.google.cloud.compute.v1.TargetSslProxySettings;
 import com.google.cloud.compute.v1.TargetTcpProxy;
 import com.google.cloud.compute.v1.TargetTcpProxyClient;
-import com.google.cloud.compute.v1.TargetTcpProxyClient.ListTargetTcpProxiesPagedResponse;
 import com.google.cloud.compute.v1.TargetTcpProxySettings;
 import com.google.cloud.compute.v1.TargetVpnGateway;
 import com.google.cloud.compute.v1.TargetVpnGatewayClient;
-import com.google.cloud.compute.v1.TargetVpnGatewayClient.ListTargetVpnGatewaysPagedResponse;
 import com.google.cloud.compute.v1.TargetVpnGatewaySettings;
 import com.google.cloud.compute.v1.UrlMap;
 import com.google.cloud.compute.v1.UrlMapClient;
-import com.google.cloud.compute.v1.UrlMapClient.AggregatedListUrlMapsPagedResponse;
-import com.google.cloud.compute.v1.UrlMapClient.ListUrlMapsPagedResponse;
 import com.google.cloud.compute.v1.UrlMapSettings;
 import com.google.cloud.compute.v1.UrlMapsScopedList;
 import com.google.cloud.compute.v1.VpnGateway;
 import com.google.cloud.compute.v1.VpnGatewayClient;
-import com.google.cloud.compute.v1.VpnGatewayClient.ListVpnGatewaysPagedResponse;
 import com.google.cloud.compute.v1.VpnGatewaySettings;
 import com.google.cloud.compute.v1.VpnTunnel;
 import com.google.cloud.compute.v1.VpnTunnelClient;
-import com.google.cloud.compute.v1.VpnTunnelClient.ListVpnTunnelsPagedResponse;
 import com.google.cloud.compute.v1.VpnTunnelSettings;
 import com.google.cloud.compute.v1.Zone;
 import com.google.cloud.compute.v1.ZoneClient;
-import com.google.cloud.compute.v1.ZoneClient.ListZonesPagedResponse;
 import com.google.cloud.compute.v1.ZoneSettings;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
@@ -542,30 +528,30 @@ public class ITComputeTest {
   @Rule public Timeout globalTimeout = Timeout.seconds(1000);
 
   @BeforeClass
-  public static void beforeClass() throws Exception {
+  public static void setUp() throws Exception {
 
     Credentials credentials =
         GoogleCredentials.getApplicationDefault()
             .createScoped(DiskTypeSettings.getDefaultServiceScopes());
     FixedCredentialsProvider credentialsProvider = FixedCredentialsProvider.create(credentials);
 
-    /** create acceleratorTypeClient */
+    /* create acceleratorTypeClient */
     acceleratorTypeSettings =
         AcceleratorTypeSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     acceleratorTypeClient = AcceleratorTypeClient.create(acceleratorTypeSettings);
 
-    /** create addressClient */
+    /* create addressClient */
     addressSettings =
         AddressSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     addressClient = AddressClient.create(addressSettings);
     addressClient.insertAddress(PROJECT_REGION_NAME, ADDRESS);
 
-    /** create autoscalerClient */
+    /* create autoscalerClient */
     autoscalerSettings =
         AutoscalerSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     autoscalerClient = AutoscalerClient.create(autoscalerSettings);
 
-    /** create backendBucketClient */
+    /* create backendBucketClient */
     backendBucketSettings =
         BackendBucketSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     backendBucketClient = BackendBucketClient.create(backendBucketSettings);
@@ -576,19 +562,19 @@ public class ITComputeTest {
         BackendBucket.newBuilder().setName(BACKEND_BUCKET_NAME).setBucketName(BUCKET).build();
     backendBucketClient.insertBackendBucket(PROJECT_NAME, backendBucketResource);
 
-    /** create diskClient */
+    /* create diskClient */
     diskSettings = DiskSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     diskClient = DiskClient.create(diskSettings);
     Disk diskResource =
         Disk.newBuilder().setName(DISK_NAME).setRegion(REGION_LINK).setSizeGb(DISK_SIZE).build();
     diskClient.insertDisk(PROJECT_ZONE_NAME, diskResource);
 
-    /** create diskTypeClient */
+    /* create diskTypeClient */
     diskTypeSettings =
         DiskTypeSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     diskTypeClient = DiskTypeClient.create(diskTypeSettings);
 
-    /** create externalVpnGatewayClient */
+    /* create externalVpnGatewayClient */
     Thread.sleep(TimeUnit.MINUTES.toMillis(2));
     externalVpnGatewaySettings =
         ExternalVpnGatewaySettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
@@ -602,7 +588,7 @@ public class ITComputeTest {
     externalVpnGatewayClient.insertExternalVpnGateway(
         PROJECT_NAME, externalVpnGatewayResource.build());
 
-    /** create firewallClient */
+    /* create firewallClient */
     firewallSettings =
         FirewallSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     firewallClient = FirewallClient.create(firewallSettings);
@@ -616,7 +602,7 @@ public class ITComputeTest {
             .build();
     firewallClient.insertFirewall(PROJECT_NAME, firewallResource);
 
-    /** create targetPoolClient */
+    /* create targetPoolClient */
     targetPoolSettings =
         TargetPoolSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     targetPoolClient = TargetPoolClient.create(targetPoolSettings);
@@ -635,7 +621,7 @@ public class ITComputeTest {
     ApiFuture<Operation> targetApiFuture =
         targetPoolClient.insertTargetPoolCallable().futureCall(request);
 
-    /** create forwardingRuleClient */
+    /* create forwardingRuleClient */
     Thread.sleep(30000);
     forwardingRuleSettings =
         ForwardingRuleSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
@@ -650,7 +636,7 @@ public class ITComputeTest {
       forwardingRuleClient.insertForwardingRule(PROJECT_REGION_NAME, forwardingRule);
     }
 
-    /** create globalAddressClient */
+    /* create globalAddressClient */
     globalAddressSettings =
         GlobalAddressSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     globalAddressClient = GlobalAddressClient.create(globalAddressSettings);
@@ -663,19 +649,19 @@ public class ITComputeTest {
     globalAddressClient.insertGlobalAddress(PROJECT_NAME, address);
     Thread.sleep(TimeUnit.MINUTES.toMillis(1));
 
-    /** create globalForwardingRuleClient */
+    /* create globalForwardingRuleClient */
     globalForwardingRuleSettings =
         GlobalForwardingRuleSettings.newBuilder()
             .setCredentialsProvider(credentialsProvider)
             .build();
     globalForwardingRuleClient = GlobalForwardingRuleClient.create(globalForwardingRuleSettings);
 
-    /** create globalOperationClient */
+    /* create globalOperationClient */
     globalOperationSettings =
         GlobalOperationSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     globalOperationClient = GlobalOperationClient.create(globalOperationSettings);
 
-    /** create healthCheckClient */
+    /* create healthCheckClient */
     healthCheckSettings =
         HealthCheckSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     healthCheckClient = HealthCheckClient.create(healthCheckSettings);
@@ -696,7 +682,7 @@ public class ITComputeTest {
     ApiFuture<Operation> insertHealthCheckFuture =
         healthCheckClient.insertHealthCheckCallable().futureCall(insertHealthCheckHttpRequest);
 
-    /** create httpHealthCheckClient */
+    /* create httpHealthCheckClient */
     httpHealthCheckSettings =
         HttpHealthCheckSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     httpHealthCheckClient = HttpHealthCheckClient.create(httpHealthCheckSettings);
@@ -709,7 +695,7 @@ public class ITComputeTest {
     httpHealthCheckClient.insertHttpHealthCheck(PROJECT_NAME, httpHealthCheckResource);
     Thread.sleep(TimeUnit.MINUTES.toMillis(1));
 
-    /** create httpsHealthCheckClient */
+    /* create httpsHealthCheckClient */
     httpsHealthCheckSettings =
         HttpsHealthCheckSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     httpsHealthCheckClient = HttpsHealthCheckClient.create(httpsHealthCheckSettings);
@@ -722,19 +708,19 @@ public class ITComputeTest {
     httpsHealthCheckClient.insertHttpsHealthCheck(PROJECT_NAME, httpsHealthCheckResource);
     Thread.sleep(TimeUnit.MINUTES.toMillis(1));
 
-    /** create imageClient */
+    /* create imageClient */
     imageSettings = ImageSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     imageClient = ImageClient.create(imageSettings);
     Image imageResource =
         Image.newBuilder().setName(IMAGE_NAME).setSourceDisk(DISK_SELF_LINK).build();
     imageClient.insertImage(Boolean.TRUE, PROJECT_NAME, imageResource);
 
-    /** create instanceClient */
+    /* create instanceClient */
     instanceSettings =
         InstanceSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     instanceClient = InstanceClient.create(instanceSettings);
 
-    /** create instanceGroupClient */
+    /* create instanceGroupClient */
     instanceGroupSettings =
         InstanceGroupSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     instanceGroupClient = InstanceGroupClient.create(instanceGroupSettings);
@@ -742,19 +728,19 @@ public class ITComputeTest {
         InstanceGroup.newBuilder().setName(INSTANCE_GROUP).build();
     instanceGroupClient.insertInstanceGroup(PROJECT_ZONE_NAME, instanceGroupResource);
 
-    /** create instanceTemplateClient */
+    /* create instanceTemplateClient */
     instanceTemplateSettings =
         InstanceTemplateSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     instanceTemplateClient = InstanceTemplateClient.create(instanceTemplateSettings);
 
-    /** create instanceGroupManagerClient */
+    /* create instanceGroupManagerClient */
     instanceGroupManagerSettings =
         InstanceGroupManagerSettings.newBuilder()
             .setCredentialsProvider(credentialsProvider)
             .build();
     instanceGroupManagerClient = InstanceGroupManagerClient.create(instanceGroupManagerSettings);
 
-    /** create interconnectAttachmentClient */
+    /* create interconnectAttachmentClient */
     interconnectAttachmentSettings =
         InterconnectAttachmentSettings.newBuilder()
             .setCredentialsProvider(credentialsProvider)
@@ -762,7 +748,7 @@ public class ITComputeTest {
     interconnectAttachmentClient =
         InterconnectAttachmentClient.create(interconnectAttachmentSettings);
 
-    /** create interconnectClient */
+    /* create interconnectClient */
     interconnectSettings =
         InterconnectSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     interconnectClient = InterconnectClient.create(interconnectSettings);
@@ -780,26 +766,26 @@ public class ITComputeTest {
     interconnectClient.insertInterconnect(PROJECT_NAME, interconnectResource);
     Thread.sleep(TimeUnit.MINUTES.toMillis(1));
 
-    /** create interconnectLocationClient */
+    /* create interconnectLocationClient */
     interconnectLocationSettings =
         InterconnectLocationSettings.newBuilder()
             .setCredentialsProvider(credentialsProvider)
             .build();
     interconnectLocationClient = InterconnectLocationClient.create(interconnectLocationSettings);
 
-    /** create licenseClient */
+    /* create licenseClient */
     licenseSettings =
         LicenseSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     licenseClient = LicenseClient.create(licenseSettings);
     License license = License.newBuilder().setName(LICENSE).build();
     licenseClient.insertLicense(PROJECT_NAME, license);
 
-    /** create machineTypeClient */
+    /* create machineTypeClient */
     machineTypeSettings =
         MachineTypeSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     machineTypeClient = MachineTypeClient.create(machineTypeSettings);
 
-    /** create networkClient */
+    /* create networkClient */
     networkSettings =
         NetworkSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     networkClient = NetworkClient.create(networkSettings);
@@ -807,7 +793,7 @@ public class ITComputeTest {
     networkClient.insertNetwork(PROJECT_NAME, networkResource);
     Thread.sleep(TimeUnit.MINUTES.toMillis(1));
 
-    /** create networkEndpointGroupClient */
+    /* create networkEndpointGroupClient */
     networkEndpointGroupSettings =
         NetworkEndpointGroupSettings.newBuilder()
             .setCredentialsProvider(credentialsProvider)
@@ -822,37 +808,37 @@ public class ITComputeTest {
     networkEndpointGroupClient.insertNetworkEndpointGroup(
         PROJECT_ZONE_NAME, networkEndpointGroupResource);
 
-    /** create nodeTypeClient */
+    /* create nodeTypeClient */
     nodeTypeSettings =
         NodeTypeSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     nodeTypeClient = NodeTypeClient.create(nodeTypeSettings);
 
-    /** create nodeTemplateClient */
+    /* create nodeTemplateClient */
     nodeTemplateSettings =
         NodeTemplateSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     nodeTemplateClient = NodeTemplateClient.create(nodeTemplateSettings);
 
-    /** create nodeGroupClient */
+    /* create nodeGroupClient */
     nodeGroupSettings =
         NodeGroupSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     nodeGroupClient = NodeGroupClient.create(nodeGroupSettings);
 
-    /** create projectClient */
+    /* create projectClient */
     projectSettings =
         ProjectSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     projectClient = ProjectClient.create(projectSettings);
 
-    /** create regionAutoscalerClient */
+    /* create regionAutoscalerClient */
     regionAutoscalerSettings =
         RegionAutoscalerSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     regionAutoscalerClient = RegionAutoscalerClient.create(regionAutoscalerSettings);
 
-    /** create regionClient */
+    /* create regionClient */
     regionSettings =
         RegionSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     regionClient = RegionClient.create(regionSettings);
 
-    /** create regionBackendServiceClient */
+    /* create regionBackendServiceClient */
     Thread.sleep(TimeUnit.MINUTES.toMillis(1));
     regionBackendServiceSettings =
         RegionBackendServiceSettings.newBuilder()
@@ -860,62 +846,62 @@ public class ITComputeTest {
             .build();
     regionBackendServiceClient = RegionBackendServiceClient.create(regionBackendServiceSettings);
 
-    /** create regionCommitmentClient */
+    /* create regionCommitmentClient */
     regionCommitmentSettings =
         RegionCommitmentSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     regionCommitmentClient = RegionCommitmentClient.create(regionCommitmentSettings);
 
-    /** create regionDiskClient */
+    /* create regionDiskClient */
     regionDiskSettings =
         RegionDiskSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     regionDiskClient = RegionDiskClient.create(regionDiskSettings);
 
-    /** create targetHttpProxyClient */
+    /* create targetHttpProxyClient */
     targetHttpProxySettings =
         TargetHttpProxySettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     targetHttpProxyClient = TargetHttpProxyClient.create(targetHttpProxySettings);
 
-    /** create targetHttpsProxyClient */
+    /* create targetHttpsProxyClient */
     targetHttpsProxySettings =
         TargetHttpsProxySettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     targetHttpsProxyClient = TargetHttpsProxyClient.create(targetHttpsProxySettings);
 
-    /** create targetInstanceClient */
+    /* create targetInstanceClient */
     targetInstanceSettings =
         TargetInstanceSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     targetInstanceClient = TargetInstanceClient.create(targetInstanceSettings);
 
-    /** targetSslProxyClient */
+    /* targetSslProxyClient */
     targetSslProxySettings =
         TargetSslProxySettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     targetSslProxyClient = TargetSslProxyClient.create(targetSslProxySettings);
 
-    /** create targetTcpProxyClient */
+    /* create targetTcpProxyClient */
     targetTcpProxySettings =
         TargetTcpProxySettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     targetTcpProxyClient = TargetTcpProxyClient.create(targetTcpProxySettings);
 
-    /** create targetVpnGatewayClient */
+    /* create targetVpnGatewayClient */
     targetVpnGatewaySettings =
         TargetVpnGatewaySettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     targetVpnGatewayClient = TargetVpnGatewayClient.create(targetVpnGatewaySettings);
 
-    /** create urlMapClient */
+    /* create urlMapClient */
     urlMapSettings =
         UrlMapSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     urlMapClient = UrlMapClient.create(urlMapSettings);
 
-    /** create vpnGatewayClient */
+    /* create vpnGatewayClient */
     vpnGatewaySettings =
         VpnGatewaySettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     vpnGatewayClient = VpnGatewayClient.create(vpnGatewaySettings);
 
-    /** create vpnTunnelClient */
+    /* create vpnTunnelClient */
     vpnTunnelSettings =
         VpnTunnelSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     vpnTunnelClient = VpnTunnelClient.create(vpnTunnelSettings);
 
-    /** create zoneClient */
+    /* create zoneClient */
     zoneSettings = ZoneSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     zoneClient = ZoneClient.create(zoneSettings);
   }
@@ -994,23 +980,22 @@ public class ITComputeTest {
 
   @Test
   public void listAcceleratorTypesTest() {
-    AcceleratorTypeClient.ListAcceleratorTypesPagedResponse listAcceleratorTypes =
-        acceleratorTypeClient.listAcceleratorTypes(PROJECT_ZONE_NAME);
-    List<AcceleratorType> acceleratorTypes = Lists.newArrayList(listAcceleratorTypes.iterateAll());
+    List<AcceleratorType> acceleratorTypes =
+        Lists.newArrayList(
+            acceleratorTypeClient.listAcceleratorTypes(PROJECT_ZONE_NAME).iterateAll());
     assertThat(acceleratorTypes).isNotNull();
-    assertTrue(acceleratorTypes.iterator().hasNext());
-    assertNotNull(acceleratorTypes.iterator().next());
+    assertThat(acceleratorTypes.size()).isGreaterThan(0);
+    assertThat(acceleratorTypes.contains(null)).isFalse();
   }
 
   @Test
   public void aggregatedListAcceleratorTypesTest() {
-    AggregatedListAcceleratorTypesPagedResponse aggregatedListAcceleratorTypes =
-        acceleratorTypeClient.aggregatedListAcceleratorTypes(PROJECT_NAME);
     List<AcceleratorTypesScopedList> typesScopedLists =
-        Lists.newArrayList(aggregatedListAcceleratorTypes.iterateAll());
+        Lists.newArrayList(
+            acceleratorTypeClient.aggregatedListAcceleratorTypes(PROJECT_NAME).iterateAll());
     assertThat(typesScopedLists).isNotNull();
-    assertTrue(typesScopedLists.iterator().hasNext());
-    assertNotNull(typesScopedLists.iterator().next());
+    assertThat(typesScopedLists.size()).isGreaterThan(0);
+    assertThat(typesScopedLists.contains(null)).isFalse();
   }
 
   @Test
@@ -1019,46 +1004,44 @@ public class ITComputeTest {
         ProjectRegionAddressName.of(ADDRESS_NAME, DEFAULT_PROJECT, REGION);
     Address address = addressClient.getAddress(projectRegionAddressName);
     assertThat(address).isNotNull();
-    assertEquals(ADDRESS_TYPE, address.getAddressType());
-    assertEquals(ADDRESS_NAME, address.getName());
-    assertEquals(NETWORK_TIER, address.getNetworkTier());
-    assertEquals(REGION_LINK, address.getRegion());
-    assertEquals(ADDRESS_OPERATION_STATUS, address.getStatus());
-    assertEquals(ADDRESS_SELF_LINK, address.getSelfLink());
+    assertThat(address.getAddressType()).isEqualTo(ADDRESS_TYPE);
+    assertThat(address.getName()).isEqualTo(ADDRESS_NAME);
+    assertThat(address.getNetworkTier()).isEqualTo(NETWORK_TIER);
+    assertThat(address.getRegion()).isEqualTo(REGION_LINK);
+    assertThat(address.getStatus()).isEqualTo(ADDRESS_OPERATION_STATUS);
+    assertThat(address.getSelfLink()).isEqualTo(ADDRESS_SELF_LINK);
   }
 
   @Test
   public void listAddressesTest() {
-    ListAddressesPagedResponse listAddresses = addressClient.listAddresses(PROJECT_REGION_NAME);
-    List<Address> addresses = Lists.newArrayList(listAddresses.iterateAll());
-    assertThat(addresses).isNotNull();
+    List<Address> addresses =
+        Lists.newArrayList(addressClient.listAddresses(PROJECT_REGION_NAME).iterateAll());
+    assertThat(addresses.size()).isGreaterThan(0);
     for (Address address : addresses) {
       if (ADDRESS_NAME.equals(address.getName())) {
-        assertEquals(ADDRESS_TYPE, address.getAddressType());
-        assertEquals(ADDRESS_NAME, address.getName());
-        assertEquals(NETWORK_TIER, address.getNetworkTier());
-        assertEquals(REGION_LINK, address.getRegion());
-        assertEquals(ADDRESS_OPERATION_STATUS, address.getStatus());
-        assertEquals(ADDRESS_SELF_LINK, address.getSelfLink());
+        assertThat(address.getAddressType()).isEqualTo(ADDRESS_TYPE);
+        assertThat(address.getName()).isEqualTo(ADDRESS_NAME);
+        assertThat(address.getNetworkTier()).isEqualTo(NETWORK_TIER);
+        assertThat(address.getRegion()).isEqualTo(REGION_LINK);
+        assertThat(address.getStatus()).isEqualTo(ADDRESS_OPERATION_STATUS);
+        assertThat(address.getSelfLink()).isEqualTo(ADDRESS_SELF_LINK);
       }
     }
   }
 
   @Test
   public void aggregatedListAddressesTest() {
-    AddressClient.AggregatedListAddressesPagedResponse pagedListResponse =
-        addressClient.aggregatedListAddresses(PROJECT_NAME);
     List<AddressesScopedList> addressesScopedLists =
-        Lists.newArrayList(pagedListResponse.iterateAll());
+        Lists.newArrayList(addressClient.aggregatedListAddresses(PROJECT_NAME).iterateAll());
     for (AddressesScopedList addressesScopedList : addressesScopedLists) {
       List<Address> addresses = addressesScopedList.getAddressesList();
       if (addresses != null) {
         for (Address address : addresses) {
           if (ADDRESS_NAME.equals(address.getName())) {
-            assertEquals(ADDRESS_TYPE, address.getAddressType());
-            assertEquals(ADDRESS_NAME, address.getName());
-            assertEquals(NETWORK_TIER, address.getNetworkTier());
-            assertEquals(ADDRESS_OPERATION_STATUS, address.getStatus());
+            assertThat(address.getAddressType()).isEqualTo(ADDRESS_TYPE);
+            assertThat(address.getName()).isEqualTo(ADDRESS_NAME);
+            assertThat(address.getNetworkTier()).isEqualTo(NETWORK_TIER);
+            assertThat(address.getStatus()).isEqualTo(ADDRESS_OPERATION_STATUS);
           }
         }
       }
@@ -1067,44 +1050,45 @@ public class ITComputeTest {
 
   @Test
   public void listAutoscalersTest() {
-    AutoscalerClient.ListAutoscalersPagedResponse listAutoscalers =
-        autoscalerClient.listAutoscalers(PROJECT_ZONE_NAME);
-    List<Autoscaler> autoscalers = Lists.newArrayList(listAutoscalers.iterateAll());
-    assertThat(autoscalers).isNotNull();
+    List<Autoscaler> autoscalers =
+        Lists.newArrayList(autoscalerClient.listAutoscalers(PROJECT_ZONE_NAME).iterateAll());
+    assertNotNull(autoscalers);
+    assertThat(autoscalers.size()).isEqualTo(0);
+    assertThat(autoscalers.contains(null)).isFalse();
   }
 
   @Test
   public void aggregatedListAutoscalersTest() {
-    AutoscalerClient.AggregatedListAutoscalersPagedResponse aggregatedListAutoscalers =
-        autoscalerClient.aggregatedListAutoscalers(PROJECT_NAME);
     List<AutoscalersScopedList> autoscalersScopedLists =
-        Lists.newArrayList(aggregatedListAutoscalers.iterateAll());
-    assertThat(autoscalersScopedLists).isNotNull();
-    assertTrue(autoscalersScopedLists.iterator().hasNext());
-    assertNotNull(autoscalersScopedLists.iterator().next());
+        Lists.newArrayList(autoscalerClient.aggregatedListAutoscalers(PROJECT_NAME).iterateAll());
+    assertNotNull(autoscalersScopedLists);
+    assertThat(autoscalersScopedLists.size()).isGreaterThan(0);
+    assertThat(autoscalersScopedLists.contains(null)).isFalse();
   }
 
   @Test
   public void getBackendBucketTest() {
     BackendBucket backendBucket = backendBucketClient.getBackendBucket(PROJECT_BACKEND_BUCKET_NAME);
-    assertEquals(BACKEND_BUCKET_NAME, backendBucket.getName());
-    assertEquals(BUCKET, backendBucket.getBucketName());
-    assertEquals(BACKEND_BUCKET_TARGET_LINK, backendBucket.getSelfLink());
-    assertEquals(Boolean.FALSE, backendBucket.getEnableCdn());
+    assertThat(backendBucket).isNotNull();
+    assertThat(backendBucket.getName()).isEqualTo(BACKEND_BUCKET_NAME);
+    assertThat(backendBucket.getBucketName()).isEqualTo(BUCKET);
+    assertThat(backendBucket.getSelfLink()).isEqualTo(BACKEND_BUCKET_TARGET_LINK);
+    assertThat(backendBucket.getEnableCdn()).isFalse();
   }
 
   @Test
   public void listBackendBucketsTest() {
-    BackendBucketClient.ListBackendBucketsPagedResponse backendBucketsList =
-        backendBucketClient.listBackendBuckets(PROJECT_NAME);
-    List<BackendBucket> backendBuckets = Lists.newArrayList(backendBucketsList.iterateAll());
+    List<BackendBucket> backendBuckets =
+        Lists.newArrayList(backendBucketClient.listBackendBuckets(PROJECT_NAME).iterateAll());
     assertThat(backendBuckets).isNotNull();
+    assertThat(backendBuckets.size()).isGreaterThan(0);
+    assertFalse(backendBuckets.contains(null));
     for (BackendBucket backendBucket : backendBuckets) {
       if (BUCKET.equals(backendBucket.getBucketName())) {
-        assertEquals(BACKEND_BUCKET_NAME, backendBucket.getName());
-        assertEquals(BUCKET, backendBucket.getBucketName());
-        assertEquals(BACKEND_BUCKET_TARGET_LINK, backendBucket.getSelfLink());
-        assertEquals(Boolean.FALSE, backendBucket.getEnableCdn());
+        assertThat(backendBucket.getName()).isEqualTo(BACKEND_BUCKET_NAME);
+        assertThat(backendBucket.getBucketName()).isEqualTo(BUCKET);
+        assertThat(backendBucket.getSelfLink()).isEqualTo(BACKEND_BUCKET_TARGET_LINK);
+        assertThat(backendBucket.getEnableCdn()).isFalse();
       }
     }
   }
@@ -1116,10 +1100,10 @@ public class ITComputeTest {
     Operation resourcePoliciesDisk =
         diskClient.addResourcePoliciesDisk(PROJECT_ZONE_DISK_NAME, resourcePoliciesRequest);
     assertThat(resourcePoliciesDisk).isNotNull();
-    assertEquals("RUNNING", resourcePoliciesDisk.getStatus());
-    assertEquals("addResourcePolicies", resourcePoliciesDisk.getOperationType());
-    assertEquals(DISK_SELF_LINK, resourcePoliciesDisk.getTargetLink());
-    assertEquals(ZONE_SELF_LINK, resourcePoliciesDisk.getZone());
+    assertThat(resourcePoliciesDisk.getStatus()).isEqualTo("RUNNING");
+    assertThat(resourcePoliciesDisk.getOperationType()).isEqualTo("addResourcePolicies");
+    assertThat(resourcePoliciesDisk.getTargetLink()).isEqualTo(DISK_SELF_LINK);
+    assertThat(resourcePoliciesDisk.getZone()).isEqualTo(ZONE_SELF_LINK);
   }
 
   @Test
@@ -1128,20 +1112,30 @@ public class ITComputeTest {
         DisksRemoveResourcePoliciesRequest.newBuilder().build();
     Operation resourcePoliciesDisk =
         diskClient.removeResourcePoliciesDisk(PROJECT_ZONE_DISK_NAME, resourcePoliciesRequest);
-    assertEquals("RUNNING", resourcePoliciesDisk.getStatus());
-    assertEquals("removeResourcePolicies", resourcePoliciesDisk.getOperationType());
-    assertEquals(DISK_SELF_LINK, resourcePoliciesDisk.getTargetLink());
-    assertEquals(ZONE_SELF_LINK, resourcePoliciesDisk.getZone());
+    assertThat(resourcePoliciesDisk).isNotNull();
+    assertThat(resourcePoliciesDisk.getStatus()).isEqualTo("RUNNING");
+    assertThat(resourcePoliciesDisk.getOperationType()).isEqualTo("removeResourcePolicies");
+    assertThat(resourcePoliciesDisk.getTargetLink()).isEqualTo(DISK_SELF_LINK);
+    assertThat(resourcePoliciesDisk.getZone()).isEqualTo(ZONE_SELF_LINK);
   }
 
   @Test
   public void aggregatedListDisksTest() {
-    DiskClient.AggregatedListDisksPagedResponse pagedListResponse =
-        diskClient.aggregatedListDisks(PROJECT_NAME);
-    List<DisksScopedList> disksScopedLists = Lists.newArrayList(pagedListResponse.iterateAll());
-    assertThat(disksScopedLists).isNotNull();
-    assertTrue(disksScopedLists.iterator().hasNext());
-    assertNotNull(disksScopedLists.iterator().next());
+    List<DisksScopedList> disksScopedLists =
+        Lists.newArrayList(diskClient.aggregatedListDisks(PROJECT_NAME).iterateAll());
+    for (DisksScopedList disksScopedList : disksScopedLists) {
+      List<Disk> disks = disksScopedList.getDisksList();
+      if (null != disks && disks.size() > 0) {
+        for (Disk disk : disks) {
+          if (DISK_NAME.equals(disk.getName())) {
+            assertThat(disk.getName()).isEqualTo(DISK_NAME);
+            assertThat(disk.getSizeGb()).isEqualTo(DISK_SIZE);
+            assertThat(disk.getSelfLink()).isEqualTo(DISK_SELF_LINK);
+            assertThat(disk.getStatus()).isEqualTo("READY");
+          }
+        }
+      }
+    }
   }
 
   @Test
@@ -1155,27 +1149,28 @@ public class ITComputeTest {
             .setSnapshotResource(snapshotResource)
             .build();
     Operation snapshotDisk = diskClient.createSnapshotDisk(diskHttpRequest);
-    assertEquals("RUNNING", snapshotDisk.getStatus());
-    assertEquals("createSnapshot", snapshotDisk.getOperationType());
-    assertEquals(DISK_SELF_LINK, snapshotDisk.getTargetLink());
-    assertEquals(ZONE_SELF_LINK, snapshotDisk.getZone());
+    assertThat(snapshotDisk).isNotNull();
+    assertThat(snapshotDisk.getStatus()).isEqualTo("RUNNING");
+    assertThat(snapshotDisk.getOperationType()).isEqualTo("createSnapshot");
+    assertThat(snapshotDisk.getTargetLink()).isEqualTo(DISK_SELF_LINK);
+    assertThat(snapshotDisk.getZone()).isEqualTo(ZONE_SELF_LINK);
   }
 
   @Test
   public void getDiskTest() {
     Disk disk = diskClient.getDisk(PROJECT_ZONE_DISK_NAME);
     assertThat(disk).isNotNull();
-    assertEquals(DISK_NAME, disk.getName());
-    assertEquals(DISK_SIZE, disk.getSizeGb());
-    assertEquals(DISK_SELF_LINK, disk.getSelfLink());
-    assertEquals("READY", disk.getStatus());
+    assertThat(disk.getName()).isEqualTo(DISK_NAME);
+    assertThat(disk.getSizeGb()).isEqualTo(DISK_SIZE);
+    assertThat(disk.getSelfLink()).isEqualTo(DISK_SELF_LINK);
+    assertThat(disk.getStatus()).isEqualTo("READY");
   }
 
   @Test
   public void getIamPolicyDiskTest() {
     Policy policy = diskClient.getIamPolicyDisk(PROJECT_ZONE_DISK_RESOURCE_NAME);
-    assertNotNull(policy);
-    assertEquals(1, (int) policy.getVersion());
+    assertThat(policy).isNotNull();
+    assertThat(policy.getVersion()).isEqualTo(1);
   }
 
   @Test
@@ -1188,23 +1183,24 @@ public class ITComputeTest {
     Thread.sleep(2000);
     assertThat(resizeDisk).isNotNull();
     Disk disk = diskClient.getDisk(PROJECT_ZONE_DISK_NAME);
-    assertEquals(DISK_NAME, disk.getName());
-    assertEquals(diskSize, disk.getSizeGb());
-    assertEquals(DISK_SELF_LINK, disk.getSelfLink());
-    assertEquals("READY", disk.getStatus());
+    assertThat(disk).isNotNull();
+    assertThat(disk.getName()).isEqualTo(DISK_NAME);
+    assertThat(disk.getSizeGb()).isEqualTo(diskSize);
+    assertThat(disk.getSelfLink()).isEqualTo(DISK_SELF_LINK);
+    assertThat(disk.getStatus()).isEqualTo("READY");
   }
 
   @Test
   public void listDisksTest() {
-    DiskClient.ListDisksPagedResponse diskList = diskClient.listDisks(PROJECT_ZONE_NAME);
-    List<Disk> disks = Lists.newArrayList(diskList.iterateAll());
+    List<Disk> disks = Lists.newArrayList(diskClient.listDisks(PROJECT_ZONE_NAME).iterateAll());
     assertThat(disks).isNotNull();
+    assertThat(disks.size()).isGreaterThan(0);
     for (Disk disk : disks) {
       if (DISK_NAME.equals(disk.getName())) {
-        assertEquals(DISK_NAME, disk.getName());
-        assertEquals(DISK_SIZE, disk.getSizeGb());
-        assertEquals(DISK_SELF_LINK, disk.getSelfLink());
-        assertEquals("READY", disk.getStatus());
+        assertThat(disk.getName()).isEqualTo(DISK_NAME);
+        assertThat(disk.getSizeGb()).isEqualTo(DISK_SIZE);
+        assertThat(disk.getSelfLink()).isEqualTo(DISK_SELF_LINK);
+        assertThat(disk.getStatus()).isEqualTo("READY");
       }
     }
   }
@@ -1227,14 +1223,15 @@ public class ITComputeTest {
     List<ExternalVpnGateway> vpnGateways =
         Lists.newArrayList(
             externalVpnGatewayClient.listExternalVpnGateways(PROJECT_NAME).iterateAll());
-    assertThat(vpnGateways).isNotNull();
+    assertThat(vpnGateways.size()).isGreaterThan(0);
+    assertThat(vpnGateways.contains(null)).isFalse();
     for (ExternalVpnGateway vpnGateway : vpnGateways) {
       if (EXTERNAL_VPN_GATEWAY_NAME.equals(vpnGateway.getName())) {
-        assertEquals(EXTERNAL_VPN_GATEWAY_NAME, vpnGateway.getName());
-        assertEquals(REDUNDANCY_TYPE, vpnGateway.getRedundancyType());
-        assertEquals(EXTERNAL_VPN_GATEWAY_TARGET_LINK, vpnGateway.getSelfLink());
-        assertEquals(VPN_GATEWAY_INTERFACE, vpnGateway.getInterfacesList());
-        assertEquals(EXTERNAL_VPN_GATEWAY_DESCRIPTION, vpnGateway.getDescription());
+        assertThat(vpnGateway.getName()).isEqualTo(EXTERNAL_VPN_GATEWAY_NAME);
+        assertThat(vpnGateway.getRedundancyType()).isEqualTo(REDUNDANCY_TYPE);
+        assertThat(vpnGateway.getSelfLink()).isEqualTo(EXTERNAL_VPN_GATEWAY_TARGET_LINK);
+        assertThat(vpnGateway.getInterfacesList()).isEqualTo(VPN_GATEWAY_INTERFACE);
+        assertThat(vpnGateway.getDescription()).isEqualTo(EXTERNAL_VPN_GATEWAY_DESCRIPTION);
       }
     }
   }
@@ -1242,13 +1239,13 @@ public class ITComputeTest {
   @Test
   public void getFirewallTest() {
     Firewall firewall = firewallClient.getFirewall(FIREWALL);
-    assertEquals(ALLOWEDS, firewall.getAllowedList());
-    assertEquals(FIREWALL_DESCRIPTION, firewall.getDescription());
-    assertEquals(DIRECTION, firewall.getDirection());
-    assertEquals(Boolean.FALSE, firewall.getDisabled());
-    assertEquals(DEFAULT_NETWORK, firewall.getNetwork());
-    assertEquals(FIREWALL_PRIORITY, (int) firewall.getPriority());
-    assertEquals(FIREWALL_LINK, firewall.getSelfLink());
+    assertThat(firewall.getAllowedList()).isEqualTo(ALLOWEDS);
+    assertThat(firewall.getDescription()).isEqualTo(FIREWALL_DESCRIPTION);
+    assertThat(firewall.getDirection()).isEqualTo(DIRECTION);
+    assertThat(firewall.getDisabled()).isFalse();
+    assertThat(firewall.getNetwork()).isEqualTo(DEFAULT_NETWORK);
+    assertThat(firewall.getPriority()).isEqualTo(FIREWALL_PRIORITY);
+    assertThat(firewall.getSelfLink()).isEqualTo(FIREWALL_LINK);
   }
 
   @Test
@@ -1257,13 +1254,13 @@ public class ITComputeTest {
         Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
     for (Firewall firewall : firewalls) {
       if (FIREWALL_NAME.equals(firewall.getName())) {
-        assertEquals(ALLOWEDS, firewall.getAllowedList());
-        assertEquals(FIREWALL_DESCRIPTION, firewall.getDescription());
-        assertEquals(DIRECTION, firewall.getDirection());
-        assertEquals(Boolean.FALSE, firewall.getDisabled());
-        assertEquals(DEFAULT_NETWORK, firewall.getNetwork());
-        assertEquals(FIREWALL_PRIORITY, (int) firewall.getPriority());
-        assertEquals(FIREWALL_LINK, firewall.getSelfLink());
+        assertThat(firewall.getAllowedList()).isEqualTo(ALLOWEDS);
+        assertThat(firewall.getDescription()).isEqualTo(FIREWALL_DESCRIPTION);
+        assertThat(firewall.getDirection()).isEqualTo(DIRECTION);
+        assertThat(firewall.getDisabled()).isFalse();
+        assertThat(firewall.getNetwork()).isEqualTo(DEFAULT_NETWORK);
+        assertThat(firewall.getPriority()).isEqualTo(FIREWALL_PRIORITY);
+        assertThat(firewall.getSelfLink()).isEqualTo(FIREWALL_LINK);
       }
     }
   }
@@ -1273,12 +1270,12 @@ public class ITComputeTest {
     Thread.sleep(50000);
     ForwardingRule forwardingRule =
         forwardingRuleClient.getForwardingRule(PROJECT_REGION_FORWARDING_RULE_NAME);
-    assertEquals(IP_PROTOCOL, forwardingRule.getIPProtocol());
-    assertEquals(FORWARDING_RULE_NAME, forwardingRule.getName());
-    assertEquals(NETWORK_TIER, forwardingRule.getNetworkTier());
-    assertEquals(REGION_LINK, forwardingRule.getRegion());
-    assertEquals(FORWARDING_RULE_LINK, forwardingRule.getSelfLink());
-    assertEquals(TARGET_POOL_SELF_LINK, forwardingRule.getTarget());
+    assertThat(forwardingRule.getIPProtocol()).isEqualTo(IP_PROTOCOL);
+    assertThat(forwardingRule.getName()).isEqualTo(FORWARDING_RULE_NAME);
+    assertThat(forwardingRule.getNetworkTier()).isEqualTo(NETWORK_TIER);
+    assertThat(forwardingRule.getRegion()).isEqualTo(REGION_LINK);
+    assertThat(forwardingRule.getSelfLink()).isEqualTo(FORWARDING_RULE_LINK);
+    assertThat(forwardingRule.getTarget()).isEqualTo(TARGET_POOL_SELF_LINK);
   }
 
   @Test
@@ -1288,12 +1285,12 @@ public class ITComputeTest {
             forwardingRuleClient.listForwardingRules(PROJECT_REGION_NAME).iterateAll());
     for (ForwardingRule forwardingRule : forwardingRules) {
       if (FORWARDING_RULE_NAME.equals(forwardingRule.getName())) {
-        assertEquals(IP_PROTOCOL, forwardingRule.getIPProtocol());
-        assertEquals(FORWARDING_RULE_NAME, forwardingRule.getName());
-        assertEquals(NETWORK_TIER, forwardingRule.getNetworkTier());
-        assertEquals(REGION_LINK, forwardingRule.getRegion());
-        assertEquals(FORWARDING_RULE_LINK, forwardingRule.getSelfLink());
-        assertEquals(TARGET_POOL_SELF_LINK, forwardingRule.getTarget());
+        assertThat(forwardingRule.getIPProtocol()).isEqualTo(IP_PROTOCOL);
+        assertThat(forwardingRule.getName()).isEqualTo(FORWARDING_RULE_NAME);
+        assertThat(forwardingRule.getNetworkTier()).isEqualTo(NETWORK_TIER);
+        assertThat(forwardingRule.getRegion()).isEqualTo(REGION_LINK);
+        assertThat(forwardingRule.getSelfLink()).isEqualTo(FORWARDING_RULE_LINK);
+        assertThat(forwardingRule.getTarget()).isEqualTo(TARGET_POOL_SELF_LINK);
       }
     }
   }
@@ -1306,9 +1303,9 @@ public class ITComputeTest {
     Operation setTargetForwardingRule =
         forwardingRuleClient.setTargetForwardingRule(
             PROJECT_REGION_FORWARDING_RULE_NAME, targetReferenceResource);
-    assertEquals("SetTarget", setTargetForwardingRule.getOperationType());
-    assertEquals(REGION_LINK, setTargetForwardingRule.getRegion());
-    assertEquals(FORWARDING_RULE_LINK, setTargetForwardingRule.getTargetLink());
+    assertThat(setTargetForwardingRule.getOperationType()).isEqualTo("SetTarget");
+    assertThat(setTargetForwardingRule.getRegion()).isEqualTo(REGION_LINK);
+    assertThat(setTargetForwardingRule.getTargetLink()).isEqualTo(FORWARDING_RULE_LINK);
   }
 
   @Test
@@ -1317,6 +1314,8 @@ public class ITComputeTest {
         Lists.newArrayList(
             forwardingRuleClient.aggregatedListForwardingRules(PROJECT_NAME).iterateAll());
     assertThat(forwardingRulesScopedLists).isNotNull();
+    assertThat(forwardingRulesScopedLists.size()).isGreaterThan(0);
+    assertThat(forwardingRulesScopedLists.contains(null)).isFalse();
   }
 
   @Test
@@ -1325,11 +1324,11 @@ public class ITComputeTest {
         Lists.newArrayList(globalAddressClient.listGlobalAddresses(PROJECT_NAME).iterateAll());
     for (Address address : addresses) {
       if (ADDRESS_NAME.equals(address.getName())) {
-        assertEquals(ADDRESS_TYPE, address.getAddressType());
-        assertEquals(ADDRESS_NAME, address.getName());
-        assertEquals(NETWORK_TIER, address.getNetworkTier());
-        assertEquals(ADDRESS_OPERATION_STATUS, address.getStatus());
-        assertEquals(GLOBAL_ADDRESS_LINK, address.getSelfLink());
+        assertThat(address.getAddressType()).isEqualTo(ADDRESS_TYPE);
+        assertThat(address.getName()).isEqualTo(ADDRESS_NAME);
+        assertThat(address.getNetworkTier()).isEqualTo(NETWORK_TIER);
+        assertThat(address.getStatus()).isEqualTo(ADDRESS_OPERATION_STATUS);
+        assertThat(address.getSelfLink()).isEqualTo(GLOBAL_ADDRESS_LINK);
       }
     }
   }
@@ -1340,6 +1339,8 @@ public class ITComputeTest {
         Lists.newArrayList(
             globalForwardingRuleClient.listGlobalForwardingRules(PROJECT_NAME).iterateAll());
     assertThat(forwardingRules).isNotNull();
+    assertThat(forwardingRules.size()).isEqualTo(0);
+    assertThat(forwardingRules.contains(null)).isFalse();
   }
 
   @Test
@@ -1348,19 +1349,18 @@ public class ITComputeTest {
         globalOperationClient.listGlobalOperations(PROJECT_NAME);
     List<Operation> operations = Lists.newArrayList(listGlobalOperations.iterateAll());
     assertThat(operations).isNotNull();
-    assertTrue(operations.iterator().hasNext());
-    assertNotNull(operations.iterator().next());
+    assertThat(operations.size()).isGreaterThan(0);
+    assertThat(operations.contains(null)).isFalse();
   }
 
   @Test
   public void aggregatedListGlobalOperationsTest() {
-    GlobalOperationClient.AggregatedListGlobalOperationsPagedResponse listGlobalOperations =
-        globalOperationClient.aggregatedListGlobalOperations(PROJECT_NAME);
     List<OperationsScopedList> operationsScopedLists =
-        Lists.newArrayList(listGlobalOperations.iterateAll());
+        Lists.newArrayList(
+            globalOperationClient.aggregatedListGlobalOperations(PROJECT_NAME).iterateAll());
     assertThat(operationsScopedLists).isNotNull();
-    assertTrue(operationsScopedLists.iterator().hasNext());
-    assertNotNull(operationsScopedLists.iterator().next());
+    assertThat(operationsScopedLists.size()).isGreaterThan(0);
+    assertThat(operationsScopedLists.contains(null)).isFalse();
   }
 
   @Test
@@ -1369,10 +1369,10 @@ public class ITComputeTest {
         Lists.newArrayList(healthCheckClient.listHealthChecks(PROJECT_NAME).iterateAll());
     for (HealthCheck healthCheck : healthChecks) {
       if (HEALTH_CHECK_NAME.equals(healthCheck.getName())) {
-        assertEquals(HEALTH_CHECK_NAME, healthCheck.getName());
-        assertEquals(HEALTH_CHECK_LINK, healthCheck.getSelfLink());
-        assertEquals(TCP_HEALTH_CHECK, healthCheck.getTcpHealthCheck());
-        assertEquals(IP_PROTOCOL, healthCheck.getType());
+        assertThat(healthCheck.getName()).isEqualTo(HEALTH_CHECK_NAME);
+        assertThat(healthCheck.getSelfLink()).isEqualTo(HEALTH_CHECK_LINK);
+        assertThat(healthCheck.getTcpHealthCheck()).isEqualTo(TCP_HEALTH_CHECK);
+        assertThat(healthCheck.getType()).isEqualTo(IP_PROTOCOL);
       }
     }
   }
@@ -1387,10 +1387,10 @@ public class ITComputeTest {
       if (null != checkList && checkList.size() > 0) {
         for (HealthCheck healthCheck : checkList) {
           if (HEALTH_CHECK_NAME.equals(healthCheck.getName())) {
-            assertEquals(HEALTH_CHECK_NAME, healthCheck.getName());
-            assertEquals(HEALTH_CHECK_LINK, healthCheck.getSelfLink());
-            assertEquals(TCP_HEALTH_CHECK, healthCheck.getTcpHealthCheck());
-            assertEquals(IP_PROTOCOL, healthCheck.getType());
+            assertThat(healthCheck.getName()).isEqualTo(HEALTH_CHECK_NAME);
+            assertThat(healthCheck.getSelfLink()).isEqualTo(HEALTH_CHECK_LINK);
+            assertThat(healthCheck.getTcpHealthCheck()).isEqualTo(TCP_HEALTH_CHECK);
+            assertThat(healthCheck.getType()).isEqualTo(IP_PROTOCOL);
           }
         }
       }
@@ -1405,10 +1405,10 @@ public class ITComputeTest {
             .setHttpHealthCheck(HTTP_HEALTH_CHECK_NAME.toString())
             .build();
     HttpHealthCheck2 httpHealthCheck = httpHealthCheckClient.getHttpHealthCheck(request);
-    assertEquals(HTTP_HEALTH_CHECK_2, httpHealthCheck.getName());
-    assertEquals(UNHEALTHY_THRESHOLD, httpHealthCheck.getHealthyThreshold());
-    assertEquals(PORT, httpHealthCheck.getPort());
-    assertEquals(HTTP_HEALTH_CHECK_LINK, httpHealthCheck.getSelfLink());
+    assertThat(httpHealthCheck.getName()).isEqualTo(HTTP_HEALTH_CHECK_2);
+    assertThat(httpHealthCheck.getHealthyThreshold()).isEqualTo(UNHEALTHY_THRESHOLD);
+    assertThat(httpHealthCheck.getPort()).isEqualTo(PORT);
+    assertThat(httpHealthCheck.getSelfLink()).isEqualTo(HTTP_HEALTH_CHECK_LINK);
   }
 
   @Test
@@ -1417,10 +1417,10 @@ public class ITComputeTest {
         Lists.newArrayList(httpHealthCheckClient.listHttpHealthChecks(PROJECT_NAME).iterateAll());
     for (HttpHealthCheck2 httpHealthCheck : healthCheck2s) {
       if (HTTP_HEALTH_CHECK_2.equals(httpHealthCheck.getName())) {
-        assertEquals(HTTP_HEALTH_CHECK_2, httpHealthCheck.getName());
-        assertEquals(UNHEALTHY_THRESHOLD, httpHealthCheck.getHealthyThreshold());
-        assertEquals(PORT, httpHealthCheck.getPort());
-        assertEquals(HTTP_HEALTH_CHECK_LINK, httpHealthCheck.getSelfLink());
+        assertThat(httpHealthCheck.getName()).isEqualTo(HTTP_HEALTH_CHECK_2);
+        assertThat(httpHealthCheck.getHealthyThreshold()).isEqualTo(UNHEALTHY_THRESHOLD);
+        assertThat(httpHealthCheck.getPort()).isEqualTo(PORT);
+        assertThat(httpHealthCheck.getSelfLink()).isEqualTo(HTTP_HEALTH_CHECK_LINK);
       }
     }
   }
@@ -1430,23 +1430,22 @@ public class ITComputeTest {
     Thread.sleep(60000);
     HttpsHealthCheck2 httpsHealthCheck =
         httpsHealthCheckClient.getHttpsHealthCheck(HTTPS_HEALTH_CHECK_NAME);
-    assertEquals(HTTPS_HEALTH_CHECK_2, httpsHealthCheck.getName());
-    assertEquals(UNHEALTHY_THRESHOLD, httpsHealthCheck.getHealthyThreshold());
-    assertEquals(PORT, httpsHealthCheck.getPort());
-    assertEquals(HTTPS_HEALTH_CHECK_LINK, httpsHealthCheck.getSelfLink());
+    assertThat(httpsHealthCheck.getName()).isEqualTo(HTTPS_HEALTH_CHECK_2);
+    assertThat(httpsHealthCheck.getHealthyThreshold()).isEqualTo(UNHEALTHY_THRESHOLD);
+    assertThat(httpsHealthCheck.getPort()).isEqualTo(PORT);
+    assertThat(httpsHealthCheck.getSelfLink()).isEqualTo(HTTPS_HEALTH_CHECK_LINK);
   }
 
   @Test
   public void listHttpsHealthChecksTest() {
     List<HttpsHealthCheck2> httpsHealthCheck2s =
         Lists.newArrayList(httpsHealthCheckClient.listHttpsHealthChecks(PROJECT_NAME).iterateAll());
-    assertThat(httpsHealthCheck2s).isNotNull();
     for (HttpsHealthCheck2 httpsHealthCheck : httpsHealthCheck2s) {
       if (HTTPS_HEALTH_CHECK_2.equals(httpsHealthCheck.getName())) {
-        assertEquals(HTTPS_HEALTH_CHECK_2, httpsHealthCheck.getName());
-        assertEquals(UNHEALTHY_THRESHOLD, httpsHealthCheck.getHealthyThreshold());
-        assertEquals(PORT, httpsHealthCheck.getPort());
-        assertEquals(HTTPS_HEALTH_CHECK_LINK, httpsHealthCheck.getSelfLink());
+        assertThat(httpsHealthCheck.getName()).isEqualTo(HTTPS_HEALTH_CHECK_2);
+        assertThat(httpsHealthCheck.getHealthyThreshold()).isEqualTo(UNHEALTHY_THRESHOLD);
+        assertThat(httpsHealthCheck.getPort()).isEqualTo(PORT);
+        assertThat(httpsHealthCheck.getSelfLink()).isEqualTo(HTTPS_HEALTH_CHECK_LINK);
       }
     }
   }
@@ -1455,9 +1454,9 @@ public class ITComputeTest {
   public void getImageTest() {
     Image image = imageClient.getImage(PROJECT_GLOBAL_IMAGE_NAME);
     assertThat(image).isNotNull();
-    assertEquals(IMAGE_NAME, image.getName());
-    assertEquals(IMAGE_LINK, image.getSelfLink());
-    assertEquals(DISK_SIZE, image.getDiskSizeGb());
+    assertThat(image.getName()).isEqualTo(IMAGE_NAME);
+    assertThat(image.getSelfLink()).isEqualTo(IMAGE_LINK);
+    assertThat(image.getDiskSizeGb()).isEqualTo(DISK_SIZE);
   }
 
   @Test
@@ -1465,9 +1464,9 @@ public class ITComputeTest {
     List<Image> images = Lists.newArrayList(imageClient.listImages(PROJECT_NAME).iterateAll());
     for (Image image : images) {
       if (IMAGE_NAME.equals(image.getName())) {
-        assertEquals(IMAGE_NAME, image.getName());
-        assertEquals(IMAGE_LINK, image.getSelfLink());
-        assertEquals(DISK_SIZE, image.getDiskSizeGb());
+        assertThat(image.getName()).isEqualTo(IMAGE_NAME);
+        assertThat(image.getSelfLink()).isEqualTo(IMAGE_LINK);
+        assertThat(image.getDiskSizeGb()).isEqualTo(DISK_SIZE);
       }
     }
   }
@@ -1475,8 +1474,8 @@ public class ITComputeTest {
   @Test
   public void getIamPolicyImageTest() {
     Policy policy = imageClient.getIamPolicyImage(IMAGE_RESOURCE_NAME);
-    assertNotNull(policy);
-    assertEquals(1, (int) policy.getVersion());
+    assertThat(policy).isNotNull();
+    assertThat(policy.getVersion()).isEqualTo(1);
   }
 
   @Test
@@ -1484,9 +1483,10 @@ public class ITComputeTest {
     DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
     Operation deprecateImage =
         imageClient.deprecateImage(PROJECT_GLOBAL_IMAGE_NAME, deprecationStatusResource);
-    assertEquals("deprecateImage", deprecateImage.getOperationType());
-    assertEquals("DONE", deprecateImage.getStatus());
-    assertEquals(IMAGE_LINK, deprecateImage.getTargetLink());
+    assertThat(deprecateImage).isNotNull();
+    assertThat(deprecateImage.getOperationType()).isEqualTo("deprecateImage");
+    assertThat(deprecateImage.getStatus()).isEqualTo("DONE");
+    assertThat(deprecateImage.getTargetLink()).isEqualTo(IMAGE_LINK);
   }
 
   @Test
@@ -1582,10 +1582,10 @@ public class ITComputeTest {
   @Test
   public void getInstanceGroupTest() {
     InstanceGroup instanceGroup = instanceGroupClient.getInstanceGroup(INSTANCE_GROUP_NAME);
-    assertNotNull(instanceGroup);
-    assertEquals(INSTANCE_GROUP, instanceGroup.getName());
-    assertEquals(INSTANCE_GROUP_LINK, instanceGroup.getSelfLink());
-    assertEquals(ZONE_SELF_LINK, instanceGroup.getZone());
+    assertThat(instanceGroup).isNotNull();
+    assertThat(instanceGroup.getName()).isEqualTo(INSTANCE_GROUP);
+    assertThat(instanceGroup.getSelfLink()).isEqualTo(INSTANCE_GROUP_LINK);
+    assertThat(instanceGroup.getZone()).isEqualTo(ZONE_SELF_LINK);
   }
 
   @Test
@@ -1594,9 +1594,9 @@ public class ITComputeTest {
         Lists.newArrayList(instanceGroupClient.listInstanceGroups(PROJECT_ZONE_NAME).iterateAll());
     for (InstanceGroup instanceGroup : instanceGroups) {
       if (INSTANCE_GROUP.equals(instanceGroup.getName())) {
-        assertEquals(INSTANCE_GROUP, instanceGroup.getName());
-        assertEquals(INSTANCE_GROUP_LINK, instanceGroup.getSelfLink());
-        assertEquals(ZONE_SELF_LINK, instanceGroup.getZone());
+        assertThat(instanceGroup.getName()).isEqualTo(INSTANCE_GROUP);
+        assertThat(instanceGroup.getSelfLink()).isEqualTo(INSTANCE_GROUP_LINK);
+        assertThat(instanceGroup.getZone()).isEqualTo(ZONE_SELF_LINK);
       }
     }
   }
@@ -1613,6 +1613,8 @@ public class ITComputeTest {
                 .listInstancesInstanceGroups(instanceGroup, instancesRequest)
                 .iterateAll());
     assertThat(instanceWithNamedPorts).isNotNull();
+    assertThat(instanceWithNamedPorts.size()).isEqualTo(0);
+    assertThat(instanceWithNamedPorts.contains(null)).isFalse();
   }
 
   @Test
@@ -1625,9 +1627,9 @@ public class ITComputeTest {
       if (null != instanceGroups && instanceGroups.size() > 0) {
         for (InstanceGroup instanceGroup : instanceGroups) {
           if (INSTANCE_GROUP.equals(instanceGroup.getName())) {
-            assertEquals(INSTANCE_GROUP, instanceGroup.getName());
-            assertEquals(INSTANCE_GROUP_LINK, instanceGroup.getSelfLink());
-            assertEquals(ZONE_SELF_LINK, instanceGroup.getZone());
+            assertThat(instanceGroup.getName()).isEqualTo(INSTANCE_GROUP);
+            assertThat(instanceGroup.getSelfLink()).isEqualTo(INSTANCE_GROUP_LINK);
+            assertThat(instanceGroup.getZone()).isEqualTo(ZONE_SELF_LINK);
           }
         }
       }
@@ -1644,62 +1646,67 @@ public class ITComputeTest {
         instanceGroupClient.setNamedPortsInstanceGroup(
             instanceGroup, instanceGroupsSetNamedPortsRequestResource);
     assertNotNull(portsInstanceGroup);
-    assertEquals("compute.instanceGroups.setNamedPorts", portsInstanceGroup.getOperationType());
-    assertEquals("DONE", portsInstanceGroup.getStatus());
-    assertEquals(ZONE_SELF_LINK, portsInstanceGroup.getZone());
-    assertEquals(INSTANCE_GROUP_LINK, portsInstanceGroup.getTargetLink());
+    assertThat(portsInstanceGroup.getOperationType())
+        .isEqualTo("compute.instanceGroups.setNamedPorts");
+    assertThat(portsInstanceGroup.getStatus()).isEqualTo("DONE");
+    assertThat(portsInstanceGroup.getZone()).isEqualTo(ZONE_SELF_LINK);
+    assertThat(portsInstanceGroup.getTargetLink()).isEqualTo(INSTANCE_GROUP_LINK);
   }
 
   @Test
   public void listTargetSslProxiesTest() {
-    ListTargetSslProxiesPagedResponse pagedListResponse =
-        targetSslProxyClient.listTargetSslProxies(PROJECT_NAME);
-    List<TargetSslProxy> targetSslProxies = Lists.newArrayList(pagedListResponse.iterateAll());
-    assertThat(targetSslProxies).isNotNull();
+    List<TargetSslProxy> targetSslProxies =
+        Lists.newArrayList(targetSslProxyClient.listTargetSslProxies(PROJECT_NAME).iterateAll());
+    assertThat(targetSslProxies.size()).isEqualTo(0);
+    assertThat(targetSslProxies.contains(null)).isFalse();
   }
 
   @Test
   public void listTargetHttpProxiesTest() {
-    TargetHttpProxyClient.ListTargetHttpProxiesPagedResponse listTargetHttpProxies =
-        targetHttpProxyClient.listTargetHttpProxies(PROJECT_NAME);
     List<TargetHttpProxy> targetHttpProxies =
-        Lists.newArrayList(listTargetHttpProxies.iterateAll());
-    assertThat(targetHttpProxies).isNotNull();
+        Lists.newArrayList(targetHttpProxyClient.listTargetHttpProxies(PROJECT_NAME).iterateAll());
+    assertThat(targetHttpProxies.size()).isEqualTo(0);
+    assertThat(targetHttpProxies.contains(null)).isFalse();
   }
 
   @Test
   public void aggregatedListTargetHttpProxiesTest() {
-    TargetHttpProxyClient.AggregatedListTargetHttpProxiesPagedResponse listTargetHttpProxies =
-        targetHttpProxyClient.aggregatedListTargetHttpProxies(PROJECT_NAME);
     List<TargetHttpProxiesScopedList> targetHttpProxiesScopedLists =
-        Lists.newArrayList(listTargetHttpProxies.iterateAll());
+        Lists.newArrayList(
+            targetHttpProxyClient.aggregatedListTargetHttpProxies(PROJECT_NAME).iterateAll());
     assertThat(targetHttpProxiesScopedLists).isNotNull();
+    assertThat(targetHttpProxiesScopedLists.size()).isGreaterThan(0);
+    assertThat(targetHttpProxiesScopedLists.contains(null)).isFalse();
   }
 
   @Test
   public void listTargetHttpsProxiesTest() {
-    ListTargetHttpsProxiesPagedResponse listTargetHttpsProxies =
-        targetHttpsProxyClient.listTargetHttpsProxies(PROJECT_NAME);
     List<TargetHttpsProxy> targetHttpsProxies =
-        Lists.newArrayList(listTargetHttpsProxies.iterateAll());
+        Lists.newArrayList(
+            targetHttpsProxyClient.listTargetHttpsProxies(PROJECT_NAME).iterateAll());
     assertThat(targetHttpsProxies).isNotNull();
+    assertThat(targetHttpsProxies.size()).isEqualTo(0);
+    assertThat(targetHttpsProxies.contains(null)).isFalse();
   }
 
   @Test
   public void listTargetInstancesTest() {
-    ListTargetInstancesPagedResponse listTargetInstances =
-        targetInstanceClient.listTargetInstances(PROJECT_ZONE_NAME);
-    List<TargetInstance> targetInstances = Lists.newArrayList(listTargetInstances.iterateAll());
+    List<TargetInstance> targetInstances =
+        Lists.newArrayList(
+            targetInstanceClient.listTargetInstances(PROJECT_ZONE_NAME).iterateAll());
     assertThat(targetInstances).isNotNull();
+    assertThat(targetInstances.size()).isEqualTo(0);
+    assertThat(targetInstances.contains(null)).isFalse();
   }
 
   @Test
   public void aggregatedListTargetInstancesTest() {
-    TargetInstanceClient.AggregatedListTargetInstancesPagedResponse aggregatedListTargetInstances =
-        targetInstanceClient.aggregatedListTargetInstances(PROJECT_NAME);
     List<TargetInstancesScopedList> targetInstancesScopedLists =
-        Lists.newArrayList(aggregatedListTargetInstances.iterateAll());
-    assertThat(targetInstancesScopedLists).isNotNull();
+        Lists.newArrayList(
+            targetInstanceClient.aggregatedListTargetInstances(PROJECT_NAME).iterateAll());
+    assertNotNull(targetInstancesScopedLists);
+    assertThat(targetInstancesScopedLists.size()).isGreaterThan(0);
+    assertThat(targetInstancesScopedLists.contains(null)).isFalse();
   }
 
   @Test
@@ -1708,24 +1715,25 @@ public class ITComputeTest {
         ProjectRegionTargetPoolName.of(DEFAULT_PROJECT, REGION, TARGET_POOL_NAME);
     TargetPool targetPool = targetPoolClient.getTargetPool(regionTargetPoolName);
     assertThat(targetPool).isNotNull();
-    assertEquals(TARGET_POOL_NAME, targetPool.getName());
-    assertEquals(REGION_LINK, targetPool.getRegion());
-    assertEquals(TARGET_POOL_SELF_LINK, targetPool.getSelfLink());
-    assertEquals(SESSION_AFFINITY, targetPool.getSessionAffinity());
+    assertThat(targetPool.getName()).isEqualTo(TARGET_POOL_NAME);
+    assertThat(targetPool.getRegion()).isEqualTo(REGION_LINK);
+    assertThat(targetPool.getSelfLink()).isEqualTo(TARGET_POOL_SELF_LINK);
+    assertThat(targetPool.getSessionAffinity()).isEqualTo(SESSION_AFFINITY);
   }
 
   @Test
   public void listTargetPoolsTest() {
-    ListTargetPoolsPagedResponse pagedListResponse =
-        targetPoolClient.listTargetPools(PROJECT_REGION_NAME);
-    List<TargetPool> targetPools = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<TargetPool> targetPools =
+        Lists.newArrayList(targetPoolClient.listTargetPools(PROJECT_REGION_NAME).iterateAll());
     assertThat(targetPools).isNotNull();
+    assertThat(targetPools.size()).isGreaterThan(0);
+    assertThat(targetPools.contains(null)).isFalse();
     for (TargetPool targetPool : targetPools) {
       if (TARGET_POOL_NAME.equals(targetPool.getName())) {
-        assertEquals(TARGET_POOL_NAME, targetPool.getName());
-        assertEquals(REGION_LINK, targetPool.getRegion());
-        assertEquals(TARGET_POOL_SELF_LINK, targetPool.getSelfLink());
-        assertEquals(SESSION_AFFINITY, targetPool.getSessionAffinity());
+        assertThat(targetPool.getName()).isEqualTo(TARGET_POOL_NAME);
+        assertThat(targetPool.getRegion()).isEqualTo(REGION_LINK);
+        assertThat(targetPool.getSelfLink()).isEqualTo(TARGET_POOL_SELF_LINK);
+        assertThat(targetPool.getSessionAffinity()).isEqualTo(SESSION_AFFINITY);
       }
     }
   }
@@ -1739,9 +1747,9 @@ public class ITComputeTest {
         targetPoolClient.addInstanceTargetPool(
             REGION_TARGET_POOL_NAME, targetPoolsAddInstanceRequestResource);
     assertThat(instanceTargetPool).isNotNull();
-    assertEquals("AddInstance", instanceTargetPool.getOperationType());
-    assertEquals(REGION_LINK, instanceTargetPool.getRegion());
-    assertEquals(TARGET_POOL_SELF_LINK, instanceTargetPool.getTargetLink());
+    assertThat(instanceTargetPool.getOperationType()).isEqualTo("AddInstance");
+    assertThat(instanceTargetPool.getRegion()).isEqualTo(REGION_LINK);
+    assertThat(instanceTargetPool.getTargetLink()).isEqualTo(TARGET_POOL_SELF_LINK);
   }
 
   @Test
@@ -1755,27 +1763,25 @@ public class ITComputeTest {
             .build();
     Operation response = targetPoolClient.setBackupTargetPool(request);
     assertThat(response).isNotNull();
-    assertEquals("SetBackup", response.getOperationType());
-    assertEquals("RUNNING", response.getStatus());
-    assertEquals(REGION_LINK, response.getRegion());
-    assertEquals(TARGET_POOL_SELF_LINK, response.getTargetLink());
+    assertThat(response.getOperationType()).isEqualTo("SetBackup");
+    assertThat(response.getStatus()).isEqualTo("RUNNING");
+    assertThat(response.getRegion()).isEqualTo(REGION_LINK);
+    assertThat(response.getTargetLink()).isEqualTo(TARGET_POOL_SELF_LINK);
   }
 
   @Test
   public void aggregatedListTargetPoolsTest() {
-    TargetPoolClient.AggregatedListTargetPoolsPagedResponse pagedListResponse =
-        targetPoolClient.aggregatedListTargetPools(PROJECT_NAME);
     List<TargetPoolsScopedList> targetPoolsScopedLists =
-        Lists.newArrayList(pagedListResponse.iterateAll());
+        Lists.newArrayList(targetPoolClient.aggregatedListTargetPools(PROJECT_NAME).iterateAll());
     for (TargetPoolsScopedList targetPoolsScopedList : targetPoolsScopedLists) {
       List<TargetPool> targetPools = targetPoolsScopedList.getTargetPoolsList();
       if (targetPools != null) {
         for (TargetPool targetPool : targetPools) {
           if (TARGET_POOL_NAME.equals(targetPool.getName())) {
-            assertEquals(TARGET_POOL_NAME, targetPool.getName());
-            assertEquals(REGION_LINK, targetPool.getRegion());
-            assertEquals(TARGET_POOL_SELF_LINK, targetPool.getSelfLink());
-            assertEquals(SESSION_AFFINITY, targetPool.getSessionAffinity());
+            assertThat(targetPool.getName()).isEqualTo(TARGET_POOL_NAME);
+            assertThat(targetPool.getRegion()).isEqualTo(REGION_LINK);
+            assertThat(targetPool.getSelfLink()).isEqualTo(TARGET_POOL_SELF_LINK);
+            assertThat(targetPool.getSessionAffinity()).isEqualTo(SESSION_AFFINITY);
           }
         }
       }
@@ -1790,151 +1796,167 @@ public class ITComputeTest {
         targetPoolClient.addHealthCheckTargetPool(
             REGION_TARGET_POOL_NAME, targetPoolsAddHealthCheckRequestResource);
     assertThat(response).isNotNull();
-    assertEquals("AddHealthCheck", response.getOperationType());
-    assertEquals("DONE", response.getStatus());
-    assertEquals(REGION_LINK, response.getRegion());
-    assertEquals(TARGET_POOL_SELF_LINK, response.getTargetLink());
+    assertThat(response.getOperationType()).isEqualTo("AddHealthCheck");
+    assertThat(response.getStatus()).isEqualTo("DONE");
+    assertThat(response.getRegion()).isEqualTo(REGION_LINK);
+    assertThat(response.getTargetLink()).isEqualTo(TARGET_POOL_SELF_LINK);
   }
 
   @Test
   public void listTargetTcpProxiesTest() {
-    ListTargetTcpProxiesPagedResponse pagedListResponse =
-        targetTcpProxyClient.listTargetTcpProxies(PROJECT_NAME);
-    List<TargetTcpProxy> proxies = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<TargetTcpProxy> proxies =
+        Lists.newArrayList(targetTcpProxyClient.listTargetTcpProxies(PROJECT_NAME).iterateAll());
     assertThat(proxies).isNotNull();
+    assertThat(proxies.size()).isEqualTo(0);
+    assertThat(proxies.contains(null)).isFalse();
   }
 
   @Test
   public void listTargetVpnGatewaysTest() {
-    ListTargetVpnGatewaysPagedResponse pagedListResponse =
-        targetVpnGatewayClient.listTargetVpnGateways(PROJECT_REGION_NAME);
-    List<TargetVpnGateway> targetVpnGateways = Lists.newArrayList(pagedListResponse.iterateAll());
-    assertThat(targetVpnGateways).isNotNull();
+    List<TargetVpnGateway> targetVpnGateways =
+        Lists.newArrayList(
+            targetVpnGatewayClient.listTargetVpnGateways(PROJECT_REGION_NAME).iterateAll());
+    assertNotNull(targetVpnGateways);
+    assertThat(targetVpnGateways.size()).isEqualTo(0);
+    assertThat(targetVpnGateways.contains(null)).isFalse();
   }
 
   @Test
   public void listUrlMapsTest() {
-    ListUrlMapsPagedResponse listUrlMaps = urlMapClient.listUrlMaps(PROJECT_NAME);
-    List<UrlMap> urlMaps = Lists.newArrayList(listUrlMaps.iterateAll());
+    List<UrlMap> urlMaps = Lists.newArrayList(urlMapClient.listUrlMaps(PROJECT_NAME).iterateAll());
     assertThat(urlMaps).isNotNull();
+    assertThat(urlMaps.size()).isEqualTo(0);
+    assertThat(urlMaps.contains(null)).isFalse();
   }
 
   @Test
   public void aggregatedListUrlMapsTest() {
-    AggregatedListUrlMapsPagedResponse pagedListResponse =
-        urlMapClient.aggregatedListUrlMaps(PROJECT_NAME);
-    List<UrlMapsScopedList> urlMapsScopedLists = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<UrlMapsScopedList> urlMapsScopedLists =
+        Lists.newArrayList(urlMapClient.aggregatedListUrlMaps(PROJECT_NAME).iterateAll());
     assertThat(urlMapsScopedLists).isNotNull();
+    assertThat(urlMapsScopedLists.size()).isGreaterThan(0);
+    assertThat(urlMapsScopedLists.contains(null)).isFalse();
   }
 
   @Test
   public void listVpnGatewaysTest() {
-    ListVpnGatewaysPagedResponse listVpnGatewaysPagedResponse =
-        vpnGatewayClient.listVpnGateways(PROJECT_REGION_NAME);
-    Iterator<VpnGateway> vpnGatewayIterator = listVpnGatewaysPagedResponse.iterateAll().iterator();
+    Iterator<VpnGateway> vpnGatewayIterator =
+        vpnGatewayClient.listVpnGateways(PROJECT_REGION_NAME).iterateAll().iterator();
     assertThat(vpnGatewayIterator).isNotNull();
   }
 
   @Test
   public void listVpnTunnelsTest() {
-    ListVpnTunnelsPagedResponse listVpnTunnels =
-        vpnTunnelClient.listVpnTunnels(PROJECT_REGION_NAME);
-    List<VpnTunnel> vpnTunnels = Lists.newArrayList(listVpnTunnels.iterateAll());
+    List<VpnTunnel> vpnTunnels =
+        Lists.newArrayList(vpnTunnelClient.listVpnTunnels(PROJECT_REGION_NAME).iterateAll());
     assertThat(vpnTunnels).isNotNull();
+    assertThat(vpnTunnels.size()).isEqualTo(0);
+    assertThat(vpnTunnels.contains(null)).isFalse();
   }
 
   @Test
   public void getZoneTest() {
-    Zone actualZone = zoneClient.getZone(PROJECT_ZONE_NAME);
-    assertEquals(ZONE, actualZone.getName());
-    assertEquals(REGION_LINK, actualZone.getRegion());
-    assertEquals(ZONE_SELF_LINK, actualZone.getSelfLink());
-    assertEquals(STATUS, actualZone.getStatus());
-    assertEquals(ZONE, actualZone.getDescription());
+    Zone zone = zoneClient.getZone(PROJECT_ZONE_NAME);
+    assertThat(zone.getName()).isEqualTo(ZONE);
+    assertThat(zone.getRegion()).isEqualTo(REGION_LINK);
+    assertThat(zone.getSelfLink()).isEqualTo(ZONE_SELF_LINK);
+    assertThat(zone.getStatus()).isEqualTo(STATUS);
+    assertThat(zone.getDescription()).isEqualTo(ZONE);
   }
 
   @Test
   public void listZonesTest() {
-    ListZonesPagedResponse pagedListResponse = zoneClient.listZones(PROJECT_NAME);
-    List<Zone> zones = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<Zone> zones = Lists.newArrayList(zoneClient.listZones(PROJECT_NAME).iterateAll());
     for (Zone zone : zones) {
       if (ZONE.equals(zone.getName())) {
-        assertEquals(ZONE, zone.getName());
-        assertEquals(REGION_LINK, zone.getRegion());
-        assertEquals(ZONE_SELF_LINK, zone.getSelfLink());
-        assertEquals(STATUS, zone.getStatus());
-        assertEquals(ZONE, zone.getDescription());
+        assertThat(zone.getName()).isEqualTo(ZONE);
+        assertThat(zone.getRegion()).isEqualTo(REGION_LINK);
+        assertThat(zone.getSelfLink()).isEqualTo(ZONE_SELF_LINK);
+        assertThat(zone.getStatus()).isEqualTo(STATUS);
+        assertThat(zone.getDescription()).isEqualTo(ZONE);
       }
     }
   }
 
   @Test
   public void listInstanceTemplatesTest() {
-    InstanceTemplateClient.ListInstanceTemplatesPagedResponse pagedListResponse =
-        instanceTemplateClient.listInstanceTemplates(PROJECT_NAME);
-    List<InstanceTemplate> templates = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<InstanceTemplate> templates =
+        Lists.newArrayList(instanceTemplateClient.listInstanceTemplates(PROJECT_NAME).iterateAll());
     assertThat(templates).isNotNull();
+    assertThat(templates.size()).isEqualTo(0);
+    assertThat(templates.contains(null)).isFalse();
   }
 
   @Test
   public void listInstanceGroupManagersTest() {
-    InstanceGroupManagerClient.ListInstanceGroupManagersPagedResponse pagedListResponse =
-        instanceGroupManagerClient.listInstanceGroupManagers(PROJECT_ZONE_NAME);
     List<InstanceGroupManager> instanceGroupManagers =
-        Lists.newArrayList(pagedListResponse.iterateAll());
+        Lists.newArrayList(
+            instanceGroupManagerClient.listInstanceGroupManagers(PROJECT_ZONE_NAME).iterateAll());
     assertThat(instanceGroupManagers).isNotNull();
+    assertThat(instanceGroupManagers.size()).isEqualTo(0);
+    assertThat(instanceGroupManagers.contains(null)).isFalse();
   }
 
   @Test
   public void aggregatedListInstanceGroupManagersTest() {
-    InstanceGroupManagerClient.AggregatedListInstanceGroupManagersPagedResponse pagedListResponse =
-        instanceGroupManagerClient.aggregatedListInstanceGroupManagers(PROJECT_NAME);
     List<InstanceGroupManagersScopedList> managersScopedLists =
-        Lists.newArrayList(pagedListResponse.iterateAll());
+        Lists.newArrayList(
+            instanceGroupManagerClient
+                .aggregatedListInstanceGroupManagers(PROJECT_NAME)
+                .iterateAll());
     assertThat(managersScopedLists).isNotNull();
+    assertThat(managersScopedLists.size()).isGreaterThan(0);
+    assertThat(managersScopedLists.contains(null)).isFalse();
   }
 
   @Test
   public void listInterconnectsTest() {
-    InterconnectClient.ListInterconnectsPagedResponse pagedListResponse =
-        interconnectClient.listInterconnects(PROJECT_NAME);
-    List<Interconnect> interconnects = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<Interconnect> interconnects =
+        Lists.newArrayList(interconnectClient.listInterconnects(PROJECT_NAME).iterateAll());
     for (Interconnect interconnect : interconnects) {
       if (INTER_CONNECT.equals(interconnect.getName())) {
-        assertEquals(CUSTOMER_NAME, interconnect.getCustomerName());
-        assertEquals(Boolean.TRUE, interconnect.getAdminEnabled());
-        assertEquals(INTER_CONNECT_TYPE, interconnect.getInterconnectType());
-        assertEquals(INTER_CONNECT_LINK_TYPE, interconnect.getLinkType());
-        assertEquals(INTER_CONNECT, interconnect.getName());
-        assertEquals(INTER_CONNECT_REQUESTED_LINK_COUNT, interconnect.getRequestedLinkCount());
-        assertEquals(INTER_CONNECT_LINK, interconnect.getSelfLink());
+        assertThat(interconnect.getCustomerName()).isEqualTo(CUSTOMER_NAME);
+        assertThat(interconnect.getAdminEnabled()).isTrue();
+        assertThat(interconnect.getInterconnectType()).isEqualTo(INTER_CONNECT_TYPE);
+        assertThat(interconnect.getLinkType()).isEqualTo(INTER_CONNECT_LINK_TYPE);
+        assertThat(interconnect.getName()).isEqualTo(INTER_CONNECT);
+        assertThat(interconnect.getRequestedLinkCount())
+            .isEqualTo(INTER_CONNECT_REQUESTED_LINK_COUNT);
+        assertThat(interconnect.getSelfLink()).isEqualTo(INTER_CONNECT_LINK);
       }
     }
   }
 
   @Test
   public void listInterconnectAttachmentsTest() {
-    InterconnectAttachmentClient.ListInterconnectAttachmentsPagedResponse pagedListResponse =
-        interconnectAttachmentClient.listInterconnectAttachments(PROJECT_REGION_NAME);
-    List<InterconnectAttachment> attachments = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<InterconnectAttachment> attachments =
+        Lists.newArrayList(
+            interconnectAttachmentClient
+                .listInterconnectAttachments(PROJECT_REGION_NAME)
+                .iterateAll());
     assertThat(attachments).isNotNull();
+    assertThat(attachments.size()).isEqualTo(0);
+    assertThat(attachments.contains(null)).isFalse();
   }
 
   @Test
   public void listInterconnectLocationsTest() {
-    InterconnectLocationClient.ListInterconnectLocationsPagedResponse pagedListResponse =
-        interconnectLocationClient.listInterconnectLocations(PROJECT_NAME);
-    List<InterconnectLocation> locations = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<InterconnectLocation> locations =
+        Lists.newArrayList(
+            interconnectLocationClient.listInterconnectLocations(PROJECT_NAME).iterateAll());
     assertThat(locations).isNotNull();
+    assertThat(locations.size()).isGreaterThan(0);
+    assertThat(locations.contains(null)).isFalse();
   }
 
   @Test
   public void getLicenseTest() {
     License license = licenseClient.getLicense(LICENSE_NAME);
-    assertEquals(Boolean.FALSE, license.getChargesUseFee());
-    assertEquals(LICENSE, license.getName());
-    assertEquals(LICENSE_LINK, license.getSelfLink());
-    assertEquals(Boolean.TRUE, license.getTransferable());
+    assertThat(license).isNotNull();
+    assertThat(license.getChargesUseFee()).isFalse();
+    assertThat(license.getName()).isEqualTo(LICENSE);
+    assertThat(license.getSelfLink()).isEqualTo(LICENSE_LINK);
+    assertThat(license.getTransferable()).isTrue();
   }
 
   @Test
@@ -1943,10 +1965,10 @@ public class ITComputeTest {
         Lists.newArrayList(licenseClient.listLicenses(PROJECT_NAME).iterateAll());
     for (License license : licenses) {
       if (LICENSE.equals(license.getName())) {
-        assertEquals(Boolean.FALSE, license.getChargesUseFee());
-        assertEquals(LICENSE, license.getName());
-        assertEquals(LICENSE_LINK, license.getSelfLink());
-        assertEquals(Boolean.TRUE, license.getTransferable());
+        assertThat(license.getChargesUseFee()).isFalse();
+        assertThat(license.getName()).isEqualTo(LICENSE);
+        assertThat(license.getSelfLink()).isEqualTo(LICENSE_LINK);
+        assertThat(license.getTransferable()).isTrue();
       }
     }
   }
@@ -1956,19 +1978,20 @@ public class ITComputeTest {
     ProjectGlobalLicenseResourceName licenseResourceName =
         ProjectGlobalLicenseResourceName.of(DEFAULT_PROJECT, LICENSE);
     Policy policy = licenseClient.getIamPolicyLicense(licenseResourceName);
-    assertEquals(1, (int) policy.getVersion());
-    assertEquals("ACAB", policy.getEtag());
+    assertThat(policy.getVersion()).isEqualTo(1);
+    assertThat(policy.getEtag()).isEqualTo("ACAB");
   }
 
   @Test
   public void getMachineTypeTest() {
-    ProjectZoneMachineTypeName machineType =
+    ProjectZoneMachineTypeName machineTypeName =
         ProjectZoneMachineTypeName.of(MACHINE_TYPE, DEFAULT_PROJECT, ZONE);
-    MachineType response = machineTypeClient.getMachineType(machineType);
-    assertEquals(Boolean.FALSE, response.getIsSharedCpu());
-    assertEquals(MACHINE_TYPE, response.getName());
-    assertEquals(MACHINE_TYPE_LINK, response.getSelfLink());
-    assertEquals(ZONE, response.getZone());
+    MachineType machineType = machineTypeClient.getMachineType(machineTypeName);
+    assertThat(machineTypeName).isNotNull();
+    assertThat(machineType.getIsSharedCpu()).isFalse();
+    assertThat(machineType.getName()).isEqualTo(MACHINE_TYPE);
+    assertThat(machineType.getSelfLink()).isEqualTo(MACHINE_TYPE_LINK);
+    assertThat(machineType.getZone()).isEqualTo(ZONE);
   }
 
   @Test
@@ -1977,26 +2000,25 @@ public class ITComputeTest {
         Lists.newArrayList(machineTypeClient.listMachineTypes(PROJECT_ZONE_NAME).iterateAll());
     for (MachineType machineType : machineTypes) {
       if (MACHINE_TYPE.equals(machineType.getName())) {
-        assertEquals(Boolean.FALSE, machineType.getIsSharedCpu());
-        assertEquals(MACHINE_TYPE, machineType.getName());
-        assertEquals(MACHINE_TYPE_LINK, machineType.getSelfLink());
-        assertEquals(ZONE, machineType.getZone());
+        assertThat(machineType.getIsSharedCpu()).isFalse();
+        assertThat(machineType.getName()).isEqualTo(MACHINE_TYPE);
+        assertThat(machineType.getSelfLink()).isEqualTo(MACHINE_TYPE_LINK);
+        assertThat(machineType.getZone()).isEqualTo(ZONE);
       }
     }
   }
 
   @Test
   public void aggregatedListMachineTypesTest() {
-    MachineTypeClient.AggregatedListMachineTypesPagedResponse pagedListResponse =
-        machineTypeClient.aggregatedListMachineTypes(PROJECT_NAME);
-    List<MachineTypesScopedList> scopedLists = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<MachineTypesScopedList> scopedLists =
+        Lists.newArrayList(machineTypeClient.aggregatedListMachineTypes(PROJECT_NAME).iterateAll());
     for (MachineTypesScopedList scopedList : scopedLists) {
       List<MachineType> machineTypes = scopedList.getMachineTypesList();
       if (null != machineTypes && machineTypes.size() > 0) {
         for (MachineType machineType : machineTypes) {
           if (null != machineType && MACHINE_TYPE.equals(machineType.getName())) {
-            assertEquals(Boolean.FALSE, machineType.getIsSharedCpu());
-            assertEquals(MACHINE_TYPE, machineType.getName());
+            assertThat(machineType.getIsSharedCpu()).isFalse();
+            assertThat(machineType.getName()).isEqualTo(MACHINE_TYPE);
           }
         }
       }
@@ -2008,18 +2030,20 @@ public class ITComputeTest {
     List<Network> networks =
         Lists.newArrayList(networkClient.listNetworks(PROJECT_NAME).iterateAll());
     assertThat(networks).isNotNull();
+    assertThat(networks.size()).isGreaterThan(0);
+    assertThat(networks.contains(null)).isFalse();
   }
 
   @Test
   public void getNetworkEndpointGroupTest() {
     NetworkEndpointGroup networkEndpointGroup =
         networkEndpointGroupClient.getNetworkEndpointGroup(NETWORK_ENDPOINT_GROUP_NAME);
-    assertEquals(DEFAULT_NETWORK, networkEndpointGroup.getNetwork());
-    assertEquals(NETWORK_ENDPOINT_GROUP, networkEndpointGroup.getName());
-    assertEquals(NETWORK_ENDPOINT_TYPE, networkEndpointGroup.getNetworkEndpointType());
-    assertEquals(NETWORK_ENDPOINT_SUB_NETWORK, networkEndpointGroup.getSubnetwork());
-    assertEquals(ZONE_SELF_LINK, networkEndpointGroup.getZone());
-    assertEquals(NETWORK_ENDPOINT_GROUP_LINK, networkEndpointGroup.getSelfLink());
+    assertThat(networkEndpointGroup.getNetwork()).isEqualTo(DEFAULT_NETWORK);
+    assertThat(networkEndpointGroup.getName()).isEqualTo(NETWORK_ENDPOINT_GROUP);
+    assertThat(networkEndpointGroup.getNetworkEndpointType()).isEqualTo(NETWORK_ENDPOINT_TYPE);
+    assertThat(networkEndpointGroup.getSubnetwork()).isEqualTo(NETWORK_ENDPOINT_SUB_NETWORK);
+    assertThat(networkEndpointGroup.getZone()).isEqualTo(ZONE_SELF_LINK);
+    assertThat(networkEndpointGroup.getSelfLink()).isEqualTo(NETWORK_ENDPOINT_GROUP_LINK);
   }
 
   @Test
@@ -2029,12 +2053,12 @@ public class ITComputeTest {
             networkEndpointGroupClient.listNetworkEndpointGroups(PROJECT_ZONE_NAME).iterateAll());
     for (NetworkEndpointGroup networkEndpointGroup : networkEndpointGroups) {
       if (NETWORK_ENDPOINT_GROUP.equals(networkEndpointGroup.getName())) {
-        assertEquals(DEFAULT_NETWORK, networkEndpointGroup.getNetwork());
-        assertEquals(NETWORK_ENDPOINT_GROUP, networkEndpointGroup.getName());
-        assertEquals(NETWORK_ENDPOINT_TYPE, networkEndpointGroup.getNetworkEndpointType());
-        assertEquals(NETWORK_ENDPOINT_SUB_NETWORK, networkEndpointGroup.getSubnetwork());
-        assertEquals(ZONE_SELF_LINK, networkEndpointGroup.getZone());
-        assertEquals(NETWORK_ENDPOINT_GROUP_LINK, networkEndpointGroup.getSelfLink());
+        assertThat(networkEndpointGroup.getNetwork()).isEqualTo(DEFAULT_NETWORK);
+        assertThat(networkEndpointGroup.getName()).isEqualTo(NETWORK_ENDPOINT_GROUP);
+        assertThat(networkEndpointGroup.getNetworkEndpointType()).isEqualTo(NETWORK_ENDPOINT_TYPE);
+        assertThat(networkEndpointGroup.getSubnetwork()).isEqualTo(NETWORK_ENDPOINT_SUB_NETWORK);
+        assertThat(networkEndpointGroup.getZone()).isEqualTo(ZONE_SELF_LINK);
+        assertThat(networkEndpointGroup.getSelfLink()).isEqualTo(NETWORK_ENDPOINT_GROUP_LINK);
       }
     }
   }
@@ -2053,12 +2077,14 @@ public class ITComputeTest {
       if (null != networkEndpointGroups && networkEndpointGroups.size() > 0) {
         for (NetworkEndpointGroup networkEndpointGroup : networkEndpointGroups) {
           if (NETWORK_ENDPOINT_GROUP.equals(networkEndpointGroup.getName())) {
-            assertEquals(DEFAULT_NETWORK, networkEndpointGroup.getNetwork());
-            assertEquals(NETWORK_ENDPOINT_GROUP, networkEndpointGroup.getName());
-            assertEquals(NETWORK_ENDPOINT_TYPE, networkEndpointGroup.getNetworkEndpointType());
-            assertEquals(NETWORK_ENDPOINT_SUB_NETWORK, networkEndpointGroup.getSubnetwork());
-            assertEquals(ZONE_SELF_LINK, networkEndpointGroup.getZone());
-            assertEquals(NETWORK_ENDPOINT_GROUP_LINK, networkEndpointGroup.getSelfLink());
+            assertThat(networkEndpointGroup.getNetwork()).isEqualTo(DEFAULT_NETWORK);
+            assertThat(networkEndpointGroup.getName()).isEqualTo(NETWORK_ENDPOINT_GROUP);
+            assertThat(networkEndpointGroup.getNetworkEndpointType())
+                .isEqualTo(NETWORK_ENDPOINT_TYPE);
+            assertThat(networkEndpointGroup.getSubnetwork())
+                .isEqualTo(NETWORK_ENDPOINT_SUB_NETWORK);
+            assertThat(networkEndpointGroup.getZone()).isEqualTo(ZONE_SELF_LINK);
+            assertThat(networkEndpointGroup.getSelfLink()).isEqualTo(NETWORK_ENDPOINT_GROUP_LINK);
           }
         }
       }
@@ -2075,6 +2101,8 @@ public class ITComputeTest {
                 .listNetworkEndpointsNetworkEndpointGroups(NETWORK_ENDPOINT_GROUP_NAME, request)
                 .iterateAll());
     assertThat(healthStatuses).isNotNull();
+    assertThat(healthStatuses.size()).isEqualTo(0);
+    assertThat(healthStatuses.contains(null)).isFalse();
   }
 
   @Test
@@ -2082,6 +2110,8 @@ public class ITComputeTest {
     List<NodeType> nodeTypes =
         Lists.newArrayList(nodeTypeClient.listNodeTypes(PROJECT_ZONE_NAME).iterateAll());
     assertThat(nodeTypes).isNotNull();
+    assertThat(nodeTypes.size()).isGreaterThan(0);
+    assertThat(nodeTypes.contains(null)).isFalse();
   }
 
   @Test
@@ -2089,6 +2119,8 @@ public class ITComputeTest {
     List<NodeTypesScopedList> nodeTypesScopedLists =
         Lists.newArrayList(nodeTypeClient.aggregatedListNodeTypes(PROJECT_NAME).iterateAll());
     assertThat(nodeTypesScopedLists).isNotNull();
+    assertThat(nodeTypesScopedLists.size()).isGreaterThan(0);
+    assertThat(nodeTypesScopedLists.contains(null)).isFalse();
   }
 
   @Test
@@ -2096,6 +2128,8 @@ public class ITComputeTest {
     List<NodeTemplate> nodeTemplates =
         Lists.newArrayList(nodeTemplateClient.listNodeTemplates(PROJECT_REGION_NAME).iterateAll());
     assertThat(nodeTemplates).isNotNull();
+    assertThat(nodeTemplates.size()).isEqualTo(0);
+    assertThat(nodeTemplates.contains(null)).isFalse();
   }
 
   @Test
@@ -2104,6 +2138,8 @@ public class ITComputeTest {
         Lists.newArrayList(
             nodeTemplateClient.aggregatedListNodeTemplates(PROJECT_NAME).iterateAll());
     assertThat(nodeTemplatesScopedLists).isNotNull();
+    assertThat(nodeTemplatesScopedLists.size()).isGreaterThan(0);
+    assertThat(nodeTemplatesScopedLists.contains(null)).isFalse();
   }
 
   @Test
@@ -2111,6 +2147,8 @@ public class ITComputeTest {
     List<NodeGroup> nodeGroups =
         Lists.newArrayList(nodeGroupClient.listNodeGroups(PROJECT_ZONE_NAME).iterateAll());
     assertThat(nodeGroups).isNotNull();
+    assertThat(nodeGroups.size()).isEqualTo(0);
+    assertThat(nodeGroups.contains(null)).isFalse();
   }
 
   @Test
@@ -2118,13 +2156,15 @@ public class ITComputeTest {
     List<NodeGroupsScopedList> nodeGroupsScopedLists =
         Lists.newArrayList(nodeGroupClient.aggregatedListNodeGroups(PROJECT_NAME).iterateAll());
     assertThat(nodeGroupsScopedLists).isNotNull();
+    assertThat(nodeGroupsScopedLists.size()).isGreaterThan(0);
+    assertThat(nodeGroupsScopedLists.contains(null)).isFalse();
   }
 
   @Test
   public void getProjectTest() {
     Project project = projectClient.getProject(PROJECT_NAME);
     assertThat(project).isNotNull();
-    assertEquals(PROJECT_LINK, project.getSelfLink());
+    assertThat(project.getSelfLink()).isEqualTo(PROJECT_LINK);
   }
 
   @Test
@@ -2133,6 +2173,8 @@ public class ITComputeTest {
         Lists.newArrayList(
             regionAutoscalerClient.listRegionAutoscalers(PROJECT_REGION_NAME).iterateAll());
     assertThat(autoscalers).isNotNull();
+    assertThat(autoscalers.size()).isEqualTo(0);
+    assertThat(autoscalers.contains(null)).isFalse();
   }
 
   @Test
@@ -2141,35 +2183,41 @@ public class ITComputeTest {
         Lists.newArrayList(
             regionBackendServiceClient.listRegionBackendServices(PROJECT_REGION_NAME).iterateAll());
     assertThat(backendServices).isNotNull();
+    assertThat(backendServices.size()).isEqualTo(0);
+    assertThat(backendServices.contains(null)).isFalse();
   }
 
   @Test
   public void getRegionTest() {
     Region region = regionClient.getRegion(PROJECT_REGION_NAME);
     assertThat(region).isNotNull();
-    assertEquals(REGION, region.getName());
-    assertEquals(REGION_LINK, region.getSelfLink());
-    assertEquals(STATUS, region.getStatus());
+    assertThat(region.getName()).isEqualTo(REGION);
+    assertThat(region.getSelfLink()).isEqualTo(REGION_LINK);
+    assertThat(region.getStatus()).isEqualTo(STATUS);
   }
 
   @Test
   public void listRegionsTest() {
     List<Region> regions = Lists.newArrayList(regionClient.listRegions(PROJECT_NAME).iterateAll());
     assertThat(regions).isNotNull();
+    assertThat(regions.size()).isGreaterThan(0);
+    assertThat(regions.contains(null)).isFalse();
     for (Region region : regions) {
       if (REGION.equals(region.getName())) {
-        assertEquals(REGION, region.getName());
-        assertEquals(REGION_LINK, region.getSelfLink());
-        assertEquals(STATUS, region.getStatus());
+        assertThat(region.getName()).isEqualTo(REGION);
+        assertThat(region.getSelfLink()).isEqualTo(REGION_LINK);
+        assertThat(region.getStatus()).isEqualTo(STATUS);
       }
     }
   }
 
   @Test
   public void listRegionCommitmentsTest() {
-    RegionCommitmentClient.ListRegionCommitmentsPagedResponse pagedListResponse =
-        regionCommitmentClient.listRegionCommitments(PROJECT_REGION_NAME);
-    List<Commitment> commitments = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<Commitment> commitments =
+        Lists.newArrayList(
+            regionCommitmentClient.listRegionCommitments(PROJECT_REGION_NAME).iterateAll());
     assertThat(commitments).isNotNull();
+    assertThat(commitments.size()).isEqualTo(0);
+    assertThat(commitments.contains(null)).isFalse();
   }
 }
