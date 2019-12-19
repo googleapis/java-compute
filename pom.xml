@@ -81,7 +81,7 @@
 
     <!-- test dependency versions -->
     <easymock.version>3.6</easymock.version>
-    <objenesis.version>2.6</objenesis.version>
+    <objenesis.version>3.1</objenesis.version>
   </properties>
 
   <dependencyManagement>
