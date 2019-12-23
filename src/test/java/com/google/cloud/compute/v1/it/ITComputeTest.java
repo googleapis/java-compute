@@ -40,7 +40,6 @@ import com.google.cloud.compute.v1.ProjectRegionDiskTypeName;
 import com.google.cloud.compute.v1.ProjectZoneDiskTypeName;
 import com.google.cloud.compute.v1.ProjectZoneMachineTypeName;
 import com.google.cloud.compute.v1.ProjectZoneName;
-import com.google.cloud.compute.v1.SourceInstanceParams;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Iterator;
@@ -57,7 +56,8 @@ public class ITComputeTest {
   private static final String ZONE = "us-central1-a";
   private static final String DISK_TYPE = "local-ssd";
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
-  private static final String DEFAULT_IMAGE = "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150710";
+  private static final String DEFAULT_IMAGE =
+      "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150710";
 
   private static DiskTypeClient diskTypeClient;
   private static DiskTypeSettings diskTypeSettings;
@@ -109,14 +109,14 @@ public class ITComputeTest {
   public void testInsertInstance() {
     String machineType =
         ProjectZoneMachineTypeName.of("n1-standard-1", DEFAULT_PROJECT, ZONE).toString();
-    AttachedDisk disk = AttachedDisk.newBuilder()
-        .setBoot(true)
-        .setAutoDelete(true)
-        .setType("PERSISTENT")
-        .setInitializeParams(AttachedDiskInitializeParams.newBuilder()
-            .setSourceImage(DEFAULT_IMAGE)
-            .build())
-        .build();
+    AttachedDisk disk =
+        AttachedDisk.newBuilder()
+            .setBoot(true)
+            .setAutoDelete(true)
+            .setType("PERSISTENT")
+            .setInitializeParams(
+                AttachedDiskInitializeParams.newBuilder().setSourceImage(DEFAULT_IMAGE).build())
+            .build();
     Instance instance =
         Instance.newBuilder()
             .setName("mytestinstancetemplate")
