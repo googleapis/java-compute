@@ -36,6 +36,8 @@ import com.google.cloud.compute.v1.AddressClient;
 import com.google.cloud.compute.v1.AddressSettings;
 import com.google.cloud.compute.v1.AddressesScopedList;
 import com.google.cloud.compute.v1.Allowed;
+import com.google.cloud.compute.v1.AttachedDisk;
+import com.google.cloud.compute.v1.AttachedDiskInitializeParams;
 import com.google.cloud.compute.v1.Autoscaler;
 import com.google.cloud.compute.v1.AutoscalerClient;
 import com.google.cloud.compute.v1.AutoscalerSettings;
@@ -392,6 +394,8 @@ public class ITComputeTest {
 
   private static final Logger LOG = Logger.getLogger(ITComputeTest.class.getName());
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
+  private static final String DEFAULT_IMAGE =
+      "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150710";
   private static final String UID = UUID.randomUUID().toString();
   private static final String ZONE = "us-central1-a";
   private static final String DISK_TYPE = "local-ssd";
@@ -1493,8 +1497,20 @@ public class ITComputeTest {
   public void testInsertInstance() {
     String machineType =
         ProjectZoneMachineTypeName.of("n1-standard-1", DEFAULT_PROJECT, ZONE).toString();
+    AttachedDisk disk =
+        AttachedDisk.newBuilder()
+            .setBoot(true)
+            .setAutoDelete(true)
+            .setType("PERSISTENT")
+            .setInitializeParams(
+                AttachedDiskInitializeParams.newBuilder().setSourceImage(DEFAULT_IMAGE).build())
+            .build();
     Instance instance =
-        Instance.newBuilder().setName("mytestinstancetemplate").setMachineType(machineType).build();
+        Instance.newBuilder()
+            .setName("mytestinstancetemplate")
+            .setMachineType(machineType)
+            .addDisks(disk)
+            .build();
     try {
       instanceClient.insertInstance(ProjectZoneName.of(DEFAULT_PROJECT, ZONE), instance);
     } catch (InvalidArgumentException e) {
