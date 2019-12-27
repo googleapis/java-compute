@@ -1872,7 +1872,6 @@ public class ITComputeTest {
     List<InstanceTemplate> templates =
         Lists.newArrayList(instanceTemplateClient.listInstanceTemplates(PROJECT_NAME).iterateAll());
     assertThat(templates).isNotNull();
-    assertThat(templates.size()).isEqualTo(0);
     assertThat(templates.contains(null)).isFalse();
   }
 
