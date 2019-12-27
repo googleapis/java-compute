@@ -437,8 +437,6 @@ public class ITComputeTest {
   private static final String FIREWALL_DESCRIPTION = "firewall";
   private static final String DIRECTION = "INGRESS";
   private static final String IP_PROTOCOL = "TCP";
-  private static final String DEFAULT_NETWORK =
-      String.format("%s/global/networks/default", PROJECT_LINK);
   private static final String FIREWALL_LINK =
       String.format("%s/global/firewalls/%s", PROJECT_LINK, FIREWALL_NAME);
   private static final int FIREWALL_PRIORITY = 1000;
@@ -602,7 +600,6 @@ public class ITComputeTest {
             .setPriority(FIREWALL_PRIORITY)
             .setDescription(FIREWALL_DESCRIPTION)
             .addAllAllowed(ALLOWEDS)
-            .setNetwork(DEFAULT_NETWORK)
             .build();
     firewallClient.insertFirewall(PROJECT_NAME, firewallResource);
 
@@ -806,7 +803,6 @@ public class ITComputeTest {
     NetworkEndpointGroup networkEndpointGroupResource =
         NetworkEndpointGroup.newBuilder()
             .setName(NETWORK_ENDPOINT_GROUP)
-            .setNetwork(DEFAULT_NETWORK)
             .setNetworkEndpointType(NETWORK_ENDPOINT_TYPE)
             .build();
     networkEndpointGroupClient.insertNetworkEndpointGroup(
@@ -1247,7 +1243,6 @@ public class ITComputeTest {
     assertThat(firewall.getDescription()).isEqualTo(FIREWALL_DESCRIPTION);
     assertThat(firewall.getDirection()).isEqualTo(DIRECTION);
     assertThat(firewall.getDisabled()).isFalse();
-    assertThat(firewall.getNetwork()).isEqualTo(DEFAULT_NETWORK);
     assertThat(firewall.getPriority()).isEqualTo(FIREWALL_PRIORITY);
     assertThat(firewall.getSelfLink()).isEqualTo(FIREWALL_LINK);
   }
@@ -1262,7 +1257,6 @@ public class ITComputeTest {
         assertThat(firewall.getDescription()).isEqualTo(FIREWALL_DESCRIPTION);
         assertThat(firewall.getDirection()).isEqualTo(DIRECTION);
         assertThat(firewall.getDisabled()).isFalse();
-        assertThat(firewall.getNetwork()).isEqualTo(DEFAULT_NETWORK);
         assertThat(firewall.getPriority()).isEqualTo(FIREWALL_PRIORITY);
         assertThat(firewall.getSelfLink()).isEqualTo(FIREWALL_LINK);
       }
@@ -2054,7 +2048,6 @@ public class ITComputeTest {
   public void getNetworkEndpointGroupTest() {
     NetworkEndpointGroup networkEndpointGroup =
         networkEndpointGroupClient.getNetworkEndpointGroup(NETWORK_ENDPOINT_GROUP_NAME);
-    assertThat(networkEndpointGroup.getNetwork()).isEqualTo(DEFAULT_NETWORK);
     assertThat(networkEndpointGroup.getName()).isEqualTo(NETWORK_ENDPOINT_GROUP);
     assertThat(networkEndpointGroup.getNetworkEndpointType()).isEqualTo(NETWORK_ENDPOINT_TYPE);
     assertThat(networkEndpointGroup.getSubnetwork()).isEqualTo(NETWORK_ENDPOINT_SUB_NETWORK);
@@ -2069,7 +2062,6 @@ public class ITComputeTest {
             networkEndpointGroupClient.listNetworkEndpointGroups(PROJECT_ZONE_NAME).iterateAll());
     for (NetworkEndpointGroup networkEndpointGroup : networkEndpointGroups) {
       if (NETWORK_ENDPOINT_GROUP.equals(networkEndpointGroup.getName())) {
-        assertThat(networkEndpointGroup.getNetwork()).isEqualTo(DEFAULT_NETWORK);
         assertThat(networkEndpointGroup.getName()).isEqualTo(NETWORK_ENDPOINT_GROUP);
         assertThat(networkEndpointGroup.getNetworkEndpointType()).isEqualTo(NETWORK_ENDPOINT_TYPE);
         assertThat(networkEndpointGroup.getSubnetwork()).isEqualTo(NETWORK_ENDPOINT_SUB_NETWORK);
@@ -2093,7 +2085,6 @@ public class ITComputeTest {
       if (null != networkEndpointGroups && networkEndpointGroups.size() > 0) {
         for (NetworkEndpointGroup networkEndpointGroup : networkEndpointGroups) {
           if (NETWORK_ENDPOINT_GROUP.equals(networkEndpointGroup.getName())) {
-            assertThat(networkEndpointGroup.getNetwork()).isEqualTo(DEFAULT_NETWORK);
             assertThat(networkEndpointGroup.getName()).isEqualTo(NETWORK_ENDPOINT_GROUP);
             assertThat(networkEndpointGroup.getNetworkEndpointType())
                 .isEqualTo(NETWORK_ENDPOINT_TYPE);
