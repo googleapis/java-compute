@@ -133,9 +133,6 @@ import com.google.cloud.compute.v1.NetworkClient;
 import com.google.cloud.compute.v1.NetworkEndpointGroup;
 import com.google.cloud.compute.v1.NetworkEndpointGroupClient;
 import com.google.cloud.compute.v1.NetworkEndpointGroupSettings;
-import com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest;
-import com.google.cloud.compute.v1.NetworkEndpointGroupsScopedList;
-import com.google.cloud.compute.v1.NetworkEndpointWithHealthStatus;
 import com.google.cloud.compute.v1.NetworkSettings;
 import com.google.cloud.compute.v1.NodeGroup;
 import com.google.cloud.compute.v1.NodeGroupClient;
@@ -175,7 +172,6 @@ import com.google.cloud.compute.v1.ProjectZoneDiskTypeName;
 import com.google.cloud.compute.v1.ProjectZoneInstanceGroupName;
 import com.google.cloud.compute.v1.ProjectZoneMachineTypeName;
 import com.google.cloud.compute.v1.ProjectZoneName;
-import com.google.cloud.compute.v1.ProjectZoneNetworkEndpointGroupName;
 import com.google.cloud.compute.v1.Region;
 import com.google.cloud.compute.v1.RegionAutoscalerClient;
 import com.google.cloud.compute.v1.RegionAutoscalerSettings;
@@ -480,13 +476,6 @@ public class ITComputeTest {
       String.format("%s/machineTypes/%s", ZONE_SELF_LINK, MACHINE_TYPE);
   private static final String NETWORK_TIER = "PREMIUM";
   private static final String NETWORK = "test-network-" + ID;
-  private static final String NETWORK_ENDPOINT_GROUP = "test-network-endpoint-group-" + ID;
-  private static final String NETWORK_ENDPOINT_GROUP_LINK =
-      String.format("%s/networkEndpointGroups/%s", ZONE_SELF_LINK, NETWORK_ENDPOINT_GROUP);
-  private static final String NETWORK_ENDPOINT_TYPE = "GCE_VM_IP_PORT";
-  private static final String NETWORK_ENDPOINT_SUB_NETWORK =
-      String.format("%s/subnetworks/default", REGION_LINK);
-
   private static final ProjectName PROJECT_NAME = ProjectName.of(DEFAULT_PROJECT);
   private static final ProjectRegionTargetPoolName REGION_TARGET_POOL_NAME =
       ProjectRegionTargetPoolName.of(DEFAULT_PROJECT, REGION, TARGET_POOL_NAME);
@@ -516,8 +505,6 @@ public class ITComputeTest {
       ProjectGlobalImageResourceName.of(DEFAULT_PROJECT, IMAGE_NAME);
   private static final ProjectGlobalLicenseName LICENSE_NAME =
       ProjectGlobalLicenseName.of(LICENSE, DEFAULT_PROJECT);
-  private static final ProjectZoneNetworkEndpointGroupName NETWORK_ENDPOINT_GROUP_NAME =
-      ProjectZoneNetworkEndpointGroupName.of(NETWORK_ENDPOINT_GROUP, DEFAULT_PROJECT, ZONE);
   private static final Address ADDRESS =
       Address.newBuilder()
           .setName(ADDRESS_NAME)
@@ -800,13 +787,6 @@ public class ITComputeTest {
             .setCredentialsProvider(credentialsProvider)
             .build();
     networkEndpointGroupClient = NetworkEndpointGroupClient.create(networkEndpointGroupSettings);
-    NetworkEndpointGroup networkEndpointGroupResource =
-        NetworkEndpointGroup.newBuilder()
-            .setName(NETWORK_ENDPOINT_GROUP)
-            .setNetworkEndpointType(NETWORK_ENDPOINT_TYPE)
-            .build();
-    networkEndpointGroupClient.insertNetworkEndpointGroup(
-        PROJECT_ZONE_NAME, networkEndpointGroupResource);
 
     /* create nodeTypeClient */
     nodeTypeSettings =
@@ -945,7 +925,6 @@ public class ITComputeTest {
     licenseClient.deleteLicense(LICENSE_NAME);
     licenseClient.close();
     machineTypeClient.close();
-    networkEndpointGroupClient.deleteNetworkEndpointGroup(NETWORK_ENDPOINT_GROUP_NAME);
     networkEndpointGroupClient.close();
     networkClient.close();
     nodeTemplateClient.close();
@@ -2045,71 +2024,12 @@ public class ITComputeTest {
   }
 
   @Test
-  public void getNetworkEndpointGroupTest() {
-    NetworkEndpointGroup networkEndpointGroup =
-        networkEndpointGroupClient.getNetworkEndpointGroup(NETWORK_ENDPOINT_GROUP_NAME);
-    assertThat(networkEndpointGroup.getName()).isEqualTo(NETWORK_ENDPOINT_GROUP);
-    assertThat(networkEndpointGroup.getNetworkEndpointType()).isEqualTo(NETWORK_ENDPOINT_TYPE);
-    assertThat(networkEndpointGroup.getSubnetwork()).isEqualTo(NETWORK_ENDPOINT_SUB_NETWORK);
-    assertThat(networkEndpointGroup.getZone()).isEqualTo(ZONE_SELF_LINK);
-    assertThat(networkEndpointGroup.getSelfLink()).isEqualTo(NETWORK_ENDPOINT_GROUP_LINK);
-  }
-
-  @Test
   public void listNetworkEndpointGroupsTest() {
     List<NetworkEndpointGroup> networkEndpointGroups =
         Lists.newArrayList(
             networkEndpointGroupClient.listNetworkEndpointGroups(PROJECT_ZONE_NAME).iterateAll());
-    for (NetworkEndpointGroup networkEndpointGroup : networkEndpointGroups) {
-      if (NETWORK_ENDPOINT_GROUP.equals(networkEndpointGroup.getName())) {
-        assertThat(networkEndpointGroup.getName()).isEqualTo(NETWORK_ENDPOINT_GROUP);
-        assertThat(networkEndpointGroup.getNetworkEndpointType()).isEqualTo(NETWORK_ENDPOINT_TYPE);
-        assertThat(networkEndpointGroup.getSubnetwork()).isEqualTo(NETWORK_ENDPOINT_SUB_NETWORK);
-        assertThat(networkEndpointGroup.getZone()).isEqualTo(ZONE_SELF_LINK);
-        assertThat(networkEndpointGroup.getSelfLink()).isEqualTo(NETWORK_ENDPOINT_GROUP_LINK);
-      }
-    }
-  }
-
-  @Test
-  public void aggregatedListNetworkEndpointGroupsTest() {
-    List<NetworkEndpointGroupsScopedList> endpointGroupsScopedLists =
-        Lists.newArrayList(
-            networkEndpointGroupClient
-                .aggregatedListNetworkEndpointGroups(PROJECT_NAME)
-                .iterateAll());
-    for (NetworkEndpointGroupsScopedList networkEndpointGroupsScopedList :
-        endpointGroupsScopedLists) {
-      List<NetworkEndpointGroup> networkEndpointGroups =
-          networkEndpointGroupsScopedList.getNetworkEndpointGroupsList();
-      if (null != networkEndpointGroups && networkEndpointGroups.size() > 0) {
-        for (NetworkEndpointGroup networkEndpointGroup : networkEndpointGroups) {
-          if (NETWORK_ENDPOINT_GROUP.equals(networkEndpointGroup.getName())) {
-            assertThat(networkEndpointGroup.getName()).isEqualTo(NETWORK_ENDPOINT_GROUP);
-            assertThat(networkEndpointGroup.getNetworkEndpointType())
-                .isEqualTo(NETWORK_ENDPOINT_TYPE);
-            assertThat(networkEndpointGroup.getSubnetwork())
-                .isEqualTo(NETWORK_ENDPOINT_SUB_NETWORK);
-            assertThat(networkEndpointGroup.getZone()).isEqualTo(ZONE_SELF_LINK);
-            assertThat(networkEndpointGroup.getSelfLink()).isEqualTo(NETWORK_ENDPOINT_GROUP_LINK);
-          }
-        }
-      }
-    }
-  }
-
-  @Test
-  public void listNetworkEndpointsNetworkEndpointGroupsTest() {
-    NetworkEndpointGroupsListEndpointsRequest request =
-        NetworkEndpointGroupsListEndpointsRequest.newBuilder().build();
-    List<NetworkEndpointWithHealthStatus> healthStatuses =
-        Lists.newArrayList(
-            networkEndpointGroupClient
-                .listNetworkEndpointsNetworkEndpointGroups(NETWORK_ENDPOINT_GROUP_NAME, request)
-                .iterateAll());
-    assertThat(healthStatuses).isNotNull();
-    assertThat(healthStatuses.size()).isEqualTo(0);
-    assertThat(healthStatuses.contains(null)).isFalse();
+    assertThat(networkEndpointGroups).isNotNull();
+    assertThat(networkEndpointGroups.contains(null)).isFalse();
   }
 
   @Test
