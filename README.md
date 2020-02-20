@@ -60,7 +60,7 @@ Example Application
 [`ComputeExample`](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/v1/ComputeExample.java)
 is a simple command line interface that provides some of Google Cloud Compute Engine's
 functionality. Read more about using the application on the
-[`ComputeExample` docs page](https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/examples/compute/ComputeExample.html).
+[`ComputeExample` docs page](https://googleapis.dev/java/google-cloud-examples/latest/index.html?com/google/cloud/examples/compute/ComputeExample.html).
 
 Authentication
 --------------
@@ -203,7 +203,7 @@ try {
 #### Complete source code
 
 In
-[ComputeExample.java](../../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/v1/ComputeExample.java)
+[ComputeExample.java](https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/v1/ComputeExample.java)
 we put together all the code shown above into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
