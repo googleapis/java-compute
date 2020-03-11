@@ -65,7 +65,7 @@ See the [Authentication][authentication] section in the base directory's README.
 ### Prerequisites
 
 You will need a [Google Cloud Platform Console][developer-console] project with the Google Compute Engine [API enabled][enable-api].
-
+You will need to [enable billing][enable-billing] to use Google Google Compute Engine.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -78,7 +78,7 @@ to add `google-cloud-compute` as a dependency in your code.
 ## About Google Compute Engine
 
 
-[Google Compute Engine][product-docs] 
+[Google Compute Engine][product-docs] delivers virtual machines running in Google's innovative data centers and worldwide fiber network. Compute Engine's tooling and workflow support enable scaling from single instances to global, load-balanced cloud computing. Compute Engine's VMs boot quickly, come with persistent disk storage, deliver consistent performance and are available in many configurations.
 
 See the [Google Compute Engine client library docs][javadocs] to learn how to
 use this Google Compute Engine Client Library.
@@ -203,6 +203,10 @@ display on your webpage.
 
 To get help, follow the instructions in the [shared Troubleshooting document][troubleshooting].
 
+## Transport
+
+Google Compute Engine uses HTTP/JSON for the transport layer.
+
 ## Java Versions
 
 Java 7 or above is required for using this client.
@@ -264,7 +268,7 @@ Java 11 | [![Kokoro CI][kokoro-badge-image-5]][kokoro-badge-link-5]
 [contributing]: https://github.com/googleapis/java-compute/blob/master/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/java-compute/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-compute/blob/master/LICENSE
-
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=compute.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
