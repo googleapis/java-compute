@@ -1039,7 +1039,8 @@ public class ITComputeTest {
   @Test
   public void aggregatedListAutoscalersTest() {
     List<AutoscalersScopedList> autoscalersScopedLists =
-        Lists.newArrayList(autoscalerClient.aggregatedListAutoscalers(true, PROJECT_NAME).iterateAll());
+        Lists.newArrayList(
+            autoscalerClient.aggregatedListAutoscalers(true, PROJECT_NAME).iterateAll());
     assertNotNull(autoscalersScopedLists);
     assertThat(autoscalersScopedLists.size()).isGreaterThan(0);
     assertThat(autoscalersScopedLists.contains(null)).isFalse();
@@ -1357,7 +1358,8 @@ public class ITComputeTest {
   @Test
   public void aggregatedListHealthChecksTest() {
     List<HealthChecksScopedList> scopedLists =
-        Lists.newArrayList(healthCheckClient.aggregatedListHealthChecks(true, PROJECT_NAME).iterateAll());
+        Lists.newArrayList(
+            healthCheckClient.aggregatedListHealthChecks(true, PROJECT_NAME).iterateAll());
     Iterator<HealthChecksScopedList> iterator = scopedLists.iterator();
     while (iterator.hasNext()) {
       List<HealthCheck> checkList = iterator.next().getHealthChecksList();
@@ -1761,7 +1763,8 @@ public class ITComputeTest {
   @Test
   public void aggregatedListTargetPoolsTest() {
     List<TargetPoolsScopedList> targetPoolsScopedLists =
-        Lists.newArrayList(targetPoolClient.aggregatedListTargetPools(true, PROJECT_NAME).iterateAll());
+        Lists.newArrayList(
+            targetPoolClient.aggregatedListTargetPools(true, PROJECT_NAME).iterateAll());
     for (TargetPoolsScopedList targetPoolsScopedList : targetPoolsScopedLists) {
       List<TargetPool> targetPools = targetPoolsScopedList.getTargetPoolsList();
       if (targetPools != null) {
@@ -1999,7 +2002,8 @@ public class ITComputeTest {
   @Test
   public void aggregatedListMachineTypesTest() {
     List<MachineTypesScopedList> scopedLists =
-        Lists.newArrayList(machineTypeClient.aggregatedListMachineTypes(true, PROJECT_NAME).iterateAll());
+        Lists.newArrayList(
+            machineTypeClient.aggregatedListMachineTypes(true, PROJECT_NAME).iterateAll());
     for (MachineTypesScopedList scopedList : scopedLists) {
       List<MachineType> machineTypes = scopedList.getMachineTypesList();
       if (null != machineTypes && machineTypes.size() > 0) {
@@ -2080,7 +2084,8 @@ public class ITComputeTest {
   @Test
   public void aggregatedListNodeGroupsTest() {
     List<NodeGroupsScopedList> nodeGroupsScopedLists =
-        Lists.newArrayList(nodeGroupClient.aggregatedListNodeGroups(true, PROJECT_NAME).iterateAll());
+        Lists.newArrayList(
+            nodeGroupClient.aggregatedListNodeGroups(true, PROJECT_NAME).iterateAll());
     assertThat(nodeGroupsScopedLists).isNotNull();
     assertThat(nodeGroupsScopedLists.size()).isGreaterThan(0);
     assertThat(nodeGroupsScopedLists.contains(null)).isFalse();
