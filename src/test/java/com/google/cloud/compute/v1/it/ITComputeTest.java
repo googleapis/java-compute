@@ -1543,11 +1543,12 @@ public class ITComputeTest {
   @Test
   public void testAggregatedListDiskTypes() {
     AggregatedListDiskTypesPagedResponse pagedListResponse =
-        diskTypeClient.aggregatedListDiskTypes(true, PROJECT_NAME);
+        diskTypeClient.aggregatedListDiskTypes(false, PROJECT_NAME);
     List<DiskTypesScopedList> diskTypeScopedListIterator =
         Lists.newArrayList(pagedListResponse.iterateAll());
     List<DiskType> diskTypeIterator = new LinkedList<>();
     for (DiskTypesScopedList scopedList : diskTypeScopedListIterator) {
+      assertThat(scopedList.getDiskTypesList()).isNotNull();
       diskTypeIterator.addAll(scopedList.getDiskTypesList());
     }
     assertThat(diskTypeIterator.size()).isGreaterThan(0);
