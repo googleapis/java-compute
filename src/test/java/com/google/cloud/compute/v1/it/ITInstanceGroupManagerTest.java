@@ -70,14 +70,12 @@ public class ITInstanceGroupManagerTest {
   private static GlobalOperationClient globalOperationClient;
   private static ZoneOperationClient zoneOperationClient;
 
-  private static ListMultimap<String, String> resourcesToCleanUp;
+  private static ListMultimap<String, String> resourcesToCleanUp = ArrayListMultimap.create();
 
   private static String instanceGroupManagerSelfLink;
 
   @BeforeClass
   public static void setUp() throws IOException {
-    resourcesToCleanUp = ArrayListMultimap.create();
-
     Credentials credentials =
         GoogleCredentials.getApplicationDefault()
             .createScoped(DiskTypeSettings.getDefaultServiceScopes());
