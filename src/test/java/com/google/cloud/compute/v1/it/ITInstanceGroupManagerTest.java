@@ -54,6 +54,7 @@ import java.util.List;
 import java.util.UUID;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -73,6 +74,8 @@ public class ITInstanceGroupManagerTest {
   private static ZoneOperationClient zoneOperationClient;
 
   private static ListMultimap<String, String> resourcesToCleanUp;
+
+  private static String instanceGroupManagerSelfLink;
 
   @BeforeClass
   public static void setUp() throws IOException {
@@ -95,7 +98,6 @@ public class ITInstanceGroupManagerTest {
             .build();
     instanceTemplateClient = InstanceTemplateClient.create(instanceTemplateSettings);
 
-    /* create instanceGroupManagerClient */
     InstanceGroupManagerSettings instanceGroupManagerSettings =
         InstanceGroupManagerSettings.newBuilder()
             .setCredentialsProvider(credentialsProvider)
@@ -113,32 +115,7 @@ public class ITInstanceGroupManagerTest {
             .setCredentialsProvider(credentialsProvider)
             .build();
     zoneOperationClient = ZoneOperationClient.create(zoneOperationSettings);
-  }
 
-  @AfterClass
-  public static void tearDown() {
-    for (String instanceGroupManager : resourcesToCleanUp.get("instance-group-manager")) {
-      System.out.println("deleting instanceGroupManager: " + instanceGroupManager);
-      waitForOperation(instanceGroupManagerClient.deleteInstanceGroupManager(instanceGroupManager));
-    }
-    for (String instanceTemplate : resourcesToCleanUp.get("instance-template")) {
-      System.out.println("deleting instanceTemplate: " + instanceTemplate);
-      waitForOperation(instanceTemplateClient.deleteInstanceTemplate(instanceTemplate));
-    }
-    for (String disk : resourcesToCleanUp.get("disk")) {
-      System.out.println("deleting disk: " + disk);
-      waitForOperation(diskClient.deleteDisk(disk));
-    }
-
-    diskClient.close();
-    instanceGroupManagerClient.close();
-    instanceTemplateClient.close();
-    globalOperationClient.close();
-    zoneOperationClient.close();
-  }
-
-  @Test
-  public void createAndListInstanceGroupManagerTest() {
     // create a disk
     Disk disk = Disk.newBuilder()
         .setName("test-" + ID)
@@ -173,10 +150,38 @@ public class ITInstanceGroupManagerTest {
         .setInstanceTemplate(instanceTemplateSelfLink)
         .build();
     completedOperation = waitForOperation(instanceGroupManagerClient.insertInstanceGroupManager(PROJECT_ZONE_NAME, instanceGroupManager));
-    String instanceGroupManagerSelfLink = completedOperation.getTargetLink();
+    instanceGroupManagerSelfLink = completedOperation.getTargetLink();
     assertNotNull(instanceGroupManagerSelfLink);
     resourcesToCleanUp.put("instance-group-manager", instanceGroupManagerSelfLink);
+  }
 
+  @AfterClass
+  public static void tearDown() {
+    for (String instanceGroupManager : resourcesToCleanUp.get("instance-group-manager")) {
+      waitForOperation(instanceGroupManagerClient.deleteInstanceGroupManager(instanceGroupManager));
+    }
+    for (String instanceTemplate : resourcesToCleanUp.get("instance-template")) {
+      waitForOperation(instanceTemplateClient.deleteInstanceTemplate(instanceTemplate));
+    }
+    for (String disk : resourcesToCleanUp.get("disk")) {
+      waitForOperation(diskClient.deleteDisk(disk));
+    }
+
+    diskClient.close();
+    instanceGroupManagerClient.close();
+    instanceTemplateClient.close();
+    globalOperationClient.close();
+    zoneOperationClient.close();
+  }
+
+  @Test
+  public void getInstanceGroupManagerTest() {
+    InstanceGroupManager instanceGroupManager = instanceGroupManagerClient.getInstanceGroupManager(instanceGroupManagerSelfLink);
+    assertEquals(instanceGroupManagerSelfLink, instanceGroupManager.getSelfLink());
+  }
+
+  @Test
+  public void listInstanceGroupManagerTest() {
     // list instance groups and ensure we find the one we just created
     List<InstanceGroupManager> instanceGroupManagers =
         Lists.newArrayList(
@@ -190,19 +195,28 @@ public class ITInstanceGroupManagerTest {
       }
     }
     assertTrue("expected to find the inserted instance group manager", found);
+  }
 
+  @Test
+  public void aggregatedListInstanceGroupManagersTest() {
     // list aggregated instance group managers
     List<InstanceGroupManagersScopedList> managersScopedLists =
         Lists.newArrayList(
             instanceGroupManagerClient
                 .aggregatedListInstanceGroupManagers(true, PROJECT_NAME)
                 .iterateAll());
-    assertThat(instanceGroupManagers).isNotNull();
-    assertThat(instanceGroupManagers.size()).isGreaterThan(0);
-    found = false;
-    for (InstanceGroupManager manager : instanceGroupManagers) {
-      if (manager.getSelfLink().equals(instanceGroupManagerSelfLink)) {
-        found = true;
+    assertThat(managersScopedLists).isNotNull();
+    assertThat(managersScopedLists.size()).isGreaterThan(0);
+    boolean found = false;
+    for (InstanceGroupManagersScopedList instanceGroupManagersScopedList : managersScopedLists) {
+      List<InstanceGroupManager> managers = instanceGroupManagersScopedList.getInstanceGroupManagersList();
+      if (managers == null) {
+        continue;
+      }
+      for (InstanceGroupManager manager : managers) {
+        if (manager.getSelfLink().equals(instanceGroupManagerSelfLink)) {
+          found = true;
+        }
       }
     }
     assertTrue("expected to find the inserted instance group manager", found);
@@ -214,16 +228,4 @@ public class ITInstanceGroupManagerTest {
     }
     return globalOperationClient.waitGlobalOperation(ProjectGlobalOperationName.of(operation.getName(), DEFAULT_PROJECT));
   }
-//
-//  @Test
-//  public void aggregatedListInstanceGroupManagersTest() {
-//    List<InstanceGroupManagersScopedList> managersScopedLists =
-//        Lists.newArrayList(
-//            instanceGroupManagerClient
-//                .aggregatedListInstanceGroupManagers(true, PROJECT_NAME)
-//                .iterateAll());
-//    assertThat(managersScopedLists).isNotNull();
-//    assertThat(managersScopedLists.size()).isGreaterThan(0);
-//    assertThat(managersScopedLists.contains(null)).isFalse();
-//  }
 }
