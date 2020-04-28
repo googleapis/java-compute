@@ -15,6 +15,11 @@
  */
 package com.google.cloud.compute.v1.it;
 
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -45,18 +50,12 @@ import com.google.cloud.compute.v1.ZoneOperationSettings;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Lists;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
-
-import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class ITInstanceGroupManagerTest {
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
@@ -87,15 +86,11 @@ public class ITInstanceGroupManagerTest {
     FixedCredentialsProvider credentialsProvider = FixedCredentialsProvider.create(credentials);
 
     DiskSettings diskSettings =
-        DiskSettings.newBuilder()
-            .setCredentialsProvider(credentialsProvider)
-            .build();
+        DiskSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     diskClient = DiskClient.create(diskSettings);
 
     InstanceTemplateSettings instanceTemplateSettings =
-        InstanceTemplateSettings.newBuilder()
-            .setCredentialsProvider(credentialsProvider)
-            .build();
+        InstanceTemplateSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     instanceTemplateClient = InstanceTemplateClient.create(instanceTemplateSettings);
 
     InstanceGroupManagerSettings instanceGroupManagerSettings =
@@ -105,51 +100,54 @@ public class ITInstanceGroupManagerTest {
     instanceGroupManagerClient = InstanceGroupManagerClient.create(instanceGroupManagerSettings);
 
     GlobalOperationSettings globalOperationSettings =
-        GlobalOperationSettings.newBuilder()
-            .setCredentialsProvider(credentialsProvider)
-            .build();
+        GlobalOperationSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     globalOperationClient = GlobalOperationClient.create(globalOperationSettings);
 
     ZoneOperationSettings zoneOperationSettings =
-        ZoneOperationSettings.newBuilder()
-            .setCredentialsProvider(credentialsProvider)
-            .build();
+        ZoneOperationSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     zoneOperationClient = ZoneOperationClient.create(zoneOperationSettings);
 
     // create a disk
-    Disk disk = Disk.newBuilder()
-        .setName("test-" + ID)
-        .build();
+    Disk disk = Disk.newBuilder().setName("test-" + ID).build();
     Operation completedOperation = waitForOperation(diskClient.insertDisk(PROJECT_ZONE_NAME, disk));
     resourcesToCleanUp.put("disk", completedOperation.getTargetLink());
 
     // create an instance template
-    InstanceTemplate instanceTemplate = InstanceTemplate.newBuilder()
-        .setName("test-" + ID)
-        .setProperties(InstanceProperties.newBuilder()
-            .setMachineType("n1-standard-1")
-            .addDisks(AttachedDisk.newBuilder()
-                .setType("PERSISTENT")
-                .setSource("test-" + ID)
-                .setBoot(true)
-                .build())
-            .addNetworkInterfaces(NetworkInterface.newBuilder()
-                .setNetwork("global/networks/default")
-                .build())
-            .build())
-        .build();
-    completedOperation = waitForOperation(instanceTemplateClient.insertInstanceTemplate(ProjectName.of(DEFAULT_PROJECT), instanceTemplate));
+    InstanceTemplate instanceTemplate =
+        InstanceTemplate.newBuilder()
+            .setName("test-" + ID)
+            .setProperties(
+                InstanceProperties.newBuilder()
+                    .setMachineType("n1-standard-1")
+                    .addDisks(
+                        AttachedDisk.newBuilder()
+                            .setType("PERSISTENT")
+                            .setSource("test-" + ID)
+                            .setBoot(true)
+                            .build())
+                    .addNetworkInterfaces(
+                        NetworkInterface.newBuilder().setNetwork("global/networks/default").build())
+                    .build())
+            .build();
+    completedOperation =
+        waitForOperation(
+            instanceTemplateClient.insertInstanceTemplate(
+                ProjectName.of(DEFAULT_PROJECT), instanceTemplate));
     String instanceTemplateSelfLink = completedOperation.getTargetLink();
     resourcesToCleanUp.put("instance-template", instanceTemplateSelfLink);
 
     // Create an instance group manager
-    InstanceGroupManager instanceGroupManager = InstanceGroupManager.newBuilder()
-        .setBaseInstanceName("base-instance-" + ID)
-        .setName("test-instance-group-" + ID)
-        .setTargetSize(0)
-        .setInstanceTemplate(instanceTemplateSelfLink)
-        .build();
-    completedOperation = waitForOperation(instanceGroupManagerClient.insertInstanceGroupManager(PROJECT_ZONE_NAME, instanceGroupManager));
+    InstanceGroupManager instanceGroupManager =
+        InstanceGroupManager.newBuilder()
+            .setBaseInstanceName("base-instance-" + ID)
+            .setName("test-instance-group-" + ID)
+            .setTargetSize(0)
+            .setInstanceTemplate(instanceTemplateSelfLink)
+            .build();
+    completedOperation =
+        waitForOperation(
+            instanceGroupManagerClient.insertInstanceGroupManager(
+                PROJECT_ZONE_NAME, instanceGroupManager));
     instanceGroupManagerSelfLink = completedOperation.getTargetLink();
     assertNotNull(instanceGroupManagerSelfLink);
     resourcesToCleanUp.put("instance-group-manager", instanceGroupManagerSelfLink);
@@ -176,7 +174,8 @@ public class ITInstanceGroupManagerTest {
 
   @Test
   public void getInstanceGroupManagerTest() {
-    InstanceGroupManager instanceGroupManager = instanceGroupManagerClient.getInstanceGroupManager(instanceGroupManagerSelfLink);
+    InstanceGroupManager instanceGroupManager =
+        instanceGroupManagerClient.getInstanceGroupManager(instanceGroupManagerSelfLink);
     assertEquals(instanceGroupManagerSelfLink, instanceGroupManager.getSelfLink());
   }
 
@@ -209,7 +208,8 @@ public class ITInstanceGroupManagerTest {
     assertThat(managersScopedLists.size()).isGreaterThan(0);
     boolean found = false;
     for (InstanceGroupManagersScopedList instanceGroupManagersScopedList : managersScopedLists) {
-      List<InstanceGroupManager> managers = instanceGroupManagersScopedList.getInstanceGroupManagersList();
+      List<InstanceGroupManager> managers =
+          instanceGroupManagersScopedList.getInstanceGroupManagersList();
       if (managers == null) {
         continue;
       }
@@ -224,8 +224,10 @@ public class ITInstanceGroupManagerTest {
 
   private static Operation waitForOperation(Operation operation) {
     if (operation.getZone() != null) {
-      return zoneOperationClient.waitZoneOperation(ProjectZoneOperationName.of(operation.getName(), DEFAULT_PROJECT, ZONE));
+      return zoneOperationClient.waitZoneOperation(
+          ProjectZoneOperationName.of(operation.getName(), DEFAULT_PROJECT, ZONE));
     }
-    return globalOperationClient.waitGlobalOperation(ProjectGlobalOperationName.of(operation.getName(), DEFAULT_PROJECT));
+    return globalOperationClient.waitGlobalOperation(
+        ProjectGlobalOperationName.of(operation.getName(), DEFAULT_PROJECT));
   }
 }
