@@ -16,9 +16,7 @@
 package com.google.cloud.compute.v1.it;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.Credentials;
@@ -187,13 +185,13 @@ public class ITInstanceGroupManagerTest {
             instanceGroupManagerClient.listInstanceGroupManagers(PROJECT_ZONE_NAME).iterateAll());
     assertThat(instanceGroupManagers).isNotNull();
     assertThat(instanceGroupManagers.size()).isGreaterThan(0);
-    boolean found = false;
     for (InstanceGroupManager manager : instanceGroupManagers) {
       if (manager.getSelfLink().equals(instanceGroupManagerSelfLink)) {
-        found = true;
+        // successfully found the expected instance
+        return;
       }
     }
-    assertTrue("expected to find the inserted instance group manager", found);
+    fail("expected to find the inserted instance group manager");
   }
 
   @Test
@@ -206,7 +204,6 @@ public class ITInstanceGroupManagerTest {
                 .iterateAll());
     assertThat(managersScopedLists).isNotNull();
     assertThat(managersScopedLists.size()).isGreaterThan(0);
-    boolean found = false;
     for (InstanceGroupManagersScopedList instanceGroupManagersScopedList : managersScopedLists) {
       List<InstanceGroupManager> managers =
           instanceGroupManagersScopedList.getInstanceGroupManagersList();
@@ -215,11 +212,12 @@ public class ITInstanceGroupManagerTest {
       }
       for (InstanceGroupManager manager : managers) {
         if (manager.getSelfLink().equals(instanceGroupManagerSelfLink)) {
-          found = true;
+          // successfully found the expected instance
+          return;
         }
       }
     }
-    assertTrue("expected to find the inserted instance group manager", found);
+    fail("expected to find the inserted instance group manager");
   }
 
   private static Operation waitForOperation(Operation operation) {
