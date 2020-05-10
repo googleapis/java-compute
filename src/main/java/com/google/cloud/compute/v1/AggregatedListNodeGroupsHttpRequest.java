@@ -90,45 +90,15 @@ public final class AggregatedListNodeGroupsHttpRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if ("access_token".equals(fieldName)) {
-      return access_token;
+    if ("".equals(fieldName)) {
+        return access_token;
     }
-    if ("callback".equals(fieldName)) {
-      return callback;
+        
+    try {
+        return this.getClass().getField(fieldName);
+    } catch (NoSuchFieldException e) {
     }
-    if ("fields".equals(fieldName)) {
-      return fields;
-    }
-    if ("filter".equals(fieldName)) {
-      return filter;
-    }
-    if ("includeAllScopes".equals(fieldName)) {
-      return includeAllScopes;
-    }
-    if ("key".equals(fieldName)) {
-      return key;
-    }
-    if ("maxResults".equals(fieldName)) {
-      return maxResults;
-    }
-    if ("orderBy".equals(fieldName)) {
-      return orderBy;
-    }
-    if ("pageToken".equals(fieldName)) {
-      return pageToken;
-    }
-    if ("prettyPrint".equals(fieldName)) {
-      return prettyPrint;
-    }
-    if ("project".equals(fieldName)) {
-      return project;
-    }
-    if ("quotaUser".equals(fieldName)) {
-      return quotaUser;
-    }
-    if ("userIp".equals(fieldName)) {
-      return userIp;
-    }
+        
     return null;
   }
 
