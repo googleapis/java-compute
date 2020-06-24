@@ -17,7 +17,15 @@ package com.google.cloud.compute.v1.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.compute.v1.*;
+import com.google.cloud.compute.v1.Allowed;
+import com.google.cloud.compute.v1.Firewall;
+import com.google.cloud.compute.v1.FirewallClient;
+import com.google.cloud.compute.v1.FirewallSettings;
+import com.google.cloud.compute.v1.Network;
+import com.google.cloud.compute.v1.NetworkClient;
+import com.google.cloud.compute.v1.NetworkSettings;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ProjectGlobalFirewallName;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Lists;
