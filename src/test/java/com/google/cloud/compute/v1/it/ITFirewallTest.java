@@ -81,7 +81,6 @@ public class ITFirewallTest extends BaseTest {
             .build();
     completedOperation =
         waitForOperation(firewallClient.insertFirewall(PROJECT_NAME, firewallResource));
-    System.out.println(completedOperation);
     resourcesToCleanUp.put("firewall", completedOperation.getTargetLink());
   }
 
