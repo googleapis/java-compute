@@ -79,11 +79,11 @@ public class ITFirewallTest extends BaseTest {
 
   @AfterClass
   public static void tearDown() {
-    for (String network : resourcesToCleanUp.get("firewall-network")) {
-      waitForOperation(networkClient.deleteNetwork(network));
-    }
     for (String firewall : resourcesToCleanUp.get("firewall")) {
       waitForOperation(firewallClient.deleteFirewall(firewall));
+    }
+    for (String network : resourcesToCleanUp.get("firewall-network")) {
+      waitForOperation(networkClient.deleteNetwork(network));
     }
     firewallClient.close();
   }
