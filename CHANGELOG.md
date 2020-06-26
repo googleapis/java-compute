@@ -1,5 +1,17 @@
 # Changelog
 
+### [0.118.1](https://www.github.com/googleapis/java-compute/compare/v0.118.0...v0.118.1) (2020-06-26)
+
+
+### Dependencies
+
+* update core dependencies to v1.93.5 ([#152](https://www.github.com/googleapis/java-compute/issues/152)) ([7ad4d75](https://www.github.com/googleapis/java-compute/commit/7ad4d753a98047282ba52e6f6c0f6a9ec24b9f30))
+* update dependency com.google.apis:google-api-services-compute to v1-rev20200331-1.30.9 ([#139](https://www.github.com/googleapis/java-compute/issues/139)) ([ef44308](https://www.github.com/googleapis/java-compute/commit/ef443088f3790e8ea8f56f7512127bf4307b9748))
+* update dependency com.google.guava:guava-bom to v29 ([#119](https://www.github.com/googleapis/java-compute/issues/119)) ([20a7432](https://www.github.com/googleapis/java-compute/commit/20a7432b25c93f6d027eb5bb20baedc6cb3e6a0b))
+* update dependency com.google.guava:guava-bom to v29 ([#119](https://www.github.com/googleapis/java-compute/issues/119)) ([e5b9170](https://www.github.com/googleapis/java-compute/commit/e5b9170ad3d746a9cd724b0a7e3f69b8ebde6c67))
+* update dependency com.google.http-client:google-http-client-bom to v1.35.0 ([#134](https://www.github.com/googleapis/java-compute/issues/134)) ([a3fc066](https://www.github.com/googleapis/java-compute/commit/a3fc0668aedef440e1931ef568d8237e3903bd74))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#130](https://www.github.com/googleapis/java-compute/issues/130)) ([6bdca9d](https://www.github.com/googleapis/java-compute/commit/6bdca9d50bed44e0ec985b9556372f1675f09bea))
+
 ## [0.118.0](https://www.github.com/googleapis/java-compute/compare/0.117.0...v0.118.0) (2020-04-09)
 
 
