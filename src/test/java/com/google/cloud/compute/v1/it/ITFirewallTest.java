@@ -100,7 +100,9 @@ public class ITFirewallTest extends BaseTest {
     for (String network : resourcesToCleanUp.get("firewall-network")) {
       waitForOperation(networkClient.deleteNetwork(network));
     }
+
     firewallClient.close();
+    networkClient.close();
   }
 
   @Test
