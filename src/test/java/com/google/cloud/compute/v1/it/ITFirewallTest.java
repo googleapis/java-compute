@@ -118,8 +118,11 @@ public class ITFirewallTest extends BaseTest {
   public void listFirewallsTest() {
     List<Firewall> firewalls =
         Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
+
+    boolean found = false;
     for (Firewall firewall : firewalls) {
       if (FIREWALL_NAME.equals(firewall.getName())) {
+        found = true;
         assertThat(firewall.getAllowedList()).isEqualTo(ALLOWEDS);
         assertThat(firewall.getDescription()).isEqualTo(FIREWALL_DESCRIPTION);
         assertThat(firewall.getDirection()).isEqualTo(DIRECTION);
@@ -128,5 +131,6 @@ public class ITFirewallTest extends BaseTest {
         assertThat(firewall.getSelfLink()).isEqualTo(FIREWALL_LINK);
       }
     }
+    assertThat(found).isTrue();
   }
 }

@@ -63,8 +63,14 @@ public class ITNetworkTest extends BaseTest {
   public void listNetworkTest() {
     List<Network> networks =
         Lists.newArrayList(networkClient.listNetworks(PROJECT_NAME).iterateAll());
-    assertThat(networks).isNotNull();
-    assertThat(networks.size()).isGreaterThan(0);
-    assertThat(networks.contains(null)).isFalse();
+
+    boolean found = false;
+    for (Network network : networks) {
+      if (NETWORK.equals(network.getName())) {
+        found = true;
+        assertThat(network.getAutoCreateSubnetworks()).isFalse();
+      }
+    }
+    assertThat(found).isTrue();
   }
 }
