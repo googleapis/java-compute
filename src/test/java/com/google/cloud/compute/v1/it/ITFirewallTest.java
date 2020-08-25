@@ -88,9 +88,9 @@ public class ITFirewallTest extends BaseTest {
 
   @AfterClass
   public static void tearDown() {
+    List<Firewall> firewalls =
+        Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
     for (String firewallTargetLink : resourcesToCleanUp.get("firewall")) {
-      List<Firewall> firewalls =
-          Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
       for (Firewall firewall : firewalls) {
         if (firewall.getSelfLink().startsWith(firewallTargetLink)) {
           waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()));
