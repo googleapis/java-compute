@@ -154,7 +154,6 @@ public class BaseTest {
       if (network.getName().startsWith("test-")) {
         Timestamp createdAt = Timestamp.parseTimestamp(network.getCreationTimestamp());
         if (createdAt.compareTo(cutoff) < 0) {
-          System.out.println(network.getSubnetworksList());
           System.out.println("deleting old network: " + network.getSelfLink());
           waitForOperation(networkClient.deleteNetwork(network.getSelfLink()));
         }
