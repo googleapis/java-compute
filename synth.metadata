@@ -3,22 +3,22 @@
     {
       "git": {
         "name": ".",
-        "remote": "https://github.com/googleapis/java-compute.git",
-        "sha": "fd238e7cc52df836e208e6bb8b67a8d744bbc44f"
+        "remote": "git@github.com:googleapis/java-compute.git",
+        "sha": "df74c7b2ef5999f1b65634194b6be6a3c42e834e"
       }
     },
     {
       "git": {
         "name": "discovery-artifact-manager",
         "remote": "https://github.com/googleapis/discovery-artifact-manager.git",
-        "sha": "0c2a61db0b5836a0768f1cceef511d5cb625f7bf"
+        "sha": "a78b0e823c9aa9978034e99372b8b6c69f3503f0"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5b48b0716a36ca069db3038da7e205c87a22ed19"
+        "sha": "05de3e1e14a0b07eab8b474e669164dbd31f81fb"
       }
     }
   ],
