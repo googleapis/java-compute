@@ -22,11 +22,6 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
-
-import java.io.IOException;
-import java.util.Calendar;
-import java.util.List;
-
 import com.google.cloud.Timestamp;
 import com.google.cloud.compute.v1.DiskTypeSettings;
 import com.google.cloud.compute.v1.Firewall;
@@ -49,6 +44,9 @@ import com.google.cloud.compute.v1.RegionOperationSettings;
 import com.google.cloud.compute.v1.ZoneOperationClient;
 import com.google.cloud.compute.v1.ZoneOperationSettings;
 import com.google.common.collect.Lists;
+import java.io.IOException;
+import java.util.Calendar;
+import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
