@@ -49,7 +49,7 @@ public enum Regions {
   NORTHAMERICA_NORTHEAST1(
       "northamerica-northeast1",
       new String[] {
-          "northamerica-northeast1-a", "northamerica-northeast1-b", "northamerica-northeast1-c"
+        "northamerica-northeast1-a", "northamerica-northeast1-b", "northamerica-northeast1-c"
       }),
   SOUTHAMERICA_EAST1(
       "southamerica-east1",
