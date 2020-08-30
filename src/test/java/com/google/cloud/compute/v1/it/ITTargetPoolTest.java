@@ -163,7 +163,7 @@ public class ITTargetPoolTest extends BaseTest {
     Operation response =
         targetPoolClient.addHealthCheckTargetPool(
             REGION_TARGET_POOL_NAME, targetPoolsAddHealthCheckRequestResource);
-    response = waitForOperation(response)
+    response = waitForOperation(response);
     assertThat(response).isNotNull();
     assertThat(response.getOperationType()).isEqualTo("AddHealthCheck");
     assertThat(response.getStatus()).isEqualTo("DONE");
