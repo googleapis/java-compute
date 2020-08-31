@@ -91,8 +91,10 @@ public class ITFirewallTest extends BaseTest {
     List<Firewall> firewalls =
         Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
     for (String firewallTargetLink : resourcesToCleanUp.get("firewall")) {
+      Firewall mainFirewall = firewallClient.getFirewall(firewallTargetLink);
+      System.out.println(mainFirewall);
       for (Firewall firewall : firewalls) {
-        System.out.println("candidate firewall: " + firewall.getSelfLink());
+        System.out.println(firewall);
         if (firewall.getSelfLink().startsWith(firewallTargetLink)) {
           System.out.println("deleting firewall:" + firewall.getSelfLink());
           waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()));
