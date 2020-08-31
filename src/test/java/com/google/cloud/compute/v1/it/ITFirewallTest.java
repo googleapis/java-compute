@@ -87,23 +87,11 @@ public class ITFirewallTest extends BaseTest {
   }
 
   @AfterClass
-  public static void tearDown() {
-    List<Firewall> firewalls =
-        Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
-
-    // clean up implicitly created firewalls - delete the firewalls for the network
-    // created in the setup block
+  public static void tearDown() throws IOException {
+    // Note: firewalls will be cleaned up by the cleanUpNetwork helper
     for (String network : resourcesToCleanUp.get("firewall-network")) {
       Network firewallNetwork = networkClient.getNetwork(network);
-      System.out.println("finding firewalls for network: " + network);
-      for (Firewall firewall : firewalls) {
-        if (firewall.getNetwork().equals(firewallNetwork.getSelfLink())) {
-          System.out.println("deleting firewall: " + firewall.getSelfLink());
-          waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()));
-        }
-      }
-      System.out.println("deleting network: " + network);
-      waitForOperation(networkClient.deleteNetwork(network));
+      cleanUpNetwork(firewallNetwork);
     }
 
     firewallClient.close();
