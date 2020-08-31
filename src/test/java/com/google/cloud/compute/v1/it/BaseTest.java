@@ -130,7 +130,6 @@ public class BaseTest {
         Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
     for (Firewall firewall : firewalls) {
       if (firewall.getNetwork().equals(network.getSelfLink())) {
-        System.out.println("deleting firewall: " + firewall.getSelfLink());
         waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()));
       }
     }
@@ -139,7 +138,6 @@ public class BaseTest {
         NetworkSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     NetworkClient networkClient = NetworkClient.create(networkSettings);
 
-    System.out.println("deleting network:" + network.getSelfLink());
     waitForOperation(networkClient.deleteNetwork(network.getSelfLink()));
   }
 
