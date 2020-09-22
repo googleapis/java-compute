@@ -87,11 +87,12 @@ public class ITFirewallTest extends BaseTest {
   }
 
   @AfterClass
-  public static void tearDown() throws IOException {
+  public static void tearDown() throws IOException, InterruptedException {
     // Note: firewalls will be cleaned up by the cleanUpNetwork helper
     for (String network : resourcesToCleanUp.get("firewall-network")) {
       Network firewallNetwork = networkClient.getNetwork(network);
       cleanUpNetwork(firewallNetwork);
+      break;
     }
 
     firewallClient.close();
