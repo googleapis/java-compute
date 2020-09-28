@@ -57,8 +57,6 @@ public class ITFirewallTest extends BaseTest {
 
   @BeforeClass
   public static void setUp() throws IOException {
-    cleanUpNetworks();
-
     FirewallSettings firewallSettings =
         FirewallSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     firewallClient = FirewallClient.create(firewallSettings);

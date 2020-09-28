@@ -22,7 +22,6 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.Timestamp;
 import com.google.cloud.compute.v1.DiskTypeSettings;
 import com.google.cloud.compute.v1.Firewall;
 import com.google.cloud.compute.v1.FirewallClient;
@@ -45,7 +44,6 @@ import com.google.cloud.compute.v1.ZoneOperationClient;
 import com.google.cloud.compute.v1.ZoneOperationSettings;
 import com.google.common.collect.Lists;
 import java.io.IOException;
-import java.util.Calendar;
 import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -139,28 +137,5 @@ public class BaseTest {
     NetworkClient networkClient = NetworkClient.create(networkSettings);
 
     waitForOperation(networkClient.deleteNetwork(network.getSelfLink()));
-  }
-
-  static void cleanUpNetworks() throws IOException {
-    NetworkSettings networkSettings =
-        NetworkSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
-    NetworkClient networkClient = NetworkClient.create(networkSettings);
-
-    // clean up resources older than 1 hour
-    Calendar calendar = Calendar.getInstance();
-    calendar.add(Calendar.HOUR_OF_DAY, -1);
-    Timestamp cutoff = Timestamp.of(calendar.getTime());
-
-    // clean up old networks
-    List<Network> networks =
-        Lists.newArrayList(networkClient.listNetworks(DEFAULT_PROJECT).iterateAll());
-    for (Network network : networks) {
-      if (network.getName().startsWith("test-")) {
-        Timestamp createdAt = Timestamp.parseTimestamp(network.getCreationTimestamp());
-        if (createdAt.compareTo(cutoff) < 0) {
-          cleanUpNetwork(network);
-        }
-      }
-    }
   }
 }
