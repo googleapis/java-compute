@@ -34,7 +34,9 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ProjectZoneInstanceName;
 import com.google.cloud.compute.v1.ProjectZoneInstanceResourceName;
 import com.google.cloud.compute.v1.ProjectZoneMachineTypeName;
+import com.google.cloud.compute.v1.SetDeletionProtectionInstanceHttpRequest;
 import com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy;
+import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StopInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateInstanceHttpRequest;
@@ -58,6 +60,7 @@ public class ITInstanceTest extends BaseTest {
       ProjectZoneInstanceName.format(INSTANCE, DEFAULT_PROJECT, ZONE);
   private static final String MACHINE_TYPE =
       ProjectZoneMachineTypeName.of("n1-standard-1", DEFAULT_PROJECT, ZONE).toString();
+  private static final String[] STATUS = {"RUNNING", "STOPPING"};
   private static final AttachedDisk DISK =
       AttachedDisk.newBuilder()
           .setBoot(true)
@@ -112,22 +115,18 @@ public class ITInstanceTest extends BaseTest {
   @Test
   @SuppressWarnings("all")
   public void updateInstanceTest() {
-    List<String> requiredProperties =
-        Arrays.asList("name", "machineType", "disks", "networkInterfaces");
-    List<String> updatableProperties = Arrays.asList("metadata", "fingerprint", "description");
+    String description = "updated description";
     List<String> fieldMask =
         Arrays.asList(
-            requiredProperties.get(0),
-            requiredProperties.get(1),
-            requiredProperties.get(2),
-            requiredProperties.get(3),
-            updatableProperties.get(0),
-            updatableProperties.get(1),
-            updatableProperties.get(2));
-
+            "name",
+            "machineType",
+            "disks",
+            "networkInterfaces",
+            "metadata",
+            "fingerprint",
+            "description");
     Instance instance = getInstance();
     assertInstanceDetails(instance);
-
     UpdateInstanceHttpRequest request =
         UpdateInstanceHttpRequest.newBuilder()
             .setMostDisruptiveAllowedAction("REFRESH")
@@ -136,17 +135,22 @@ public class ITInstanceTest extends BaseTest {
             .setInstanceResource(
                 instance
                     .toBuilder()
-                    .setDescription("updated description")
-                    .setFingerprint(instance.getFingerprint())
+                    .setDescription(description)
+                    .setFingerprint(getInstance().getFingerprint())
                     .build())
             .addAllFieldMask(fieldMask)
             .build();
-    if (instance.getStatus().equals("RUNNING")) {
-      instanceClient.updateInstance(request);
-      Instance updatedInstance = getInstance();
-      assertThat(updatedInstance.getDescription()).isNotEqualTo(instance.getDescription());
-      assertThat(updatedInstance.getDescription()).isEqualTo("updated description");
+    waitUntilStatusChangeTo(STATUS[0]);
+    instanceClient.updateInstance(request);
+    Instance updatedInstance;
+    while (true) {
+      updatedInstance = getInstance();
+      if (updatedInstance.getDescription().equals(description)) {
+        break;
+      }
     }
+    assertInstanceDetails(updatedInstance);
+    assertThat(updatedInstance.getDescription()).isEqualTo(description);
   }
 
   @Test
@@ -155,12 +159,16 @@ public class ITInstanceTest extends BaseTest {
     StopInstanceHttpRequest stopInstanceHttpRequest =
         StopInstanceHttpRequest.newBuilder().setInstance(FORMATTED_INSTANCE).build();
     Operation stopOperation = instanceClient.stopInstance(stopInstanceHttpRequest);
+    waitUntilStatusChangeTo(STATUS[1]);
     assertThat(stopOperation.getOperationType()).isEqualTo("stop");
+    assertThat(getInstance().getStatus()).isEqualTo(STATUS[1]);
 
     StartInstanceHttpRequest startInstanceHttpRequest =
         StartInstanceHttpRequest.newBuilder().setInstance(FORMATTED_INSTANCE).build();
     Operation startOperation = instanceClient.startInstance(startInstanceHttpRequest);
+    waitUntilStatusChangeTo(STATUS[0]);
     assertThat(startOperation.getOperationType()).isEqualTo("start");
+    assertThat(getInstance().getStatus()).isEqualTo(STATUS[0]);
   }
 
   @Test
@@ -182,17 +190,30 @@ public class ITInstanceTest extends BaseTest {
   @Test
   @SuppressWarnings("all")
   public void simulateMaintenanceEventInstanceTest() {
-    Operation operation = instanceClient.simulateMaintenanceEventInstance(FORMATTED_INSTANCE);
+    SimulateMaintenanceEventInstanceHttpRequest request =
+        SimulateMaintenanceEventInstanceHttpRequest.newBuilder()
+            .setInstance(FORMATTED_INSTANCE)
+            .build();
+    Operation operation = instanceClient.simulateMaintenanceEventInstance(request);
     assertOperationDetails(operation, "simulateMaintenanceEvent");
+    assertThat(getInstance().getName()).isEqualTo(INSTANCE);
   }
 
   @Test
   @SuppressWarnings("all")
   public void setDeletionProtectionInstanceTest() {
-    ProjectZoneInstanceResourceName resource =
-        ProjectZoneInstanceResourceName.of(DEFAULT_PROJECT, INSTANCE, ZONE);
-    Operation operation = instanceClient.setDeletionProtectionInstance(resource, false);
-    assertOperationDetails(operation, "setDeletionProtection");
+    String resource =
+        ProjectZoneInstanceResourceName.of(DEFAULT_PROJECT, INSTANCE, ZONE).toString();
+    SetDeletionProtectionInstanceHttpRequest request =
+        SetDeletionProtectionInstanceHttpRequest.newBuilder()
+            .setResource(resource)
+            .setDeletionProtection(false)
+            .build();
+    Operation response = instanceClient.setDeletionProtectionInstance(resource, false);
+    assertOperationDetails(response, "setDeletionProtection");
+    Instance instance = getInstance();
+    assertThat(instance.getName()).isEqualTo(INSTANCE);
+    assertThat(instance.getDeletionProtection()).isFalse();
   }
 
   @Test
@@ -202,10 +223,14 @@ public class ITInstanceTest extends BaseTest {
     String key2 = "key-" + UUID.randomUUID().toString();
     Map<String, String> labels = ImmutableMap.of(key1, "label-1", key2, "label-2");
     InstancesSetLabelsRequest instancesSetLabelsRequestResource =
-        InstancesSetLabelsRequest.newBuilder().putAllLabels(labels).build();
+        InstancesSetLabelsRequest.newBuilder()
+            .setLabelFingerprint(getInstance().getLabelFingerprint())
+            .putAllLabels(labels)
+            .build();
     Operation operation =
         instanceClient.setLabelsInstance(FORMATTED_INSTANCE, instancesSetLabelsRequestResource);
     assertOperationDetails(operation, "setLabels");
+    assertThat(getInstance().getLabelFingerprint()).isNotNull();
   }
 
   @Test
@@ -228,23 +253,35 @@ public class ITInstanceTest extends BaseTest {
         instanceClient.setMachineTypeInstance(
             FORMATTED_INSTANCE, instancesSetMachineTypeRequestResource);
     assertOperationDetails(operation, "setMachineType");
+    assertThat(getInstance().getMachineType().contains("machineTypes/n1-standard-1")).isTrue();
   }
 
   @Test
   @SuppressWarnings("all")
   public void setMinCpuPlatformInstanceTest() {
+    String minCpuPlatform = "Intel Haswell";
     InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource =
-        InstancesSetMinCpuPlatformRequest.newBuilder().setMinCpuPlatform("Intel Haswell").build();
+        InstancesSetMinCpuPlatformRequest.newBuilder().setMinCpuPlatform(minCpuPlatform).build();
     Operation operation =
         instanceClient.setMinCpuPlatformInstance(
             FORMATTED_INSTANCE, instancesSetMinCpuPlatformRequestResource);
     assertOperationDetails(operation, "setMinCpuPlatform");
+    assertThat(getInstance().getCpuPlatform()).isEqualTo(minCpuPlatform);
   }
 
   private Instance getInstance() {
     GetInstanceHttpRequest httpRequest =
         GetInstanceHttpRequest.newBuilder().setInstance(FORMATTED_INSTANCE).build();
     return instanceClient.getInstance(httpRequest);
+  }
+
+  private void waitUntilStatusChangeTo(String status) {
+    while (true) {
+      Instance instance = getInstance();
+      if (instance.getStatus().equals(status)) {
+        break;
+      }
+    }
   }
 
   private void assertInstanceDetails(Instance instance) {
