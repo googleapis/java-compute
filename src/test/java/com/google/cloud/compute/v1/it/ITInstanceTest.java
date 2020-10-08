@@ -39,11 +39,9 @@ import com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy;
 import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StopInstanceHttpRequest;
-import com.google.cloud.compute.v1.UpdateInstanceHttpRequest;
 import com.google.common.collect.ImmutableMap;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -110,47 +108,6 @@ public class ITInstanceTest extends BaseTest {
         assertInstanceDetails(instance);
       }
     }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void updateInstanceTest() {
-    String description = "updated description";
-    List<String> fieldMask =
-        Arrays.asList(
-            "name",
-            "machineType",
-            "disks",
-            "networkInterfaces",
-            "metadata",
-            "fingerprint",
-            "description");
-    Instance instance = getInstance();
-    assertInstanceDetails(instance);
-    UpdateInstanceHttpRequest request =
-        UpdateInstanceHttpRequest.newBuilder()
-            .setMostDisruptiveAllowedAction("REFRESH")
-            .setMinimalAction(null)
-            .setInstance(FORMATTED_INSTANCE)
-            .setInstanceResource(
-                instance
-                    .toBuilder()
-                    .setDescription(description)
-                    .setFingerprint(getInstance().getFingerprint())
-                    .build())
-            .addAllFieldMask(fieldMask)
-            .build();
-    waitUntilStatusChangeTo(STATUS[0]);
-    instanceClient.updateInstance(request);
-    Instance updatedInstance;
-    while (true) {
-      updatedInstance = getInstance();
-      if (updatedInstance.getDescription().equals(description)) {
-        break;
-      }
-    }
-    assertInstanceDetails(updatedInstance);
-    assertThat(updatedInstance.getDescription()).isEqualTo(description);
   }
 
   @Test
@@ -265,11 +222,12 @@ public class ITInstanceTest extends BaseTest {
     Operation operation =
         instanceClient.setMinCpuPlatformInstance(
             FORMATTED_INSTANCE, instancesSetMinCpuPlatformRequestResource);
+    waitUntilStatusChangeTo(STATUS[0]);
     assertOperationDetails(operation, "setMinCpuPlatform");
     assertThat(getInstance().getCpuPlatform()).isEqualTo(minCpuPlatform);
   }
 
-  private Instance getInstance() {
+  private static Instance getInstance() {
     GetInstanceHttpRequest httpRequest =
         GetInstanceHttpRequest.newBuilder().setInstance(FORMATTED_INSTANCE).build();
     return instanceClient.getInstance(httpRequest);
