@@ -16,18 +16,20 @@
 package com.google.cloud.compute.v1.integration;
 
 import com.google.cloud.compute.v1.*;
+
+import java.io.IOException;
+
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.io.IOException;
 
 import static junit.framework.TestCase.fail;
 
 
 public class SmokeInstancesTest extends BaseTest {
     private static InstancesClient instancesClient;
+    private static ZoneOperationsClient operationsClient;
     private static final String DEFAULT_IMAGE =
             "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150710";
     private static final AttachedDisk DISK =
@@ -48,6 +50,9 @@ public class SmokeInstancesTest extends BaseTest {
         InstancesSettings instanceSettings = InstancesSettings.newBuilder()
                 .build();
         instancesClient = InstancesClient.create(instanceSettings);
+        ZoneOperationsSettings zoneOperationsSettings = ZoneOperationsSettings.newBuilder().build();
+        operationsClient = ZoneOperationsClient.create(zoneOperationsSettings);
+
     }
 
     @AfterClass
@@ -66,6 +71,7 @@ public class SmokeInstancesTest extends BaseTest {
                         .addNetworkInterfaces(NETWORK_INTERFACE)
                         .build();
         Operation insertResponse = instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
+        waitUntilStatusChangeTo(insertResponse, Operation.Status.DONE);
         Instance resultInstance = getInstance();
         assertInstanceDetails(resultInstance);
     }
@@ -91,15 +97,16 @@ public class SmokeInstancesTest extends BaseTest {
 
     private void waitUntilStatusChangeTo(Operation operation, Operation.Status status) {
         while (true) {
-            if (operation.getStatus().equals(Operation.Status.UNRECOGNIZED)) {
+            Operation tempOperation = operationsClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, operation.getName());
+            if (tempOperation.getStatus().equals(Operation.Status.UNRECOGNIZED)) {
                 fail("Unexpected operation status: UNRECOGNIZED");
                 break;
             }
-            if (operation.getStatus().equals(Operation.Status.UNDEFINED_STATUS)) {
+            if (tempOperation.getStatus().equals(Operation.Status.UNDEFINED_STATUS)) {
                 fail("Unexpected operation status: UNDEFINED_STATUS");
                 break;
             }
-            if (operation.getStatus().equals(status)) {
+            if (tempOperation.getStatus().equals(status)) {
                 break;
             }
         }
