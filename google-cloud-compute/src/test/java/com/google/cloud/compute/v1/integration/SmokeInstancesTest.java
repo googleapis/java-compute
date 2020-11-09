@@ -15,14 +15,24 @@
  */
 package com.google.cloud.compute.v1.integration;
 
+import com.google.api.core.ApiFuture;
 import com.google.cloud.compute.v1.*;
+import com.google.api.pathtemplate.ValidationException;
+import com.google.api.gax.rpc.AbortedException;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 import org.junit.AfterClass;
+import org.junit.Rule;
+import org.junit.Before;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static junit.framework.TestCase.fail;
 
@@ -30,6 +40,7 @@ import static junit.framework.TestCase.fail;
 public class SmokeInstancesTest extends BaseTest {
     private static InstancesClient instancesClient;
     private static ZoneOperationsClient operationsClient;
+    private static List<Instance> instances;
     private static final String DEFAULT_IMAGE =
             "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150710";
     private static final AttachedDisk DISK =
@@ -43,10 +54,14 @@ public class SmokeInstancesTest extends BaseTest {
     private static final String MACHINE_TYPE = "https://www.googleapis.com/compute/v1/projects/cloudsdktest/zones/us-central1-a/machineTypes/n1-standard-1";
     private static final NetworkInterface NETWORK_INTERFACE =
             NetworkInterface.newBuilder().setName("default").build();
-    private static final String INSTANCE = generateRandomName();
+    private static String INSTANCE;
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @BeforeClass
     public static void setUp() throws IOException {
+        instances = new ArrayList<>();
         InstancesSettings instanceSettings = InstancesSettings.newBuilder()
                 .build();
         instancesClient = InstancesClient.create(instanceSettings);
@@ -55,14 +70,90 @@ public class SmokeInstancesTest extends BaseTest {
 
     }
 
+    @Before
+    public void setUpMethod(){
+        INSTANCE = generateRandomName();
+    }
+
     @AfterClass
     public static void tearDown() {
-        instancesClient.delete(DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE);
+        for (Instance instance: instances){
+            instancesClient.delete(DEFAULT_PROJECT, DEFAULT_ZONE, instance.getName());
+        }
         instancesClient.close();
     }
 
     @Test
     public void testInsertInstance(){
+        Instance resultInstance = insertInstance();
+        assertInstanceDetails(resultInstance);
+    }
+
+
+    @Test
+    public void testAggregatedList(){
+        insertInstance();
+        boolean presented = Boolean.FALSE;
+        InstancesClient.AggregatedListPagedResponse response = instancesClient.aggregatedList(DEFAULT_PROJECT);
+        for (Map.Entry<String, InstancesScopedList> entry: response.iterateAll()){
+            if (entry.getKey().equals("zones/us-central1-a")){
+                for (Instance instance: entry.getValue().getInstancesList()){
+                    if (instance.getName().equals(INSTANCE)){
+                        presented = Boolean.TRUE;
+                        assertInstanceDetails(instance);
+                    }
+                }
+            }
+        }
+        Assert.assertTrue(presented);
+    }
+
+    @Test
+    public void testApiError(){
+        insertInstance();
+        Instance instanceResource =
+                Instance.newBuilder()
+                        .setName(INSTANCE)
+                        .setMachineType(MACHINE_TYPE)
+                        .addDisks(DISK)
+                        .addNetworkInterfaces(NETWORK_INTERFACE)
+                        .build();
+        thrown.expect(AbortedException.class);
+        thrown.expectMessage("Conflict");
+        Operation insertResponse = instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
+        System.out.println(insertResponse.getError());
+    }
+
+    //@Test(expected = ValidationException.class)
+    public void testEmptyProjectValue(){
+        Instance instanceResource =
+                Instance.newBuilder().build();
+        InsertInstanceRequest request = InsertInstanceRequest.newBuilder().setInstanceResource(instanceResource).
+                build();
+        instancesClient.insert(request);
+    }
+
+    //@Test LRO feature is not finished.
+    public void testFutureInsert() throws InterruptedException, ExecutionException {
+        Instance instanceResource =
+                Instance.newBuilder()
+                        .setName(INSTANCE)
+                        .setMachineType(MACHINE_TYPE)
+                        .addDisks(DISK)
+                        .addNetworkInterfaces(NETWORK_INTERFACE)
+                        .build();
+        InsertInstanceRequest request = InsertInstanceRequest.newBuilder().
+                setProject(DEFAULT_PROJECT).
+                setZone(DEFAULT_ZONE).
+                setInstanceResource(instanceResource).
+                build();
+        ApiFuture<Operation> future = instancesClient.insertCallable().futureCall(request);
+        Operation response = future.get();
+        Assert.assertEquals(response.getStatus(), Operation.Status.DONE);
+        assertInstanceDetails(getInstance());
+    }
+
+    private Instance insertInstance(){
         Instance instanceResource =
                 Instance.newBuilder()
                         .setName(INSTANCE)
@@ -72,8 +163,8 @@ public class SmokeInstancesTest extends BaseTest {
                         .build();
         Operation insertResponse = instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
         waitUntilStatusChangeTo(insertResponse, Operation.Status.DONE);
-        Instance resultInstance = getInstance();
-        assertInstanceDetails(resultInstance);
+        instances.add(instanceResource);
+        return getInstance();
     }
 
     private Instance getInstance() {
@@ -92,6 +183,7 @@ public class SmokeInstancesTest extends BaseTest {
         Assert.assertNotNull(instance.getFingerprint());
         Assert.assertEquals(instance.getMachineType(), MACHINE_TYPE);
         Assert.assertEquals(instance.getDisksCount(), 1);
+        Assert.assertEquals(instance.getDisksList().get(0).getType(), AttachedDisk.Type.PERSISTENT);
         Assert.assertEquals(instance.getNetworkInterfacesCount(), 1);
     }
 
