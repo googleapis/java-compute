@@ -70,6 +70,10 @@
       <scope>test</scope>
       <version>4.13.1</version>
     </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+    </dependency>
 
     <!-- Need testing utility classes for generated REST clients tests -->
     <dependency>

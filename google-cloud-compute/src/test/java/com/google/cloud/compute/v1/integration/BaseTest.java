@@ -16,10 +16,10 @@
 package com.google.cloud.compute.v1.integration;
 
 import java.util.UUID;
-//import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceOptions;
 
 public class BaseTest {
-    protected static final String DEFAULT_PROJECT = "cloudsdktest"; //ServiceOptions.getDefaultProjectId();
+    protected static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
     protected static final String DEFAULT_ZONE = "us-central1-a";
     public static String generateRandomName() {
         return "gapic-" + "instance" + UUID.randomUUID().toString().substring(0, 8);
