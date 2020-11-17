@@ -38,4 +38,6 @@ for version in versions:
 
   java.format_code('./src')
 
-java.common_templates()
+java.common_templates(excludes=[
+    'renovate.json'
+])
