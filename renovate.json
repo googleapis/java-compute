@@ -37,6 +37,14 @@
     },
     {
       "packagePatterns": [
+        "com.google.cloud:google-cloud-shared-dependencies",
+        "^com.google.oauth-client:",
+        "com.google.cloud:google-cloud-storage"
+      ],
+      "groupName": "google-cloud-shared-dependencies, google-oauth-client-bom, google-cloud-storage"
+    },
+    {
+      "packagePatterns": [
         "*"
       ],
       "semanticCommitType": "deps",
