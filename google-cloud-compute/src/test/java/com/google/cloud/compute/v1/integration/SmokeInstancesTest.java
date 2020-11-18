@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1.integration;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.compute.v1.*;
 import com.google.api.pathtemplate.ValidationException;
 import com.google.api.gax.rpc.AbortedException;
@@ -108,20 +109,39 @@ public class SmokeInstancesTest extends BaseTest {
         Assert.assertTrue(presented);
     }
 
+
     @Test
-    public void testApiError(){
-        insertInstance();
+    public void testDefaultClient() throws IOException {
+        InstancesClient defaultClient = InstancesClient.create();
+        Instance instanceResource = Instance.newBuilder()
+                .setName(INSTANCE)
+                .setMachineType(MACHINE_TYPE)
+                .addDisks(DISK)
+                .addNetworkInterfaces(NETWORK_INTERFACE)
+                .build();;
+        Operation operation = defaultClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
+        waitUntilStatusChangeTo(operation, Operation.Status.DONE);
+        instances.add(instanceResource);
+        assertInstanceDetails(getInstance());
+    }
+
+    @Test(expected= InvalidArgumentException.class)
+    public void testDefaultInstance(){
+        Instance instanceResource = Instance.newBuilder().build();
+        Operation operation = instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
+        waitUntilStatusChangeTo(operation, Operation.Status.DONE);
+        instances.add(instanceResource);
+        assertInstanceDetails(getInstance());
+    }
+
+    //@Test(expected = ValidationException.class)
+    public void testEmptyZone(){
         Instance instanceResource =
-                Instance.newBuilder()
-                        .setName(INSTANCE)
-                        .setMachineType(MACHINE_TYPE)
-                        .addDisks(DISK)
-                        .addNetworkInterfaces(NETWORK_INTERFACE)
-                        .build();
-        thrown.expect(AbortedException.class);
-        thrown.expectMessage("Conflict");
-        Operation insertResponse = instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
-        System.out.println(insertResponse.getError());
+                Instance.newBuilder().build();
+        InsertInstanceRequest request = InsertInstanceRequest.newBuilder().setInstanceResource(instanceResource)
+                .setProject(DEFAULT_PROJECT).build();
+        instancesClient.insert(request);
+
     }
 
     //@Test(expected = ValidationException.class)
@@ -152,6 +172,22 @@ public class SmokeInstancesTest extends BaseTest {
         Assert.assertEquals(response.getStatus(), Operation.Status.DONE);
         assertInstanceDetails(getInstance());
     }
+
+    //@Test
+    public void testApiError(){
+        insertInstance();
+        Instance instanceResource =
+                Instance.newBuilder()
+                        .setName(INSTANCE)
+                        .setMachineType(MACHINE_TYPE)
+                        .addDisks(DISK)
+                        .addNetworkInterfaces(NETWORK_INTERFACE)
+                        .build();
+        thrown.expect(AbortedException.class);
+        thrown.expectMessage("Conflict");
+        Operation insertResponse = instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
+    }
+
 
     private Instance insertInstance(){
         Instance instanceResource =
