@@ -20,24 +20,6 @@ import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-gapic = gcp.GAPICBazel()
-
-service = 'compute'
-versions = ['v1']
-
-for version in versions:
-  library = gapic.java_library(
-      service=service,
-      version=version,
-      bazel_target=f'//gapic/google/{service}/{version}:google-cloud-{service}-{version}-java',
-      discogapic = True,
-  )
-
-  s.copy(library / f'gapic-google-cloud-{service}-{version}-java/src', 'src', required=True)
-  s.copy(library / f'google-cloud-{service}-{version}-java/gapic-google-cloud-{service}-{version}-java/src', 'src', required=True)
-
-  java.format_code('./src')
-
 java.common_templates(excludes=[
     'renovate.json'
 ])
