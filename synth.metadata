@@ -4,32 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-compute.git",
-        "sha": "e3ab784ee3270a562e0e9029c1d2fb0c0c92bfe1"
-      }
-    },
-    {
-      "git": {
-        "name": "discovery-artifact-manager",
-        "remote": "https://github.com/googleapis/discovery-artifact-manager.git",
-        "sha": "a78b0e823c9aa9978034e99372b8b6c69f3503f0"
+        "sha": "06de2c5ee77a0ce8fca8ce9dc14baec0e3d370b6"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "968465a1cad496e1292ef4584a054a35f756ff94"
-      }
-    }
-  ],
-  "destinations": [
-    {
-      "client": {
-        "source": "discovery-artifact-manager",
-        "apiName": "compute",
-        "apiVersion": "v1",
-        "language": "java",
-        "generator": "bazel"
+        "sha": "019c7168faa0e56619f792693a8acdb30d6de19b"
       }
     }
   ],
@@ -90,11 +72,9 @@
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "LICENSE",
-    "README.md",
     "codecov.yaml",
     "java.header",
     "license-checks.xml",
-    "renovate.json",
     "samples/install-without-bom/pom.xml",
     "samples/pom.xml",
     "samples/snapshot/pom.xml",
