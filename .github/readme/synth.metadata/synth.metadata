@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "https://github.com/googleapis/java-compute.git",
+        "sha": "b9ca69adf391c4313b6a75159df3942555676b16"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "5d11bd2888c38ce1fb6fa6bf25494a4219a73928"
+      }
+    }
+  ]
+}
