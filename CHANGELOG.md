@@ -1,5 +1,13 @@
 # Changelog
 
+### [0.119.1](https://www.github.com/googleapis/java-compute/compare/v0.119.0...v0.119.1) (2020-12-08)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.15.0 ([#236](https://www.github.com/googleapis/java-compute/issues/236)) ([79c18b9](https://www.github.com/googleapis/java-compute/commit/79c18b98245e1569995d40f12febbc8f23905a07))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.0 ([#255](https://www.github.com/googleapis/java-compute/issues/255)) ([8621d9f](https://www.github.com/googleapis/java-compute/commit/8621d9ffd951f3c2385922a819d89cf272a0fe2e))
+
 ## [0.119.0](https://www.github.com/googleapis/java-compute/compare/v0.118.0...v0.119.0) (2020-11-04)
 
 
