@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.119.2](https://www.github.com/googleapis/java-compute/compare/v0.119.1...v0.119.2) (2020-12-14)
+
+
+### Dependencies
+
+* update google-cloud-shared-dependencies, google-oauth-client-bom, google-cloud-storage ([#258](https://www.github.com/googleapis/java-compute/issues/258)) ([e213d82](https://www.github.com/googleapis/java-compute/commit/e213d8256236bf26aa3ef630348b0413fdfdb419))
+
 ### [0.119.1](https://www.github.com/googleapis/java-compute/compare/v0.119.0...v0.119.1) (2020-12-08)
 
 
