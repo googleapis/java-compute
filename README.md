@@ -48,11 +48,11 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-compute:0.119.1-alpha'
+compile 'com.google.cloud:google-cloud-compute:0.119.3-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.119.1-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.119.3-alpha"
 ```
 
 ## Authentication
