@@ -96,14 +96,4 @@ public class PaginationTest extends BaseTest{
                 Lists.newArrayList(nextPage.getValues()),
                 Lists.newArrayList(nextPageWithToken.getValues()));
     }
-
-    @Test
-    public void testPaginationOrderBy(){
-        ListZonesRequest listZonesRequest = ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).
-                setMaxResults(1).
-                setOrderBy("creationTimestamp desc").
-                build();
-        ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
-        Assert.assertEquals("asia-east1-c", Lists.newArrayList(response.iterateAll()).get(0).getName());
-    }
 }

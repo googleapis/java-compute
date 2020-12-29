@@ -15,25 +15,21 @@
  */
 package com.google.cloud.compute.v1.integration;
 
-import com.google.api.core.ApiFuture;
+
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.compute.v1.*;
-import com.google.api.pathtemplate.ValidationException;
-import com.google.api.gax.rpc.AbortedException;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 import org.junit.AfterClass;
-import org.junit.Rule;
 import org.junit.Before;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import static junit.framework.TestCase.fail;
 
@@ -52,13 +48,10 @@ public class SmokeInstancesTest extends BaseTest {
                     .setInitializeParams(
                             AttachedDiskInitializeParams.newBuilder().setSourceImage(DEFAULT_IMAGE).build())
                     .build();
-    private static final String MACHINE_TYPE = "https://www.googleapis.com/compute/v1/projects/cloudsdktest/zones/us-central1-a/machineTypes/n1-standard-1";
+    private static final String MACHINE_TYPE = "https://www.googleapis.com/compute/v1/projects/"+DEFAULT_PROJECT+"/zones/us-central1-a/machineTypes/n1-standard-1";
     private static final NetworkInterface NETWORK_INTERFACE =
             NetworkInterface.newBuilder().setName("default").build();
     private static String INSTANCE;
-
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
 
     @BeforeClass
     public static void setUp() throws IOException {
@@ -118,23 +111,43 @@ public class SmokeInstancesTest extends BaseTest {
                 .setMachineType(MACHINE_TYPE)
                 .addDisks(DISK)
                 .addNetworkInterfaces(NETWORK_INTERFACE)
-                .build();;
+                .build();
         Operation operation = defaultClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
-        waitUntilStatusChangeTo(operation, Operation.Status.DONE);
+        waitUntilStatusChangeTo(operation);
         instances.add(instanceResource);
         assertInstanceDetails(getInstance());
     }
 
-    @Test(expected= InvalidArgumentException.class)
-    public void testDefaultInstance(){
+    @Test
+    public void testDefaultResource(){
         Instance instanceResource = Instance.newBuilder().build();
-        Operation operation = instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
-        waitUntilStatusChangeTo(operation, Operation.Status.DONE);
-        instances.add(instanceResource);
-        assertInstanceDetails(getInstance());
+        try{
+            instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
+            fail("Did not catch the exception");
+        }
+        catch (InvalidArgumentException ex){
+            String message = "Bad Request";
+            Assert.assertEquals(message, ex.getMessage());
+        }
     }
 
-    //@Test(expected = ValidationException.class)
+
+    @Test
+    public void testApiError(){
+        try{
+            getInstance();
+            fail("Did not catch the exception");
+        }
+        catch (NotFoundException ex){
+            String message = "Not Found";
+            Assert.assertEquals(message, ex.getMessage());
+        }
+    }
+
+    /*
+    GAPIC error:
+    Caused by: com.google.api.gax.rpc.UnknownException: com.google.api.pathtemplate.ValidationException: Unbound variable 'zone'. Bindings: {project=cloudsdktest}
+    @Test(expected = ValidationException.class)
     public void testEmptyZone(){
         Instance instanceResource =
                 Instance.newBuilder().build();
@@ -144,16 +157,8 @@ public class SmokeInstancesTest extends BaseTest {
 
     }
 
-    //@Test(expected = ValidationException.class)
-    public void testEmptyProjectValue(){
-        Instance instanceResource =
-                Instance.newBuilder().build();
-        InsertInstanceRequest request = InsertInstanceRequest.newBuilder().setInstanceResource(instanceResource).
-                build();
-        instancesClient.insert(request);
-    }
-
-    //@Test LRO feature is not finished.
+    LRO feature is not finished.
+    @Test
     public void testFutureInsert() throws InterruptedException, ExecutionException {
         Instance instanceResource =
                 Instance.newBuilder()
@@ -171,22 +176,7 @@ public class SmokeInstancesTest extends BaseTest {
         Operation response = future.get();
         Assert.assertEquals(response.getStatus(), Operation.Status.DONE);
         assertInstanceDetails(getInstance());
-    }
-
-    //@Test
-    public void testApiError(){
-        insertInstance();
-        Instance instanceResource =
-                Instance.newBuilder()
-                        .setName(INSTANCE)
-                        .setMachineType(MACHINE_TYPE)
-                        .addDisks(DISK)
-                        .addNetworkInterfaces(NETWORK_INTERFACE)
-                        .build();
-        thrown.expect(AbortedException.class);
-        thrown.expectMessage("Conflict");
-        Operation insertResponse = instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
-    }
+    }*/
 
 
     private Instance insertInstance(){
@@ -198,7 +188,7 @@ public class SmokeInstancesTest extends BaseTest {
                         .addNetworkInterfaces(NETWORK_INTERFACE)
                         .build();
         Operation insertResponse = instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
-        waitUntilStatusChangeTo(insertResponse, Operation.Status.DONE);
+        waitUntilStatusChangeTo(insertResponse);
         instances.add(instanceResource);
         return getInstance();
     }
@@ -223,7 +213,7 @@ public class SmokeInstancesTest extends BaseTest {
         Assert.assertEquals(instance.getNetworkInterfacesCount(), 1);
     }
 
-    private void waitUntilStatusChangeTo(Operation operation, Operation.Status status) {
+    private void waitUntilStatusChangeTo(Operation operation) {
         while (true) {
             Operation tempOperation = operationsClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, operation.getName());
             if (tempOperation.getStatus().equals(Operation.Status.UNRECOGNIZED)) {
@@ -234,7 +224,7 @@ public class SmokeInstancesTest extends BaseTest {
                 fail("Unexpected operation status: UNDEFINED_STATUS");
                 break;
             }
-            if (tempOperation.getStatus().equals(status)) {
+            if (tempOperation.getStatus().equals(Operation.Status.DONE)) {
                 break;
             }
         }
