@@ -15,219 +15,213 @@
  */
 package com.google.cloud.compute.v1.integration;
 
+import static junit.framework.TestCase.fail;
 
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.compute.v1.*;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static junit.framework.TestCase.fail;
-
-
 public class ITSmokeInstancesTest extends BaseTest {
-    private static InstancesClient instancesClient;
-    private static ZoneOperationsClient operationsClient;
-    private static List<Instance> instances;
-    private static final String DEFAULT_IMAGE =
-            "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150710";
-    private static final AttachedDisk DISK =
-            AttachedDisk.newBuilder()
-                    .setBoot(true)
-                    .setAutoDelete(true)
-                    .setType(AttachedDisk.Type.PERSISTENT)
-                    .setInitializeParams(
-                            AttachedDiskInitializeParams.newBuilder().setSourceImage(DEFAULT_IMAGE).build())
-                    .build();
-    private static final String MACHINE_TYPE = "https://www.googleapis.com/compute/v1/projects/"+DEFAULT_PROJECT+"/zones/us-central1-a/machineTypes/n1-standard-1";
-    private static final NetworkInterface NETWORK_INTERFACE =
-            NetworkInterface.newBuilder().setName("default").build();
-    private static String INSTANCE;
+  private static InstancesClient instancesClient;
+  private static ZoneOperationsClient operationsClient;
+  private static List<Instance> instances;
+  private static final String DEFAULT_IMAGE =
+      "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150710";
+  private static final AttachedDisk DISK =
+      AttachedDisk.newBuilder()
+          .setBoot(true)
+          .setAutoDelete(true)
+          .setType(AttachedDisk.Type.PERSISTENT)
+          .setInitializeParams(
+              AttachedDiskInitializeParams.newBuilder().setSourceImage(DEFAULT_IMAGE).build())
+          .build();
+  private static final String MACHINE_TYPE =
+      "https://www.googleapis.com/compute/v1/projects/"
+          + DEFAULT_PROJECT
+          + "/zones/us-central1-a/machineTypes/n1-standard-1";
+  private static final NetworkInterface NETWORK_INTERFACE =
+      NetworkInterface.newBuilder().setName("default").build();
+  private static String INSTANCE;
 
-    @BeforeClass
-    public static void setUp() throws IOException {
-        instances = new ArrayList<>();
-        InstancesSettings instanceSettings = InstancesSettings.newBuilder()
-                .build();
-        instancesClient = InstancesClient.create(instanceSettings);
-        ZoneOperationsSettings zoneOperationsSettings = ZoneOperationsSettings.newBuilder().build();
-        operationsClient = ZoneOperationsClient.create(zoneOperationsSettings);
+  @BeforeClass
+  public static void setUp() throws IOException {
+    instances = new ArrayList<>();
+    InstancesSettings instanceSettings = InstancesSettings.newBuilder().build();
+    instancesClient = InstancesClient.create(instanceSettings);
+    ZoneOperationsSettings zoneOperationsSettings = ZoneOperationsSettings.newBuilder().build();
+    operationsClient = ZoneOperationsClient.create(zoneOperationsSettings);
+  }
 
+  @Before
+  public void setUpMethod() {
+    INSTANCE = generateRandomName();
+  }
+
+  @AfterClass
+  public static void tearDown() {
+    for (Instance instance : instances) {
+      instancesClient.delete(DEFAULT_PROJECT, DEFAULT_ZONE, instance.getName());
     }
+    instancesClient.close();
+  }
 
-    @Before
-    public void setUpMethod(){
-        INSTANCE = generateRandomName();
-    }
+  @Test
+  public void testInsertInstance() {
+    Instance resultInstance = insertInstance();
+    assertInstanceDetails(resultInstance);
+  }
 
-    @AfterClass
-    public static void tearDown() {
-        for (Instance instance: instances){
-            instancesClient.delete(DEFAULT_PROJECT, DEFAULT_ZONE, instance.getName());
+  @Test
+  public void testAggregatedList() {
+    insertInstance();
+    boolean presented = Boolean.FALSE;
+    InstancesClient.AggregatedListPagedResponse response =
+        instancesClient.aggregatedList(DEFAULT_PROJECT);
+    for (Map.Entry<String, InstancesScopedList> entry : response.iterateAll()) {
+      if (entry.getKey().equals("zones/us-central1-a")) {
+        for (Instance instance : entry.getValue().getInstancesList()) {
+          if (instance.getName().equals(INSTANCE)) {
+            presented = Boolean.TRUE;
+            assertInstanceDetails(instance);
+          }
         }
-        instancesClient.close();
+      }
     }
+    Assert.assertTrue(presented);
+  }
 
-    @Test
-    public void testInsertInstance(){
-        Instance resultInstance = insertInstance();
-        assertInstanceDetails(resultInstance);
+  @Test
+  public void testDefaultClient() throws IOException {
+    InstancesClient defaultClient = InstancesClient.create();
+    Instance instanceResource =
+        Instance.newBuilder()
+            .setName(INSTANCE)
+            .setMachineType(MACHINE_TYPE)
+            .addDisks(DISK)
+            .addNetworkInterfaces(NETWORK_INTERFACE)
+            .build();
+    Operation operation = defaultClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
+    waitUntilStatusChangeTo(operation);
+    instances.add(instanceResource);
+    assertInstanceDetails(getInstance());
+  }
+
+  @Test
+  public void testDefaultResource() {
+    Instance instanceResource = Instance.newBuilder().build();
+    try {
+      instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
+      fail("Did not catch the exception");
+    } catch (InvalidArgumentException ex) {
+      String message = "Bad Request";
+      Assert.assertEquals(message, ex.getMessage());
     }
+  }
 
-
-    @Test
-    public void testAggregatedList(){
-        insertInstance();
-        boolean presented = Boolean.FALSE;
-        InstancesClient.AggregatedListPagedResponse response = instancesClient.aggregatedList(DEFAULT_PROJECT);
-        for (Map.Entry<String, InstancesScopedList> entry: response.iterateAll()){
-            if (entry.getKey().equals("zones/us-central1-a")){
-                for (Instance instance: entry.getValue().getInstancesList()){
-                    if (instance.getName().equals(INSTANCE)){
-                        presented = Boolean.TRUE;
-                        assertInstanceDetails(instance);
-                    }
-                }
-            }
-        }
-        Assert.assertTrue(presented);
+  @Test
+  public void testApiError() {
+    try {
+      getInstance();
+      fail("Did not catch the exception");
+    } catch (NotFoundException ex) {
+      String message = "Not Found";
+      Assert.assertEquals(message, ex.getMessage());
     }
+  }
 
+  /*
+  GAPIC error:
+  Caused by: com.google.api.gax.rpc.UnknownException: com.google.api.pathtemplate.ValidationException: Unbound variable 'zone'. Bindings: {project=cloudsdktest}
+  @Test(expected = ValidationException.class)
+  public void testEmptyZone(){
+      Instance instanceResource =
+              Instance.newBuilder().build();
+      InsertInstanceRequest request = InsertInstanceRequest.newBuilder().setInstanceResource(instanceResource)
+              .setProject(DEFAULT_PROJECT).build();
+      instancesClient.insert(request);
 
-    @Test
-    public void testDefaultClient() throws IOException {
-        InstancesClient defaultClient = InstancesClient.create();
-        Instance instanceResource = Instance.newBuilder()
-                .setName(INSTANCE)
-                .setMachineType(MACHINE_TYPE)
-                .addDisks(DISK)
-                .addNetworkInterfaces(NETWORK_INTERFACE)
-                .build();
-        Operation operation = defaultClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
-        waitUntilStatusChangeTo(operation);
-        instances.add(instanceResource);
-        assertInstanceDetails(getInstance());
+  }
+
+  LRO feature is not finished.
+  @Test
+  public void testFutureInsert() throws InterruptedException, ExecutionException {
+      Instance instanceResource =
+              Instance.newBuilder()
+                      .setName(INSTANCE)
+                      .setMachineType(MACHINE_TYPE)
+                      .addDisks(DISK)
+                      .addNetworkInterfaces(NETWORK_INTERFACE)
+                      .build();
+      InsertInstanceRequest request = InsertInstanceRequest.newBuilder().
+              setProject(DEFAULT_PROJECT).
+              setZone(DEFAULT_ZONE).
+              setInstanceResource(instanceResource).
+              build();
+      ApiFuture<Operation> future = instancesClient.insertCallable().futureCall(request);
+      Operation response = future.get();
+      Assert.assertEquals(response.getStatus(), Operation.Status.DONE);
+      assertInstanceDetails(getInstance());
+  }*/
+
+  private Instance insertInstance() {
+    Instance instanceResource =
+        Instance.newBuilder()
+            .setName(INSTANCE)
+            .setMachineType(MACHINE_TYPE)
+            .addDisks(DISK)
+            .addNetworkInterfaces(NETWORK_INTERFACE)
+            .build();
+    Operation insertResponse =
+        instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
+    waitUntilStatusChangeTo(insertResponse);
+    instances.add(instanceResource);
+    return getInstance();
+  }
+
+  private Instance getInstance() {
+    GetInstanceRequest request =
+        GetInstanceRequest.newBuilder()
+            .setProject(DEFAULT_PROJECT)
+            .setZone(DEFAULT_ZONE)
+            .setInstance(INSTANCE)
+            .build();
+    return instancesClient.get(request);
+  }
+
+  private void assertInstanceDetails(Instance instance) {
+    Assert.assertNotNull(instance);
+    Assert.assertEquals(instance.getName(), INSTANCE);
+    Assert.assertNotNull(instance.getFingerprint());
+    Assert.assertEquals(instance.getMachineType(), MACHINE_TYPE);
+    Assert.assertEquals(instance.getDisksCount(), 1);
+    Assert.assertEquals(instance.getDisksList().get(0).getType(), AttachedDisk.Type.PERSISTENT);
+    Assert.assertEquals(instance.getNetworkInterfacesCount(), 1);
+  }
+
+  private void waitUntilStatusChangeTo(Operation operation) {
+    while (true) {
+      Operation tempOperation =
+          operationsClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, operation.getName());
+      if (tempOperation.getStatus().equals(Operation.Status.UNRECOGNIZED)) {
+        fail("Unexpected operation status: UNRECOGNIZED");
+        break;
+      }
+      if (tempOperation.getStatus().equals(Operation.Status.UNDEFINED_STATUS)) {
+        fail("Unexpected operation status: UNDEFINED_STATUS");
+        break;
+      }
+      if (tempOperation.getStatus().equals(Operation.Status.DONE)) {
+        break;
+      }
     }
-
-    @Test
-    public void testDefaultResource(){
-        Instance instanceResource = Instance.newBuilder().build();
-        try{
-            instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
-            fail("Did not catch the exception");
-        }
-        catch (InvalidArgumentException ex){
-            String message = "Bad Request";
-            Assert.assertEquals(message, ex.getMessage());
-        }
-    }
-
-
-    @Test
-    public void testApiError(){
-        try{
-            getInstance();
-            fail("Did not catch the exception");
-        }
-        catch (NotFoundException ex){
-            String message = "Not Found";
-            Assert.assertEquals(message, ex.getMessage());
-        }
-    }
-
-    /*
-    GAPIC error:
-    Caused by: com.google.api.gax.rpc.UnknownException: com.google.api.pathtemplate.ValidationException: Unbound variable 'zone'. Bindings: {project=cloudsdktest}
-    @Test(expected = ValidationException.class)
-    public void testEmptyZone(){
-        Instance instanceResource =
-                Instance.newBuilder().build();
-        InsertInstanceRequest request = InsertInstanceRequest.newBuilder().setInstanceResource(instanceResource)
-                .setProject(DEFAULT_PROJECT).build();
-        instancesClient.insert(request);
-
-    }
-
-    LRO feature is not finished.
-    @Test
-    public void testFutureInsert() throws InterruptedException, ExecutionException {
-        Instance instanceResource =
-                Instance.newBuilder()
-                        .setName(INSTANCE)
-                        .setMachineType(MACHINE_TYPE)
-                        .addDisks(DISK)
-                        .addNetworkInterfaces(NETWORK_INTERFACE)
-                        .build();
-        InsertInstanceRequest request = InsertInstanceRequest.newBuilder().
-                setProject(DEFAULT_PROJECT).
-                setZone(DEFAULT_ZONE).
-                setInstanceResource(instanceResource).
-                build();
-        ApiFuture<Operation> future = instancesClient.insertCallable().futureCall(request);
-        Operation response = future.get();
-        Assert.assertEquals(response.getStatus(), Operation.Status.DONE);
-        assertInstanceDetails(getInstance());
-    }*/
-
-
-    private Instance insertInstance(){
-        Instance instanceResource =
-                Instance.newBuilder()
-                        .setName(INSTANCE)
-                        .setMachineType(MACHINE_TYPE)
-                        .addDisks(DISK)
-                        .addNetworkInterfaces(NETWORK_INTERFACE)
-                        .build();
-        Operation insertResponse = instancesClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource);
-        waitUntilStatusChangeTo(insertResponse);
-        instances.add(instanceResource);
-        return getInstance();
-    }
-
-    private Instance getInstance() {
-        GetInstanceRequest request =
-                GetInstanceRequest.newBuilder()
-                        .setProject(DEFAULT_PROJECT)
-                        .setZone(DEFAULT_ZONE)
-                        .setInstance(INSTANCE)
-                        .build();
-        return instancesClient.get(request);
-    }
-
-    private void assertInstanceDetails(Instance instance) {
-        Assert.assertNotNull(instance);
-        Assert.assertEquals(instance.getName(), INSTANCE);
-        Assert.assertNotNull(instance.getFingerprint());
-        Assert.assertEquals(instance.getMachineType(), MACHINE_TYPE);
-        Assert.assertEquals(instance.getDisksCount(), 1);
-        Assert.assertEquals(instance.getDisksList().get(0).getType(), AttachedDisk.Type.PERSISTENT);
-        Assert.assertEquals(instance.getNetworkInterfacesCount(), 1);
-    }
-
-    private void waitUntilStatusChangeTo(Operation operation) {
-        while (true) {
-            Operation tempOperation = operationsClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, operation.getName());
-            if (tempOperation.getStatus().equals(Operation.Status.UNRECOGNIZED)) {
-                fail("Unexpected operation status: UNRECOGNIZED");
-                break;
-            }
-            if (tempOperation.getStatus().equals(Operation.Status.UNDEFINED_STATUS)) {
-                fail("Unexpected operation status: UNDEFINED_STATUS");
-                break;
-            }
-            if (tempOperation.getStatus().equals(Operation.Status.DONE)) {
-                break;
-            }
-        }
-    }
+  }
 }
-

@@ -17,83 +17,86 @@ package com.google.cloud.compute.v1.integration;
 
 import com.google.cloud.compute.v1.*;
 import com.google.common.collect.Lists;
+import java.io.IOException;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.Assert;
 
-import java.io.IOException;
+public class ITPaginationTest extends BaseTest {
+  private static ZonesClient zonesClient;
 
-public class ITPaginationTest extends BaseTest{
-    private static ZonesClient zonesClient;
+  @BeforeClass
+  public static void setUp() throws IOException {
+    ZonesSettings zoneSettings = ZonesSettings.newBuilder().build();
+    zonesClient = ZonesClient.create(zoneSettings);
+  }
 
-    @BeforeClass
-    public static void setUp() throws IOException {
-        ZonesSettings zoneSettings = ZonesSettings.newBuilder().build();
-        zonesClient = ZonesClient.create(zoneSettings);
+  @AfterClass
+  public static void tearDown() {
+    zonesClient.close();
+  }
+
+  @Test
+  public void testList() {
+    ZonesClient.ListPagedResponse response = zonesClient.list(DEFAULT_PROJECT);
+    boolean presented = Boolean.FALSE;
+    for (Zone element : response.iterateAll()) {
+      if (element.getName().equals(DEFAULT_ZONE)) {
+        presented = Boolean.TRUE;
+      }
     }
+    Assert.assertTrue(presented);
+  }
 
-    @AfterClass
-    public static void tearDown() {
-        zonesClient.close();
-    }
+  @Test
+  public void testPaginationMaxResults() {
+    ListZonesRequest listZonesRequest =
+        ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(15).build();
+    ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
+    ZonesClient.ListPage listPage = response.getPage();
+    Assert.assertEquals(15, Lists.newArrayList(listPage.getValues()).size());
+  }
 
-    @Test
-    public void testList() {
-        ZonesClient.ListPagedResponse response = zonesClient.list(DEFAULT_PROJECT);
-        boolean presented = Boolean.FALSE;
-        for (Zone element : response.iterateAll()) {
-            if (element.getName().equals(DEFAULT_ZONE)){
-                presented = Boolean.TRUE;
-            }
-        }
-        Assert.assertTrue(presented);
-    }
+  @Test
+  public void testPaginationNextPage() {
+    ListZonesRequest listZonesRequest =
+        ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(15).build();
+    ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
+    ZonesClient.ListPage listPage = response.getPage();
+    ZonesClient.ListPage nextPage = listPage.getNextPage();
+    Assert.assertNotEquals(listPage, nextPage);
+  }
 
-    @Test
-    public void testPaginationMaxResults(){
-        ListZonesRequest listZonesRequest = ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(15).
-                build();
-        ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
-        ZonesClient.ListPage listPage = response.getPage();
-        Assert.assertEquals(15, Lists.newArrayList(listPage.getValues()).size());
-    }
+  @Test
+  public void testPaginationNextPageSize() {
+    ListZonesRequest listZonesRequest =
+        ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(15).build();
+    ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
+    ZonesClient.ListPage listPage = response.getPage();
+    ZonesClient.ListPage nextPage = listPage.getNextPage(20);
+    Assert.assertEquals(20, Lists.newArrayList(nextPage.getValues()).size());
+  }
 
-    @Test
-    public void testPaginationNextPage(){
-        ListZonesRequest listZonesRequest = ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(15).
-                build();
-        ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
-        ZonesClient.ListPage listPage = response.getPage();
-        ZonesClient.ListPage nextPage = listPage.getNextPage();
-        Assert.assertNotEquals(listPage, nextPage);
-    }
+  @Test
+  public void testPaginationNextToken() {
+    ListZonesRequest listZonesRequest =
+        ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(15).build();
+    ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
+    ZonesClient.ListPage listPage = response.getPage();
+    String nextPageToken = listPage.getNextPageToken();
+    ZonesClient.ListPage nextPage = listPage.getNextPage();
 
-    @Test
-    public void testPaginationNextPageSize(){
-        ListZonesRequest listZonesRequest = ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(15).
-                build();
-        ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
-        ZonesClient.ListPage listPage = response.getPage();
-        ZonesClient.ListPage nextPage = listPage.getNextPage(20);
-        Assert.assertEquals(20, Lists.newArrayList(nextPage.getValues()).size());
-    }
-
-    @Test
-    public void testPaginationNextToken(){
-        ListZonesRequest listZonesRequest = ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(15).
-                build();
-        ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
-        ZonesClient.ListPage listPage = response.getPage();
-        String nextPageToken = listPage.getNextPageToken();
-        ZonesClient.ListPage nextPage = listPage.getNextPage();
-
-        ListZonesRequest listZonesRequestToken = ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(15)
-                .setPageToken(nextPageToken).build();
-        ZonesClient.ListPagedResponse responseToken = zonesClient.list(listZonesRequestToken);
-        ZonesClient.ListPage nextPageWithToken = responseToken.getPage();
-        Assert.assertEquals(
-                Lists.newArrayList(nextPage.getValues()),
-                Lists.newArrayList(nextPageWithToken.getValues()));
-    }
+    ListZonesRequest listZonesRequestToken =
+        ListZonesRequest.newBuilder()
+            .setProject(DEFAULT_PROJECT)
+            .setMaxResults(15)
+            .setPageToken(nextPageToken)
+            .build();
+    ZonesClient.ListPagedResponse responseToken = zonesClient.list(listZonesRequestToken);
+    ZonesClient.ListPage nextPageWithToken = responseToken.getPage();
+    Assert.assertEquals(
+        Lists.newArrayList(nextPage.getValues()),
+        Lists.newArrayList(nextPageWithToken.getValues()));
+  }
 }

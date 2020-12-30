@@ -15,13 +15,14 @@
  */
 package com.google.cloud.compute.v1.integration;
 
-import java.util.UUID;
 import com.google.cloud.ServiceOptions;
+import java.util.UUID;
 
 public class BaseTest {
-    protected static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
-    protected static final String DEFAULT_ZONE = "us-central1-a";
-    public static String generateRandomName() {
-        return "gapic-" + "instance" + UUID.randomUUID().toString().substring(0, 8);
-    }
+  protected static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
+  protected static final String DEFAULT_ZONE = "us-central1-a";
+
+  public static String generateRandomName() {
+    return "gapic-" + "instance" + UUID.randomUUID().toString().substring(0, 8);
+  }
 }
