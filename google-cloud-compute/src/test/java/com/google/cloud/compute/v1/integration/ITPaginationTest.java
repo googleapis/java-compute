@@ -24,7 +24,7 @@ import org.junit.Assert;
 
 import java.io.IOException;
 
-public class PaginationTest extends BaseTest{
+public class ITPaginationTest extends BaseTest{
     private static ZonesClient zonesClient;
 
     @BeforeClass

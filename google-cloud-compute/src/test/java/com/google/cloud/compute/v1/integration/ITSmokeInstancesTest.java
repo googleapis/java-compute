@@ -34,7 +34,7 @@ import org.junit.Test;
 import static junit.framework.TestCase.fail;
 
 
-public class SmokeInstancesTest extends BaseTest {
+public class ITSmokeInstancesTest extends BaseTest {
     private static InstancesClient instancesClient;
     private static ZoneOperationsClient operationsClient;
     private static List<Instance> instances;
