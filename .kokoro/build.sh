@@ -17,7 +17,7 @@ set -eo pipefail
 
 # Make sure maven does not consume too much memory, otherwise it may fail
 # with OutOfMemoryError on CI machines when building massive clients (like GCE).
-export MAVEN_OPTS="-Xmx1200m -XX:+HeapDumpOnOutOfMemoryError"
+# export MAVEN_OPTS="-Xmx1200m -XX:+HeapDumpOnOutOfMemoryError"
 
 ## Get the directory of the build script
 scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
