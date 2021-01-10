@@ -1,17 +1,23 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+  <version>0.0.1-SNAPSHOT
+  </version><!-- {x-version-update:google-cloud-compute:current} -->
   <packaging>jar</packaging>
   <name>Google Compute Engine</name>
   <url>https://github.com/googleapis/java-compute</url>
-  <description>Compute Engine delivers configurable virtual machines running in Google's data centers with access to high-performance.</description>
+  <description>Compute Engine delivers configurable virtual machines running in
+    Google's data centers with access to high-performance.
+  </description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-compute-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
+    <version>0.0.1-SNAPSHOT
+    </version><!-- {x-version-update:google-cloud-compute:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-compute</site.installationModule>
@@ -104,9 +110,15 @@
   <build>
     <plugins>
       <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>flatten-maven-plugin</artifactId>
-        </plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <argLine>-Xmx1024m -XX:MaxPermSize=512m</argLine>
+          </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
