@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
+  <difference>
+    <differenceType>8001</differenceType>
+    <className>com/google/cloud/compute/v1/*</className>
+  </difference>
+</differences>
