@@ -4,6 +4,6 @@
   <!-- TODO: remove once 1.x.y-alpha version is stabilized -->
   <difference>
     <differenceType>8001</differenceType>
-    <className>com/google/cloud/compute/v1/*</className>
+    <className>com/google/cloud/compute/**</className>
   </difference>
 </differences>
