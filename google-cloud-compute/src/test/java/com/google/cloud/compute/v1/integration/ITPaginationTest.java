@@ -40,10 +40,10 @@ public class ITPaginationTest extends BaseTest {
   @Test
   public void testList() {
     ZonesClient.ListPagedResponse response = zonesClient.list(DEFAULT_PROJECT);
-    boolean presented = Boolean.FALSE;
+    boolean presented = false;
     for (Zone element : response.iterateAll()) {
       if (element.getName().equals(DEFAULT_ZONE)) {
-        presented = Boolean.TRUE;
+        presented = true;
       }
     }
     Assert.assertTrue(presented);
@@ -98,5 +98,19 @@ public class ITPaginationTest extends BaseTest {
     Assert.assertEquals(
         Lists.newArrayList(nextPage.getValues()),
         Lists.newArrayList(nextPageWithToken.getValues()));
+  }
+
+  @Test
+  public void testPaginationIterating(){
+    ListZonesRequest listZonesRequest =
+            ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(1).build();
+    ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
+    boolean presented = false;
+    for (Zone element : response.iterateAll()) {
+      if (element.getName().equals(DEFAULT_ZONE)) {
+        presented = true;
+      }
+    }
+    Assert.assertTrue(presented);
   }
 }

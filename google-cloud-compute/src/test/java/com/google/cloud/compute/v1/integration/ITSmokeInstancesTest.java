@@ -35,7 +35,7 @@ public class ITSmokeInstancesTest extends BaseTest {
   private static ZoneOperationsClient operationsClient;
   private static List<Instance> instances;
   private static final String DEFAULT_IMAGE =
-      "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-7-wheezy-v20150710";
+      "projects/debian-cloud/global/images/family/debian-10";
   private static final AttachedDisk DISK =
       AttachedDisk.newBuilder()
           .setBoot(true)
@@ -63,7 +63,7 @@ public class ITSmokeInstancesTest extends BaseTest {
 
   @Before
   public void setUpMethod() {
-    INSTANCE = generateRandomName();
+    INSTANCE = generateRandomName("instance");
   }
 
   @AfterClass
@@ -83,14 +83,14 @@ public class ITSmokeInstancesTest extends BaseTest {
   @Test
   public void testAggregatedList() {
     insertInstance();
-    boolean presented = Boolean.FALSE;
+    boolean presented = false;
     InstancesClient.AggregatedListPagedResponse response =
         instancesClient.aggregatedList(DEFAULT_PROJECT);
     for (Map.Entry<String, InstancesScopedList> entry : response.iterateAll()) {
-      if (entry.getKey().equals("zones/us-central1-a")) {
+      if (entry.getKey().equals("zones/"+DEFAULT_ZONE)) {
         for (Instance instance : entry.getValue().getInstancesList()) {
           if (instance.getName().equals(INSTANCE)) {
-            presented = Boolean.TRUE;
+            presented = true;
             assertInstanceDetails(instance);
           }
         }
@@ -208,7 +208,8 @@ public class ITSmokeInstancesTest extends BaseTest {
   }
 
   private void waitUntilStatusChangeTo(Operation operation) {
-    while (true) {
+    long startTime = System.currentTimeMillis();
+    while((System.currentTimeMillis() - startTime) < 20000){
       Operation tempOperation =
           operationsClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, operation.getName());
       if (tempOperation.getStatus().equals(Operation.Status.UNRECOGNIZED)) {
