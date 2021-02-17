@@ -87,7 +87,7 @@ public class ITSmokeInstancesTest extends BaseTest {
     InstancesClient.AggregatedListPagedResponse response =
         instancesClient.aggregatedList(DEFAULT_PROJECT);
     for (Map.Entry<String, InstancesScopedList> entry : response.iterateAll()) {
-      if (entry.getKey().equals("zones/"+DEFAULT_ZONE)) {
+      if (entry.getKey().equals("zones/" + DEFAULT_ZONE)) {
         for (Instance instance : entry.getValue().getInstancesList()) {
           if (instance.getName().equals(INSTANCE)) {
             presented = true;
@@ -209,7 +209,7 @@ public class ITSmokeInstancesTest extends BaseTest {
 
   private void waitUntilStatusChangeTo(Operation operation) {
     long startTime = System.currentTimeMillis();
-    while((System.currentTimeMillis() - startTime) < 20000){
+    while ((System.currentTimeMillis() - startTime) < 20000) {
       Operation tempOperation =
           operationsClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, operation.getName());
       if (tempOperation.getStatus().equals(Operation.Status.UNRECOGNIZED)) {

@@ -101,9 +101,9 @@ public class ITPaginationTest extends BaseTest {
   }
 
   @Test
-  public void testPaginationIterating(){
+  public void testPaginationIterating() {
     ListZonesRequest listZonesRequest =
-            ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(1).build();
+        ListZonesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(1).build();
     ZonesClient.ListPagedResponse response = zonesClient.list(listZonesRequest);
     boolean presented = false;
     for (Zone element : response.iterateAll()) {
