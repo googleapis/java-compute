@@ -100,6 +100,10 @@ public class BaseTest {
   }
 
   protected static Operation waitForOperation(Operation operation) {
+    return waitForOperation(operation, false);
+  }
+
+  protected static Operation waitForOperation(Operation operation, boolean allowFailure) {
     Operation completedOperation;
     if (operation.getZone() != null) {
       completedOperation =
@@ -114,7 +118,7 @@ public class BaseTest {
           globalOperationClient.waitGlobalOperation(
               ProjectGlobalOperationName.of(operation.getName(), DEFAULT_PROJECT));
     }
-    if (completedOperation.getError() != null) {
+    if (completedOperation.getError() != null && !allowFailure) {
       fail("Operation failed: " + completedOperation.getError().toString());
     }
     return completedOperation;
@@ -130,7 +134,7 @@ public class BaseTest {
         Lists.newArrayList(firewallClient.listFirewalls(PROJECT_NAME).iterateAll());
     for (Firewall firewall : firewalls) {
       if (firewall.getNetwork().equals(network.getSelfLink())) {
-        waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()));
+        waitForOperation(firewallClient.deleteFirewall(firewall.getSelfLink()), true);
       }
     }
 
