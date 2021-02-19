@@ -17,7 +17,13 @@ package com.google.cloud.compute.v1.integration;
 
 import static org.junit.Assert.fail;
 
-import com.google.cloud.compute.v1.*;
+import com.google.cloud.compute.v1.Address;
+import com.google.cloud.compute.v1.AddressesClient;
+import com.google.cloud.compute.v1.AddressesScopedList;
+import com.google.cloud.compute.v1.AddressesSettings;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.RegionOperationsClient;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -87,7 +93,7 @@ public class ITAddressesTest extends BaseTest {
     while ((System.currentTimeMillis() - startTime) < 15000) {
       Operation op =
           regionOperationsClient.get(DEFAULT_PROJECT, DEFAULT_REGION, operation.getName());
-      if (op.getStatus().toString().equals("DONE")) {
+      if (op.getStatus() == Status.DONE) {
         success = true;
         break;
       }

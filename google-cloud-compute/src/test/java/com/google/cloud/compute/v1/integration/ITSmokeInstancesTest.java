@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,17 @@ import static junit.framework.TestCase.fail;
 
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.NotFoundException;
-import com.google.cloud.compute.v1.*;
+import com.google.cloud.compute.v1.AttachedDisk;
+import com.google.cloud.compute.v1.AttachedDiskInitializeParams;
+import com.google.cloud.compute.v1.GetInstanceRequest;
+import com.google.cloud.compute.v1.Instance;
+import com.google.cloud.compute.v1.InstancesClient;
+import com.google.cloud.compute.v1.InstancesScopedList;
+import com.google.cloud.compute.v1.InstancesSettings;
+import com.google.cloud.compute.v1.NetworkInterface;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ZoneOperationsClient;
+import com.google.cloud.compute.v1.ZoneOperationsSettings;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
