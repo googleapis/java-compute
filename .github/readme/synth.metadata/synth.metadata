@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-compute.git",
-        "sha": "a8d6ceaf90c756585d1e0a2227a36ea0c90c7898"
+        "sha": "47ea0888240dfce1783e4f749651957e72701f25"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "a3e990f3545dc8ccd384a75d20ce9cb185ca6a28"
+        "sha": "4dca4132c6d63788c6675e1b1e11e7b9225f8694"
       }
     }
   ]
