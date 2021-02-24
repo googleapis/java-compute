@@ -41,14 +41,14 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>0.119.4-alpha</version>
+  <version>1.0.1-alpha</version>
 </dependency>
 
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:16.4.0')
+implementation platform('com.google.cloud:libraries-bom:17.0.0')
 
 compile 'com.google.cloud:google-cloud-compute'
 ```
