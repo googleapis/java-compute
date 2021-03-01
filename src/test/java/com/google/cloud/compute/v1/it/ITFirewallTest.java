@@ -34,8 +34,10 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class ITFirewallTest extends BaseTest {
 
   private static final String NETWORK_NAME = TestHelper.getTestUniqueName("firewall-network");
