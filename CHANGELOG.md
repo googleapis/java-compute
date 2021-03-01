@@ -1,5 +1,15 @@
 # Changelog
 
+### [0.119.5](https://www.github.com/googleapis/java-compute/compare/v0.119.4...v0.119.5) (2021-03-01)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-compute to v1-rev20210209-1.31.0 ([#307](https://www.github.com/googleapis/java-compute/issues/307)) ([2e37abe](https://www.github.com/googleapis/java-compute/commit/2e37abe6b77d474b5202500478e177ff42653510))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.20.0 ([#332](https://www.github.com/googleapis/java-compute/issues/332)) ([f8bd171](https://www.github.com/googleapis/java-compute/commit/f8bd17118ce625167731b8132f68454cc30ac4f3))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.11 ([#323](https://www.github.com/googleapis/java-compute/issues/323)) ([5ef7a5c](https://www.github.com/googleapis/java-compute/commit/5ef7a5caa249118e1298a09be80604437d19ab36))
+* update dependency com.google.truth:truth to v1.1.2 ([#291](https://www.github.com/googleapis/java-compute/issues/291)) ([3562ff0](https://www.github.com/googleapis/java-compute/commit/3562ff0f65a7aaf425f38562b6198d7b8583214f))
+
 ### [0.119.4](https://www.github.com/googleapis/java-compute/compare/v0.119.3...v0.119.4) (2021-02-19)
 
 
