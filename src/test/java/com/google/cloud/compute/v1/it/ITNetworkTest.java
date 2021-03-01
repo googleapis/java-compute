@@ -28,8 +28,10 @@ import java.io.IOException;
 import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class ITNetworkTest extends BaseTest {
   private static final String NETWORK = TestHelper.getTestUniqueName("network");;
 

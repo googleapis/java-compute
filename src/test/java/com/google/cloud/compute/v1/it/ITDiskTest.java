@@ -25,9 +25,11 @@ import java.io.IOException;
 import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.threeten.bp.Duration;
 
+@Ignore
 public class ITDiskTest extends BaseTest {
 
   private static final String DISK_NAME = TestHelper.getTestUniqueName("disk");
