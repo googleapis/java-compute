@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1.it;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assume.assumeTrue;
 
 import com.google.cloud.compute.v1.Allowed;
 import com.google.cloud.compute.v1.Firewall;
@@ -59,6 +60,7 @@ public class ITFirewallTest extends BaseTest {
 
   @BeforeClass
   public static void setUp() throws IOException {
+    assumeTrue("Skipping flaky firewall tests until they can be rewritten for diregapic", false);
     cleanUpNetworks();
 
     FirewallSettings firewallSettings =
