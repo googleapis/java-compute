@@ -40,8 +40,6 @@ public class ITNetworkTest extends BaseTest {
 
   @BeforeClass
   public static void setUp() throws IOException {
-    cleanUpNetworks();
-
     NetworkSettings networkSettings =
         NetworkSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
     networkClient = NetworkClient.create(networkSettings);
