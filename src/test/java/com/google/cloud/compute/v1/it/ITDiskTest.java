@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1.it;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assume.assumeTrue;
 
 import com.google.cloud.compute.v1.*;
 import com.google.common.collect.ArrayListMultimap;
@@ -48,6 +49,7 @@ public class ITDiskTest extends BaseTest {
 
   @BeforeClass
   public static void setUp() throws IOException {
+    assumeTrue("Skipping flaky disk tests until they can be rewritten for diregapic", false);
     DiskSettings.Builder diskSettings = DiskSettings.newBuilder();
     diskSettings
         .getDiskSettings()
