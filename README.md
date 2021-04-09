@@ -8,8 +8,11 @@ Java idiomatic client for [Compute Engine][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
+
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
+
+
 
 ## Quickstart
 
