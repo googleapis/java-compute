@@ -1,5 +1,14 @@
 # Changelog
 
+### [0.119.8](https://www.github.com/googleapis/java-compute/compare/v0.119.7...v0.119.8) (2021-04-12)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-compute to v1-rev20210316-1.31.0 ([#360](https://www.github.com/googleapis/java-compute/issues/360)) ([1524d1c](https://www.github.com/googleapis/java-compute/commit/1524d1ca9965ffc457543e4011059ebfd6289fe1))
+* update dependency com.google.apis:google-api-services-compute to v1-rev20210322-1.31.0 ([#368](https://www.github.com/googleapis/java-compute/issues/368)) ([614ae39](https://www.github.com/googleapis/java-compute/commit/614ae398b999ed13e320e4632af8de222cbb4b03))
+* update google-cloud-shared-dependencies, google-oauth-client-bom, google-cloud-storage ([#369](https://www.github.com/googleapis/java-compute/issues/369)) ([9cea611](https://www.github.com/googleapis/java-compute/commit/9cea6113f8c9de83bc6f8fd24d52f8296a794f54))
+
 ### [0.119.7](https://www.github.com/googleapis/java-compute/compare/v0.119.6...v0.119.7) (2021-03-12)
 
 
