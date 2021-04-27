@@ -1,5 +1,21 @@
 # Changelog
 
+### [0.119.9](https://www.github.com/googleapis/java-compute/compare/v0.119.8...v0.119.9) (2021-04-27)
+
+
+### Bug Fixes
+
+* release scripts from issuing overlapping phases ([#379](https://www.github.com/googleapis/java-compute/issues/379)) ([114a3bf](https://www.github.com/googleapis/java-compute/commit/114a3bf99d645def7009c859962dc4e3a27144ae))
+* typo ([#376](https://www.github.com/googleapis/java-compute/issues/376)) ([44b1e97](https://www.github.com/googleapis/java-compute/commit/44b1e974443357ba4a7a0cc05bed2c3d114a0296))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-compute to v1-rev20210327-1.31.0 ([#381](https://www.github.com/googleapis/java-compute/issues/381)) ([911a69d](https://www.github.com/googleapis/java-compute/commit/911a69dcaf4abd018bbcedffcdbd62a6fd6567a1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1 ([#385](https://www.github.com/googleapis/java-compute/issues/385)) ([bfa64e1](https://www.github.com/googleapis/java-compute/commit/bfa64e1f720f358d031276dff518d012539aeedd))
+* update dependency com.google.cloud:google-cloud-storage to v1.113.16 ([#386](https://www.github.com/googleapis/java-compute/issues/386)) ([62517c6](https://www.github.com/googleapis/java-compute/commit/62517c6b2aafc719c51e56d1956f16a5e6763a96))
+* update google-cloud-shared-dependencies, google-oauth-client-bom, google-cloud-storage ([#377](https://www.github.com/googleapis/java-compute/issues/377)) ([53f1584](https://www.github.com/googleapis/java-compute/commit/53f1584c243043181e7a25cf4b4d2d42235deb96))
+
 ### [0.119.8](https://www.github.com/googleapis/java-compute/compare/v0.119.7...v0.119.8) (2021-04-12)
 
 
