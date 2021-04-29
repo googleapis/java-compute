@@ -28,6 +28,7 @@ import com.google.cloud.compute.v1.InstancesScopedList;
 import com.google.cloud.compute.v1.InstancesSettings;
 import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ShieldedInstanceConfig;
 import com.google.cloud.compute.v1.ZoneOperationsClient;
 import com.google.cloud.compute.v1.ZoneOperationsSettings;
 import java.io.IOException;
@@ -146,6 +147,23 @@ public class ITSmokeInstancesTest extends BaseTest {
       String message = "Not Found";
       Assert.assertEquals(message, ex.getMessage());
     }
+  }
+
+
+  @Test
+  public void testPatch(){
+    Instance resultInstance = insertInstance();
+    Assert.assertFalse(resultInstance.getShieldedInstanceConfig().getEnableSecureBoot());
+    Operation op = instancesClient.stop(DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE);
+    waitUntilStatusChangeTo(op);
+    ShieldedInstanceConfig shieldedInstanceConfigResource = ShieldedInstanceConfig
+            .newBuilder()
+            .setEnableSecureBoot(true)
+            .build();
+    instancesClient.updateShieldedInstanceConfig(
+            DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE, shieldedInstanceConfigResource);
+    Instance updInstance = getInstance();
+    Assert.assertTrue(updInstance.getShieldedInstanceConfig().getEnableSecureBoot());
   }
 
   /*
