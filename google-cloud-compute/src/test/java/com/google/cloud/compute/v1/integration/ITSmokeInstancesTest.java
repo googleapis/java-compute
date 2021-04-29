@@ -160,8 +160,9 @@ public class ITSmokeInstancesTest extends BaseTest {
             .newBuilder()
             .setEnableSecureBoot(true)
             .build();
-    instancesClient.updateShieldedInstanceConfig(
+    Operation opPatch = instancesClient.updateShieldedInstanceConfig(
             DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE, shieldedInstanceConfigResource);
+    waitUntilStatusChangeTo(opPatch);
     Instance updInstance = getInstance();
     Assert.assertTrue(updInstance.getShieldedInstanceConfig().getEnableSecureBoot());
   }
