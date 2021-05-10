@@ -9,9 +9,11 @@
   <difference>
     <differenceType>6003</differenceType>
     <className>com/google/cloud/compute/**</className>
+    <field>*FIELD_NUMBER</field>
   </difference>
   <difference>
     <differenceType>7012</differenceType>
     <className>com/google/cloud/compute/**</className>
+    <method>boolean has*(*)</method>
   </difference>
 </differences>
