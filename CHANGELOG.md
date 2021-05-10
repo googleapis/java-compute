@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.119.10](https://www.github.com/googleapis/java-compute/compare/v0.119.9...v0.119.10) (2021-05-10)
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-compute to v1-rev20210415-1.31.0 ([#400](https://www.github.com/googleapis/java-compute/issues/400)) ([29472e6](https://www.github.com/googleapis/java-compute/commit/29472e6d90beacdd1b470a46d863f00f44142173))
+
 ### [0.119.9](https://www.github.com/googleapis/java-compute/compare/v0.119.8...v0.119.9) (2021-04-27)
 
 
