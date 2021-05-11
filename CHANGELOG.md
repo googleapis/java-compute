@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.119.11](https://www.github.com/googleapis/java-compute/compare/v0.119.10...v0.119.11) (2021-05-11)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v1.1.0 ([#410](https://www.github.com/googleapis/java-compute/issues/410)) ([189dc69](https://www.github.com/googleapis/java-compute/commit/189dc69acd6b69520955f18b8aef8eb0b40bec2f))
+
 ### [0.119.10](https://www.github.com/googleapis/java-compute/compare/v0.119.9...v0.119.10) (2021-05-10)
 
 
