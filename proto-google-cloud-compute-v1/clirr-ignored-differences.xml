@@ -27,4 +27,16 @@
     <className>com/google/cloud/compute/**</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/compute/**</className>
+    <method>* get*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/compute/**</className>
+    <method>* contains*(*)</method>
+  </difference>
+
 </differences>
