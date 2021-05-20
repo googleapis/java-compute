@@ -16,7 +16,13 @@
 package com.google.cloud.compute.v1.integration;
 
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.compute.v1.GlobalOperationsClient;
+import com.google.cloud.compute.v1.Operation;
+
+import java.io.IOException;
 import java.util.UUID;
+
+import static junit.framework.TestCase.fail;
 
 public class BaseTest {
   protected static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
@@ -25,5 +31,28 @@ public class BaseTest {
 
   public static String generateRandomName(String placeholder) {
     return "gapic-" + placeholder + UUID.randomUUID().toString().substring(0, 8);
+  }
+
+  public void waitGlobalOperation(Operation operation) throws IOException {
+    GlobalOperationsClient operationsClient =  GlobalOperationsClient.create();
+    long startTime = System.currentTimeMillis();
+    while (true) {
+      if ((System.currentTimeMillis() - startTime) > 200000){
+        fail("Operation "+operation.getName()+" took more than 200 sec to finish");
+      }
+      Operation tempOperation =
+              operationsClient.get(DEFAULT_PROJECT, operation.getName());
+      if (tempOperation.getStatus().equals(Operation.Status.UNRECOGNIZED)) {
+        fail("Unexpected operation status: UNRECOGNIZED");
+        break;
+      }
+      if (tempOperation.getStatus().equals(Operation.Status.UNDEFINED_STATUS)) {
+        fail("Unexpected operation status: UNDEFINED_STATUS");
+        break;
+      }
+      if (tempOperation.getStatus().equals(Operation.Status.DONE)) {
+        break;
+      }
+    }
   }
 }
