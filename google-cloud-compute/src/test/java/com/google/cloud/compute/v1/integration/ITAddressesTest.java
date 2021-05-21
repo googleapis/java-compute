@@ -28,7 +28,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
@@ -107,14 +106,14 @@ public class ITAddressesTest extends BaseTest {
 
   @Ignore("Non ascii symbols are not converted correctly")
   @Test
-  public void testNonAscii(){
+  public void testNonAscii() {
     insertAddress("тест");
     Address address = addressesClient.get(DEFAULT_PROJECT, DEFAULT_REGION, name);
     Assert.assertEquals(name, address.getName());
     Assert.assertEquals("тест", address.getDescription());
   }
 
-  private void insertAddress(){
+  private void insertAddress() {
     insertAddress("test");
   }
 
@@ -126,7 +125,7 @@ public class ITAddressesTest extends BaseTest {
     long startTime = System.currentTimeMillis();
     while ((System.currentTimeMillis() - startTime) < 15000) {
       Operation op =
-              regionOperationsClient.get(DEFAULT_PROJECT, DEFAULT_REGION, operation.getName());
+          regionOperationsClient.get(DEFAULT_PROJECT, DEFAULT_REGION, operation.getName());
       if (op.getStatus() == Status.DONE) {
         success = true;
         break;

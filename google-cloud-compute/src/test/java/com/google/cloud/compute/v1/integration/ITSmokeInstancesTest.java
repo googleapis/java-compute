@@ -25,11 +25,11 @@ import com.google.cloud.compute.v1.GetInstanceRequest;
 import com.google.cloud.compute.v1.Instance;
 import com.google.cloud.compute.v1.InstanceGroupManager;
 import com.google.cloud.compute.v1.InstanceGroupManagersClient;
+import com.google.cloud.compute.v1.InstanceTemplate;
+import com.google.cloud.compute.v1.InstanceTemplatesClient;
 import com.google.cloud.compute.v1.InstancesClient;
 import com.google.cloud.compute.v1.InstancesScopedList;
 import com.google.cloud.compute.v1.InstancesSettings;
-import com.google.cloud.compute.v1.InstanceTemplate;
-import com.google.cloud.compute.v1.InstanceTemplatesClient;
 import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.ShieldedInstanceConfig;
@@ -102,7 +102,8 @@ public class ITSmokeInstancesTest extends BaseTest {
     Assert.assertEquals("test", resultInstance.getDescription());
     Assert.assertEquals(0, resultInstance.getScheduling().getMinNodeCpus());
     Instance descInstance = resultInstance.toBuilder().setDescription("").build();
-    Operation updateOp = instancesClient.update(DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE, descInstance);
+    Operation updateOp =
+        instancesClient.update(DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE, descInstance);
     waitUntilStatusChangeTo(updateOp);
     Instance updated = getInstance();
     assertInstanceDetails(updated);
@@ -119,7 +120,8 @@ public class ITSmokeInstancesTest extends BaseTest {
     String templateName = generateRandomName("template");
     String instanceGroupManagerName = generateRandomName("igm");
     Instance instance = insertInstance();
-    InstanceTemplate instanceTemplate = InstanceTemplate.newBuilder()
+    InstanceTemplate instanceTemplate =
+        InstanceTemplate.newBuilder()
             .setSourceInstance(instance.getSelfLink())
             .setName(templateName)
             .build();
@@ -127,36 +129,46 @@ public class ITSmokeInstancesTest extends BaseTest {
     waitGlobalOperation(insertOperation);
     instanceTemplatesToClean.add(templateName);
     try {
-      InstanceGroupManager instanceGroupManager = InstanceGroupManager.newBuilder().
-              setName(instanceGroupManagerName).
-              setBaseInstanceName("java-gapic").
-              setInstanceTemplate(insertOperation.getTargetLink()).
-              setTargetSize(0).
-              build();
-      Operation igmOperation = instanceGroupManagersClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManager);
+      InstanceGroupManager instanceGroupManager =
+          InstanceGroupManager.newBuilder()
+              .setName(instanceGroupManagerName)
+              .setBaseInstanceName("java-gapic")
+              .setInstanceTemplate(insertOperation.getTargetLink())
+              .setTargetSize(0)
+              .build();
+      Operation igmOperation =
+          instanceGroupManagersClient.insert(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManager);
       waitUntilStatusChangeTo(igmOperation);
       instanceGroupManagersToClean.add(instanceGroupManagerName);
-      InstanceGroupManager fetched = instanceGroupManagersClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName);
+      InstanceGroupManager fetched =
+          instanceGroupManagersClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName);
       Assert.assertEquals(0, fetched.getTargetSize());
 
-      Operation resize = instanceGroupManagersClient.resize(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName, 1);
+      Operation resize =
+          instanceGroupManagersClient.resize(
+              DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName, 1);
       waitUntilStatusChangeTo(resize);
 
-      InstanceGroupManager resizedIGM = instanceGroupManagersClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName);
+      InstanceGroupManager resizedIGM =
+          instanceGroupManagersClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName);
       Assert.assertEquals(1, resizedIGM.getTargetSize());
 
-      Operation resizeOp = instanceGroupManagersClient.resize(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName, 0);
+      Operation resizeOp =
+          instanceGroupManagersClient.resize(
+              DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName, 0);
       waitUntilStatusChangeTo(resizeOp);
 
-      InstanceGroupManager instanceGroupManagerResized = instanceGroupManagersClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName);
+      InstanceGroupManager instanceGroupManagerResized =
+          instanceGroupManagersClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, instanceGroupManagerName);
       Assert.assertEquals(0, instanceGroupManagerResized.getTargetSize());
 
     } finally {
-      for(String name: instanceGroupManagersToClean){
-        Operation deleteOperation = instanceGroupManagersClient.delete(DEFAULT_PROJECT, DEFAULT_ZONE, name);
+      for (String name : instanceGroupManagersToClean) {
+        Operation deleteOperation =
+            instanceGroupManagersClient.delete(DEFAULT_PROJECT, DEFAULT_ZONE, name);
         waitUntilStatusChangeTo(deleteOperation);
       }
-      for(String name: instanceTemplatesToClean){
+      for (String name : instanceTemplatesToClean) {
         Operation deleteOperation = instanceTemplatesClient.delete(DEFAULT_PROJECT, name);
         waitGlobalOperation(deleteOperation);
       }
@@ -223,16 +235,15 @@ public class ITSmokeInstancesTest extends BaseTest {
 
   @Ignore("Patch is not supported")
   @Test
-  public void testPatch(){
+  public void testPatch() {
     Instance resultInstance = insertInstance();
     Assert.assertFalse(resultInstance.getShieldedInstanceConfig().getEnableSecureBoot());
     Operation op = instancesClient.stop(DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE);
     waitUntilStatusChangeTo(op);
-    ShieldedInstanceConfig shieldedInstanceConfigResource = ShieldedInstanceConfig
-            .newBuilder()
-            .setEnableSecureBoot(true)
-            .build();
-    Operation opPatch = instancesClient.updateShieldedInstanceConfig(
+    ShieldedInstanceConfig shieldedInstanceConfigResource =
+        ShieldedInstanceConfig.newBuilder().setEnableSecureBoot(true).build();
+    Operation opPatch =
+        instancesClient.updateShieldedInstanceConfig(
             DEFAULT_PROJECT, DEFAULT_ZONE, INSTANCE, shieldedInstanceConfigResource);
     waitUntilStatusChangeTo(opPatch);
     Instance updInstance = getInstance();
@@ -278,8 +289,8 @@ public class ITSmokeInstancesTest extends BaseTest {
   private void waitUntilStatusChangeTo(Operation operation) {
     long startTime = System.currentTimeMillis();
     while (true) {
-      if ((System.currentTimeMillis() - startTime) > 200000){
-        fail("Operation "+operation.getName()+" took more than 200 sec to finish");
+      if ((System.currentTimeMillis() - startTime) > 200000) {
+        fail("Operation " + operation.getName() + " took more than 200 sec to finish");
       }
       Operation tempOperation =
           operationsClient.get(DEFAULT_PROJECT, DEFAULT_ZONE, operation.getName());
