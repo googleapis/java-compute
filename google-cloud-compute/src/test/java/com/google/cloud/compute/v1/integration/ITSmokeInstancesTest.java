@@ -98,6 +98,8 @@ public class ITSmokeInstancesTest extends BaseTest {
 
   @Test
   public void testUpdateInstanceDescToEmpty() {
+    // We test here: 1)set body field to an empty string
+    //               2)unset body field
     Instance resultInstance = insertInstance();
     Assert.assertEquals("test", resultInstance.getDescription());
     Assert.assertEquals(0, resultInstance.getScheduling().getMinNodeCpus());
@@ -113,6 +115,8 @@ public class ITSmokeInstancesTest extends BaseTest {
 
   @Test
   public void testResizeGroupToZero() throws IOException {
+    // We test here: 1)set body field to zero
+    //               2)set query param to zero
     List<String> instanceGroupManagersToClean = new ArrayList<>();
     List<String> instanceTemplatesToClean = new ArrayList<>();
     InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create();
@@ -304,6 +308,11 @@ public class ITSmokeInstancesTest extends BaseTest {
       }
       if (tempOperation.getStatus().equals(Operation.Status.DONE)) {
         break;
+      }
+      try {
+        Thread.sleep(2000);
+      } catch (InterruptedException e) {
+        fail("Interrupted");
       }
     }
   }

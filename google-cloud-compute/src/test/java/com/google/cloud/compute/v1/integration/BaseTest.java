@@ -51,6 +51,11 @@ public class BaseTest {
       if (tempOperation.getStatus().equals(Operation.Status.DONE)) {
         break;
       }
+      try {
+      Thread.sleep(2000);
+      } catch (InterruptedException e) {
+        fail("Interrupted");
+      }
     }
   }
 }

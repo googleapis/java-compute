@@ -103,8 +103,7 @@ public class ITAddressesTest extends BaseTest {
     }
     Assert.assertTrue(presented);
   }
-
-  @Ignore("Non ascii symbols are not converted correctly")
+  @Ignore("Non ascii symbols are not converted correctly, b/188905787")
   @Test
   public void testNonAscii() {
     insertAddress("тест");
@@ -129,6 +128,11 @@ public class ITAddressesTest extends BaseTest {
       if (op.getStatus() == Status.DONE) {
         success = true;
         break;
+      }
+      try {
+        Thread.sleep(2000);
+      } catch (InterruptedException e) {
+        fail("Interrupted");
       }
     }
     if (!success) {
