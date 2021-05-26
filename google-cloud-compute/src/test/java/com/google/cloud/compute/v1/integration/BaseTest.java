@@ -52,7 +52,7 @@ public class BaseTest {
         break;
       }
       try {
-      Thread.sleep(2000);
+        Thread.sleep(2000);
       } catch (InterruptedException e) {
         fail("Interrupted");
       }

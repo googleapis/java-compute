@@ -103,6 +103,7 @@ public class ITAddressesTest extends BaseTest {
     }
     Assert.assertTrue(presented);
   }
+
   @Ignore("Non ascii symbols are not converted correctly, b/188905787")
   @Test
   public void testNonAscii() {
