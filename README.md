@@ -20,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>20.3.0</version>
+      <version>20.5.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -41,25 +41,25 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>1.0.1-alpha</version>
+  <version>1.2.0-alpha</version>
 </dependency>
 
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:20.3.0')
+implementation platform('com.google.cloud:libraries-bom:20.5.0')
 
 compile 'com.google.cloud:google-cloud-compute'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-compute:1.0.1-alpha'
+compile 'com.google.cloud:google-cloud-compute:1.2.0-alpha'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.0.1-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.2.0-alpha"
 ```
 
 ## Authentication
