@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.120.0](https://www.github.com/googleapis/java-compute/compare/v0.119.11...v0.120.0) (2021-05-31)
+
+
+### Features
+
+* add `gcf-owl-bot[bot]` to `ignoreAuthors` ([#425](https://www.github.com/googleapis/java-compute/issues/425)) ([edaa8d8](https://www.github.com/googleapis/java-compute/commit/edaa8d8ba2c91a447dd54f2a7fedb1f49c15f8ac))
+
+
+### Dependencies
+
+* update dependency com.google.apis:google-api-services-compute to v1-rev20210505-1.31.0 ([#434](https://www.github.com/googleapis/java-compute/issues/434)) ([33dbdd6](https://www.github.com/googleapis/java-compute/commit/33dbdd6db9f7532704039ce94b1f12f150b16fb1))
+* update dependency com.google.apis:google-api-services-compute to v1-rev20210518-1.31.0 ([#440](https://www.github.com/googleapis/java-compute/issues/440)) ([aca25b1](https://www.github.com/googleapis/java-compute/commit/aca25b10b1e955eb2005de1ce88c79deeb06be57))
+* update dependency com.google.truth:truth to v1.1.3 ([#439](https://www.github.com/googleapis/java-compute/issues/439)) ([54d71b6](https://www.github.com/googleapis/java-compute/commit/54d71b63e0cabebc6219e71b0a9c37aece6d7126))
+* update google-cloud-shared-dependencies, google-oauth-client-bom, google-cloud-storage ([#418](https://www.github.com/googleapis/java-compute/issues/418)) ([8c45244](https://www.github.com/googleapis/java-compute/commit/8c45244b5a49e19ef7397080faf357e7604bdd9a))
+
 ### [0.119.11](https://www.github.com/googleapis/java-compute/compare/v0.119.10...v0.119.11) (2021-05-11)
 
 
