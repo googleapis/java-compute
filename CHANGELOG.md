@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.120.1](https://www.github.com/googleapis/java-compute/compare/v0.120.0...v0.120.1) (2021-06-02)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-storage to v1.115.0 ([#443](https://www.github.com/googleapis/java-compute/issues/443)) ([8f4c643](https://www.github.com/googleapis/java-compute/commit/8f4c643fb4e3ee90ea3ad9cdcf292d135d6486f6))
+
 ## [0.120.0](https://www.github.com/googleapis/java-compute/compare/v0.119.11...v0.120.0) (2021-05-31)
 
 
