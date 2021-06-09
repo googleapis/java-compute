@@ -101,21 +101,21 @@ code to create your service object:
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.compute.v1.AddressClient;
-import com.google.cloud.compute.v1.AddressSettings;
+import com.google.cloud.compute.v1.AddressesClient;
+import com.google.cloud.compute.v1.AddressesSettings;
 
 Credentials myCredentials = GoogleCredentials.getApplicationDefault();
-    String myEndpoint = AddressSettings.getDefaultEndpoint();
+String myEndpoint = AddressSettings.getDefaultEndpoint();
 
-    AddressSettings addressSettings =
-        AddressSettings.newBuilder()
-            .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
-            .setTransportChannelProvider(
-                AddressSettings.defaultHttpJsonTransportProviderBuilder()
-                    .setEndpoint(myEndpoint)
-                    .build())
-            .build();
-    return AddressClient.create(addressSettings);
+AddressesSettings addressSettings =
+    AddressesSettings.newBuilder()
+        .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+        .setTransportChannelProvider(
+            AddressesSettings.defaultHttpJsonTransportProviderBuilder()
+                .setEndpoint(myEndpoint)
+                .build())
+        .build();
+return AddressesClient.create(addressSettings);
 ```
 
 For other authentication options, see the [Authentication](https://github.com/googleapis/google-cloud-java#authentication)
