@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-compute.git",
-        "sha": "b13c4137b54577689a89e011129a8d03cff536d6"
+        "sha": "8b33aa8c4a8d5b1d1bb561fac58c68193ff0c624"
       }
     },
     {
