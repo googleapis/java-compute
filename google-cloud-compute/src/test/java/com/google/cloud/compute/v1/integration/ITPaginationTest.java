@@ -15,12 +15,11 @@
  */
 package com.google.cloud.compute.v1.integration;
 
-import com.google.cloud.compute.v1.ListZonesRequest;
-import com.google.cloud.compute.v1.Zone;
-import com.google.cloud.compute.v1.ZonesClient;
-import com.google.cloud.compute.v1.ZonesSettings;
+import com.google.cloud.compute.v1.*;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.Map;
+
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -112,6 +111,24 @@ public class ITPaginationTest extends BaseTest {
     for (Zone element : response.iterateAll()) {
       if (element.getName().equals(DEFAULT_ZONE)) {
         presented = true;
+      }
+    }
+    Assert.assertTrue(presented);
+  }
+
+  @Test
+  public void testPaginationAggregatedIterating() throws IOException {
+    AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create();
+    AcceleratorTypesClient.AggregatedListPagedResponse response = acceleratorTypesClient.aggregatedList(DEFAULT_PROJECT);
+    boolean presented = false;
+    for (Map.Entry<String, AcceleratorTypesScopedList> entry : response.iterateAll()) {
+      if (entry.getKey().equals("zones/" + DEFAULT_ZONE)) {
+        for (AcceleratorType type : entry.getValue().getAcceleratorTypesList()) {
+          if (type.getName().equals("nvidia-tesla-t4")) {
+            presented = true;
+            break;
+          }
+        }
       }
     }
     Assert.assertTrue(presented);
