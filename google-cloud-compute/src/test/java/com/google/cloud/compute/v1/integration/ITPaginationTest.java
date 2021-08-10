@@ -126,7 +126,10 @@ public class ITPaginationTest extends BaseTest {
   public void testPaginationAggregatedIterating() throws IOException {
     AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create();
     AggregatedListAcceleratorTypesRequest aggregatedListAcceleratorTypesRequest =
-            AggregatedListAcceleratorTypesRequest.newBuilder().setProject(DEFAULT_PROJECT).setMaxResults(2).build();
+        AggregatedListAcceleratorTypesRequest.newBuilder()
+            .setProject(DEFAULT_PROJECT)
+            .setMaxResults(2)
+            .build();
     AcceleratorTypesClient.AggregatedListPagedResponse response =
         acceleratorTypesClient.aggregatedList(aggregatedListAcceleratorTypesRequest);
     boolean presented = false;
