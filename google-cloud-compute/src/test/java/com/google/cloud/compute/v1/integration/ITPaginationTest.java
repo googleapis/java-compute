@@ -19,7 +19,6 @@ import com.google.cloud.compute.v1.*;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Map;
-
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -119,7 +118,8 @@ public class ITPaginationTest extends BaseTest {
   @Test
   public void testPaginationAggregatedIterating() throws IOException {
     AcceleratorTypesClient acceleratorTypesClient = AcceleratorTypesClient.create();
-    AcceleratorTypesClient.AggregatedListPagedResponse response = acceleratorTypesClient.aggregatedList(DEFAULT_PROJECT);
+    AcceleratorTypesClient.AggregatedListPagedResponse response =
+        acceleratorTypesClient.aggregatedList(DEFAULT_PROJECT);
     boolean presented = false;
     for (Map.Entry<String, AcceleratorTypesScopedList> entry : response.iterateAll()) {
       if (entry.getKey().equals("zones/" + DEFAULT_ZONE)) {
