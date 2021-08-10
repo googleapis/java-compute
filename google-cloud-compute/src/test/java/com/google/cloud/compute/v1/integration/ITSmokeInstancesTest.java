@@ -19,11 +19,32 @@ import static junit.framework.TestCase.fail;
 
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.NotFoundException;
-import com.google.cloud.compute.v1.*;
-
+import com.google.cloud.compute.v1.Allowed;
+import com.google.cloud.compute.v1.AttachedDisk;
+import com.google.cloud.compute.v1.AttachedDiskInitializeParams;
+import com.google.cloud.compute.v1.Firewall;
+import com.google.cloud.compute.v1.FirewallsClient;
+import com.google.cloud.compute.v1.GetInstanceRequest;
+import com.google.cloud.compute.v1.Image;
+import com.google.cloud.compute.v1.ImagesClient;
+import com.google.cloud.compute.v1.Instance;
+import com.google.cloud.compute.v1.InstanceGroupManager;
+import com.google.cloud.compute.v1.InstanceGroupManagersClient;
+import com.google.cloud.compute.v1.InstanceTemplate;
+import com.google.cloud.compute.v1.InstanceTemplatesClient;
+import com.google.cloud.compute.v1.InstancesClient;
+import com.google.cloud.compute.v1.InstancesScopedList;
+import com.google.cloud.compute.v1.InstancesSettings;
+import com.google.cloud.compute.v1.NetworkInterface;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.ShieldedInstanceConfig;
+import com.google.cloud.compute.v1.ZoneOperationsClient;
+import com.google.cloud.compute.v1.ZoneOperationsSettings;
 import java.io.IOException;
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
@@ -230,10 +251,11 @@ public class ITSmokeInstancesTest extends BaseTest {
     String sourceImage = "projects/debian-cloud/global/images/debian-10-buster-v20210721";
     ImagesClient imagesClient = ImagesClient.create();
     Image image =
-            Image.newBuilder()
-                    .setName(name)
-                    .addAllLicenseCodes(licenseCodes)
-                    .setSourceImage(sourceImage).build();
+        Image.newBuilder()
+            .setName(name)
+            .addAllLicenseCodes(licenseCodes)
+            .setSourceImage(sourceImage)
+            .build();
     try {
       Operation op = imagesClient.insert(DEFAULT_PROJECT, image);
       waitGlobalOperation(op);
@@ -250,13 +272,10 @@ public class ITSmokeInstancesTest extends BaseTest {
     // we want to test a field like "IPProtocol"
     String name = generateRandomName("fw-rule");
     FirewallsClient firewallsClient = FirewallsClient.create();
-    Firewall firewall = Firewall.newBuilder()
+    Firewall firewall =
+        Firewall.newBuilder()
             .setName(name)
-            .addAllowed(
-                    Allowed.newBuilder()
-                            .setIPProtocol("TCP")
-                            .addPorts("80")
-                            .build())
+            .addAllowed(Allowed.newBuilder().setIPProtocol("TCP").addPorts("80").build())
             .addSourceRanges("0.0.0.0/0")
             .build();
     try {
