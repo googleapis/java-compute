@@ -275,7 +275,7 @@ public class ITSmokeInstancesTest extends BaseTest {
     Firewall firewall =
         Firewall.newBuilder()
             .setName(name)
-            .addAllowed(Allowed.newBuilder().setIPProtocol("TCP").addPorts("80").build())
+            .addAllowed(Allowed.newBuilder().setIPProtocol("tcp").addPorts("80").build())
             .addSourceRanges("0.0.0.0/0")
             .build();
     try {
@@ -284,6 +284,7 @@ public class ITSmokeInstancesTest extends BaseTest {
 
       Firewall fetched = firewallsClient.get(DEFAULT_PROJECT, name);
       Assert.assertEquals(name, fetched.getName());
+      Assert.assertEquals("tcp", fetched.getAllowed(0).getIPProtocol());
     } finally {
       firewallsClient.delete(DEFAULT_PROJECT, name);
     }
