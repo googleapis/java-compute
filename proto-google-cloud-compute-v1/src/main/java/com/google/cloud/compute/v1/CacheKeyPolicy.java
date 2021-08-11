@@ -38,8 +38,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   private CacheKeyPolicy() {
-    queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    queryStringExcludelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    queryStringIncludelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -76,10 +76,10 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                queryStringWhitelist_ = new com.google.protobuf.LazyStringArrayList();
+                queryStringIncludelist_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000010;
               }
-              queryStringWhitelist_.add(s);
+              queryStringIncludelist_.add(s);
               break;
             }
           case -1866907016:
@@ -92,10 +92,10 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                queryStringBlacklist_ = new com.google.protobuf.LazyStringArrayList();
+                queryStringExcludelist_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000008;
               }
-              queryStringBlacklist_.add(s);
+              queryStringExcludelist_.add(s);
               break;
             }
           case -502674184:
@@ -125,10 +125,10 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000010) != 0)) {
-        queryStringWhitelist_ = queryStringWhitelist_.getUnmodifiableView();
+        queryStringIncludelist_ = queryStringIncludelist_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        queryStringBlacklist_ = queryStringBlacklist_.getUnmodifiableView();
+        queryStringExcludelist_ = queryStringExcludelist_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -223,7 +223,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+   * If true, include query string parameters in the cache key according to query_string_includelist and query_string_excludelist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
    * </pre>
    *
    * <code>bool include_query_string = 474036639;</code>
@@ -238,7 +238,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+   * If true, include query string parameters in the cache key according to query_string_includelist and query_string_excludelist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
    * </pre>
    *
    * <code>bool include_query_string = 474036639;</code>
@@ -251,125 +251,125 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_STRING_BLACKLIST_FIELD_NUMBER = 354964742;
-  private com.google.protobuf.LazyStringList queryStringBlacklist_;
+  private com.google.protobuf.LazyStringList queryStringExcludelist_;
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 354964742;</code>
+   * <code>repeated string query_string_excludelist = 354964742;</code>
    *
-   * @return A list containing the queryStringBlacklist.
+   * @return A list containing the queryStringExcludelist.
    */
-  public com.google.protobuf.ProtocolStringList getQueryStringBlacklistList() {
-    return queryStringBlacklist_;
+  public com.google.protobuf.ProtocolStringList getQueryStringExcludelistList() {
+    return queryStringExcludelist_;
   }
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 354964742;</code>
+   * <code>repeated string query_string_excludelist = 354964742;</code>
    *
-   * @return The count of queryStringBlacklist.
+   * @return The count of queryStringExcludelist.
    */
-  public int getQueryStringBlacklistCount() {
-    return queryStringBlacklist_.size();
+  public int getQueryStringExcludelistCount() {
+    return queryStringExcludelist_.size();
   }
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 354964742;</code>
+   * <code>repeated string query_string_excludelist = 354964742;</code>
    *
    * @param index The index of the element to return.
-   * @return The queryStringBlacklist at the given index.
+   * @return The queryStringExcludelist at the given index.
    */
-  public java.lang.String getQueryStringBlacklist(int index) {
-    return queryStringBlacklist_.get(index);
+  public java.lang.String getQueryStringExcludelist(int index) {
+    return queryStringExcludelist_.get(index);
   }
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 354964742;</code>
+   * <code>repeated string query_string_excludelist = 354964742;</code>
    *
    * @param index The index of the value to return.
-   * @return The bytes of the queryStringBlacklist at the given index.
+   * @return The bytes of the queryStringExcludelist at the given index.
    */
-  public com.google.protobuf.ByteString getQueryStringBlacklistBytes(int index) {
-    return queryStringBlacklist_.getByteString(index);
+  public com.google.protobuf.ByteString getQueryStringExcludelistBytes(int index) {
+    return queryStringExcludelist_.getByteString(index);
   }
 
   public static final int QUERY_STRING_WHITELIST_FIELD_NUMBER = 52456496;
-  private com.google.protobuf.LazyStringList queryStringWhitelist_;
+  private com.google.protobuf.LazyStringList queryStringIncludelist_;
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_whitelist = 52456496;</code>
+   * <code>repeated string query_string_includelist = 52456496;</code>
    *
-   * @return A list containing the queryStringWhitelist.
+   * @return A list containing the queryStringIncludelist.
    */
-  public com.google.protobuf.ProtocolStringList getQueryStringWhitelistList() {
-    return queryStringWhitelist_;
+  public com.google.protobuf.ProtocolStringList getQueryStringIncludelistList() {
+    return queryStringIncludelist_;
   }
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_whitelist = 52456496;</code>
+   * <code>repeated string query_string_includelist = 52456496;</code>
    *
-   * @return The count of queryStringWhitelist.
+   * @return The count of queryStringIncludelist.
    */
-  public int getQueryStringWhitelistCount() {
-    return queryStringWhitelist_.size();
+  public int getQueryStringIncludelistCount() {
+    return queryStringIncludelist_.size();
   }
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_whitelist = 52456496;</code>
+   * <code>repeated string query_string_includelist = 52456496;</code>
    *
    * @param index The index of the element to return.
-   * @return The queryStringWhitelist at the given index.
+   * @return The queryStringIncludelist at the given index.
    */
-  public java.lang.String getQueryStringWhitelist(int index) {
-    return queryStringWhitelist_.get(index);
+  public java.lang.String getQueryStringIncludelist(int index) {
+    return queryStringIncludelist_.get(index);
   }
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_whitelist = 52456496;</code>
+   * <code>repeated string query_string_includelist = 52456496;</code>
    *
    * @param index The index of the value to return.
-   * @return The bytes of the queryStringWhitelist at the given index.
+   * @return The bytes of the queryStringIncludelist at the given index.
    */
-  public com.google.protobuf.ByteString getQueryStringWhitelistBytes(int index) {
-    return queryStringWhitelist_.getByteString(index);
+  public com.google.protobuf.ByteString getQueryStringIncludelistBytes(int index) {
+    return queryStringIncludelist_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -386,16 +386,16 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < queryStringWhitelist_.size(); i++) {
+    for (int i = 0; i < queryStringIncludelist_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 52456496, queryStringWhitelist_.getRaw(i));
+          output, 52456496, queryStringIncludelist_.getRaw(i));
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(303507535, includeProtocol_);
     }
-    for (int i = 0; i < queryStringBlacklist_.size(); i++) {
+    for (int i = 0; i < queryStringExcludelist_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 354964742, queryStringBlacklist_.getRaw(i));
+          output, 354964742, queryStringExcludelist_.getRaw(i));
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(474036639, includeQueryString_);
@@ -414,22 +414,22 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     {
       int dataSize = 0;
-      for (int i = 0; i < queryStringWhitelist_.size(); i++) {
-        dataSize += computeStringSizeNoTag(queryStringWhitelist_.getRaw(i));
+      for (int i = 0; i < queryStringIncludelist_.size(); i++) {
+        dataSize += computeStringSizeNoTag(queryStringIncludelist_.getRaw(i));
       }
       size += dataSize;
-      size += 5 * getQueryStringWhitelistList().size();
+      size += 5 * getQueryStringIncludelistList().size();
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(303507535, includeProtocol_);
     }
     {
       int dataSize = 0;
-      for (int i = 0; i < queryStringBlacklist_.size(); i++) {
-        dataSize += computeStringSizeNoTag(queryStringBlacklist_.getRaw(i));
+      for (int i = 0; i < queryStringExcludelist_.size(); i++) {
+        dataSize += computeStringSizeNoTag(queryStringExcludelist_.getRaw(i));
       }
       size += dataSize;
-      size += 5 * getQueryStringBlacklistList().size();
+      size += 5 * getQueryStringExcludelistList().size();
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(474036639, includeQueryString_);
@@ -465,8 +465,8 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasIncludeQueryString()) {
       if (getIncludeQueryString() != other.getIncludeQueryString()) return false;
     }
-    if (!getQueryStringBlacklistList().equals(other.getQueryStringBlacklistList())) return false;
-    if (!getQueryStringWhitelistList().equals(other.getQueryStringWhitelistList())) return false;
+    if (!getQueryStringExcludelistList().equals(other.getQueryStringExcludelistList())) return false;
+    if (!getQueryStringIncludelistList().equals(other.getQueryStringIncludelistList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -490,13 +490,13 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + INCLUDE_QUERY_STRING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeQueryString());
     }
-    if (getQueryStringBlacklistCount() > 0) {
+    if (getQueryStringExcludelistCount() > 0) {
       hash = (37 * hash) + QUERY_STRING_BLACKLIST_FIELD_NUMBER;
-      hash = (53 * hash) + getQueryStringBlacklistList().hashCode();
+      hash = (53 * hash) + getQueryStringExcludelistList().hashCode();
     }
-    if (getQueryStringWhitelistCount() > 0) {
+    if (getQueryStringIncludelistCount() > 0) {
       hash = (37 * hash) + QUERY_STRING_WHITELIST_FIELD_NUMBER;
-      hash = (53 * hash) + getQueryStringWhitelistList().hashCode();
+      hash = (53 * hash) + getQueryStringIncludelistList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -649,9 +649,9 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       includeQueryString_ = false;
       bitField0_ = (bitField0_ & ~0x00000004);
-      queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      queryStringExcludelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
-      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      queryStringIncludelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
@@ -695,15 +695,15 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000004;
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        queryStringBlacklist_ = queryStringBlacklist_.getUnmodifiableView();
+        queryStringExcludelist_ = queryStringExcludelist_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000008);
       }
-      result.queryStringBlacklist_ = queryStringBlacklist_;
+      result.queryStringExcludelist_ = queryStringExcludelist_;
       if (((bitField0_ & 0x00000010) != 0)) {
-        queryStringWhitelist_ = queryStringWhitelist_.getUnmodifiableView();
+        queryStringIncludelist_ = queryStringIncludelist_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000010);
       }
-      result.queryStringWhitelist_ = queryStringWhitelist_;
+      result.queryStringIncludelist_ = queryStringIncludelist_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -763,23 +763,23 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       if (other.hasIncludeQueryString()) {
         setIncludeQueryString(other.getIncludeQueryString());
       }
-      if (!other.queryStringBlacklist_.isEmpty()) {
-        if (queryStringBlacklist_.isEmpty()) {
-          queryStringBlacklist_ = other.queryStringBlacklist_;
+      if (!other.queryStringExcludelist_.isEmpty()) {
+        if (queryStringExcludelist_.isEmpty()) {
+          queryStringExcludelist_ = other.queryStringExcludelist_;
           bitField0_ = (bitField0_ & ~0x00000008);
         } else {
-          ensureQueryStringBlacklistIsMutable();
-          queryStringBlacklist_.addAll(other.queryStringBlacklist_);
+          ensureQueryStringExcludelistIsMutable();
+          queryStringExcludelist_.addAll(other.queryStringExcludelist_);
         }
         onChanged();
       }
-      if (!other.queryStringWhitelist_.isEmpty()) {
-        if (queryStringWhitelist_.isEmpty()) {
-          queryStringWhitelist_ = other.queryStringWhitelist_;
+      if (!other.queryStringIncludelist_.isEmpty()) {
+        if (queryStringIncludelist_.isEmpty()) {
+          queryStringIncludelist_ = other.queryStringIncludelist_;
           bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          ensureQueryStringWhitelistIsMutable();
-          queryStringWhitelist_.addAll(other.queryStringWhitelist_);
+          ensureQueryStringIncludelistIsMutable();
+          queryStringIncludelist_.addAll(other.queryStringIncludelist_);
         }
         onChanged();
       }
@@ -953,7 +953,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+     * If true, include query string parameters in the cache key according to query_string_includelist and query_string_excludelist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
      * </pre>
      *
      * <code>bool include_query_string = 474036639;</code>
@@ -968,7 +968,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+     * If true, include query string parameters in the cache key according to query_string_includelist and query_string_excludelist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
      * </pre>
      *
      * <code>bool include_query_string = 474036639;</code>
@@ -983,7 +983,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+     * If true, include query string parameters in the cache key according to query_string_includelist and query_string_excludelist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
      * </pre>
      *
      * <code>bool include_query_string = 474036639;</code>
@@ -1001,7 +1001,7 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+     * If true, include query string parameters in the cache key according to query_string_includelist and query_string_excludelist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
      * </pre>
      *
      * <code>bool include_query_string = 474036639;</code>
@@ -1015,12 +1015,12 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private com.google.protobuf.LazyStringList queryStringBlacklist_ =
+    private com.google.protobuf.LazyStringList queryStringExcludelist_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
-    private void ensureQueryStringBlacklistIsMutable() {
+    private void ensureQueryStringExcludelistIsMutable() {
       if (!((bitField0_ & 0x00000008) != 0)) {
-        queryStringBlacklist_ = new com.google.protobuf.LazyStringArrayList(queryStringBlacklist_);
+        queryStringExcludelist_ = new com.google.protobuf.LazyStringArrayList(queryStringExcludelist_);
         bitField0_ |= 0x00000008;
       }
     }
@@ -1028,79 +1028,79 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 354964742;</code>
+     * <code>repeated string query_string_excludelist = 354964742;</code>
      *
-     * @return A list containing the queryStringBlacklist.
+     * @return A list containing the queryStringExcludelist.
      */
-    public com.google.protobuf.ProtocolStringList getQueryStringBlacklistList() {
-      return queryStringBlacklist_.getUnmodifiableView();
+    public com.google.protobuf.ProtocolStringList getQueryStringExcludelistList() {
+      return queryStringExcludelist_.getUnmodifiableView();
     }
     /**
      *
      *
      * <pre>
-     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 354964742;</code>
+     * <code>repeated string query_string_excludelist = 354964742;</code>
      *
-     * @return The count of queryStringBlacklist.
+     * @return The count of queryStringExcludelist.
      */
-    public int getQueryStringBlacklistCount() {
-      return queryStringBlacklist_.size();
+    public int getQueryStringExcludelistCount() {
+      return queryStringExcludelist_.size();
     }
     /**
      *
      *
      * <pre>
-     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 354964742;</code>
+     * <code>repeated string query_string_excludelist = 354964742;</code>
      *
      * @param index The index of the element to return.
-     * @return The queryStringBlacklist at the given index.
+     * @return The queryStringExcludelist at the given index.
      */
-    public java.lang.String getQueryStringBlacklist(int index) {
-      return queryStringBlacklist_.get(index);
+    public java.lang.String getQueryStringExcludelist(int index) {
+      return queryStringExcludelist_.get(index);
     }
     /**
      *
      *
      * <pre>
-     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 354964742;</code>
+     * <code>repeated string query_string_excludelist = 354964742;</code>
      *
      * @param index The index of the value to return.
-     * @return The bytes of the queryStringBlacklist at the given index.
+     * @return The bytes of the queryStringExcludelist at the given index.
      */
-    public com.google.protobuf.ByteString getQueryStringBlacklistBytes(int index) {
-      return queryStringBlacklist_.getByteString(index);
+    public com.google.protobuf.ByteString getQueryStringExcludelistBytes(int index) {
+      return queryStringExcludelist_.getByteString(index);
     }
     /**
      *
      *
      * <pre>
-     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 354964742;</code>
+     * <code>repeated string query_string_excludelist = 354964742;</code>
      *
      * @param index The index to set the value at.
-     * @param value The queryStringBlacklist to set.
+     * @param value The queryStringExcludelist to set.
      * @return This builder for chaining.
      */
-    public Builder setQueryStringBlacklist(int index, java.lang.String value) {
+    public Builder setQueryStringExcludelist(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      ensureQueryStringBlacklistIsMutable();
-      queryStringBlacklist_.set(index, value);
+      ensureQueryStringExcludelistIsMutable();
+      queryStringExcludelist_.set(index, value);
       onChanged();
       return this;
     }
@@ -1108,20 +1108,20 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 354964742;</code>
+     * <code>repeated string query_string_excludelist = 354964742;</code>
      *
-     * @param value The queryStringBlacklist to add.
+     * @param value The queryStringExcludelist to add.
      * @return This builder for chaining.
      */
-    public Builder addQueryStringBlacklist(java.lang.String value) {
+    public Builder addQueryStringExcludelist(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      ensureQueryStringBlacklistIsMutable();
-      queryStringBlacklist_.add(value);
+      ensureQueryStringExcludelistIsMutable();
+      queryStringExcludelist_.add(value);
       onChanged();
       return this;
     }
@@ -1129,17 +1129,17 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 354964742;</code>
+     * <code>repeated string query_string_excludelist = 354964742;</code>
      *
-     * @param values The queryStringBlacklist to add.
+     * @param values The queryStringExcludelist to add.
      * @return This builder for chaining.
      */
-    public Builder addAllQueryStringBlacklist(java.lang.Iterable<java.lang.String> values) {
-      ensureQueryStringBlacklistIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queryStringBlacklist_);
+    public Builder addAllQueryStringExcludelist(java.lang.Iterable<java.lang.String> values) {
+      ensureQueryStringExcludelistIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queryStringExcludelist_);
       onChanged();
       return this;
     }
@@ -1147,15 +1147,15 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 354964742;</code>
+     * <code>repeated string query_string_excludelist = 354964742;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearQueryStringBlacklist() {
-      queryStringBlacklist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    public Builder clearQueryStringExcludelist() {
+      queryStringExcludelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
@@ -1164,31 +1164,31 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_blacklist = 354964742;</code>
+     * <code>repeated string query_string_excludelist = 354964742;</code>
      *
-     * @param value The bytes of the queryStringBlacklist to add.
+     * @param value The bytes of the queryStringExcludelist to add.
      * @return This builder for chaining.
      */
-    public Builder addQueryStringBlacklistBytes(com.google.protobuf.ByteString value) {
+    public Builder addQueryStringExcludelistBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      ensureQueryStringBlacklistIsMutable();
-      queryStringBlacklist_.add(value);
+      ensureQueryStringExcludelistIsMutable();
+      queryStringExcludelist_.add(value);
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList queryStringWhitelist_ =
+    private com.google.protobuf.LazyStringList queryStringIncludelist_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
-    private void ensureQueryStringWhitelistIsMutable() {
+    private void ensureQueryStringIncludelistIsMutable() {
       if (!((bitField0_ & 0x00000010) != 0)) {
-        queryStringWhitelist_ = new com.google.protobuf.LazyStringArrayList(queryStringWhitelist_);
+        queryStringIncludelist_ = new com.google.protobuf.LazyStringArrayList(queryStringIncludelist_);
         bitField0_ |= 0x00000010;
       }
     }
@@ -1196,79 +1196,79 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_whitelist = 52456496;</code>
+     * <code>repeated string query_string_includelist = 52456496;</code>
      *
-     * @return A list containing the queryStringWhitelist.
+     * @return A list containing the queryStringIncludelist.
      */
-    public com.google.protobuf.ProtocolStringList getQueryStringWhitelistList() {
-      return queryStringWhitelist_.getUnmodifiableView();
+    public com.google.protobuf.ProtocolStringList getQueryStringIncludelistList() {
+      return queryStringIncludelist_.getUnmodifiableView();
     }
     /**
      *
      *
      * <pre>
-     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_whitelist = 52456496;</code>
+     * <code>repeated string query_string_includelist = 52456496;</code>
      *
-     * @return The count of queryStringWhitelist.
+     * @return The count of queryStringIncludelist.
      */
-    public int getQueryStringWhitelistCount() {
-      return queryStringWhitelist_.size();
+    public int getQueryStringIncludelistCount() {
+      return queryStringIncludelist_.size();
     }
     /**
      *
      *
      * <pre>
-     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_whitelist = 52456496;</code>
+     * <code>repeated string query_string_includelist = 52456496;</code>
      *
      * @param index The index of the element to return.
-     * @return The queryStringWhitelist at the given index.
+     * @return The queryStringIncludelist at the given index.
      */
-    public java.lang.String getQueryStringWhitelist(int index) {
-      return queryStringWhitelist_.get(index);
+    public java.lang.String getQueryStringIncludelist(int index) {
+      return queryStringIncludelist_.get(index);
     }
     /**
      *
      *
      * <pre>
-     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_whitelist = 52456496;</code>
+     * <code>repeated string query_string_includelist = 52456496;</code>
      *
      * @param index The index of the value to return.
-     * @return The bytes of the queryStringWhitelist at the given index.
+     * @return The bytes of the queryStringIncludelist at the given index.
      */
-    public com.google.protobuf.ByteString getQueryStringWhitelistBytes(int index) {
-      return queryStringWhitelist_.getByteString(index);
+    public com.google.protobuf.ByteString getQueryStringIncludelistBytes(int index) {
+      return queryStringIncludelist_.getByteString(index);
     }
     /**
      *
      *
      * <pre>
-     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_whitelist = 52456496;</code>
+     * <code>repeated string query_string_includelist = 52456496;</code>
      *
      * @param index The index to set the value at.
-     * @param value The queryStringWhitelist to set.
+     * @param value The queryStringIncludelist to set.
      * @return This builder for chaining.
      */
-    public Builder setQueryStringWhitelist(int index, java.lang.String value) {
+    public Builder setQueryStringIncludelist(int index, java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      ensureQueryStringWhitelistIsMutable();
-      queryStringWhitelist_.set(index, value);
+      ensureQueryStringIncludelistIsMutable();
+      queryStringIncludelist_.set(index, value);
       onChanged();
       return this;
     }
@@ -1276,20 +1276,20 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_whitelist = 52456496;</code>
+     * <code>repeated string query_string_includelist = 52456496;</code>
      *
-     * @param value The queryStringWhitelist to add.
+     * @param value The queryStringIncludelist to add.
      * @return This builder for chaining.
      */
-    public Builder addQueryStringWhitelist(java.lang.String value) {
+    public Builder addQueryStringIncludelist(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      ensureQueryStringWhitelistIsMutable();
-      queryStringWhitelist_.add(value);
+      ensureQueryStringIncludelistIsMutable();
+      queryStringIncludelist_.add(value);
       onChanged();
       return this;
     }
@@ -1297,17 +1297,17 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_whitelist = 52456496;</code>
+     * <code>repeated string query_string_includelist = 52456496;</code>
      *
-     * @param values The queryStringWhitelist to add.
+     * @param values The queryStringIncludelist to add.
      * @return This builder for chaining.
      */
-    public Builder addAllQueryStringWhitelist(java.lang.Iterable<java.lang.String> values) {
-      ensureQueryStringWhitelistIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queryStringWhitelist_);
+    public Builder addAllQueryStringIncludelist(java.lang.Iterable<java.lang.String> values) {
+      ensureQueryStringIncludelistIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queryStringIncludelist_);
       onChanged();
       return this;
     }
@@ -1315,15 +1315,15 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_whitelist = 52456496;</code>
+     * <code>repeated string query_string_includelist = 52456496;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearQueryStringWhitelist() {
-      queryStringWhitelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    public Builder clearQueryStringIncludelist() {
+      queryStringIncludelist_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
@@ -1332,21 +1332,21 @@ public final class CacheKeyPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+     * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
      * </pre>
      *
-     * <code>repeated string query_string_whitelist = 52456496;</code>
+     * <code>repeated string query_string_includelist = 52456496;</code>
      *
-     * @param value The bytes of the queryStringWhitelist to add.
+     * @param value The bytes of the queryStringIncludelist to add.
      * @return This builder for chaining.
      */
-    public Builder addQueryStringWhitelistBytes(com.google.protobuf.ByteString value) {
+    public Builder addQueryStringIncludelistBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      ensureQueryStringWhitelistIsMutable();
-      queryStringWhitelist_.add(value);
+      ensureQueryStringIncludelistIsMutable();
+      queryStringIncludelist_.add(value);
       onChanged();
       return this;
     }

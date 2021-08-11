@@ -77,7 +77,7 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+   * If true, include query string parameters in the cache key according to query_string_includelist and query_string_excludelist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
    * </pre>
    *
    * <code>bool include_query_string = 474036639;</code>
@@ -89,7 +89,7 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+   * If true, include query string parameters in the cache key according to query_string_includelist and query_string_excludelist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
    * </pre>
    *
    * <code>bool include_query_string = 474036639;</code>
@@ -102,101 +102,101 @@ public interface CacheKeyPolicyOrBuilder
    *
    *
    * <pre>
-   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 354964742;</code>
+   * <code>repeated string query_string_excludelist = 354964742;</code>
    *
-   * @return A list containing the queryStringBlacklist.
+   * @return A list containing the queryStringExcludelist.
    */
-  java.util.List<java.lang.String> getQueryStringBlacklistList();
+  java.util.List<java.lang.String> getQueryStringExcludelistList();
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 354964742;</code>
+   * <code>repeated string query_string_excludelist = 354964742;</code>
    *
-   * @return The count of queryStringBlacklist.
+   * @return The count of queryStringExcludelist.
    */
-  int getQueryStringBlacklistCount();
+  int getQueryStringExcludelistCount();
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 354964742;</code>
+   * <code>repeated string query_string_excludelist = 354964742;</code>
    *
    * @param index The index of the element to return.
-   * @return The queryStringBlacklist at the given index.
+   * @return The queryStringExcludelist at the given index.
    */
-  java.lang.String getQueryStringBlacklist(int index);
+  java.lang.String getQueryStringExcludelist(int index);
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 354964742;</code>
+   * <code>repeated string query_string_excludelist = 354964742;</code>
    *
    * @param index The index of the value to return.
-   * @return The bytes of the queryStringBlacklist at the given index.
+   * @return The bytes of the queryStringExcludelist at the given index.
    */
-  com.google.protobuf.ByteString getQueryStringBlacklistBytes(int index);
+  com.google.protobuf.ByteString getQueryStringExcludelistBytes(int index);
 
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_whitelist = 52456496;</code>
+   * <code>repeated string query_string_includelist = 52456496;</code>
    *
-   * @return A list containing the queryStringWhitelist.
+   * @return A list containing the queryStringIncludelist.
    */
-  java.util.List<java.lang.String> getQueryStringWhitelistList();
+  java.util.List<java.lang.String> getQueryStringIncludelistList();
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_whitelist = 52456496;</code>
+   * <code>repeated string query_string_includelist = 52456496;</code>
    *
-   * @return The count of queryStringWhitelist.
+   * @return The count of queryStringIncludelist.
    */
-  int getQueryStringWhitelistCount();
+  int getQueryStringIncludelistCount();
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_whitelist = 52456496;</code>
+   * <code>repeated string query_string_includelist = 52456496;</code>
    *
    * @param index The index of the element to return.
-   * @return The queryStringWhitelist at the given index.
+   * @return The queryStringIncludelist at the given index.
    */
-  java.lang.String getQueryStringWhitelist(int index);
+  java.lang.String getQueryStringIncludelist(int index);
   /**
    *
    *
    * <pre>
-   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
+   * Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_whitelist = 52456496;</code>
+   * <code>repeated string query_string_includelist = 52456496;</code>
    *
    * @param index The index of the value to return.
-   * @return The bytes of the queryStringWhitelist at the given index.
+   * @return The bytes of the queryStringIncludelist at the given index.
    */
-  com.google.protobuf.ByteString getQueryStringWhitelistBytes(int index);
+  com.google.protobuf.ByteString getQueryStringIncludelistBytes(int index);
 }

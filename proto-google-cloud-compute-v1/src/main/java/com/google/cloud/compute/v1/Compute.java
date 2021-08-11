@@ -5475,8 +5475,8 @@ public final class Compute {
           + "\377\001\n\016CacheKeyPolicy\022\035\n\014include_host\030\337\205\224\350\001"
           + " \001(\010H\000\210\001\001\022!\n\020include_protocol\030\317\320\334\220\001 \001(\010H"
           + "\001\210\001\001\022%\n\024include_query_string\030\237\363\204\342\001 \001(\010H\002"
-          + "\210\001\001\022\"\n\026query_string_blacklist\030\206\252\241\251\001 \003(\t\022"
-          + "!\n\026query_string_whitelist\030\260\330\201\031 \003(\tB\017\n\r_i"
+          + "\210\001\001\022\"\n\026query_string_excludelist\030\206\252\241\251\001 \003(\t\022"
+          + "!\n\026query_string_includelist\030\260\330\201\031 \003(\tB\017\n\r_i"
           + "nclude_hostB\023\n\021_include_protocolB\027\n\025_inc"
           + "lude_query_string\"i\n,BackendServiceCdnPo"
           + "licyNegativeCachingPolicy\022\024\n\004code\030\355\333\272\001 \001"
@@ -17684,8 +17684,8 @@ public final class Compute {
               "IncludeHost",
               "IncludeProtocol",
               "IncludeQueryString",
-              "QueryStringBlacklist",
-              "QueryStringWhitelist",
+              "QueryStringExcludelist",
+              "QueryStringIncludelist",
               "IncludeHost",
               "IncludeProtocol",
               "IncludeQueryString",

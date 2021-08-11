@@ -2117,14 +2117,14 @@ message CacheKeyPolicy {
   // If true, http and https requests will be cached separately.
   optional bool include_protocol = 303507535;
 
-  // If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
+  // If true, include query string parameters in the cache key according to query_string_includelist and query_string_excludelist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
   optional bool include_query_string = 474036639;
 
-  // Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&' and '=' will be percent encoded and not treated as delimiters.
-  repeated string query_string_blacklist = 354964742;
+  // Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_includelist or query_string_excludelist, not both. '&' and '=' will be percent encoded and not treated as delimiters.
+  repeated string query_string_excludelist = 354964742;
 
-  // Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&' and '=' will be percent encoded and not treated as delimiters.
-  repeated string query_string_whitelist = 52456496;
+  // Names of query string parameters to include in cache keys. All other parameters will be excluded. Either specify query_string_includelist or query_string_excludelist, not both. '&' and '=' will be percent encoded and not treated as delimiters.
+  repeated string query_string_includelist = 52456496;
 
 }
 
