@@ -247,7 +247,7 @@ public class ITSmokeInstancesTest extends BaseTest {
   public void testInt64() throws IOException {
     // we want to test a field with format:int64
     String name = generateRandomName("image");
-    List<String> licenseCodes = Collections.singletonList("5543610867827062957");
+    List<Long> licenseCodes = Collections.singletonList(5543610867827062957L);
     String sourceImage = "projects/debian-cloud/global/images/debian-10-buster-v20210721";
     ImagesClient imagesClient = ImagesClient.create();
     Image image =
