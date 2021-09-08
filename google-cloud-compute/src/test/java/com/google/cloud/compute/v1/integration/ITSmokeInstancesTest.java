@@ -290,7 +290,6 @@ public class ITSmokeInstancesTest extends BaseTest {
     }
   }
 
-  @Ignore("Patch is not supported")
   @Test
   public void testPatch() {
     Instance resultInstance = insertInstance();
