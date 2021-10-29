@@ -3,8 +3,9 @@ package com.google.cloud.compute.v1.integration;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 
-import com.google.cloud.compute.v1.ZonesClient;
-import com.google.cloud.compute.v1.ZonesSettings;
+import com.google.cloud.compute.v1.Address;
+import com.google.cloud.compute.v1.AddressesClient;
+import com.google.cloud.compute.v1.AddressesSettings;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -17,7 +18,7 @@ import org.junit.Test;
 public class ITHeadersTest {
 
     private static HttpServer server;
-    private static ZonesClient zonesClient;
+    private static AddressesClient addressesClient;
     private static Headers headers;
 
 
@@ -28,8 +29,8 @@ public class ITHeadersTest {
         server.setExecutor(null);
         server.start();
         String address = server.getAddress().toString().replace("/", "http://");
-        ZonesSettings zoneSettings = ZonesSettings.newBuilder().setEndpoint(address).build();
-        zonesClient = ZonesClient.create(zoneSettings);
+        AddressesSettings addressesSettings = AddressesSettings.newBuilder().setEndpoint(address).build();
+        addressesClient = AddressesClient.create(addressesSettings);
     }
 
     static class MyHandler implements HttpHandler {
@@ -50,9 +51,8 @@ public class ITHeadersTest {
 
     @Test
     public void testHeaders() {
-        zonesClient.get("test", "test");
+        addressesClient.insert("test", "test", Address.newBuilder().setName("test").build());
         Assert.assertTrue(headers.get("X-goog-api-client").get(0).contains("rest/"));
-        // fails with nullpointerexception cause there is no Content-type header
         Assert.assertTrue(headers.get("Content-type").get(0).contains("application/json"));
     }
 
