@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Cloud Storage Bucket resource.
- * This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more information, read Backend Buckets.
+ * Represents a Cloud Storage Bucket resource. This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more information, read Backend Buckets.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.BackendBucket}
@@ -1056,8 +1055,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Cloud Storage Bucket resource.
-   * This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more information, read Backend Buckets.
+   * Represents a Cloud Storage Bucket resource. This Cloud Storage bucket resource is referenced by a URL map of a load balancer. For more information, read Backend Buckets.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.BackendBucket}

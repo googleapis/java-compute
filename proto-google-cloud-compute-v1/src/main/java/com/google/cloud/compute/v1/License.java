@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a License resource.
- * A License represents billing and aggregate usage data for public and marketplace images.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images. (== resource_for {$api_version}.licenses ==)
+ * Represents a License resource. A License represents billing and aggregate usage data for public and marketplace images. *Caution* This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.License}
@@ -970,8 +969,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a License resource.
-   * A License represents billing and aggregate usage data for public and marketplace images.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images. (== resource_for {$api_version}.licenses ==)
+   * Represents a License resource. A License represents billing and aggregate usage data for public and marketplace images. *Caution* This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.License}

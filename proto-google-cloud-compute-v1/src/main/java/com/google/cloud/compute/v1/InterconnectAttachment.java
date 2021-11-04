@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Interconnect Attachment (VLAN) resource.
- * You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud networks to your on-premises networks through an Interconnect. For more information, read  Creating VLAN Attachments. (== resource_for {$api_version}.interconnectAttachments ==)
+ * Represents an Interconnect Attachment (VLAN) resource. You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud networks to your on-premises networks through an Interconnect. For more information, read Creating VLAN Attachments.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachment}
@@ -120,7 +119,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           case 28604880:
             {
               int rawValue = input.readEnum();
-              bitField0_ |= 0x01000000;
+              bitField0_ |= 0x02000000;
               type_ = rawValue;
               break;
             }
@@ -172,13 +171,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           case 878060680:
             {
               int rawValue = input.readEnum();
-              bitField0_ |= 0x00800000;
+              bitField0_ |= 0x01000000;
               state_ = rawValue;
               break;
             }
           case 959422688:
             {
-              bitField0_ |= 0x02000000;
+              bitField0_ |= 0x04000000;
               vlanTag8021Q_ = input.readInt32();
               break;
             }
@@ -298,8 +297,14 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00400000;
+              bitField0_ |= 0x00800000;
               selfLink_ = s;
+              break;
+            }
+          case -447253160:
+            {
+              bitField0_ |= 0x00400000;
+              satisfiesPzs_ = input.readBool();
               break;
             }
           case -15411542:
@@ -353,19 +358,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
-   * - BPS_50M: 50 Mbit/s
-   * - BPS_100M: 100 Mbit/s
-   * - BPS_200M: 200 Mbit/s
-   * - BPS_300M: 300 Mbit/s
-   * - BPS_400M: 400 Mbit/s
-   * - BPS_500M: 500 Mbit/s
-   * - BPS_1G: 1 Gbit/s
-   * - BPS_2G: 2 Gbit/s
-   * - BPS_5G: 5 Gbit/s
-   * - BPS_10G: 10 Gbit/s
-   * - BPS_20G: 20 Gbit/s
-   * - BPS_50G: 50 Gbit/s
+   * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: - BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s - BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5 Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectAttachment.Bandwidth}
@@ -381,29 +374,125 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_BANDWIDTH = 0;</code>
      */
     UNDEFINED_BANDWIDTH(0),
-    /** <code>BPS_100M = 49547958;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 100 Mbit/s
+     * </pre>
+     *
+     * <code>BPS_100M = 49547958;</code>
+     */
     BPS_100M(49547958),
-    /** <code>BPS_10G = 278693006;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 10 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_10G = 278693006;</code>
+     */
     BPS_10G(278693006),
-    /** <code>BPS_1G = 355358448;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 1 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_1G = 355358448;</code>
+     */
     BPS_1G(355358448),
-    /** <code>BPS_200M = 49577749;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 200 Mbit/s
+     * </pre>
+     *
+     * <code>BPS_200M = 49577749;</code>
+     */
     BPS_200M(49577749),
-    /** <code>BPS_20G = 278693967;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 20 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_20G = 278693967;</code>
+     */
     BPS_20G(278693967),
-    /** <code>BPS_2G = 355358479;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 2 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_2G = 355358479;</code>
+     */
     BPS_2G(355358479),
-    /** <code>BPS_300M = 49607540;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 300 Mbit/s
+     * </pre>
+     *
+     * <code>BPS_300M = 49607540;</code>
+     */
     BPS_300M(49607540),
-    /** <code>BPS_400M = 49637331;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 400 Mbit/s
+     * </pre>
+     *
+     * <code>BPS_400M = 49637331;</code>
+     */
     BPS_400M(49637331),
-    /** <code>BPS_500M = 49667122;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 500 Mbit/s
+     * </pre>
+     *
+     * <code>BPS_500M = 49667122;</code>
+     */
     BPS_500M(49667122),
-    /** <code>BPS_50G = 278696850;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 50 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_50G = 278696850;</code>
+     */
     BPS_50G(278696850),
-    /** <code>BPS_50M = 278696856;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 50 Mbit/s
+     * </pre>
+     *
+     * <code>BPS_50M = 278696856;</code>
+     */
     BPS_50M(278696856),
-    /** <code>BPS_5G = 355358572;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 5 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_5G = 355358572;</code>
+     */
     BPS_5G(355358572),
     UNRECOGNIZED(-1),
     ;
@@ -418,29 +507,125 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_BANDWIDTH = 0;</code>
      */
     public static final int UNDEFINED_BANDWIDTH_VALUE = 0;
-    /** <code>BPS_100M = 49547958;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 100 Mbit/s
+     * </pre>
+     *
+     * <code>BPS_100M = 49547958;</code>
+     */
     public static final int BPS_100M_VALUE = 49547958;
-    /** <code>BPS_10G = 278693006;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 10 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_10G = 278693006;</code>
+     */
     public static final int BPS_10G_VALUE = 278693006;
-    /** <code>BPS_1G = 355358448;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 1 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_1G = 355358448;</code>
+     */
     public static final int BPS_1G_VALUE = 355358448;
-    /** <code>BPS_200M = 49577749;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 200 Mbit/s
+     * </pre>
+     *
+     * <code>BPS_200M = 49577749;</code>
+     */
     public static final int BPS_200M_VALUE = 49577749;
-    /** <code>BPS_20G = 278693967;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 20 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_20G = 278693967;</code>
+     */
     public static final int BPS_20G_VALUE = 278693967;
-    /** <code>BPS_2G = 355358479;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 2 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_2G = 355358479;</code>
+     */
     public static final int BPS_2G_VALUE = 355358479;
-    /** <code>BPS_300M = 49607540;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 300 Mbit/s
+     * </pre>
+     *
+     * <code>BPS_300M = 49607540;</code>
+     */
     public static final int BPS_300M_VALUE = 49607540;
-    /** <code>BPS_400M = 49637331;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 400 Mbit/s
+     * </pre>
+     *
+     * <code>BPS_400M = 49637331;</code>
+     */
     public static final int BPS_400M_VALUE = 49637331;
-    /** <code>BPS_500M = 49667122;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 500 Mbit/s
+     * </pre>
+     *
+     * <code>BPS_500M = 49667122;</code>
+     */
     public static final int BPS_500M_VALUE = 49667122;
-    /** <code>BPS_50G = 278696850;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 50 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_50G = 278696850;</code>
+     */
     public static final int BPS_50G_VALUE = 278696850;
-    /** <code>BPS_50M = 278696856;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 50 Mbit/s
+     * </pre>
+     *
+     * <code>BPS_50M = 278696856;</code>
+     */
     public static final int BPS_50M_VALUE = 278696856;
-    /** <code>BPS_5G = 355358572;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * 5 Gbit/s
+     * </pre>
+     *
+     * <code>BPS_5G = 355358572;</code>
+     */
     public static final int BPS_5G_VALUE = 355358572;
 
     public final int getNumber() {
@@ -552,10 +737,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
-   * - AVAILABILITY_DOMAIN_ANY
-   * - AVAILABILITY_DOMAIN_1
-   * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+   * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values: - AVAILABILITY_DOMAIN_ANY - AVAILABILITY_DOMAIN_1 - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectAttachment.EdgeAvailabilityDomain}
@@ -691,10 +873,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Indicates the user-supplied encryption option of this interconnect attachment:
-   * - NONE is the default value, which means that the attachment carries unencrypted traffic. VMs can send traffic to, or receive traffic from, this type of attachment.
-   * - IPSEC indicates that the attachment carries only traffic encrypted by an IPsec device such as an HA VPN gateway. VMs cannot directly send traffic to, or receive traffic from, such an attachment. To use IPsec-encrypted Cloud Interconnect, create the attachment using this option.
-   * Not currently available in all Interconnect locations.
+   * Indicates the user-supplied encryption option of this VLAN attachment (interconnectAttachment). Can only be specified at attachment creation for PARTNER or DEDICATED attachments. Possible values are: - NONE - This is the default value, which means that the VLAN attachment carries unencrypted traffic. VMs are able to send traffic to, or receive traffic from, such a VLAN attachment. - IPSEC - The VLAN attachment carries only encrypted traffic that is encrypted by an IPsec device, such as an HA VPN gateway or third-party IPsec VPN. VMs cannot directly send traffic to, or receive traffic from, such a VLAN attachment. To use *IPsec-encrypted Cloud Interconnect*, the VLAN attachment must be created with this option. Not currently available publicly.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectAttachment.Encryption}
@@ -710,9 +889,25 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_ENCRYPTION = 0;</code>
      */
     UNDEFINED_ENCRYPTION(0),
-    /** <code>IPSEC = 69882282;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The interconnect attachment will carry only encrypted traffic that is encrypted by an IPsec device such as HA VPN gateway; VMs cannot directly send traffic to or receive traffic from such an interconnect attachment. To use IPsec-encrypted Cloud Interconnect, the interconnect attachment must be created with this option.
+     * </pre>
+     *
+     * <code>IPSEC = 69882282;</code>
+     */
     IPSEC(69882282),
-    /** <code>NONE = 2402104;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is the default value, which means the Interconnect Attachment will carry unencrypted traffic. VMs will be able to send traffic to or receive traffic from such interconnect attachment.
+     * </pre>
+     *
+     * <code>NONE = 2402104;</code>
+     */
     NONE(2402104),
     UNRECOGNIZED(-1),
     ;
@@ -727,9 +922,25 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_ENCRYPTION = 0;</code>
      */
     public static final int UNDEFINED_ENCRYPTION_VALUE = 0;
-    /** <code>IPSEC = 69882282;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The interconnect attachment will carry only encrypted traffic that is encrypted by an IPsec device such as HA VPN gateway; VMs cannot directly send traffic to or receive traffic from such an interconnect attachment. To use IPsec-encrypted Cloud Interconnect, the interconnect attachment must be created with this option.
+     * </pre>
+     *
+     * <code>IPSEC = 69882282;</code>
+     */
     public static final int IPSEC_VALUE = 69882282;
-    /** <code>NONE = 2402104;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is the default value, which means the Interconnect Attachment will carry unencrypted traffic. VMs will be able to send traffic to or receive traffic from such interconnect attachment.
+     * </pre>
+     *
+     * <code>NONE = 2402104;</code>
+     */
     public static final int NONE_VALUE = 2402104;
 
     public final int getNumber() {
@@ -821,9 +1032,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
-   * - OS_ACTIVE: The attachment has been turned up and is ready to use.
-   * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+   * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values: - OS_ACTIVE: The attachment has been turned up and is ready to use. - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectAttachment.OperationalStatus}
@@ -839,9 +1048,25 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_OPERATIONAL_STATUS = 0;</code>
      */
     UNDEFINED_OPERATIONAL_STATUS(0),
-    /** <code>OS_ACTIVE = 55721409;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that attachment has been turned up and is ready to use.
+     * </pre>
+     *
+     * <code>OS_ACTIVE = 55721409;</code>
+     */
     OS_ACTIVE(55721409),
-    /** <code>OS_UNPROVISIONED = 239771840;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that attachment is not ready to use yet, because turnup is not complete.
+     * </pre>
+     *
+     * <code>OS_UNPROVISIONED = 239771840;</code>
+     */
     OS_UNPROVISIONED(239771840),
     UNRECOGNIZED(-1),
     ;
@@ -856,9 +1081,25 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_OPERATIONAL_STATUS = 0;</code>
      */
     public static final int UNDEFINED_OPERATIONAL_STATUS_VALUE = 0;
-    /** <code>OS_ACTIVE = 55721409;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that attachment has been turned up and is ready to use.
+     * </pre>
+     *
+     * <code>OS_ACTIVE = 55721409;</code>
+     */
     public static final int OS_ACTIVE_VALUE = 55721409;
-    /** <code>OS_UNPROVISIONED = 239771840;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that attachment is not ready to use yet, because turnup is not complete.
+     * </pre>
+     *
+     * <code>OS_UNPROVISIONED = 239771840;</code>
+     */
     public static final int OS_UNPROVISIONED_VALUE = 239771840;
 
     public final int getNumber() {
@@ -953,13 +1194,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
-   * - ACTIVE: The attachment has been turned up and is ready to use.
-   * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
-   * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
-   * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
-   * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
-   * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+   * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values: - ACTIVE: The attachment has been turned up and is ready to use. - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete. - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side. - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it. - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it. - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectAttachment.State}
@@ -975,19 +1210,67 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that attachment has been turned up and is ready to use.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     ACTIVE(314733318),
-    /** <code>DEFUNCT = 115891759;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was wiped out, or because the other side of a Partner attachment was deleted.
+     * </pre>
+     *
+     * <code>DEFUNCT = 115891759;</code>
+     */
     DEFUNCT(115891759),
-    /** <code>PARTNER_REQUEST_RECEIVED = 513587304;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
+     * </pre>
+     *
+     * <code>PARTNER_REQUEST_RECEIVED = 513587304;</code>
+     */
     PARTNER_REQUEST_RECEIVED(513587304),
-    /** <code>PENDING_CUSTOMER = 167494054;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * PARTNER or PARTNER_PROVIDER attachment that is waiting for the customer to activate.
+     * </pre>
+     *
+     * <code>PENDING_CUSTOMER = 167494054;</code>
+     */
     PENDING_CUSTOMER(167494054),
-    /** <code>PENDING_PARTNER = 387890656;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A newly created PARTNER attachment that has not yet been configured on the Partner side.
+     * </pre>
+     *
+     * <code>PENDING_PARTNER = 387890656;</code>
+     */
     PENDING_PARTNER(387890656),
     /** <code>STATE_UNSPECIFIED = 470755401;</code> */
     STATE_UNSPECIFIED(470755401),
-    /** <code>UNPROVISIONED = 517333979;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that attachment is not ready to use yet, because turnup is not complete.
+     * </pre>
+     *
+     * <code>UNPROVISIONED = 517333979;</code>
+     */
     UNPROVISIONED(517333979),
     UNRECOGNIZED(-1),
     ;
@@ -1002,19 +1285,67 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that attachment has been turned up and is ready to use.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     public static final int ACTIVE_VALUE = 314733318;
-    /** <code>DEFUNCT = 115891759;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was wiped out, or because the other side of a Partner attachment was deleted.
+     * </pre>
+     *
+     * <code>DEFUNCT = 115891759;</code>
+     */
     public static final int DEFUNCT_VALUE = 115891759;
-    /** <code>PARTNER_REQUEST_RECEIVED = 513587304;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
+     * </pre>
+     *
+     * <code>PARTNER_REQUEST_RECEIVED = 513587304;</code>
+     */
     public static final int PARTNER_REQUEST_RECEIVED_VALUE = 513587304;
-    /** <code>PENDING_CUSTOMER = 167494054;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * PARTNER or PARTNER_PROVIDER attachment that is waiting for the customer to activate.
+     * </pre>
+     *
+     * <code>PENDING_CUSTOMER = 167494054;</code>
+     */
     public static final int PENDING_CUSTOMER_VALUE = 167494054;
-    /** <code>PENDING_PARTNER = 387890656;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A newly created PARTNER attachment that has not yet been configured on the Partner side.
+     * </pre>
+     *
+     * <code>PENDING_PARTNER = 387890656;</code>
+     */
     public static final int PENDING_PARTNER_VALUE = 387890656;
     /** <code>STATE_UNSPECIFIED = 470755401;</code> */
     public static final int STATE_UNSPECIFIED_VALUE = 470755401;
-    /** <code>UNPROVISIONED = 517333979;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that attachment is not ready to use yet, because turnup is not complete.
+     * </pre>
+     *
+     * <code>UNPROVISIONED = 517333979;</code>
+     */
     public static final int UNPROVISIONED_VALUE = 517333979;
 
     public final int getNumber() {
@@ -1116,10 +1447,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The type of interconnect attachment this is, which can take one of the following values:
-   * - DEDICATED: an attachment to a Dedicated Interconnect.
-   * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
-   * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+   * The type of interconnect attachment this is, which can take one of the following values: - DEDICATED: an attachment to a Dedicated Interconnect. - PARTNER: an attachment to a Partner Interconnect, created by the customer. - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectAttachment.Type}
@@ -1135,11 +1463,35 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>DEDICATED = 258411983;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Attachment to a dedicated interconnect.
+     * </pre>
+     *
+     * <code>DEDICATED = 258411983;</code>
+     */
     DEDICATED(258411983),
-    /** <code>PARTNER = 461924520;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Attachment to a partner interconnect, created by the customer.
+     * </pre>
+     *
+     * <code>PARTNER = 461924520;</code>
+     */
     PARTNER(461924520),
-    /** <code>PARTNER_PROVIDER = 483261352;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Attachment to a partner interconnect, created by the partner.
+     * </pre>
+     *
+     * <code>PARTNER_PROVIDER = 483261352;</code>
+     */
     PARTNER_PROVIDER(483261352),
     UNRECOGNIZED(-1),
     ;
@@ -1154,11 +1506,35 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>DEDICATED = 258411983;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Attachment to a dedicated interconnect.
+     * </pre>
+     *
+     * <code>DEDICATED = 258411983;</code>
+     */
     public static final int DEDICATED_VALUE = 258411983;
-    /** <code>PARTNER = 461924520;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Attachment to a partner interconnect, created by the customer.
+     * </pre>
+     *
+     * <code>PARTNER = 461924520;</code>
+     */
     public static final int PARTNER_VALUE = 461924520;
-    /** <code>PARTNER_PROVIDER = 483261352;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Attachment to a partner interconnect, created by the partner.
+     * </pre>
+     *
+     * <code>PARTNER_PROVIDER = 483261352;</code>
+     */
     public static final int PARTNER_PROVIDER_VALUE = 483261352;
 
     public final int getNumber() {
@@ -1288,19 +1664,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
-   * - BPS_50M: 50 Mbit/s
-   * - BPS_100M: 100 Mbit/s
-   * - BPS_200M: 200 Mbit/s
-   * - BPS_300M: 300 Mbit/s
-   * - BPS_400M: 400 Mbit/s
-   * - BPS_500M: 500 Mbit/s
-   * - BPS_1G: 1 Gbit/s
-   * - BPS_2G: 2 Gbit/s
-   * - BPS_5G: 5 Gbit/s
-   * - BPS_10G: 10 Gbit/s
-   * - BPS_20G: 20 Gbit/s
-   * - BPS_50G: 50 Gbit/s
+   * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: - BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s - BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5 Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.Bandwidth bandwidth = 181715121;</code>
@@ -1315,19 +1679,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
-   * - BPS_50M: 50 Mbit/s
-   * - BPS_100M: 100 Mbit/s
-   * - BPS_200M: 200 Mbit/s
-   * - BPS_300M: 300 Mbit/s
-   * - BPS_400M: 400 Mbit/s
-   * - BPS_500M: 500 Mbit/s
-   * - BPS_1G: 1 Gbit/s
-   * - BPS_2G: 2 Gbit/s
-   * - BPS_5G: 5 Gbit/s
-   * - BPS_10G: 10 Gbit/s
-   * - BPS_20G: 20 Gbit/s
-   * - BPS_50G: 50 Gbit/s
+   * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: - BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s - BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5 Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.Bandwidth bandwidth = 181715121;</code>
@@ -1342,19 +1694,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
-   * - BPS_50M: 50 Mbit/s
-   * - BPS_100M: 100 Mbit/s
-   * - BPS_200M: 200 Mbit/s
-   * - BPS_300M: 300 Mbit/s
-   * - BPS_400M: 400 Mbit/s
-   * - BPS_500M: 500 Mbit/s
-   * - BPS_1G: 1 Gbit/s
-   * - BPS_2G: 2 Gbit/s
-   * - BPS_5G: 5 Gbit/s
-   * - BPS_10G: 10 Gbit/s
-   * - BPS_20G: 20 Gbit/s
-   * - BPS_50G: 50 Gbit/s
+   * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: - BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s - BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5 Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.Bandwidth bandwidth = 181715121;</code>
@@ -1727,10 +2067,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
-   * - AVAILABILITY_DOMAIN_ANY
-   * - AVAILABILITY_DOMAIN_1
-   * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+   * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values: - AVAILABILITY_DOMAIN_ANY - AVAILABILITY_DOMAIN_1 - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
    * </pre>
    *
    * <code>
@@ -1747,10 +2084,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
-   * - AVAILABILITY_DOMAIN_ANY
-   * - AVAILABILITY_DOMAIN_1
-   * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+   * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values: - AVAILABILITY_DOMAIN_ANY - AVAILABILITY_DOMAIN_1 - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
    * </pre>
    *
    * <code>
@@ -1767,10 +2101,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
-   * - AVAILABILITY_DOMAIN_ANY
-   * - AVAILABILITY_DOMAIN_1
-   * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+   * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values: - AVAILABILITY_DOMAIN_ANY - AVAILABILITY_DOMAIN_1 - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
    * </pre>
    *
    * <code>
@@ -1797,10 +2128,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Indicates the user-supplied encryption option of this interconnect attachment:
-   * - NONE is the default value, which means that the attachment carries unencrypted traffic. VMs can send traffic to, or receive traffic from, this type of attachment.
-   * - IPSEC indicates that the attachment carries only traffic encrypted by an IPsec device such as an HA VPN gateway. VMs cannot directly send traffic to, or receive traffic from, such an attachment. To use IPsec-encrypted Cloud Interconnect, create the attachment using this option.
-   * Not currently available in all Interconnect locations.
+   * Indicates the user-supplied encryption option of this VLAN attachment (interconnectAttachment). Can only be specified at attachment creation for PARTNER or DEDICATED attachments. Possible values are: - NONE - This is the default value, which means that the VLAN attachment carries unencrypted traffic. VMs are able to send traffic to, or receive traffic from, such a VLAN attachment. - IPSEC - The VLAN attachment carries only encrypted traffic that is encrypted by an IPsec device, such as an HA VPN gateway or third-party IPsec VPN. VMs cannot directly send traffic to, or receive traffic from, such a VLAN attachment. To use *IPsec-encrypted Cloud Interconnect*, the VLAN attachment must be created with this option. Not currently available publicly.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.Encryption encryption = 97980291;</code>
@@ -1815,10 +2143,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Indicates the user-supplied encryption option of this interconnect attachment:
-   * - NONE is the default value, which means that the attachment carries unencrypted traffic. VMs can send traffic to, or receive traffic from, this type of attachment.
-   * - IPSEC indicates that the attachment carries only traffic encrypted by an IPsec device such as an HA VPN gateway. VMs cannot directly send traffic to, or receive traffic from, such an attachment. To use IPsec-encrypted Cloud Interconnect, create the attachment using this option.
-   * Not currently available in all Interconnect locations.
+   * Indicates the user-supplied encryption option of this VLAN attachment (interconnectAttachment). Can only be specified at attachment creation for PARTNER or DEDICATED attachments. Possible values are: - NONE - This is the default value, which means that the VLAN attachment carries unencrypted traffic. VMs are able to send traffic to, or receive traffic from, such a VLAN attachment. - IPSEC - The VLAN attachment carries only encrypted traffic that is encrypted by an IPsec device, such as an HA VPN gateway or third-party IPsec VPN. VMs cannot directly send traffic to, or receive traffic from, such a VLAN attachment. To use *IPsec-encrypted Cloud Interconnect*, the VLAN attachment must be created with this option. Not currently available publicly.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.Encryption encryption = 97980291;</code>
@@ -1833,10 +2158,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Indicates the user-supplied encryption option of this interconnect attachment:
-   * - NONE is the default value, which means that the attachment carries unencrypted traffic. VMs can send traffic to, or receive traffic from, this type of attachment.
-   * - IPSEC indicates that the attachment carries only traffic encrypted by an IPsec device such as an HA VPN gateway. VMs cannot directly send traffic to, or receive traffic from, such an attachment. To use IPsec-encrypted Cloud Interconnect, create the attachment using this option.
-   * Not currently available in all Interconnect locations.
+   * Indicates the user-supplied encryption option of this VLAN attachment (interconnectAttachment). Can only be specified at attachment creation for PARTNER or DEDICATED attachments. Possible values are: - NONE - This is the default value, which means that the VLAN attachment carries unencrypted traffic. VMs are able to send traffic to, or receive traffic from, such a VLAN attachment. - IPSEC - The VLAN attachment carries only encrypted traffic that is encrypted by an IPsec device, such as an HA VPN gateway or third-party IPsec VPN. VMs cannot directly send traffic to, or receive traffic from, such a VLAN attachment. To use *IPsec-encrypted Cloud Interconnect*, the VLAN attachment must be created with this option. Not currently available publicly.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.Encryption encryption = 97980291;</code>
@@ -2020,8 +2342,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-   * Not currently available in all Interconnect locations.
+   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
    * </pre>
    *
    * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -2035,8 +2356,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-   * Not currently available in all Interconnect locations.
+   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
    * </pre>
    *
    * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -2050,8 +2370,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-   * Not currently available in all Interconnect locations.
+   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
    * </pre>
    *
    * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -2066,8 +2385,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-   * Not currently available in all Interconnect locations.
+   * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
    * </pre>
    *
    * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -2246,9 +2564,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
-   * - OS_ACTIVE: The attachment has been turned up and is ready to use.
-   * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+   * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values: - OS_ACTIVE: The attachment has been turned up and is ready to use. - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
    * </pre>
    *
    * <code>
@@ -2265,9 +2581,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
-   * - OS_ACTIVE: The attachment has been turned up and is ready to use.
-   * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+   * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values: - OS_ACTIVE: The attachment has been turned up and is ready to use. - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
    * </pre>
    *
    * <code>
@@ -2284,9 +2598,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
-   * - OS_ACTIVE: The attachment has been turned up and is ready to use.
-   * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+   * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values: - OS_ACTIVE: The attachment has been turned up and is ready to use. - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
    * </pre>
    *
    * <code>
@@ -2647,6 +2959,39 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 480964267;
+  private boolean satisfiesPzs_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00400000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
   private volatile java.lang.Object selfLink_;
   /**
@@ -2662,7 +3007,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
   /**
    *
@@ -2717,13 +3062,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
-   * - ACTIVE: The attachment has been turned up and is ready to use.
-   * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
-   * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
-   * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
-   * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
-   * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+   * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values: - ACTIVE: The attachment has been turned up and is ready to use. - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete. - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side. - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it. - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it. - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.State state = 109757585;</code>
@@ -2732,19 +3071,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
   /**
    *
    *
    * <pre>
-   * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
-   * - ACTIVE: The attachment has been turned up and is ready to use.
-   * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
-   * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
-   * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
-   * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
-   * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+   * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values: - ACTIVE: The attachment has been turned up and is ready to use. - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete. - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side. - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it. - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it. - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.State state = 109757585;</code>
@@ -2759,13 +3092,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
-   * - ACTIVE: The attachment has been turned up and is ready to use.
-   * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
-   * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
-   * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
-   * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
-   * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+   * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values: - ACTIVE: The attachment has been turned up and is ready to use. - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete. - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side. - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it. - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it. - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.State state = 109757585;</code>
@@ -2788,10 +3115,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The type of interconnect attachment this is, which can take one of the following values:
-   * - DEDICATED: an attachment to a Dedicated Interconnect.
-   * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
-   * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+   * The type of interconnect attachment this is, which can take one of the following values: - DEDICATED: an attachment to a Dedicated Interconnect. - PARTNER: an attachment to a Partner Interconnect, created by the customer. - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
@@ -2800,16 +3124,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasType() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
   /**
    *
    *
    * <pre>
-   * The type of interconnect attachment this is, which can take one of the following values:
-   * - DEDICATED: an attachment to a Dedicated Interconnect.
-   * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
-   * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+   * The type of interconnect attachment this is, which can take one of the following values: - DEDICATED: an attachment to a Dedicated Interconnect. - PARTNER: an attachment to a Partner Interconnect, created by the customer. - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
@@ -2824,10 +3145,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The type of interconnect attachment this is, which can take one of the following values:
-   * - DEDICATED: an attachment to a Dedicated Interconnect.
-   * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
-   * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+   * The type of interconnect attachment this is, which can take one of the following values: - DEDICATED: an attachment to a Dedicated Interconnect. - PARTNER: an attachment to a Partner Interconnect, created by the customer. - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
@@ -2859,7 +3177,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    */
   @java.lang.Override
   public boolean hasVlanTag8021Q() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
   /**
    *
@@ -2903,7 +3221,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       output.writeEnum(3575610, type_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -2921,10 +3239,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeEnum(97980291, encryption_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       output.writeEnum(109757585, state_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       output.writeInt32(119927836, vlanTag8021Q_);
     }
     if (((bitField0_ & 0x00100000) != 0)) {
@@ -2972,8 +3290,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(445675089, adminEnabled_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      output.writeBool(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 534944469, googleReferenceId_);
@@ -2999,7 +3320,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -3020,10 +3341,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(97980291, encryption_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(119927836, vlanTag8021Q_);
     }
     if (((bitField0_ & 0x00100000) != 0)) {
@@ -3084,8 +3405,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(445675089, adminEnabled_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size +=
@@ -3197,6 +3521,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
     if (hasRouter() != other.hasRouter()) return false;
     if (hasRouter()) {
       if (!getRouter().equals(other.getRouter())) return false;
+    }
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -3321,6 +3649,10 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       hash = (37 * hash) + ROUTER_FIELD_NUMBER;
       hash = (53 * hash) + getRouter().hashCode();
     }
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
@@ -3441,8 +3773,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Represents an Interconnect Attachment (VLAN) resource.
-   * You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud networks to your on-premises networks through an Interconnect. For more information, read  Creating VLAN Attachments. (== resource_for {$api_version}.interconnectAttachments ==)
+   * Represents an Interconnect Attachment (VLAN) resource. You can use Interconnect attachments (VLANS) to connect your Virtual Private Cloud networks to your on-premises networks through an Interconnect. For more information, read Creating VLAN Attachments.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectAttachment}
@@ -3542,14 +3873,16 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       bitField0_ = (bitField0_ & ~0x00400000);
       router_ = "";
       bitField0_ = (bitField0_ & ~0x00800000);
-      selfLink_ = "";
+      satisfiesPzs_ = false;
       bitField0_ = (bitField0_ & ~0x01000000);
-      state_ = 0;
+      selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x02000000);
-      type_ = 0;
+      state_ = 0;
       bitField0_ = (bitField0_ & ~0x04000000);
-      vlanTag8021Q_ = 0;
+      type_ = 0;
       bitField0_ = (bitField0_ & ~0x08000000);
+      vlanTag8021Q_ = 0;
+      bitField0_ = (bitField0_ & ~0x10000000);
       return this;
     }
 
@@ -3686,20 +4019,24 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       }
       result.router_ = router_;
       if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00400000;
       }
-      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x02000000) != 0)) {
         to_bitField0_ |= 0x00800000;
       }
-      result.state_ = state_;
+      result.selfLink_ = selfLink_;
       if (((from_bitField0_ & 0x04000000) != 0)) {
         to_bitField0_ |= 0x01000000;
       }
-      result.type_ = type_;
+      result.state_ = state_;
       if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.vlanTag8021Q_ = vlanTag8021Q_;
         to_bitField0_ |= 0x02000000;
+      }
+      result.type_ = type_;
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.vlanTag8021Q_ = vlanTag8021Q_;
+        to_bitField0_ |= 0x04000000;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -3860,8 +4197,11 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         router_ = other.router_;
         onChanged();
       }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         selfLink_ = other.selfLink_;
         onChanged();
       }
@@ -3978,19 +4318,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
-     * - BPS_50M: 50 Mbit/s
-     * - BPS_100M: 100 Mbit/s
-     * - BPS_200M: 200 Mbit/s
-     * - BPS_300M: 300 Mbit/s
-     * - BPS_400M: 400 Mbit/s
-     * - BPS_500M: 500 Mbit/s
-     * - BPS_1G: 1 Gbit/s
-     * - BPS_2G: 2 Gbit/s
-     * - BPS_5G: 5 Gbit/s
-     * - BPS_10G: 10 Gbit/s
-     * - BPS_20G: 20 Gbit/s
-     * - BPS_50G: 50 Gbit/s
+     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: - BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s - BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5 Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Bandwidth bandwidth = 181715121;</code>
@@ -4005,19 +4333,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
-     * - BPS_50M: 50 Mbit/s
-     * - BPS_100M: 100 Mbit/s
-     * - BPS_200M: 200 Mbit/s
-     * - BPS_300M: 300 Mbit/s
-     * - BPS_400M: 400 Mbit/s
-     * - BPS_500M: 500 Mbit/s
-     * - BPS_1G: 1 Gbit/s
-     * - BPS_2G: 2 Gbit/s
-     * - BPS_5G: 5 Gbit/s
-     * - BPS_10G: 10 Gbit/s
-     * - BPS_20G: 20 Gbit/s
-     * - BPS_50G: 50 Gbit/s
+     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: - BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s - BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5 Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Bandwidth bandwidth = 181715121;</code>
@@ -4032,19 +4348,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
-     * - BPS_50M: 50 Mbit/s
-     * - BPS_100M: 100 Mbit/s
-     * - BPS_200M: 200 Mbit/s
-     * - BPS_300M: 300 Mbit/s
-     * - BPS_400M: 400 Mbit/s
-     * - BPS_500M: 500 Mbit/s
-     * - BPS_1G: 1 Gbit/s
-     * - BPS_2G: 2 Gbit/s
-     * - BPS_5G: 5 Gbit/s
-     * - BPS_10G: 10 Gbit/s
-     * - BPS_20G: 20 Gbit/s
-     * - BPS_50G: 50 Gbit/s
+     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: - BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s - BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5 Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Bandwidth bandwidth = 181715121;</code>
@@ -4062,19 +4366,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
-     * - BPS_50M: 50 Mbit/s
-     * - BPS_100M: 100 Mbit/s
-     * - BPS_200M: 200 Mbit/s
-     * - BPS_300M: 300 Mbit/s
-     * - BPS_400M: 400 Mbit/s
-     * - BPS_500M: 500 Mbit/s
-     * - BPS_1G: 1 Gbit/s
-     * - BPS_2G: 2 Gbit/s
-     * - BPS_5G: 5 Gbit/s
-     * - BPS_10G: 10 Gbit/s
-     * - BPS_20G: 20 Gbit/s
-     * - BPS_50G: 50 Gbit/s
+     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: - BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s - BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5 Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Bandwidth bandwidth = 181715121;</code>
@@ -4094,19 +4386,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
-     * - BPS_50M: 50 Mbit/s
-     * - BPS_100M: 100 Mbit/s
-     * - BPS_200M: 200 Mbit/s
-     * - BPS_300M: 300 Mbit/s
-     * - BPS_400M: 400 Mbit/s
-     * - BPS_500M: 500 Mbit/s
-     * - BPS_1G: 1 Gbit/s
-     * - BPS_2G: 2 Gbit/s
-     * - BPS_5G: 5 Gbit/s
-     * - BPS_10G: 10 Gbit/s
-     * - BPS_20G: 20 Gbit/s
-     * - BPS_50G: 50 Gbit/s
+     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: - BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s - BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5 Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Bandwidth bandwidth = 181715121;</code>
@@ -4128,19 +4408,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values:
-     * - BPS_50M: 50 Mbit/s
-     * - BPS_100M: 100 Mbit/s
-     * - BPS_200M: 200 Mbit/s
-     * - BPS_300M: 300 Mbit/s
-     * - BPS_400M: 400 Mbit/s
-     * - BPS_500M: 500 Mbit/s
-     * - BPS_1G: 1 Gbit/s
-     * - BPS_2G: 2 Gbit/s
-     * - BPS_5G: 5 Gbit/s
-     * - BPS_10G: 10 Gbit/s
-     * - BPS_20G: 20 Gbit/s
-     * - BPS_50G: 50 Gbit/s
+     * Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: - BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s - BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5 Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Bandwidth bandwidth = 181715121;</code>
@@ -4874,10 +5142,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
-     * - AVAILABILITY_DOMAIN_ANY
-     * - AVAILABILITY_DOMAIN_1
-     * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values: - AVAILABILITY_DOMAIN_ANY - AVAILABILITY_DOMAIN_1 - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
      * </pre>
      *
      * <code>
@@ -4894,10 +5159,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
-     * - AVAILABILITY_DOMAIN_ANY
-     * - AVAILABILITY_DOMAIN_1
-     * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values: - AVAILABILITY_DOMAIN_ANY - AVAILABILITY_DOMAIN_1 - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
      * </pre>
      *
      * <code>
@@ -4914,10 +5176,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
-     * - AVAILABILITY_DOMAIN_ANY
-     * - AVAILABILITY_DOMAIN_1
-     * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values: - AVAILABILITY_DOMAIN_ANY - AVAILABILITY_DOMAIN_1 - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
      * </pre>
      *
      * <code>
@@ -4937,10 +5196,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
-     * - AVAILABILITY_DOMAIN_ANY
-     * - AVAILABILITY_DOMAIN_1
-     * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values: - AVAILABILITY_DOMAIN_ANY - AVAILABILITY_DOMAIN_1 - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
      * </pre>
      *
      * <code>
@@ -4964,10 +5220,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
-     * - AVAILABILITY_DOMAIN_ANY
-     * - AVAILABILITY_DOMAIN_1
-     * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values: - AVAILABILITY_DOMAIN_ANY - AVAILABILITY_DOMAIN_1 - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
      * </pre>
      *
      * <code>
@@ -4991,10 +5244,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values:
-     * - AVAILABILITY_DOMAIN_ANY
-     * - AVAILABILITY_DOMAIN_1
-     * - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+     * Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values: - AVAILABILITY_DOMAIN_ANY - AVAILABILITY_DOMAIN_1 - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
      * </pre>
      *
      * <code>
@@ -5015,10 +5265,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicates the user-supplied encryption option of this interconnect attachment:
-     * - NONE is the default value, which means that the attachment carries unencrypted traffic. VMs can send traffic to, or receive traffic from, this type of attachment.
-     * - IPSEC indicates that the attachment carries only traffic encrypted by an IPsec device such as an HA VPN gateway. VMs cannot directly send traffic to, or receive traffic from, such an attachment. To use IPsec-encrypted Cloud Interconnect, create the attachment using this option.
-     * Not currently available in all Interconnect locations.
+     * Indicates the user-supplied encryption option of this VLAN attachment (interconnectAttachment). Can only be specified at attachment creation for PARTNER or DEDICATED attachments. Possible values are: - NONE - This is the default value, which means that the VLAN attachment carries unencrypted traffic. VMs are able to send traffic to, or receive traffic from, such a VLAN attachment. - IPSEC - The VLAN attachment carries only encrypted traffic that is encrypted by an IPsec device, such as an HA VPN gateway or third-party IPsec VPN. VMs cannot directly send traffic to, or receive traffic from, such a VLAN attachment. To use *IPsec-encrypted Cloud Interconnect*, the VLAN attachment must be created with this option. Not currently available publicly.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Encryption encryption = 97980291;
@@ -5034,10 +5281,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicates the user-supplied encryption option of this interconnect attachment:
-     * - NONE is the default value, which means that the attachment carries unencrypted traffic. VMs can send traffic to, or receive traffic from, this type of attachment.
-     * - IPSEC indicates that the attachment carries only traffic encrypted by an IPsec device such as an HA VPN gateway. VMs cannot directly send traffic to, or receive traffic from, such an attachment. To use IPsec-encrypted Cloud Interconnect, create the attachment using this option.
-     * Not currently available in all Interconnect locations.
+     * Indicates the user-supplied encryption option of this VLAN attachment (interconnectAttachment). Can only be specified at attachment creation for PARTNER or DEDICATED attachments. Possible values are: - NONE - This is the default value, which means that the VLAN attachment carries unencrypted traffic. VMs are able to send traffic to, or receive traffic from, such a VLAN attachment. - IPSEC - The VLAN attachment carries only encrypted traffic that is encrypted by an IPsec device, such as an HA VPN gateway or third-party IPsec VPN. VMs cannot directly send traffic to, or receive traffic from, such a VLAN attachment. To use *IPsec-encrypted Cloud Interconnect*, the VLAN attachment must be created with this option. Not currently available publicly.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Encryption encryption = 97980291;
@@ -5053,10 +5297,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicates the user-supplied encryption option of this interconnect attachment:
-     * - NONE is the default value, which means that the attachment carries unencrypted traffic. VMs can send traffic to, or receive traffic from, this type of attachment.
-     * - IPSEC indicates that the attachment carries only traffic encrypted by an IPsec device such as an HA VPN gateway. VMs cannot directly send traffic to, or receive traffic from, such an attachment. To use IPsec-encrypted Cloud Interconnect, create the attachment using this option.
-     * Not currently available in all Interconnect locations.
+     * Indicates the user-supplied encryption option of this VLAN attachment (interconnectAttachment). Can only be specified at attachment creation for PARTNER or DEDICATED attachments. Possible values are: - NONE - This is the default value, which means that the VLAN attachment carries unencrypted traffic. VMs are able to send traffic to, or receive traffic from, such a VLAN attachment. - IPSEC - The VLAN attachment carries only encrypted traffic that is encrypted by an IPsec device, such as an HA VPN gateway or third-party IPsec VPN. VMs cannot directly send traffic to, or receive traffic from, such a VLAN attachment. To use *IPsec-encrypted Cloud Interconnect*, the VLAN attachment must be created with this option. Not currently available publicly.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Encryption encryption = 97980291;
@@ -5075,10 +5316,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicates the user-supplied encryption option of this interconnect attachment:
-     * - NONE is the default value, which means that the attachment carries unencrypted traffic. VMs can send traffic to, or receive traffic from, this type of attachment.
-     * - IPSEC indicates that the attachment carries only traffic encrypted by an IPsec device such as an HA VPN gateway. VMs cannot directly send traffic to, or receive traffic from, such an attachment. To use IPsec-encrypted Cloud Interconnect, create the attachment using this option.
-     * Not currently available in all Interconnect locations.
+     * Indicates the user-supplied encryption option of this VLAN attachment (interconnectAttachment). Can only be specified at attachment creation for PARTNER or DEDICATED attachments. Possible values are: - NONE - This is the default value, which means that the VLAN attachment carries unencrypted traffic. VMs are able to send traffic to, or receive traffic from, such a VLAN attachment. - IPSEC - The VLAN attachment carries only encrypted traffic that is encrypted by an IPsec device, such as an HA VPN gateway or third-party IPsec VPN. VMs cannot directly send traffic to, or receive traffic from, such a VLAN attachment. To use *IPsec-encrypted Cloud Interconnect*, the VLAN attachment must be created with this option. Not currently available publicly.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Encryption encryption = 97980291;
@@ -5099,10 +5337,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicates the user-supplied encryption option of this interconnect attachment:
-     * - NONE is the default value, which means that the attachment carries unencrypted traffic. VMs can send traffic to, or receive traffic from, this type of attachment.
-     * - IPSEC indicates that the attachment carries only traffic encrypted by an IPsec device such as an HA VPN gateway. VMs cannot directly send traffic to, or receive traffic from, such an attachment. To use IPsec-encrypted Cloud Interconnect, create the attachment using this option.
-     * Not currently available in all Interconnect locations.
+     * Indicates the user-supplied encryption option of this VLAN attachment (interconnectAttachment). Can only be specified at attachment creation for PARTNER or DEDICATED attachments. Possible values are: - NONE - This is the default value, which means that the VLAN attachment carries unencrypted traffic. VMs are able to send traffic to, or receive traffic from, such a VLAN attachment. - IPSEC - The VLAN attachment carries only encrypted traffic that is encrypted by an IPsec device, such as an HA VPN gateway or third-party IPsec VPN. VMs cannot directly send traffic to, or receive traffic from, such a VLAN attachment. To use *IPsec-encrypted Cloud Interconnect*, the VLAN attachment must be created with this option. Not currently available publicly.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Encryption encryption = 97980291;
@@ -5125,10 +5360,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Indicates the user-supplied encryption option of this interconnect attachment:
-     * - NONE is the default value, which means that the attachment carries unencrypted traffic. VMs can send traffic to, or receive traffic from, this type of attachment.
-     * - IPSEC indicates that the attachment carries only traffic encrypted by an IPsec device such as an HA VPN gateway. VMs cannot directly send traffic to, or receive traffic from, such an attachment. To use IPsec-encrypted Cloud Interconnect, create the attachment using this option.
-     * Not currently available in all Interconnect locations.
+     * Indicates the user-supplied encryption option of this VLAN attachment (interconnectAttachment). Can only be specified at attachment creation for PARTNER or DEDICATED attachments. Possible values are: - NONE - This is the default value, which means that the VLAN attachment carries unencrypted traffic. VMs are able to send traffic to, or receive traffic from, such a VLAN attachment. - IPSEC - The VLAN attachment carries only encrypted traffic that is encrypted by an IPsec device, such as an HA VPN gateway or third-party IPsec VPN. VMs cannot directly send traffic to, or receive traffic from, such a VLAN attachment. To use *IPsec-encrypted Cloud Interconnect*, the VLAN attachment must be created with this option. Not currently available publicly.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Encryption encryption = 97980291;
@@ -5464,8 +5696,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-     * Not currently available in all Interconnect locations.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -5479,8 +5710,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-     * Not currently available in all Interconnect locations.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -5494,8 +5724,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-     * Not currently available in all Interconnect locations.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -5510,8 +5739,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-     * Not currently available in all Interconnect locations.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -5526,8 +5754,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-     * Not currently available in all Interconnect locations.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -5549,8 +5776,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-     * Not currently available in all Interconnect locations.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -5571,8 +5797,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-     * Not currently available in all Interconnect locations.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -5590,8 +5815,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-     * Not currently available in all Interconnect locations.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -5608,8 +5832,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL of addresses that have been reserved for the interconnect attachment, Used only for interconnect attachment that has the encryption option as IPSEC. The addresses must be RFC 1918 IP address ranges. When creating HA VPN gateway over the interconnect attachment, if the attachment is configured to use an RFC 1918 IP address, then the VPN gateway's IP address will be allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this interconnect attachment, then an RFC 1918 IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this interconnect attachment. If this field is not specified for interconnect attachment that has encryption option as IPSEC, later on when creating HA VPN gateway on this interconnect attachment, the HA VPN gateway's IP address will be allocated from regional external IP address pool.
-     * Not currently available in all Interconnect locations.
+     * A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool. Not currently available publicly.
      * </pre>
      *
      * <code>repeated string ipsec_internal_addresses = 407648565;</code>
@@ -5940,9 +6163,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
-     * - OS_ACTIVE: The attachment has been turned up and is ready to use.
-     * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values: - OS_ACTIVE: The attachment has been turned up and is ready to use. - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
      * </pre>
      *
      * <code>
@@ -5959,9 +6180,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
-     * - OS_ACTIVE: The attachment has been turned up and is ready to use.
-     * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values: - OS_ACTIVE: The attachment has been turned up and is ready to use. - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
      * </pre>
      *
      * <code>
@@ -5978,9 +6197,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
-     * - OS_ACTIVE: The attachment has been turned up and is ready to use.
-     * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values: - OS_ACTIVE: The attachment has been turned up and is ready to use. - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
      * </pre>
      *
      * <code>
@@ -6000,9 +6217,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
-     * - OS_ACTIVE: The attachment has been turned up and is ready to use.
-     * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values: - OS_ACTIVE: The attachment has been turned up and is ready to use. - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
      * </pre>
      *
      * <code>
@@ -6026,9 +6241,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
-     * - OS_ACTIVE: The attachment has been turned up and is ready to use.
-     * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values: - OS_ACTIVE: The attachment has been turned up and is ready to use. - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
      * </pre>
      *
      * <code>
@@ -6052,9 +6265,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values:
-     * - OS_ACTIVE: The attachment has been turned up and is ready to use.
-     * - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
+     * [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values: - OS_ACTIVE: The attachment has been turned up and is ready to use. - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
      * </pre>
      *
      * <code>
@@ -6922,6 +7133,73 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 480964267;</code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 480964267;</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 480964267;</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+      bitField0_ |= 0x01000000;
+      satisfiesPzs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 480964267;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object selfLink_ = "";
     /**
      *
@@ -6935,7 +7213,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -6997,7 +7275,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -7014,7 +7292,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -7036,7 +7314,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -7047,13 +7325,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
-     * - ACTIVE: The attachment has been turned up and is ready to use.
-     * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
-     * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
-     * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
-     * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
-     * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values: - ACTIVE: The attachment has been turned up and is ready to use. - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete. - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side. - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it. - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it. - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.State state = 109757585;</code>
@@ -7062,19 +7334,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public boolean hasState() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
-     * - ACTIVE: The attachment has been turned up and is ready to use.
-     * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
-     * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
-     * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
-     * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
-     * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values: - ACTIVE: The attachment has been turned up and is ready to use. - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete. - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side. - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it. - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it. - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.State state = 109757585;</code>
@@ -7089,13 +7355,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
-     * - ACTIVE: The attachment has been turned up and is ready to use.
-     * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
-     * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
-     * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
-     * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
-     * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values: - ACTIVE: The attachment has been turned up and is ready to use. - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete. - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side. - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it. - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it. - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.State state = 109757585;</code>
@@ -7104,7 +7364,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       state_ = value;
       onChanged();
       return this;
@@ -7113,13 +7373,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
-     * - ACTIVE: The attachment has been turned up and is ready to use.
-     * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
-     * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
-     * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
-     * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
-     * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values: - ACTIVE: The attachment has been turned up and is ready to use. - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete. - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side. - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it. - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it. - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.State state = 109757585;</code>
@@ -7139,13 +7393,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
-     * - ACTIVE: The attachment has been turned up and is ready to use.
-     * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
-     * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
-     * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
-     * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
-     * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values: - ACTIVE: The attachment has been turned up and is ready to use. - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete. - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side. - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it. - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it. - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.State state = 109757585;</code>
@@ -7157,7 +7405,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -7166,13 +7414,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values:
-     * - ACTIVE: The attachment has been turned up and is ready to use.
-     * - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
-     * - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side.
-     * - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it.
-     * - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it.
-     * - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
+     * [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values: - ACTIVE: The attachment has been turned up and is ready to use. - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete. - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side. - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it. - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it. - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.State state = 109757585;</code>
@@ -7180,7 +7422,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       state_ = 0;
       onChanged();
       return this;
@@ -7191,10 +7433,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The type of interconnect attachment this is, which can take one of the following values:
-     * - DEDICATED: an attachment to a Dedicated Interconnect.
-     * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
-     * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+     * The type of interconnect attachment this is, which can take one of the following values: - DEDICATED: an attachment to a Dedicated Interconnect. - PARTNER: an attachment to a Partner Interconnect, created by the customer. - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
@@ -7203,16 +7442,13 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public boolean hasType() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The type of interconnect attachment this is, which can take one of the following values:
-     * - DEDICATED: an attachment to a Dedicated Interconnect.
-     * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
-     * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+     * The type of interconnect attachment this is, which can take one of the following values: - DEDICATED: an attachment to a Dedicated Interconnect. - PARTNER: an attachment to a Partner Interconnect, created by the customer. - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
@@ -7227,10 +7463,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The type of interconnect attachment this is, which can take one of the following values:
-     * - DEDICATED: an attachment to a Dedicated Interconnect.
-     * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
-     * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+     * The type of interconnect attachment this is, which can take one of the following values: - DEDICATED: an attachment to a Dedicated Interconnect. - PARTNER: an attachment to a Partner Interconnect, created by the customer. - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
@@ -7239,7 +7472,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       type_ = value;
       onChanged();
       return this;
@@ -7248,10 +7481,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The type of interconnect attachment this is, which can take one of the following values:
-     * - DEDICATED: an attachment to a Dedicated Interconnect.
-     * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
-     * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+     * The type of interconnect attachment this is, which can take one of the following values: - DEDICATED: an attachment to a Dedicated Interconnect. - PARTNER: an attachment to a Partner Interconnect, created by the customer. - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
@@ -7271,10 +7501,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The type of interconnect attachment this is, which can take one of the following values:
-     * - DEDICATED: an attachment to a Dedicated Interconnect.
-     * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
-     * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+     * The type of interconnect attachment this is, which can take one of the following values: - DEDICATED: an attachment to a Dedicated Interconnect. - PARTNER: an attachment to a Partner Interconnect, created by the customer. - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
@@ -7286,7 +7513,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -7295,10 +7522,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The type of interconnect attachment this is, which can take one of the following values:
-     * - DEDICATED: an attachment to a Dedicated Interconnect.
-     * - PARTNER: an attachment to a Partner Interconnect, created by the customer.
-     * - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
+     * The type of interconnect attachment this is, which can take one of the following values: - DEDICATED: an attachment to a Dedicated Interconnect. - PARTNER: an attachment to a Partner Interconnect, created by the customer. - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectAttachment.Type type = 3575610;</code>
@@ -7306,7 +7530,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       type_ = 0;
       onChanged();
       return this;
@@ -7326,7 +7550,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      */
     @java.lang.Override
     public boolean hasVlanTag8021Q() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -7356,7 +7580,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setVlanTag8021Q(int value) {
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       vlanTag8021Q_ = value;
       onChanged();
       return this;
@@ -7373,7 +7597,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearVlanTag8021Q() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       vlanTag8021Q_ = 0;
       onChanged();
       return this;

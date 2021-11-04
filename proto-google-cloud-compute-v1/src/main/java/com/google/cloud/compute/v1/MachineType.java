@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Machine Type resource.
- * You can use specific machine types for your VM instances based on performance and pricing requirements. For more information, read Machine Types. (== resource_for {$api_version}.machineTypes ==)
+ * Represents a Machine Type resource. You can use specific machine types for your VM instances based on performance and pricing requirements. For more information, read Machine Types.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.MachineType}
@@ -1424,8 +1423,7 @@ public final class MachineType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Machine Type resource.
-   * You can use specific machine types for your VM instances based on performance and pricing requirements. For more information, read Machine Types. (== resource_for {$api_version}.machineTypes ==)
+   * Represents a Machine Type resource. You can use specific machine types for your VM instances based on performance and pricing requirements. For more information, read Machine Types.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.MachineType}

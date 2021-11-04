@@ -299,6 +299,21 @@
  * }
  * }</pre>
  *
+ * <p>======================= ImageFamilyViewsClient =======================
+ *
+ * <p>Service Description: The ImageFamilyViews API.
+ *
+ * <p>Sample for ImageFamilyViewsClient:
+ *
+ * <pre>{@code
+ * try (ImageFamilyViewsClient imageFamilyViewsClient = ImageFamilyViewsClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String family = "family-1281860764";
+ *   ImageFamilyView response = imageFamilyViewsClient.get(project, zone, family);
+ * }
+ * }</pre>
+ *
  * <p>======================= ImagesClient =======================
  *
  * <p>Service Description: The Images API.
@@ -996,6 +1011,21 @@
  *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
  *   Operation response =
  *       securityPoliciesClient.addRule(project, securityPolicy, securityPolicyRuleResource);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ServiceAttachmentsClient =======================
+ *
+ * <p>Service Description: The ServiceAttachments API.
+ *
+ * <p>Sample for ServiceAttachmentsClient:
+ *
+ * <pre>{@code
+ * try (ServiceAttachmentsClient serviceAttachmentsClient = ServiceAttachmentsClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   String serviceAttachment = "serviceAttachment-398467656";
+ *   Operation response = serviceAttachmentsClient.delete(project, region, serviceAttachment);
  * }
  * }</pre>
  *

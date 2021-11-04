@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Packet Mirroring resource.
- * Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud (VPC) network and forwards it to a collector destination, such as an instance group of an internal TCP/UDP load balancer, for analysis or examination. For more information about setting up Packet Mirroring, see Using Packet Mirroring. (== resource_for {$api_version}.packetMirrorings ==)
+ * Represents a Packet Mirroring resource. Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud (VPC) network and forwards it to a collector destination, such as an instance group of an internal TCP/UDP load balancer, for analysis or examination. For more information about setting up Packet Mirroring, see Using Packet Mirroring.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.PacketMirroring}
@@ -247,8 +246,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PacketMirroring.Enable}
@@ -558,8 +556,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
@@ -574,8 +571,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
@@ -590,8 +586,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
@@ -932,8 +927,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-   * Default value is 1000. Valid range is 0 through 65535.
+   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
    * </pre>
    *
    * <code>uint32 priority = 445151652;</code>
@@ -948,8 +942,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-   * Default value is 1000. Valid range is 0 through 65535.
+   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
    * </pre>
    *
    * <code>uint32 priority = 445151652;</code>
@@ -1429,8 +1422,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Represents a Packet Mirroring resource.
-   * Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud (VPC) network and forwards it to a collector destination, such as an instance group of an internal TCP/UDP load balancer, for analysis or examination. For more information about setting up Packet Mirroring, see Using Packet Mirroring. (== resource_for {$api_version}.packetMirrorings ==)
+   * Represents a Packet Mirroring resource. Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud (VPC) network and forwards it to a collector destination, such as an instance group of an internal TCP/UDP load balancer, for analysis or examination. For more information about setting up Packet Mirroring, see Using Packet Mirroring.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.PacketMirroring}
@@ -2195,8 +2187,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-     * The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
@@ -2211,8 +2202,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-     * The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
@@ -2227,8 +2217,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-     * The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
@@ -2246,8 +2235,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-     * The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
@@ -2267,8 +2255,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-     * The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
@@ -2289,8 +2276,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-     * The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
@@ -3203,8 +3189,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-     * Default value is 1000. Valid range is 0 through 65535.
+     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
      * <code>uint32 priority = 445151652;</code>
@@ -3219,8 +3204,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-     * Default value is 1000. Valid range is 0 through 65535.
+     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
      * <code>uint32 priority = 445151652;</code>
@@ -3235,8 +3219,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-     * Default value is 1000. Valid range is 0 through 65535.
+     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
      * <code>uint32 priority = 445151652;</code>
@@ -3254,8 +3237,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-     * Default value is 1000. Valid range is 0 through 65535.
+     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
      * <code>uint32 priority = 445151652;</code>

@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Image resource.
- * You can use images to create boot disks for your VM instances. For more information, read Images. (== resource_for {$api_version}.images ==)
+ * Represents an Image resource. You can use images to create boot disks for your VM instances. For more information, read Images.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Image}
@@ -599,13 +598,45 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Image is deleting.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
-    /** <code>FAILED = 455706685;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Image creation failed due to an error.
+     * </pre>
+     *
+     * <code>FAILED = 455706685;</code>
+     */
     FAILED(455706685),
-    /** <code>PENDING = 35394935;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Image hasn't been created as yet.
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
     PENDING(35394935),
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Image has been successfully created.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     READY(77848963),
     UNRECOGNIZED(-1),
     ;
@@ -620,13 +651,45 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Image is deleting.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
-    /** <code>FAILED = 455706685;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Image creation failed due to an error.
+     * </pre>
+     *
+     * <code>FAILED = 455706685;</code>
+     */
     public static final int FAILED_VALUE = 455706685;
-    /** <code>PENDING = 35394935;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Image hasn't been created as yet.
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
     public static final int PENDING_VALUE = 35394935;
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Image has been successfully created.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     public static final int READY_VALUE = 77848963;
 
     public final int getNumber() {
@@ -1031,7 +1094,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -1044,7 +1107,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -1058,7 +1121,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -1071,7 +1134,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -1084,7 +1147,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -1134,10 +1197,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the image using a customer-supplied encryption key.
-   * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-   * Customer-supplied encryption keys do not protect access to metadata of the disk.
-   * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+   * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -1152,10 +1212,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the image using a customer-supplied encryption key.
-   * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-   * Customer-supplied encryption keys do not protect access to metadata of the disk.
-   * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+   * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -1172,10 +1229,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the image using a customer-supplied encryption key.
-   * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-   * Customer-supplied encryption keys do not protect access to metadata of the disk.
-   * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+   * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -1258,8 +1312,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an image.
+   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
    * </pre>
    *
    * <code>string label_fingerprint = 178124825;</code>
@@ -1274,8 +1327,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an image.
+   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
    * </pre>
    *
    * <code>string label_fingerprint = 178124825;</code>
@@ -1298,8 +1350,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an image.
+   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
    * </pre>
    *
    * <code>string label_fingerprint = 178124825;</code>
@@ -1794,10 +1845,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - zones/zone/disks/disk
+   * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_disk = 451753793;</code>
@@ -1812,10 +1860,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - zones/zone/disks/disk
+   * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_disk = 451753793;</code>
@@ -1838,10 +1883,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - zones/zone/disks/disk
+   * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_disk = 451753793;</code>
@@ -1985,12 +2027,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source image used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_image = 50443319;</code>
@@ -2005,12 +2042,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source image used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_image = 50443319;</code>
@@ -2033,12 +2065,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source image used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_image = 50443319;</code>
@@ -2182,13 +2209,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source snapshot used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The sourceImage URL
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_snapshot = 126061928;</code>
@@ -2203,13 +2224,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source snapshot used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The sourceImage URL
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_snapshot = 126061928;</code>
@@ -2232,13 +2247,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source snapshot used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The sourceImage URL
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_snapshot = 126061928;</code>
@@ -3161,8 +3170,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an Image resource.
-   * You can use images to create boot disks for your VM instances. For more information, read Images. (== resource_for {$api_version}.images ==)
+   * Represents an Image resource. You can use images to create boot disks for your VM instances. For more information, read Images.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Image}
@@ -4456,7 +4464,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4472,7 +4480,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4488,7 +4496,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4504,7 +4512,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4526,7 +4534,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4546,7 +4554,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4568,7 +4576,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4590,7 +4598,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4610,7 +4618,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4630,7 +4638,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4650,7 +4658,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4669,7 +4677,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4688,7 +4696,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4700,7 +4708,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4717,7 +4725,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4734,7 +4742,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4747,7 +4755,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4760,7 +4768,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+     * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -4867,10 +4875,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key.
-     * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -4884,10 +4889,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key.
-     * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -4907,10 +4909,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key.
-     * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -4932,10 +4931,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key.
-     * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -4955,10 +4951,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key.
-     * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -4988,10 +4981,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key.
-     * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -5010,10 +5000,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key.
-     * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -5028,10 +5015,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key.
-     * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -5050,10 +5034,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key.
-     * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-     * Customer-supplied encryption keys do not protect access to metadata of the disk.
-     * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -5200,8 +5181,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an image.
+     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -5215,8 +5195,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an image.
+     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -5238,8 +5217,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an image.
+     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -5261,8 +5239,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an image.
+     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -5283,8 +5260,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an image.
+     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -5301,8 +5277,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an image.
+     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -6481,10 +6456,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - zones/zone/disks/disk
+     * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_disk = 451753793;</code>
@@ -6498,10 +6470,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - zones/zone/disks/disk
+     * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_disk = 451753793;</code>
@@ -6523,10 +6492,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - zones/zone/disks/disk
+     * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_disk = 451753793;</code>
@@ -6548,10 +6514,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - zones/zone/disks/disk
+     * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_disk = 451753793;</code>
@@ -6572,10 +6535,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - zones/zone/disks/disk
+     * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_disk = 451753793;</code>
@@ -6592,10 +6552,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-     * - projects/project/zones/zone/disks/disk
-     * - zones/zone/disks/disk
+     * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_disk = 451753793;</code>
@@ -6940,12 +6897,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source image used to create this image.
-     * In order to create an image, you must provide the full or partial URL of one of the following:
-     * - The selfLink URL
-     * - This property
-     * - The rawDisk.source URL
-     * - The sourceDisk URL
+     * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_image = 50443319;</code>
@@ -6959,12 +6911,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source image used to create this image.
-     * In order to create an image, you must provide the full or partial URL of one of the following:
-     * - The selfLink URL
-     * - This property
-     * - The rawDisk.source URL
-     * - The sourceDisk URL
+     * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_image = 50443319;</code>
@@ -6986,12 +6933,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source image used to create this image.
-     * In order to create an image, you must provide the full or partial URL of one of the following:
-     * - The selfLink URL
-     * - This property
-     * - The rawDisk.source URL
-     * - The sourceDisk URL
+     * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_image = 50443319;</code>
@@ -7013,12 +6955,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source image used to create this image.
-     * In order to create an image, you must provide the full or partial URL of one of the following:
-     * - The selfLink URL
-     * - This property
-     * - The rawDisk.source URL
-     * - The sourceDisk URL
+     * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_image = 50443319;</code>
@@ -7039,12 +6976,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source image used to create this image.
-     * In order to create an image, you must provide the full or partial URL of one of the following:
-     * - The selfLink URL
-     * - This property
-     * - The rawDisk.source URL
-     * - The sourceDisk URL
+     * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_image = 50443319;</code>
@@ -7061,12 +6993,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source image used to create this image.
-     * In order to create an image, you must provide the full or partial URL of one of the following:
-     * - The selfLink URL
-     * - This property
-     * - The rawDisk.source URL
-     * - The sourceDisk URL
+     * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_image = 50443319;</code>
@@ -7412,13 +7339,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source snapshot used to create this image.
-     * In order to create an image, you must provide the full or partial URL of one of the following:
-     * - The selfLink URL
-     * - This property
-     * - The sourceImage URL
-     * - The rawDisk.source URL
-     * - The sourceDisk URL
+     * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_snapshot = 126061928;</code>
@@ -7432,13 +7353,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source snapshot used to create this image.
-     * In order to create an image, you must provide the full or partial URL of one of the following:
-     * - The selfLink URL
-     * - This property
-     * - The sourceImage URL
-     * - The rawDisk.source URL
-     * - The sourceDisk URL
+     * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_snapshot = 126061928;</code>
@@ -7460,13 +7375,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source snapshot used to create this image.
-     * In order to create an image, you must provide the full or partial URL of one of the following:
-     * - The selfLink URL
-     * - This property
-     * - The sourceImage URL
-     * - The rawDisk.source URL
-     * - The sourceDisk URL
+     * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_snapshot = 126061928;</code>
@@ -7488,13 +7397,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source snapshot used to create this image.
-     * In order to create an image, you must provide the full or partial URL of one of the following:
-     * - The selfLink URL
-     * - This property
-     * - The sourceImage URL
-     * - The rawDisk.source URL
-     * - The sourceDisk URL
+     * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_snapshot = 126061928;</code>
@@ -7515,13 +7418,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source snapshot used to create this image.
-     * In order to create an image, you must provide the full or partial URL of one of the following:
-     * - The selfLink URL
-     * - This property
-     * - The sourceImage URL
-     * - The rawDisk.source URL
-     * - The sourceDisk URL
+     * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_snapshot = 126061928;</code>
@@ -7538,13 +7435,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source snapshot used to create this image.
-     * In order to create an image, you must provide the full or partial URL of one of the following:
-     * - The selfLink URL
-     * - This property
-     * - The sourceImage URL
-     * - The rawDisk.source URL
-     * - The sourceDisk URL
+     * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source_snapshot = 126061928;</code>

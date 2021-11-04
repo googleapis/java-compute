@@ -206,7 +206,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource.
    * </pre>
    *
    * <code>string description = 422937596;</code>
@@ -218,7 +218,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource.
    * </pre>
    *
    * <code>string description = 422937596;</code>
@@ -230,7 +230,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource.
    * </pre>
    *
    * <code>string description = 422937596;</code>
@@ -278,8 +278,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -291,8 +290,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -304,8 +302,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -801,8 +798,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -813,8 +809,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -825,8 +820,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -837,8 +831,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;
@@ -850,8 +843,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * Specifies the instance templates used by this managed instance group to create instances.
-   * Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
+   * Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InstanceGroupManagerVersion versions = 162430619;

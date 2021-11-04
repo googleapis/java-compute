@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * An instance's serial console output.
+ * An instance serial console output.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SerialPortOutput}
@@ -623,7 +623,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An instance's serial console output.
+   * An instance serial console output.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SerialPortOutput}

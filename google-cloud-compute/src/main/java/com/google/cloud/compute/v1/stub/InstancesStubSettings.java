@@ -73,6 +73,8 @@ import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
+import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceRequest;
+import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceResponse;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest;
 import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceRequest;
@@ -184,6 +186,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
   private final UnaryCallSettings<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesSettings;
   private final UnaryCallSettings<ResetInstanceRequest, Operation> resetSettings;
+  private final UnaryCallSettings<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptSettings;
   private final UnaryCallSettings<SetDeletionProtectionInstanceRequest, Operation>
       setDeletionProtectionSettings;
   private final UnaryCallSettings<SetDiskAutoDeleteInstanceRequest, Operation>
@@ -514,6 +519,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return resetSettings;
   }
 
+  /** Returns the object with the settings used for calls to sendDiagnosticInterrupt. */
+  public UnaryCallSettings<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptSettings() {
+    return sendDiagnosticInterruptSettings;
+  }
+
   /** Returns the object with the settings used for calls to setDeletionProtection. */
   public UnaryCallSettings<SetDeletionProtectionInstanceRequest, Operation>
       setDeletionProtectionSettings() {
@@ -732,6 +744,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     listReferrersSettings = settingsBuilder.listReferrersSettings().build();
     removeResourcePoliciesSettings = settingsBuilder.removeResourcePoliciesSettings().build();
     resetSettings = settingsBuilder.resetSettings().build();
+    sendDiagnosticInterruptSettings = settingsBuilder.sendDiagnosticInterruptSettings().build();
     setDeletionProtectionSettings = settingsBuilder.setDeletionProtectionSettings().build();
     setDiskAutoDeleteSettings = settingsBuilder.setDiskAutoDeleteSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -801,6 +814,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final UnaryCallSettings.Builder<RemoveResourcePoliciesInstanceRequest, Operation>
         removeResourcePoliciesSettings;
     private final UnaryCallSettings.Builder<ResetInstanceRequest, Operation> resetSettings;
+    private final UnaryCallSettings.Builder<
+            SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+        sendDiagnosticInterruptSettings;
     private final UnaryCallSettings.Builder<SetDeletionProtectionInstanceRequest, Operation>
         setDeletionProtectionSettings;
     private final UnaryCallSettings.Builder<SetDiskAutoDeleteInstanceRequest, Operation>
@@ -855,6 +871,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -882,6 +899,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -912,6 +931,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       listReferrersSettings = PagedCallSettings.newBuilder(LIST_REFERRERS_PAGE_STR_FACT);
       removeResourcePoliciesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      sendDiagnosticInterruptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setDeletionProtectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setDiskAutoDeleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -957,6 +977,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               listReferrersSettings,
               removeResourcePoliciesSettings,
               resetSettings,
+              sendDiagnosticInterruptSettings,
               setDeletionProtectionSettings,
               setDiskAutoDeleteSettings,
               setIamPolicySettings,
@@ -1006,6 +1027,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       listReferrersSettings = settings.listReferrersSettings.toBuilder();
       removeResourcePoliciesSettings = settings.removeResourcePoliciesSettings.toBuilder();
       resetSettings = settings.resetSettings.toBuilder();
+      sendDiagnosticInterruptSettings = settings.sendDiagnosticInterruptSettings.toBuilder();
       setDeletionProtectionSettings = settings.setDeletionProtectionSettings.toBuilder();
       setDiskAutoDeleteSettings = settings.setDiskAutoDeleteSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1053,6 +1075,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               listReferrersSettings,
               removeResourcePoliciesSettings,
               resetSettings,
+              sendDiagnosticInterruptSettings,
               setDeletionProtectionSettings,
               setDiskAutoDeleteSettings,
               setIamPolicySettings,
@@ -1190,6 +1213,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
           .resetSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .sendDiagnosticInterruptSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .setDeletionProtectionSettings()
@@ -1433,6 +1461,13 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     /** Returns the builder for the settings used for calls to reset. */
     public UnaryCallSettings.Builder<ResetInstanceRequest, Operation> resetSettings() {
       return resetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to sendDiagnosticInterrupt. */
+    public UnaryCallSettings.Builder<
+            SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+        sendDiagnosticInterruptSettings() {
+      return sendDiagnosticInterruptSettings;
     }
 
     /** Returns the builder for the settings used for calls to setDeletionProtection. */

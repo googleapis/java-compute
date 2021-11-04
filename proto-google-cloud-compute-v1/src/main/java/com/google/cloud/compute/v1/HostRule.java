@@ -205,8 +205,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-   * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated string hosts = 99467211;</code>
@@ -220,8 +219,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-   * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated string hosts = 99467211;</code>
@@ -235,8 +233,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-   * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated string hosts = 99467211;</code>
@@ -251,8 +248,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-   * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
    * <code>repeated string hosts = 99467211;</code>
@@ -846,8 +842,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-     * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated string hosts = 99467211;</code>
@@ -861,8 +856,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-     * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated string hosts = 99467211;</code>
@@ -876,8 +870,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-     * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated string hosts = 99467211;</code>
@@ -892,8 +885,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-     * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated string hosts = 99467211;</code>
@@ -908,8 +900,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-     * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated string hosts = 99467211;</code>
@@ -931,8 +922,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-     * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated string hosts = 99467211;</code>
@@ -953,8 +943,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-     * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated string hosts = 99467211;</code>
@@ -972,8 +961,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-     * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated string hosts = 99467211;</code>
@@ -990,8 +978,7 @@ public final class HostRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or ..
-     * * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * The list of host patterns to match. They must be valid hostnames with optional port numbers in the format host:port. * matches any string of ([a-z0-9-.]*). In that case, * must be the first character and must be followed in the pattern by either - or .. * based matching is not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
      * <code>repeated string hosts = 99467211;</code>

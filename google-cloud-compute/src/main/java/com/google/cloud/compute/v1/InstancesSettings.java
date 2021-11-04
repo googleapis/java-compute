@@ -182,6 +182,13 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).resetSettings();
   }
 
+  /** Returns the object with the settings used for calls to sendDiagnosticInterrupt. */
+  public UnaryCallSettings<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptSettings() {
+    return ((InstancesStubSettings) getStubSettings()).sendDiagnosticInterruptSettings();
+  }
+
   /** Returns the object with the settings used for calls to setDeletionProtection. */
   public UnaryCallSettings<SetDeletionProtectionInstanceRequest, Operation>
       setDeletionProtectionSettings() {
@@ -516,6 +523,13 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     /** Returns the builder for the settings used for calls to reset. */
     public UnaryCallSettings.Builder<ResetInstanceRequest, Operation> resetSettings() {
       return getStubSettingsBuilder().resetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to sendDiagnosticInterrupt. */
+    public UnaryCallSettings.Builder<
+            SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+        sendDiagnosticInterruptSettings() {
+      return getStubSettingsBuilder().sendDiagnosticInterruptSettings();
     }
 
     /** Returns the builder for the settings used for calls to setDeletionProtection. */

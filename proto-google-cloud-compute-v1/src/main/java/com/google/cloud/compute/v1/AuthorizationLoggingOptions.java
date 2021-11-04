@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Authorization-related information used by Cloud Audit Logging.
+ * This is deprecated and has no effect. Do not use.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AuthorizationLoggingOptions}
@@ -116,7 +116,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The type of the permission that was checked.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType}
@@ -132,15 +132,55 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      * <code>UNDEFINED_PERMISSION_TYPE = 0;</code>
      */
     UNDEFINED_PERMISSION_TYPE(0),
-    /** <code>ADMIN_READ = 128951462;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ADMIN_READ = 128951462;</code>
+     */
     ADMIN_READ(128951462),
-    /** <code>ADMIN_WRITE = 244412079;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ADMIN_WRITE = 244412079;</code>
+     */
     ADMIN_WRITE(244412079),
-    /** <code>DATA_READ = 305224971;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DATA_READ = 305224971;</code>
+     */
     DATA_READ(305224971),
-    /** <code>DATA_WRITE = 340181738;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DATA_WRITE = 340181738;</code>
+     */
     DATA_WRITE(340181738),
-    /** <code>PERMISSION_TYPE_UNSPECIFIED = 440313346;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>PERMISSION_TYPE_UNSPECIFIED = 440313346;</code>
+     */
     PERMISSION_TYPE_UNSPECIFIED(440313346),
     UNRECOGNIZED(-1),
     ;
@@ -155,15 +195,55 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      * <code>UNDEFINED_PERMISSION_TYPE = 0;</code>
      */
     public static final int UNDEFINED_PERMISSION_TYPE_VALUE = 0;
-    /** <code>ADMIN_READ = 128951462;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ADMIN_READ = 128951462;</code>
+     */
     public static final int ADMIN_READ_VALUE = 128951462;
-    /** <code>ADMIN_WRITE = 244412079;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ADMIN_WRITE = 244412079;</code>
+     */
     public static final int ADMIN_WRITE_VALUE = 244412079;
-    /** <code>DATA_READ = 305224971;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DATA_READ = 305224971;</code>
+     */
     public static final int DATA_READ_VALUE = 305224971;
-    /** <code>DATA_WRITE = 340181738;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DATA_WRITE = 340181738;</code>
+     */
     public static final int DATA_WRITE_VALUE = 340181738;
-    /** <code>PERMISSION_TYPE_UNSPECIFIED = 440313346;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>PERMISSION_TYPE_UNSPECIFIED = 440313346;</code>
+     */
     public static final int PERMISSION_TYPE_UNSPECIFIED_VALUE = 440313346;
 
     public final int getNumber() {
@@ -264,7 +344,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The type of the permission that was checked.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -281,7 +361,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The type of the permission that was checked.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -298,7 +378,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The type of the permission that was checked.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -488,7 +568,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Authorization-related information used by Cloud Audit Logging.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AuthorizationLoggingOptions}
@@ -655,7 +735,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The type of the permission that was checked.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -672,7 +752,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The type of the permission that was checked.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -689,7 +769,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The type of the permission that was checked.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -709,7 +789,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The type of the permission that was checked.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -733,7 +813,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The type of the permission that was checked.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -757,7 +837,7 @@ public final class AuthorizationLoggingOptions extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The type of the permission that was checked.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>

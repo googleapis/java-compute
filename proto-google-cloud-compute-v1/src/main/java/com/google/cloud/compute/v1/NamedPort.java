@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * The named port. For example: .
+ * The named port. For example: &lt;"http", 80&gt;.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NamedPort}
@@ -396,7 +396,7 @@ public final class NamedPort extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The named port. For example: .
+   * The named port. For example: &lt;"http", 80&gt;.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NamedPort}

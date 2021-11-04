@@ -27,7 +27,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
+   * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
@@ -39,7 +39,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
+   * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
@@ -51,7 +51,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see  Connection balancing mode.
+   * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
@@ -65,8 +65,6 @@ public interface BackendOrBuilder
    *
    * <pre>
    * A multiplier applied to the backend's target capacity of its balancing mode. The default value is 1, which means the group serves up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. The valid ranges are 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
-   * Not supported by:
-   * - Internal TCP/UDP Load Balancing - Network Load Balancing
    * </pre>
    *
    * <code>float capacity_scaler = 315958157;</code>
@@ -79,8 +77,6 @@ public interface BackendOrBuilder
    *
    * <pre>
    * A multiplier applied to the backend's target capacity of its balancing mode. The default value is 1, which means the group serves up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. The valid ranges are 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
-   * Not supported by:
-   * - Internal TCP/UDP Load Balancing - Network Load Balancing
    * </pre>
    *
    * <code>float capacity_scaler = 315958157;</code>
@@ -155,11 +151,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. The type of backend that a backend service supports depends on the backend service's loadBalancingScheme.
-   * - When the loadBalancingScheme for the backend service is EXTERNAL (except Network Load Balancing),  INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED , the backend can be either an instance group or a NEG. The backends on the backend service must be either all instance groups or all NEGs. You cannot mix instance group and NEG backends on the same backend service.
-   * - When the loadBalancingScheme for the backend service is EXTERNAL for Network Load Balancing or INTERNAL for Internal TCP/UDP Load Balancing, the backend must be an instance group. NEGs are not supported.
-   * For regional services, the backend must be in the same region as the backend service.
-   * You must use the fully-qualified URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
    * </pre>
    *
    * <code>string group = 98629247;</code>
@@ -171,11 +163,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. The type of backend that a backend service supports depends on the backend service's loadBalancingScheme.
-   * - When the loadBalancingScheme for the backend service is EXTERNAL (except Network Load Balancing),  INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED , the backend can be either an instance group or a NEG. The backends on the backend service must be either all instance groups or all NEGs. You cannot mix instance group and NEG backends on the same backend service.
-   * - When the loadBalancingScheme for the backend service is EXTERNAL for Network Load Balancing or INTERNAL for Internal TCP/UDP Load Balancing, the backend must be an instance group. NEGs are not supported.
-   * For regional services, the backend must be in the same region as the backend service.
-   * You must use the fully-qualified URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
    * </pre>
    *
    * <code>string group = 98629247;</code>
@@ -187,11 +175,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. The type of backend that a backend service supports depends on the backend service's loadBalancingScheme.
-   * - When the loadBalancingScheme for the backend service is EXTERNAL (except Network Load Balancing),  INTERNAL_SELF_MANAGED, or INTERNAL_MANAGED , the backend can be either an instance group or a NEG. The backends on the backend service must be either all instance groups or all NEGs. You cannot mix instance group and NEG backends on the same backend service.
-   * - When the loadBalancingScheme for the backend service is EXTERNAL for Network Load Balancing or INTERNAL for Internal TCP/UDP Load Balancing, the backend must be an instance group. NEGs are not supported.
-   * For regional services, the backend must be in the same region as the backend service.
-   * You must use the fully-qualified URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
+   * The fully-qualified URL of an instance group or network endpoint group (NEG) resource. To determine what types of backends a load balancer supports, see the [Backend services overview](https://cloud.google.com/load-balancing/docs/backend-service#backends). You must use the *fully-qualified* URL (starting with https://www.googleapis.com/) to specify the instance group or NEG. Partial URLs are not supported.
    * </pre>
    *
    * <code>string group = 98629247;</code>
@@ -204,8 +188,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE. Not supported by:
-   * - Internal TCP/UDP Load Balancing - Network Load Balancing
+   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE.
    * </pre>
    *
    * <code>int32 max_connections = 110652154;</code>
@@ -217,8 +200,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE. Not supported by:
-   * - Internal TCP/UDP Load Balancing - Network Load Balancing
+   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE.
    * </pre>
    *
    * <code>int32 max_connections = 110652154;</code>
@@ -231,9 +213,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
-   * Not available if the backend's balancingMode is RATE. Not supported by:
-   * - Internal TCP/UDP Load Balancing - Network Load Balancing.
+   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE.
    * </pre>
    *
    * <code>int32 max_connections_per_endpoint = 216904604;</code>
@@ -245,9 +225,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
-   * Not available if the backend's balancingMode is RATE. Not supported by:
-   * - Internal TCP/UDP Load Balancing - Network Load Balancing.
+   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE.
    * </pre>
    *
    * <code>int32 max_connections_per_endpoint = 216904604;</code>
@@ -260,9 +238,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
-   * Not available if the backend's balancingMode is RATE. Not supported by:
-   * - Internal TCP/UDP Load Balancing - Network Load Balancing.
+   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE.
    * </pre>
    *
    * <code>int32 max_connections_per_instance = 104671900;</code>
@@ -274,9 +250,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode.
-   * Not available if the backend's balancingMode is RATE. Not supported by:
-   * - Internal TCP/UDP Load Balancing - Network Load Balancing.
+   * Defines a target maximum number of simultaneous connections. For usage guidelines, see Connection balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is RATE.
    * </pre>
    *
    * <code>int32 max_connections_per_instance = 104671900;</code>
@@ -289,8 +263,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Defines a maximum number of HTTP requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
-   * Not available if the backend's balancingMode is CONNECTION.
+   * Defines a maximum number of HTTP requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
    * <code>int32 max_rate = 408035035;</code>
@@ -302,8 +275,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Defines a maximum number of HTTP requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
-   * Not available if the backend's balancingMode is CONNECTION.
+   * Defines a maximum number of HTTP requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
    * <code>int32 max_rate = 408035035;</code>
@@ -316,8 +288,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
-   * Not available if the backend's balancingMode is CONNECTION.
+   * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
    * <code>float max_rate_per_endpoint = 129832283;</code>
@@ -329,8 +300,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
-   * Not available if the backend's balancingMode is CONNECTION.
+   * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
    * <code>float max_rate_per_endpoint = 129832283;</code>
@@ -343,8 +313,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
-   * Not available if the backend's balancingMode is CONNECTION.
+   * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
    * <code>float max_rate_per_instance = 17599579;</code>
@@ -356,8 +325,7 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
-   * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode.
-   * Not available if the backend's balancingMode is CONNECTION.
+   * Defines a maximum target for requests per second (RPS). For usage guidelines, see Rate balancing mode and Utilization balancing mode. Not available if the backend's balancingMode is CONNECTION.
    * </pre>
    *
    * <code>float max_rate_per_instance = 17599579;</code>
@@ -367,12 +335,24 @@ public interface BackendOrBuilder
   float getMaxRatePerInstance();
 
   /**
+   *
+   *
+   * <pre>
+   * Optional parameter to define a target capacity for the UTILIZATIONbalancing mode. The valid range is [0.0, 1.0]. For usage guidelines, see Utilization balancing mode.
+   * </pre>
+   *
    * <code>float max_utilization = 148192199;</code>
    *
    * @return Whether the maxUtilization field is set.
    */
   boolean hasMaxUtilization();
   /**
+   *
+   *
+   * <pre>
+   * Optional parameter to define a target capacity for the UTILIZATIONbalancing mode. The valid range is [0.0, 1.0]. For usage guidelines, see Utilization balancing mode.
+   * </pre>
+   *
    * <code>float max_utilization = 148192199;</code>
    *
    * @return The maxUtilization.

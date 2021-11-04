@@ -545,6 +545,18 @@
         }
       }
     },
+    "ImageFamilyViews": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ImageFamilyViewsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            }
+          }
+        }
+      }
+    },
     "Images": {
       "clients": {
         "grpc": {
@@ -786,6 +798,9 @@
             },
             "Reset": {
               "methods": ["reset", "reset", "resetCallable"]
+            },
+            "SendDiagnosticInterrupt": {
+              "methods": ["sendDiagnosticInterrupt", "sendDiagnosticInterrupt", "sendDiagnosticInterruptCallable"]
             },
             "SetDeletionProtection": {
               "methods": ["setDeletionProtection", "setDeletionProtection", "setDeletionProtectionCallable"]
@@ -1926,6 +1941,42 @@
             },
             "RemoveRule": {
               "methods": ["removeRule", "removeRule", "removeRuleCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ServiceAttachments": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ServiceAttachmentsClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Delete": {
+              "methods": ["delete", "delete", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "Insert": {
+              "methods": ["insert", "insert", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Patch": {
+              "methods": ["patch", "patch", "patchCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }

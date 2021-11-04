@@ -22,12 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Autoscaler resource.
- * Google Compute Engine has two Autoscaler resources:
- * * [Zonal](/compute/docs/reference/rest/{$api_version}/autoscalers) * [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
- * Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances.
- * For zonal managed instance groups resource, use the autoscaler resource.
- * For regional managed instance groups, use the regionAutoscalers resource. (== resource_for {$api_version}.autoscalers ==) (== resource_for {$api_version}.regionAutoscalers ==)
+ * Represents an Autoscaler resource. Google Compute Engine has two Autoscaler resources: * [Zonal](/compute/docs/reference/rest/v1/autoscalers) * [Regional](/compute/docs/reference/rest/v1/regionAutoscalers) Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances. For zonal managed instance groups resource, use the autoscaler resource. For regional managed instance groups, use the regionAutoscalers resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Autoscaler}
@@ -260,11 +255,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-   * - DELETING: Configuration is being deleted.
-   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Autoscaler.Status}
@@ -280,13 +271,45 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration is acknowledged to be effective
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     ACTIVE(314733318),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration is being deleted
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
-    /** <code>ERROR = 66247144;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration has errors. Actionable for users.
+     * </pre>
+     *
+     * <code>ERROR = 66247144;</code>
+     */
     ERROR(66247144),
-    /** <code>PENDING = 35394935;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaler backend hasn't read new/updated configuration
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
     PENDING(35394935),
     UNRECOGNIZED(-1),
     ;
@@ -301,13 +324,45 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration is acknowledged to be effective
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     public static final int ACTIVE_VALUE = 314733318;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration is being deleted
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
-    /** <code>ERROR = 66247144;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration has errors. Actionable for users.
+     * </pre>
+     *
+     * <code>ERROR = 66247144;</code>
+     */
     public static final int ERROR_VALUE = 66247144;
-    /** <code>PENDING = 35394935;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaler backend hasn't read new/updated configuration
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
     public static final int PENDING_VALUE = 35394935;
 
     public final int getNumber() {
@@ -404,8 +459,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-   * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -420,8 +474,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-   * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -438,8 +491,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-   * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -1028,11 +1080,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-   * - DELETING: Configuration is being deleted.
-   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
@@ -1047,11 +1095,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-   * - DELETING: Configuration is being deleted.
-   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
@@ -1066,11 +1110,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-   * - DELETING: Configuration is being deleted.
-   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
@@ -1651,12 +1691,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an Autoscaler resource.
-   * Google Compute Engine has two Autoscaler resources:
-   * * [Zonal](/compute/docs/reference/rest/{$api_version}/autoscalers) * [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
-   * Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances.
-   * For zonal managed instance groups resource, use the autoscaler resource.
-   * For regional managed instance groups, use the regionAutoscalers resource. (== resource_for {$api_version}.autoscalers ==) (== resource_for {$api_version}.regionAutoscalers ==)
+   * Represents an Autoscaler resource. Google Compute Engine has two Autoscaler resources: * [Zonal](/compute/docs/reference/rest/v1/autoscalers) * [Regional](/compute/docs/reference/rest/v1/regionAutoscalers) Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances. For zonal managed instance groups resource, use the autoscaler resource. For regional managed instance groups, use the regionAutoscalers resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Autoscaler}
@@ -2018,8 +2053,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -2033,8 +2067,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -2054,8 +2087,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -2077,8 +2109,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -2098,8 +2129,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -2128,8 +2158,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -2148,8 +2177,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -2163,8 +2191,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -2182,8 +2209,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-     * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+     * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -3251,11 +3277,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-     * - DELETING: Configuration is being deleted.
-     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
@@ -3270,11 +3292,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-     * - DELETING: Configuration is being deleted.
-     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
@@ -3289,11 +3307,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-     * - DELETING: Configuration is being deleted.
-     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
@@ -3311,11 +3325,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-     * - DELETING: Configuration is being deleted.
-     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
@@ -3333,11 +3343,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-     * - DELETING: Configuration is being deleted.
-     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
@@ -3358,11 +3364,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-     * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-     * - DELETING: Configuration is being deleted.
-     * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-     * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+     * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>

@@ -127,7 +127,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode}
@@ -145,11 +145,35 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
     UNDEFINED_MODE(0),
     /** <code>MODE_UNSPECIFIED = 371348091;</code> */
     MODE_UNSPECIFIED(371348091),
-    /** <code>OFF = 78159;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaling is disabled.
+     * </pre>
+     *
+     * <code>OFF = 78159;</code>
+     */
     OFF(78159),
-    /** <code>ON = 2527;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Autocaling is fully enabled.
+     * </pre>
+     *
+     * <code>ON = 2527;</code>
+     */
     ON(2527),
-    /** <code>ONLY_SCALE_OUT = 152713670;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaling will only scale out and will not remove nodes.
+     * </pre>
+     *
+     * <code>ONLY_SCALE_OUT = 152713670;</code>
+     */
     ONLY_SCALE_OUT(152713670),
     UNRECOGNIZED(-1),
     ;
@@ -166,11 +190,35 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
     public static final int UNDEFINED_MODE_VALUE = 0;
     /** <code>MODE_UNSPECIFIED = 371348091;</code> */
     public static final int MODE_UNSPECIFIED_VALUE = 371348091;
-    /** <code>OFF = 78159;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaling is disabled.
+     * </pre>
+     *
+     * <code>OFF = 78159;</code>
+     */
     public static final int OFF_VALUE = 78159;
-    /** <code>ON = 2527;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Autocaling is fully enabled.
+     * </pre>
+     *
+     * <code>ON = 2527;</code>
+     */
     public static final int ON_VALUE = 2527;
-    /** <code>ONLY_SCALE_OUT = 152713670;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Autoscaling will only scale out and will not remove nodes.
+     * </pre>
+     *
+     * <code>ONLY_SCALE_OUT = 152713670;</code>
+     */
     public static final int ONLY_SCALE_OUT_VALUE = 152713670;
 
     public final int getNumber() {
@@ -335,7 +383,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
@@ -350,7 +398,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
@@ -365,7 +413,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
@@ -897,7 +945,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
@@ -912,7 +960,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
@@ -927,7 +975,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
@@ -945,7 +993,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
@@ -965,7 +1013,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
@@ -986,7 +1034,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+     * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>

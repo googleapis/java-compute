@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an SSL Policy resource.
- * Use SSL policies to control the SSL features, such as versions and cipher suites, offered by an HTTPS or SSL Proxy load balancer. For more information, read  SSL Policy Concepts. (== resource_for {$api_version}.sslPolicies ==)
+ * Represents an SSL Policy resource. Use SSL policies to control the SSL features, such as versions and cipher suites, offered by an HTTPS or SSL Proxy load balancer. For more information, read SSL Policy Concepts.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SslPolicy}
@@ -238,11 +237,35 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MIN_TLS_VERSION = 0;</code>
      */
     UNDEFINED_MIN_TLS_VERSION(0),
-    /** <code>TLS_1_0 = 33116734;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.0
+     * </pre>
+     *
+     * <code>TLS_1_0 = 33116734;</code>
+     */
     TLS_1_0(33116734),
-    /** <code>TLS_1_1 = 33116735;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.1
+     * </pre>
+     *
+     * <code>TLS_1_1 = 33116735;</code>
+     */
     TLS_1_1(33116735),
-    /** <code>TLS_1_2 = 33116736;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.2
+     * </pre>
+     *
+     * <code>TLS_1_2 = 33116736;</code>
+     */
     TLS_1_2(33116736),
     UNRECOGNIZED(-1),
     ;
@@ -257,11 +280,35 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MIN_TLS_VERSION = 0;</code>
      */
     public static final int UNDEFINED_MIN_TLS_VERSION_VALUE = 0;
-    /** <code>TLS_1_0 = 33116734;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.0
+     * </pre>
+     *
+     * <code>TLS_1_0 = 33116734;</code>
+     */
     public static final int TLS_1_0_VALUE = 33116734;
-    /** <code>TLS_1_1 = 33116735;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.1
+     * </pre>
+     *
+     * <code>TLS_1_1 = 33116735;</code>
+     */
     public static final int TLS_1_1_VALUE = 33116735;
-    /** <code>TLS_1_2 = 33116736;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * TLS 1.2
+     * </pre>
+     *
+     * <code>TLS_1_2 = 33116736;</code>
+     */
     public static final int TLS_1_2_VALUE = 33116736;
 
     public final int getNumber() {
@@ -369,13 +416,45 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PROFILE = 0;</code>
      */
     UNDEFINED_PROFILE(0),
-    /** <code>COMPATIBLE = 179357396;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Compatible profile. Allows the broadset set of clients, even those which support only out-of-date SSL features to negotiate with the load balancer.
+     * </pre>
+     *
+     * <code>COMPATIBLE = 179357396;</code>
+     */
     COMPATIBLE(179357396),
-    /** <code>CUSTOM = 388595569;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Custom profile. Allow only the set of allowed SSL features specified in the customFeatures field.
+     * </pre>
+     *
+     * <code>CUSTOM = 388595569;</code>
+     */
     CUSTOM(388595569),
-    /** <code>MODERN = 132013855;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Modern profile. Supports a wide set of SSL features, allowing modern clients to negotiate SSL with the load balancer.
+     * </pre>
+     *
+     * <code>MODERN = 132013855;</code>
+     */
     MODERN(132013855),
-    /** <code>RESTRICTED = 261551195;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Restricted profile. Supports a reduced set of SSL features, intended to meet stricter compliance requirements.
+     * </pre>
+     *
+     * <code>RESTRICTED = 261551195;</code>
+     */
     RESTRICTED(261551195),
     UNRECOGNIZED(-1),
     ;
@@ -390,13 +469,45 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PROFILE = 0;</code>
      */
     public static final int UNDEFINED_PROFILE_VALUE = 0;
-    /** <code>COMPATIBLE = 179357396;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Compatible profile. Allows the broadset set of clients, even those which support only out-of-date SSL features to negotiate with the load balancer.
+     * </pre>
+     *
+     * <code>COMPATIBLE = 179357396;</code>
+     */
     public static final int COMPATIBLE_VALUE = 179357396;
-    /** <code>CUSTOM = 388595569;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Custom profile. Allow only the set of allowed SSL features specified in the customFeatures field.
+     * </pre>
+     *
+     * <code>CUSTOM = 388595569;</code>
+     */
     public static final int CUSTOM_VALUE = 388595569;
-    /** <code>MODERN = 132013855;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Modern profile. Supports a wide set of SSL features, allowing modern clients to negotiate SSL with the load balancer.
+     * </pre>
+     *
+     * <code>MODERN = 132013855;</code>
+     */
     public static final int MODERN_VALUE = 132013855;
-    /** <code>RESTRICTED = 261551195;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Restricted profile. Supports a reduced set of SSL features, intended to meet stricter compliance requirements.
+     * </pre>
+     *
+     * <code>RESTRICTED = 261551195;</code>
+     */
     public static final int RESTRICTED_VALUE = 261551195;
 
     public final int getNumber() {
@@ -557,8 +668,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The
-   * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -572,8 +682,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The
-   * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -587,8 +696,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The
-   * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -603,8 +711,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features enabled when the selected profile is CUSTOM. The
-   * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+   * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
    * </pre>
    *
    * <code>repeated string custom_features = 34789707;</code>
@@ -747,8 +854,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -763,8 +869,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -787,8 +892,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -1530,8 +1634,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an SSL Policy resource.
-   * Use SSL policies to control the SSL features, such as versions and cipher suites, offered by an HTTPS or SSL Proxy load balancer. For more information, read  SSL Policy Concepts. (== resource_for {$api_version}.sslPolicies ==)
+   * Represents an SSL Policy resource. Use SSL policies to control the SSL features, such as versions and cipher suites, offered by an HTTPS or SSL Proxy load balancer. For more information, read SSL Policy Concepts.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SslPolicy}
@@ -1986,8 +2089,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2001,8 +2103,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2016,8 +2117,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2032,8 +2132,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2048,8 +2147,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2071,8 +2169,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2093,8 +2190,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2112,8 +2208,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2130,8 +2225,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features enabled when the selected profile is CUSTOM. The
-     * - method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
+     * A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is not CUSTOM.
      * </pre>
      *
      * <code>repeated string custom_features = 34789707;</code>
@@ -2443,8 +2537,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -2458,8 +2551,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -2481,8 +2573,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -2504,8 +2595,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -2526,8 +2616,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -2544,8 +2633,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>

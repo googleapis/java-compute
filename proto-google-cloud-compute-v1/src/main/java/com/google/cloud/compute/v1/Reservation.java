@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read  Reserving zonal resources. (== resource_for {$api_version}.reservations ==)
+ * Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read Reserving zonal resources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Reservation}
@@ -224,15 +224,47 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated for the reservation.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     CREATING(455564985),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reservation is currently being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
     /** <code>INVALID = 530283991;</code> */
     INVALID(530283991),
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reservation has allocated all its resources.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     READY(77848963),
-    /** <code>UPDATING = 494614342;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reservation is currently being resized.
+     * </pre>
+     *
+     * <code>UPDATING = 494614342;</code>
+     */
     UPDATING(494614342),
     UNRECOGNIZED(-1),
     ;
@@ -247,15 +279,47 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated for the reservation.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     public static final int CREATING_VALUE = 455564985;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reservation is currently being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
     /** <code>INVALID = 530283991;</code> */
     public static final int INVALID_VALUE = 530283991;
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reservation has allocated all its resources.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     public static final int READY_VALUE = 77848963;
-    /** <code>UPDATING = 494614342;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reservation is currently being resized.
+     * </pre>
+     *
+     * <code>UPDATING = 494614342;</code>
+     */
     public static final int UPDATING_VALUE = 494614342;
 
     public final int getNumber() {
@@ -1330,7 +1394,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read  Reserving zonal resources. (== resource_for {$api_version}.reservations ==)
+   * Represents a reservation resource. A reservation ensures that capacity is held in a specific zone even if the reserved VMs are not running. For more information, read Reserving zonal resources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Reservation}

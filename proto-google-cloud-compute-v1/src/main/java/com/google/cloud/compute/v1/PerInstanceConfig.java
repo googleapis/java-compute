@@ -163,17 +163,65 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>APPLYING = 352003508;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config is being applied to the instance, but is not yet effective, possibly waiting for the instance to, for example, REFRESH.
+     * </pre>
+     *
+     * <code>APPLYING = 352003508;</code>
+     */
     APPLYING(352003508),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config deletion is being applied on the instance, possibly waiting for the instance to, for example, REFRESH.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
-    /** <code>EFFECTIVE = 244201863;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config is effective on the instance, meaning that all disks, ips and metadata specified in this config are attached or set on the instance.
+     * </pre>
+     *
+     * <code>EFFECTIVE = 244201863;</code>
+     */
     EFFECTIVE(244201863),
-    /** <code>NONE = 2402104;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* The default status, when no per-instance config exists.
+     * </pre>
+     *
+     * <code>NONE = 2402104;</code>
+     */
     NONE(2402104),
-    /** <code>UNAPPLIED = 483935140;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config is set on an instance but not been applied yet.
+     * </pre>
+     *
+     * <code>UNAPPLIED = 483935140;</code>
+     */
     UNAPPLIED(483935140),
-    /** <code>UNAPPLIED_DELETION = 313956873;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config has been deleted, but the deletion is not yet applied.
+     * </pre>
+     *
+     * <code>UNAPPLIED_DELETION = 313956873;</code>
+     */
     UNAPPLIED_DELETION(313956873),
     UNRECOGNIZED(-1),
     ;
@@ -188,17 +236,65 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>APPLYING = 352003508;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config is being applied to the instance, but is not yet effective, possibly waiting for the instance to, for example, REFRESH.
+     * </pre>
+     *
+     * <code>APPLYING = 352003508;</code>
+     */
     public static final int APPLYING_VALUE = 352003508;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config deletion is being applied on the instance, possibly waiting for the instance to, for example, REFRESH.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
-    /** <code>EFFECTIVE = 244201863;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config is effective on the instance, meaning that all disks, ips and metadata specified in this config are attached or set on the instance.
+     * </pre>
+     *
+     * <code>EFFECTIVE = 244201863;</code>
+     */
     public static final int EFFECTIVE_VALUE = 244201863;
-    /** <code>NONE = 2402104;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* The default status, when no per-instance config exists.
+     * </pre>
+     *
+     * <code>NONE = 2402104;</code>
+     */
     public static final int NONE_VALUE = 2402104;
-    /** <code>UNAPPLIED = 483935140;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config is set on an instance but not been applied yet.
+     * </pre>
+     *
+     * <code>UNAPPLIED = 483935140;</code>
+     */
     public static final int UNAPPLIED_VALUE = 483935140;
-    /** <code>UNAPPLIED_DELETION = 313956873;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The per-instance config has been deleted, but the deletion is not yet applied.
+     * </pre>
+     *
+     * <code>UNAPPLIED_DELETION = 313956873;</code>
+     */
     public static final int UNAPPLIED_DELETION_VALUE = 313956873;
 
     public final int getNumber() {

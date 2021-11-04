@@ -642,8 +642,7 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetHttpsProxy resource with the data included in the request. This
-   * method supports PATCH semantics and uses JSON merge patch format and processing rules. (==
-   * suppress_warning http-rest-shadowed ==)
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -676,8 +675,7 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetHttpsProxy resource with the data included in the request. This
-   * method supports PATCH semantics and uses JSON merge patch format and processing rules. (==
-   * suppress_warning http-rest-shadowed ==)
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -704,8 +702,7 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified TargetHttpsProxy resource with the data included in the request. This
-   * method supports PATCH semantics and uses JSON merge patch format and processing rules. (==
-   * suppress_warning http-rest-shadowed ==)
+   * method supports PATCH semantics and uses JSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *

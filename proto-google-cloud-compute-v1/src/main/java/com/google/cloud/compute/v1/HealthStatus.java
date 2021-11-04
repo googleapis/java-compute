@@ -335,13 +335,45 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_WEIGHT_ERROR = 0;</code>
      */
     UNDEFINED_WEIGHT_ERROR(0),
-    /** <code>INVALID_WEIGHT = 383698400;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The response to a Health Check probe had the HTTP response header field X-Load-Balancing-Endpoint-Weight, but its content was invalid (i.e., not a non-negative single-precision floating-point number in decimal string representation).
+     * </pre>
+     *
+     * <code>INVALID_WEIGHT = 383698400;</code>
+     */
     INVALID_WEIGHT(383698400),
-    /** <code>MISSING_WEIGHT = 384027537;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The response to a Health Check probe did not have the HTTP response header field X-Load-Balancing-Endpoint-Weight.
+     * </pre>
+     *
+     * <code>MISSING_WEIGHT = 384027537;</code>
+     */
     MISSING_WEIGHT(384027537),
-    /** <code>UNAVAILABLE_WEIGHT = 439464295;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is the value when the accompanied health status is either TIMEOUT (i.e.,the Health Check probe was not able to get a response in time) or UNKNOWN. For the latter, it should be typically because there has not been sufficient time to parse and report the weight for a new backend (which is with 0.0.0.0 ip address). However, it can be also due to an outage case for which the health status is explicitly reset to UNKNOWN.
+     * </pre>
+     *
+     * <code>UNAVAILABLE_WEIGHT = 439464295;</code>
+     */
     UNAVAILABLE_WEIGHT(439464295),
-    /** <code>WEIGHT_NONE = 502428831;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is the default value when WeightReportMode is DISABLE, and is also the initial value when WeightReportMode has just updated to ENABLE or DRY_RUN and there has not been sufficient time to parse and report the backend weight.
+     * </pre>
+     *
+     * <code>WEIGHT_NONE = 502428831;</code>
+     */
     WEIGHT_NONE(502428831),
     UNRECOGNIZED(-1),
     ;
@@ -356,13 +388,45 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_WEIGHT_ERROR = 0;</code>
      */
     public static final int UNDEFINED_WEIGHT_ERROR_VALUE = 0;
-    /** <code>INVALID_WEIGHT = 383698400;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The response to a Health Check probe had the HTTP response header field X-Load-Balancing-Endpoint-Weight, but its content was invalid (i.e., not a non-negative single-precision floating-point number in decimal string representation).
+     * </pre>
+     *
+     * <code>INVALID_WEIGHT = 383698400;</code>
+     */
     public static final int INVALID_WEIGHT_VALUE = 383698400;
-    /** <code>MISSING_WEIGHT = 384027537;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The response to a Health Check probe did not have the HTTP response header field X-Load-Balancing-Endpoint-Weight.
+     * </pre>
+     *
+     * <code>MISSING_WEIGHT = 384027537;</code>
+     */
     public static final int MISSING_WEIGHT_VALUE = 384027537;
-    /** <code>UNAVAILABLE_WEIGHT = 439464295;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is the value when the accompanied health status is either TIMEOUT (i.e.,the Health Check probe was not able to get a response in time) or UNKNOWN. For the latter, it should be typically because there has not been sufficient time to parse and report the weight for a new backend (which is with 0.0.0.0 ip address). However, it can be also due to an outage case for which the health status is explicitly reset to UNKNOWN.
+     * </pre>
+     *
+     * <code>UNAVAILABLE_WEIGHT = 439464295;</code>
+     */
     public static final int UNAVAILABLE_WEIGHT_VALUE = 439464295;
-    /** <code>WEIGHT_NONE = 502428831;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is the default value when WeightReportMode is DISABLE, and is also the initial value when WeightReportMode has just updated to ENABLE or DRY_RUN and there has not been sufficient time to parse and report the backend weight.
+     * </pre>
+     *
+     * <code>WEIGHT_NONE = 502428831;</code>
+     */
     public static final int WEIGHT_NONE_VALUE = 502428831;
 
     public final int getNumber() {

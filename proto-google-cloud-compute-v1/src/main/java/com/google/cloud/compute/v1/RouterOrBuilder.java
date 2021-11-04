@@ -188,8 +188,7 @@ public interface RouterOrBuilder
    *
    *
    * <pre>
-   * Field to indicate if a router is dedicated to use with encrypted Interconnect Attachment (IPsec-encrypted Cloud Interconnect feature).
-   * Not currently available in all Interconnect locations.
+   * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments). Not currently available publicly.
    * </pre>
    *
    * <code>bool encrypted_interconnect_router = 297996575;</code>
@@ -201,8 +200,7 @@ public interface RouterOrBuilder
    *
    *
    * <pre>
-   * Field to indicate if a router is dedicated to use with encrypted Interconnect Attachment (IPsec-encrypted Cloud Interconnect feature).
-   * Not currently available in all Interconnect locations.
+   * Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments). Not currently available publicly.
    * </pre>
    *
    * <code>bool encrypted_interconnect_router = 297996575;</code>

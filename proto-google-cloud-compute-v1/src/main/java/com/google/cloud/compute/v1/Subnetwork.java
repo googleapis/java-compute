@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Subnetwork resource.
- * A subnetwork (also known as a subnet) is a logical partition of a Virtual Private Cloud network with one primary IP range and zero or more secondary IP ranges. For more information, read  Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.subnetworks ==)
+ * Represents a Subnetwork resource. A subnetwork (also known as a subnet) is a logical partition of a Virtual Private Cloud network with one primary IP range and zero or more secondary IP ranges. For more information, read Virtual Private Cloud (VPC) Network.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Subnetwork}
@@ -41,9 +40,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
   private Subnetwork() {
     creationTimestamp_ = "";
     description_ = "";
+    externalIpv6Prefix_ = "";
     fingerprint_ = "";
     gatewayAddress_ = "";
     ipCidrRange_ = "";
+    ipv6AccessType_ = 0;
     ipv6CidrRange_ = "";
     kind_ = "";
     name_ = "";
@@ -54,6 +55,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     role_ = 0;
     secondaryIpRanges_ = java.util.Collections.emptyList();
     selfLink_ = "";
+    stackType_ = 0;
     state_ = 0;
   }
 
@@ -89,28 +91,28 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             break;
           case 26840:
             {
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               id_ = input.readUInt64();
               break;
             }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000400;
               kind_ = s;
               break;
             }
           case 26989658:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00001000;
               name_ = s;
               break;
             }
           case 28050352:
             {
               int rawValue = input.readEnum();
-              bitField0_ |= 0x00010000;
+              bitField0_ |= 0x00040000;
               role_ = rawValue;
               break;
             }
@@ -124,30 +126,30 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
           case 386216048:
             {
               int rawValue = input.readEnum();
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00008000;
               privateIpv6GoogleAccess_ = rawValue;
               break;
             }
           case 784938578:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               ipCidrRange_ = s;
               break;
             }
           case 878060680:
             {
               int rawValue = input.readEnum();
-              bitField0_ |= 0x00040000;
+              bitField0_ |= 0x00200000;
               state_ = rawValue;
               break;
             }
           case 1093271322:
             {
-              if (!((mutable_bitField0_ & 0x00020000) != 0)) {
+              if (!((mutable_bitField0_ & 0x00080000) != 0)) {
                 secondaryIpRanges_ =
                     new java.util.ArrayList<com.google.cloud.compute.v1.SubnetworkSecondaryRange>();
-                mutable_bitField0_ |= 0x00020000;
+                mutable_bitField0_ |= 0x00080000;
               }
               secondaryIpRanges_.add(
                   input.readMessage(
@@ -158,8 +160,15 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00008000;
+              bitField0_ |= 0x00020000;
               region_ = s;
+              break;
+            }
+          case 1114393522:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              externalIpv6Prefix_ = s;
               break;
             }
           case 1212355360:
@@ -171,35 +180,35 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00002000;
               network_ = s;
               break;
             }
           case 1877428002:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               fingerprint_ = s;
               break;
             }
           case -2109837230:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000200;
               ipv6CidrRange_ = s;
               break;
             }
           case -1763710736:
             {
               int rawValue = input.readEnum();
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00010000;
               purpose_ = rawValue;
               break;
             }
           case -1484569366:
             {
               com.google.cloud.compute.v1.SubnetworkLogConfig.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000200) != 0)) {
+              if (((bitField0_ & 0x00000800) != 0)) {
                 subBuilder = logConfig_.toBuilder();
               }
               logConfig_ =
@@ -209,12 +218,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
                 subBuilder.mergeFrom(logConfig_);
                 logConfig_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000800;
               break;
             }
           case -923032976:
             {
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00004000;
               privateIpGoogleAccess_ = input.readBool();
               break;
             }
@@ -225,18 +234,32 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
               description_ = s;
               break;
             }
+          case -887696248:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00100000;
+              stackType_ = rawValue;
+              break;
+            }
           case -645248918:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00020000;
+              bitField0_ |= 0x00080000;
               selfLink_ = s;
               break;
             }
           case -616028214:
             {
               java.lang.String s = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               gatewayAddress_ = s;
+              break;
+            }
+          case -257698072:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00000100;
+              ipv6AccessType_ = rawValue;
               break;
             }
           default:
@@ -253,7 +276,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00020000) != 0)) {
+      if (((mutable_bitField0_ & 0x00080000) != 0)) {
         secondaryIpRanges_ = java.util.Collections.unmodifiableList(secondaryIpRanges_);
       }
       this.unknownFields = unknownFields.build();
@@ -280,8 +303,164 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-   * This field can be both set at resource creation time and updated using patch.
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.Ipv6AccessType}
+   */
+  public enum Ipv6AccessType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IPV6_ACCESS_TYPE = 0;</code>
+     */
+    UNDEFINED_IPV6_ACCESS_TYPE(0),
+    /**
+     *
+     *
+     * <pre>
+     * VMs on this subnet will be assigned IPv6 addresses that are accesible via the Internet, as well as the VPC network.
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
+    EXTERNAL(35607499),
+    /**
+     *
+     *
+     * <pre>
+     * IPv6 access type not set. Means this subnet hasn't been turned on IPv6 yet.
+     * </pre>
+     *
+     * <code>UNSPECIFIED_IPV6_ACCESS_TYPE = 313080613;</code>
+     */
+    UNSPECIFIED_IPV6_ACCESS_TYPE(313080613),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_IPV6_ACCESS_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_IPV6_ACCESS_TYPE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * VMs on this subnet will be assigned IPv6 addresses that are accesible via the Internet, as well as the VPC network.
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
+    public static final int EXTERNAL_VALUE = 35607499;
+    /**
+     *
+     *
+     * <pre>
+     * IPv6 access type not set. Means this subnet hasn't been turned on IPv6 yet.
+     * </pre>
+     *
+     * <code>UNSPECIFIED_IPV6_ACCESS_TYPE = 313080613;</code>
+     */
+    public static final int UNSPECIFIED_IPV6_ACCESS_TYPE_VALUE = 313080613;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Ipv6AccessType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Ipv6AccessType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_IPV6_ACCESS_TYPE;
+        case 35607499:
+          return EXTERNAL;
+        case 313080613:
+          return UNSPECIFIED_IPV6_ACCESS_TYPE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Ipv6AccessType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Ipv6AccessType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Ipv6AccessType>() {
+          public Ipv6AccessType findValueByNumber(int number) {
+            return Ipv6AccessType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Ipv6AccessType[] VALUES = values();
+
+    public static Ipv6AccessType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Ipv6AccessType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Subnetwork.Ipv6AccessType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess}
@@ -297,11 +476,35 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS(0),
-    /** <code>DISABLE_GOOGLE_ACCESS = 450958579;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Disable private IPv6 access to/from Google services.
+     * </pre>
+     *
+     * <code>DISABLE_GOOGLE_ACCESS = 450958579;</code>
+     */
     DISABLE_GOOGLE_ACCESS(450958579),
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional private IPv6 access to/from Google services.
+     * </pre>
+     *
+     * <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
+     */
     ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE(427975994),
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Outbound private IPv6 access from VMs in this subnet to Google services.
+     * </pre>
+     *
+     * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
+     */
     ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE(288210263),
     UNRECOGNIZED(-1),
     ;
@@ -316,11 +519,35 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     public static final int UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS_VALUE = 0;
-    /** <code>DISABLE_GOOGLE_ACCESS = 450958579;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Disable private IPv6 access to/from Google services.
+     * </pre>
+     *
+     * <code>DISABLE_GOOGLE_ACCESS = 450958579;</code>
+     */
     public static final int DISABLE_GOOGLE_ACCESS_VALUE = 450958579;
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional private IPv6 access to/from Google services.
+     * </pre>
+     *
+     * <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
+     */
     public static final int ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE_VALUE = 427975994;
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Outbound private IPv6 access from VMs in this subnet to Google services.
+     * </pre>
+     *
+     * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
+     */
     public static final int ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE_VALUE = 288210263;
 
     public final int getNumber() {
@@ -386,7 +613,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final PrivateIpv6GoogleAccess[] VALUES = values();
@@ -431,12 +658,46 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PURPOSE = 0;</code>
      */
     UNDEFINED_PURPOSE(0),
-    /** <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Subnet reserved for Internal HTTP(S) Load Balancing.
+     * </pre>
+     *
+     * <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code>
+     */
     INTERNAL_HTTPS_LOAD_BALANCER(248748889),
-    /** <code>PRIVATE = 403485027;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Regular user created or automatically created subnet.
+     * </pre>
+     *
+     * <code>PRIVATE = 403485027;</code>
+     */
     PRIVATE(403485027),
-    /** <code>PRIVATE_RFC_1918 = 254902107;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Regular user created or automatically created subnet.
+     * </pre>
+     *
+     * <code>PRIVATE_RFC_1918 = 254902107;</code>
+     */
     PRIVATE_RFC_1918(254902107),
+    /**
+     *
+     *
+     * <pre>
+     * Subnetworks created for Private Service Connect in the producer network.
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
+     */
+    PRIVATE_SERVICE_CONNECT(48134724),
     UNRECOGNIZED(-1),
     ;
 
@@ -450,12 +711,46 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PURPOSE = 0;</code>
      */
     public static final int UNDEFINED_PURPOSE_VALUE = 0;
-    /** <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Subnet reserved for Internal HTTP(S) Load Balancing.
+     * </pre>
+     *
+     * <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code>
+     */
     public static final int INTERNAL_HTTPS_LOAD_BALANCER_VALUE = 248748889;
-    /** <code>PRIVATE = 403485027;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Regular user created or automatically created subnet.
+     * </pre>
+     *
+     * <code>PRIVATE = 403485027;</code>
+     */
     public static final int PRIVATE_VALUE = 403485027;
-    /** <code>PRIVATE_RFC_1918 = 254902107;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Regular user created or automatically created subnet.
+     * </pre>
+     *
+     * <code>PRIVATE_RFC_1918 = 254902107;</code>
+     */
     public static final int PRIVATE_RFC_1918_VALUE = 254902107;
+    /**
+     *
+     *
+     * <pre>
+     * Subnetworks created for Private Service Connect in the producer network.
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
+     */
+    public static final int PRIVATE_SERVICE_CONNECT_VALUE = 48134724;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -489,6 +784,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
           return PRIVATE;
         case 254902107:
           return PRIVATE_RFC_1918;
+        case 48134724:
+          return PRIVATE_SERVICE_CONNECT;
         default:
           return null;
       }
@@ -518,7 +815,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final Purpose[] VALUES = values();
@@ -562,9 +859,25 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ROLE = 0;</code>
      */
     UNDEFINED_ROLE(0),
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The ACTIVE subnet that is currently used.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     ACTIVE(314733318),
-    /** <code>BACKUP = 341010882;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The BACKUP subnet that could be promoted to ACTIVE.
+     * </pre>
+     *
+     * <code>BACKUP = 341010882;</code>
+     */
     BACKUP(341010882),
     UNRECOGNIZED(-1),
     ;
@@ -579,9 +892,25 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ROLE = 0;</code>
      */
     public static final int UNDEFINED_ROLE_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The ACTIVE subnet that is currently used.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     public static final int ACTIVE_VALUE = 314733318;
-    /** <code>BACKUP = 341010882;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The BACKUP subnet that could be promoted to ACTIVE.
+     * </pre>
+     *
+     * <code>BACKUP = 341010882;</code>
+     */
     public static final int BACKUP_VALUE = 341010882;
 
     public final int getNumber() {
@@ -643,7 +972,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(2);
+      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final Role[] VALUES = values();
@@ -671,6 +1000,169 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.StackType}
+   */
+  public enum StackType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_STACK_TYPE = 0;</code>
+     */
+    UNDEFINED_STACK_TYPE(0),
+    /**
+     *
+     *
+     * <pre>
+     * New VMs in this subnet can have both IPv4 and IPv6 addresses.
+     * </pre>
+     *
+     * <code>IPV4_IPV6 = 22197249;</code>
+     */
+    IPV4_IPV6(22197249),
+    /**
+     *
+     *
+     * <pre>
+     * New VMs in this subnet will only be assigned IPv4 addresses.
+     * </pre>
+     *
+     * <code>IPV4_ONLY = 22373798;</code>
+     */
+    IPV4_ONLY(22373798),
+    /** <code>UNSPECIFIED_STACK_TYPE = 298084569;</code> */
+    UNSPECIFIED_STACK_TYPE(298084569),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_STACK_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_STACK_TYPE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * New VMs in this subnet can have both IPv4 and IPv6 addresses.
+     * </pre>
+     *
+     * <code>IPV4_IPV6 = 22197249;</code>
+     */
+    public static final int IPV4_IPV6_VALUE = 22197249;
+    /**
+     *
+     *
+     * <pre>
+     * New VMs in this subnet will only be assigned IPv4 addresses.
+     * </pre>
+     *
+     * <code>IPV4_ONLY = 22373798;</code>
+     */
+    public static final int IPV4_ONLY_VALUE = 22373798;
+    /** <code>UNSPECIFIED_STACK_TYPE = 298084569;</code> */
+    public static final int UNSPECIFIED_STACK_TYPE_VALUE = 298084569;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static StackType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static StackType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_STACK_TYPE;
+        case 22197249:
+          return IPV4_IPV6;
+        case 22373798:
+          return IPV4_ONLY;
+        case 298084569:
+          return UNSPECIFIED_STACK_TYPE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<StackType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<StackType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<StackType>() {
+          public StackType findValueByNumber(int number) {
+            return StackType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final StackType[] VALUES = values();
+
+    public static StackType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private StackType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Subnetwork.StackType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
    * </pre>
    *
@@ -687,9 +1179,25 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>DRAINING = 480455402;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Subnetwork is being drained.
+     * </pre>
+     *
+     * <code>DRAINING = 480455402;</code>
+     */
     DRAINING(480455402),
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Subnetwork is ready for use.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     READY(77848963),
     UNRECOGNIZED(-1),
     ;
@@ -704,9 +1212,25 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>DRAINING = 480455402;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Subnetwork is being drained.
+     * </pre>
+     *
+     * <code>DRAINING = 480455402;</code>
+     */
     public static final int DRAINING_VALUE = 480455402;
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Subnetwork is ready for use.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     public static final int READY_VALUE = 77848963;
 
     public final int getNumber() {
@@ -768,7 +1292,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(3);
+      return com.google.cloud.compute.v1.Subnetwork.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final State[] VALUES = values();
@@ -954,14 +1478,77 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     return enableFlowLogs_;
   }
 
+  public static final int EXTERNAL_IPV6_PREFIX_FIELD_NUMBER = 139299190;
+  private volatile java.lang.Object externalIpv6Prefix_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+   * </pre>
+   *
+   * <code>string external_ipv6_prefix = 139299190;</code>
+   *
+   * @return Whether the externalIpv6Prefix field is set.
+   */
+  @java.lang.Override
+  public boolean hasExternalIpv6Prefix() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+   * </pre>
+   *
+   * <code>string external_ipv6_prefix = 139299190;</code>
+   *
+   * @return The externalIpv6Prefix.
+   */
+  @java.lang.Override
+  public java.lang.String getExternalIpv6Prefix() {
+    java.lang.Object ref = externalIpv6Prefix_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      externalIpv6Prefix_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+   * </pre>
+   *
+   * <code>string external_ipv6_prefix = 139299190;</code>
+   *
+   * @return The bytes for externalIpv6Prefix.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExternalIpv6PrefixBytes() {
+    java.lang.Object ref = externalIpv6Prefix_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      externalIpv6Prefix_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
   private volatile java.lang.Object fingerprint_;
   /**
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -970,14 +1557,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasFingerprint() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -1000,8 +1586,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -1036,7 +1621,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasGatewayAddress() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -1100,7 +1685,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -1133,7 +1718,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasIpCidrRange() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1182,6 +1767,59 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int IPV6_ACCESS_TYPE_FIELD_NUMBER = 504658653;
+  private int ipv6AccessType_;
+  /**
+   *
+   *
+   * <pre>
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+   *
+   * @return Whether the ipv6AccessType field is set.
+   */
+  @java.lang.Override
+  public boolean hasIpv6AccessType() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+   *
+   * @return The enum numeric value on the wire for ipv6AccessType.
+   */
+  @java.lang.Override
+  public int getIpv6AccessTypeValue() {
+    return ipv6AccessType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+   *
+   * @return The ipv6AccessType.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType getIpv6AccessType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType result =
+        com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType.valueOf(ipv6AccessType_);
+    return result == null
+        ? com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType.UNRECOGNIZED
+        : result;
+  }
+
   public static final int IPV6_CIDR_RANGE_FIELD_NUMBER = 273141258;
   private volatile java.lang.Object ipv6CidrRange_;
   /**
@@ -1197,7 +1835,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasIpv6CidrRange() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -1261,7 +1899,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    *
@@ -1325,7 +1963,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLogConfig() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    *
@@ -1375,7 +2013,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    *
@@ -1430,7 +2068,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
    * </pre>
    *
    * <code>string network = 232872494;</code>
@@ -1439,13 +2077,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNetwork() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
    * </pre>
    *
    * <code>string network = 232872494;</code>
@@ -1468,7 +2106,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
    * </pre>
    *
    * <code>string network = 232872494;</code>
@@ -1503,7 +2141,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPrivateIpGoogleAccess() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -1527,8 +2165,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-   * This field can be both set at resource creation time and updated using patch.
+   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
    * </pre>
    *
    * <code>
@@ -1539,14 +2176,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPrivateIpv6GoogleAccess() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-   * This field can be both set at resource creation time and updated using patch.
+   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
    * </pre>
    *
    * <code>
@@ -1563,8 +2199,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-   * This field can be both set at resource creation time and updated using patch.
+   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
    * </pre>
    *
    * <code>
@@ -1600,7 +2235,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPurpose() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -1651,7 +2286,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -1715,7 +2350,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRole() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -1847,7 +2482,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
   /**
    *
@@ -1896,6 +2531,57 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int STACK_TYPE_FIELD_NUMBER = 425908881;
+  private int stackType_;
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+   *
+   * @return Whether the stackType field is set.
+   */
+  @java.lang.Override
+  public boolean hasStackType() {
+    return ((bitField0_ & 0x00100000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+   *
+   * @return The enum numeric value on the wire for stackType.
+   */
+  @java.lang.Override
+  public int getStackTypeValue() {
+    return stackType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+   *
+   * @return The stackType.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.Subnetwork.StackType getStackType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.compute.v1.Subnetwork.StackType result =
+        com.google.cloud.compute.v1.Subnetwork.StackType.valueOf(stackType_);
+    return result == null ? com.google.cloud.compute.v1.Subnetwork.StackType.UNRECOGNIZED : result;
+  }
+
   public static final int STATE_FIELD_NUMBER = 109757585;
   private int state_;
   /**
@@ -1911,7 +2597,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
   /**
    *
@@ -1961,65 +2647,74 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeEnum(3506294, role_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeEnum(48277006, privateIpv6GoogleAccess_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       output.writeEnum(109757585, state_);
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
       output.writeMessage(136658915, secondaryIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 139299190, externalIpv6Prefix_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(151544420, enableFlowLogs_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 273141258, ipv6CidrRange_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeEnum(316407070, purpose_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(351299741, getLogConfig());
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeBool(421491790, privateIpGoogleAccess_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
+      output.writeEnum(425908881, stackType_);
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 459867385, gatewayAddress_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeEnum(504658653, ipv6AccessType_);
     }
     unknownFields.writeTo(output);
   }
@@ -2030,30 +2725,30 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3506294, role_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(48277006, privateIpv6GoogleAccess_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
@@ -2061,39 +2756,49 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               136658915, secondaryIpRanges_.get(i));
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(139299190, externalIpv6Prefix_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(151544420, enableFlowLogs_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(273141258, ipv6CidrRange_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(316407070, purpose_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(351299741, getLogConfig());
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(421491790, privateIpGoogleAccess_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(425908881, stackType_);
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(459867385, gatewayAddress_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(504658653, ipv6AccessType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2122,6 +2827,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (hasEnableFlowLogs()) {
       if (getEnableFlowLogs() != other.getEnableFlowLogs()) return false;
     }
+    if (hasExternalIpv6Prefix() != other.hasExternalIpv6Prefix()) return false;
+    if (hasExternalIpv6Prefix()) {
+      if (!getExternalIpv6Prefix().equals(other.getExternalIpv6Prefix())) return false;
+    }
     if (hasFingerprint() != other.hasFingerprint()) return false;
     if (hasFingerprint()) {
       if (!getFingerprint().equals(other.getFingerprint())) return false;
@@ -2137,6 +2846,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (hasIpCidrRange() != other.hasIpCidrRange()) return false;
     if (hasIpCidrRange()) {
       if (!getIpCidrRange().equals(other.getIpCidrRange())) return false;
+    }
+    if (hasIpv6AccessType() != other.hasIpv6AccessType()) return false;
+    if (hasIpv6AccessType()) {
+      if (ipv6AccessType_ != other.ipv6AccessType_) return false;
     }
     if (hasIpv6CidrRange() != other.hasIpv6CidrRange()) return false;
     if (hasIpv6CidrRange()) {
@@ -2183,6 +2896,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
     }
+    if (hasStackType() != other.hasStackType()) return false;
+    if (hasStackType()) {
+      if (stackType_ != other.stackType_) return false;
+    }
     if (hasState() != other.hasState()) return false;
     if (hasState()) {
       if (state_ != other.state_) return false;
@@ -2210,6 +2927,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ENABLE_FLOW_LOGS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableFlowLogs());
     }
+    if (hasExternalIpv6Prefix()) {
+      hash = (37 * hash) + EXTERNAL_IPV6_PREFIX_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalIpv6Prefix().hashCode();
+    }
     if (hasFingerprint()) {
       hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
       hash = (53 * hash) + getFingerprint().hashCode();
@@ -2225,6 +2946,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (hasIpCidrRange()) {
       hash = (37 * hash) + IP_CIDR_RANGE_FIELD_NUMBER;
       hash = (53 * hash) + getIpCidrRange().hashCode();
+    }
+    if (hasIpv6AccessType()) {
+      hash = (37 * hash) + IPV6_ACCESS_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + ipv6AccessType_;
     }
     if (hasIpv6CidrRange()) {
       hash = (37 * hash) + IPV6_CIDR_RANGE_FIELD_NUMBER;
@@ -2273,6 +2998,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasStackType()) {
+      hash = (37 * hash) + STACK_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + stackType_;
     }
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
@@ -2382,8 +3111,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Subnetwork resource.
-   * A subnetwork (also known as a subnet) is a logical partition of a Virtual Private Cloud network with one primary IP range and zero or more secondary IP ranges. For more information, read  Virtual Private Cloud (VPC) Network. (== resource_for {$api_version}.subnetworks ==)
+   * Represents a Subnetwork resource. A subnetwork (also known as a subnet) is a logical partition of a Virtual Private Cloud network with one primary IP range and zero or more secondary IP ranges. For more information, read Virtual Private Cloud (VPC) Network.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Subnetwork}
@@ -2433,48 +3161,54 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       enableFlowLogs_ = false;
       bitField0_ = (bitField0_ & ~0x00000004);
-      fingerprint_ = "";
+      externalIpv6Prefix_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      gatewayAddress_ = "";
+      fingerprint_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
-      id_ = 0L;
+      gatewayAddress_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
-      ipCidrRange_ = "";
+      id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
-      ipv6CidrRange_ = "";
+      ipCidrRange_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      kind_ = "";
+      ipv6AccessType_ = 0;
       bitField0_ = (bitField0_ & ~0x00000100);
+      ipv6CidrRange_ = "";
+      bitField0_ = (bitField0_ & ~0x00000200);
+      kind_ = "";
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (logConfigBuilder_ == null) {
         logConfig_ = null;
       } else {
         logConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
-      name_ = "";
-      bitField0_ = (bitField0_ & ~0x00000400);
-      network_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
-      privateIpGoogleAccess_ = false;
+      name_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
-      privateIpv6GoogleAccess_ = 0;
+      network_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
-      purpose_ = 0;
+      privateIpGoogleAccess_ = false;
       bitField0_ = (bitField0_ & ~0x00004000);
-      region_ = "";
+      privateIpv6GoogleAccess_ = 0;
       bitField0_ = (bitField0_ & ~0x00008000);
-      role_ = 0;
+      purpose_ = 0;
       bitField0_ = (bitField0_ & ~0x00010000);
+      region_ = "";
+      bitField0_ = (bitField0_ & ~0x00020000);
+      role_ = 0;
+      bitField0_ = (bitField0_ & ~0x00040000);
       if (secondaryIpRangesBuilder_ == null) {
         secondaryIpRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00080000);
       } else {
         secondaryIpRangesBuilder_.clear();
       }
       selfLink_ = "";
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
+      stackType_ = 0;
+      bitField0_ = (bitField0_ & ~0x00200000);
       state_ = 0;
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       return this;
     }
 
@@ -2519,78 +3253,90 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         to_bitField0_ |= 0x00000008;
       }
-      result.fingerprint_ = fingerprint_;
+      result.externalIpv6Prefix_ = externalIpv6Prefix_;
       if (((from_bitField0_ & 0x00000010) != 0)) {
         to_bitField0_ |= 0x00000010;
       }
-      result.gatewayAddress_ = gatewayAddress_;
+      result.fingerprint_ = fingerprint_;
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.id_ = id_;
         to_bitField0_ |= 0x00000020;
       }
+      result.gatewayAddress_ = gatewayAddress_;
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000040;
       }
-      result.ipCidrRange_ = ipCidrRange_;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         to_bitField0_ |= 0x00000080;
       }
-      result.ipv6CidrRange_ = ipv6CidrRange_;
+      result.ipCidrRange_ = ipCidrRange_;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         to_bitField0_ |= 0x00000100;
       }
-      result.kind_ = kind_;
+      result.ipv6AccessType_ = ipv6AccessType_;
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        to_bitField0_ |= 0x00000200;
+      }
+      result.ipv6CidrRange_ = ipv6CidrRange_;
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        to_bitField0_ |= 0x00000400;
+      }
+      result.kind_ = kind_;
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         if (logConfigBuilder_ == null) {
           result.logConfig_ = logConfig_;
         } else {
           result.logConfig_ = logConfigBuilder_.build();
         }
-        to_bitField0_ |= 0x00000200;
-      }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        to_bitField0_ |= 0x00000400;
-      }
-      result.name_ = name_;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
         to_bitField0_ |= 0x00000800;
       }
-      result.network_ = network_;
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.privateIpGoogleAccess_ = privateIpGoogleAccess_;
         to_bitField0_ |= 0x00001000;
       }
+      result.name_ = name_;
       if (((from_bitField0_ & 0x00002000) != 0)) {
         to_bitField0_ |= 0x00002000;
       }
-      result.privateIpv6GoogleAccess_ = privateIpv6GoogleAccess_;
+      result.network_ = network_;
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.privateIpGoogleAccess_ = privateIpGoogleAccess_;
         to_bitField0_ |= 0x00004000;
       }
-      result.purpose_ = purpose_;
       if (((from_bitField0_ & 0x00008000) != 0)) {
         to_bitField0_ |= 0x00008000;
       }
-      result.region_ = region_;
+      result.privateIpv6GoogleAccess_ = privateIpv6GoogleAccess_;
       if (((from_bitField0_ & 0x00010000) != 0)) {
         to_bitField0_ |= 0x00010000;
       }
+      result.purpose_ = purpose_;
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        to_bitField0_ |= 0x00020000;
+      }
+      result.region_ = region_;
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        to_bitField0_ |= 0x00040000;
+      }
       result.role_ = role_;
       if (secondaryIpRangesBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)) {
+        if (((bitField0_ & 0x00080000) != 0)) {
           secondaryIpRanges_ = java.util.Collections.unmodifiableList(secondaryIpRanges_);
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00080000);
         }
         result.secondaryIpRanges_ = secondaryIpRanges_;
       } else {
         result.secondaryIpRanges_ = secondaryIpRangesBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
-        to_bitField0_ |= 0x00020000;
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        to_bitField0_ |= 0x00080000;
       }
       result.selfLink_ = selfLink_;
-      if (((from_bitField0_ & 0x00080000) != 0)) {
-        to_bitField0_ |= 0x00040000;
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        to_bitField0_ |= 0x00100000;
+      }
+      result.stackType_ = stackType_;
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        to_bitField0_ |= 0x00200000;
       }
       result.state_ = state_;
       result.bitField0_ = to_bitField0_;
@@ -2656,13 +3402,18 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEnableFlowLogs()) {
         setEnableFlowLogs(other.getEnableFlowLogs());
       }
-      if (other.hasFingerprint()) {
+      if (other.hasExternalIpv6Prefix()) {
         bitField0_ |= 0x00000008;
+        externalIpv6Prefix_ = other.externalIpv6Prefix_;
+        onChanged();
+      }
+      if (other.hasFingerprint()) {
+        bitField0_ |= 0x00000010;
         fingerprint_ = other.fingerprint_;
         onChanged();
       }
       if (other.hasGatewayAddress()) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         gatewayAddress_ = other.gatewayAddress_;
         onChanged();
       }
@@ -2670,17 +3421,20 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         setId(other.getId());
       }
       if (other.hasIpCidrRange()) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         ipCidrRange_ = other.ipCidrRange_;
         onChanged();
       }
+      if (other.hasIpv6AccessType()) {
+        setIpv6AccessType(other.getIpv6AccessType());
+      }
       if (other.hasIpv6CidrRange()) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         ipv6CidrRange_ = other.ipv6CidrRange_;
         onChanged();
       }
       if (other.hasKind()) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         kind_ = other.kind_;
         onChanged();
       }
@@ -2688,12 +3442,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         mergeLogConfig(other.getLogConfig());
       }
       if (other.hasName()) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         name_ = other.name_;
         onChanged();
       }
       if (other.hasNetwork()) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         network_ = other.network_;
         onChanged();
       }
@@ -2707,7 +3461,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         setPurpose(other.getPurpose());
       }
       if (other.hasRegion()) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
         region_ = other.region_;
         onChanged();
       }
@@ -2718,7 +3472,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         if (!other.secondaryIpRanges_.isEmpty()) {
           if (secondaryIpRanges_.isEmpty()) {
             secondaryIpRanges_ = other.secondaryIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00080000);
           } else {
             ensureSecondaryIpRangesIsMutable();
             secondaryIpRanges_.addAll(other.secondaryIpRanges_);
@@ -2731,7 +3485,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             secondaryIpRangesBuilder_.dispose();
             secondaryIpRangesBuilder_ = null;
             secondaryIpRanges_ = other.secondaryIpRanges_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00080000);
             secondaryIpRangesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSecondaryIpRangesFieldBuilder()
@@ -2742,9 +3496,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         }
       }
       if (other.hasSelfLink()) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         selfLink_ = other.selfLink_;
         onChanged();
+      }
+      if (other.hasStackType()) {
+        setStackType(other.getStackType());
       }
       if (other.hasState()) {
         setState(other.getState());
@@ -3087,13 +3844,132 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object externalIpv6Prefix_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+     * </pre>
+     *
+     * <code>string external_ipv6_prefix = 139299190;</code>
+     *
+     * @return Whether the externalIpv6Prefix field is set.
+     */
+    public boolean hasExternalIpv6Prefix() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+     * </pre>
+     *
+     * <code>string external_ipv6_prefix = 139299190;</code>
+     *
+     * @return The externalIpv6Prefix.
+     */
+    public java.lang.String getExternalIpv6Prefix() {
+      java.lang.Object ref = externalIpv6Prefix_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        externalIpv6Prefix_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+     * </pre>
+     *
+     * <code>string external_ipv6_prefix = 139299190;</code>
+     *
+     * @return The bytes for externalIpv6Prefix.
+     */
+    public com.google.protobuf.ByteString getExternalIpv6PrefixBytes() {
+      java.lang.Object ref = externalIpv6Prefix_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        externalIpv6Prefix_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+     * </pre>
+     *
+     * <code>string external_ipv6_prefix = 139299190;</code>
+     *
+     * @param value The externalIpv6Prefix to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalIpv6Prefix(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      externalIpv6Prefix_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+     * </pre>
+     *
+     * <code>string external_ipv6_prefix = 139299190;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExternalIpv6Prefix() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      externalIpv6Prefix_ = getDefaultInstance().getExternalIpv6Prefix();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+     * </pre>
+     *
+     * <code>string external_ipv6_prefix = 139299190;</code>
+     *
+     * @param value The bytes for externalIpv6Prefix to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalIpv6PrefixBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      externalIpv6Prefix_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object fingerprint_ = "";
     /**
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -3101,14 +3977,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -3130,8 +4005,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -3153,8 +4027,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -3166,7 +4039,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -3175,8 +4048,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -3184,7 +4056,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearFingerprint() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       fingerprint_ = getDefaultInstance().getFingerprint();
       onChanged();
       return this;
@@ -3193,8 +4065,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -3207,7 +4078,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       fingerprint_ = value;
       onChanged();
       return this;
@@ -3226,7 +4097,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gatewayAddress field is set.
      */
     public boolean hasGatewayAddress() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -3288,7 +4159,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       gatewayAddress_ = value;
       onChanged();
       return this;
@@ -3305,7 +4176,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearGatewayAddress() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       gatewayAddress_ = getDefaultInstance().getGatewayAddress();
       onChanged();
       return this;
@@ -3327,7 +4198,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       gatewayAddress_ = value;
       onChanged();
       return this;
@@ -3347,7 +4218,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -3377,7 +4248,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setId(long value) {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       id_ = value;
       onChanged();
       return this;
@@ -3394,7 +4265,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       id_ = 0L;
       onChanged();
       return this;
@@ -3413,7 +4284,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ipCidrRange field is set.
      */
     public boolean hasIpCidrRange() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -3475,7 +4346,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       ipCidrRange_ = value;
       onChanged();
       return this;
@@ -3492,7 +4363,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpCidrRange() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       ipCidrRange_ = getDefaultInstance().getIpCidrRange();
       onChanged();
       return this;
@@ -3514,8 +4385,116 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       ipCidrRange_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int ipv6AccessType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+     *
+     * @return Whether the ipv6AccessType field is set.
+     */
+    @java.lang.Override
+    public boolean hasIpv6AccessType() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+     *
+     * @return The enum numeric value on the wire for ipv6AccessType.
+     */
+    @java.lang.Override
+    public int getIpv6AccessTypeValue() {
+      return ipv6AccessType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+     *
+     * @param value The enum numeric value on the wire for ipv6AccessType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6AccessTypeValue(int value) {
+      bitField0_ |= 0x00000100;
+      ipv6AccessType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+     *
+     * @return The ipv6AccessType.
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType getIpv6AccessType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType result =
+          com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType.valueOf(ipv6AccessType_);
+      return result == null
+          ? com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+     *
+     * @param value The ipv6AccessType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpv6AccessType(com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      ipv6AccessType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpv6AccessType() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ipv6AccessType_ = 0;
       onChanged();
       return this;
     }
@@ -3533,7 +4512,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ipv6CidrRange field is set.
      */
     public boolean hasIpv6CidrRange() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3595,7 +4574,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       ipv6CidrRange_ = value;
       onChanged();
       return this;
@@ -3612,7 +4591,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIpv6CidrRange() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ipv6CidrRange_ = getDefaultInstance().getIpv6CidrRange();
       onChanged();
       return this;
@@ -3634,7 +4613,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       ipv6CidrRange_ = value;
       onChanged();
       return this;
@@ -3653,7 +4632,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3715,7 +4694,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       kind_ = value;
       onChanged();
       return this;
@@ -3732,7 +4711,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearKind() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       kind_ = getDefaultInstance().getKind();
       onChanged();
       return this;
@@ -3754,7 +4733,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       kind_ = value;
       onChanged();
       return this;
@@ -3778,7 +4757,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the logConfig field is set.
      */
     public boolean hasLogConfig() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3819,7 +4798,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -3839,7 +4818,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -3853,7 +4832,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLogConfig(com.google.cloud.compute.v1.SubnetworkLogConfig value) {
       if (logConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && logConfig_ != null
             && logConfig_ != com.google.cloud.compute.v1.SubnetworkLogConfig.getDefaultInstance()) {
           logConfig_ =
@@ -3867,7 +4846,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       return this;
     }
     /**
@@ -3886,7 +4865,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
     /**
@@ -3899,7 +4878,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
      */
     public com.google.cloud.compute.v1.SubnetworkLogConfig.Builder getLogConfigBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getLogConfigFieldBuilder().getBuilder();
     }
@@ -3960,7 +4939,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -4022,7 +5001,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       name_ = value;
       onChanged();
       return this;
@@ -4039,7 +5018,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
@@ -4061,7 +5040,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       name_ = value;
       onChanged();
       return this;
@@ -4072,7 +5051,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
      * </pre>
      *
      * <code>string network = 232872494;</code>
@@ -4080,13 +5059,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
      * </pre>
      *
      * <code>string network = 232872494;</code>
@@ -4108,7 +5087,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
      * </pre>
      *
      * <code>string network = 232872494;</code>
@@ -4130,7 +5109,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
      * </pre>
      *
      * <code>string network = 232872494;</code>
@@ -4142,7 +5121,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       network_ = value;
       onChanged();
       return this;
@@ -4151,7 +5130,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
      * </pre>
      *
      * <code>string network = 232872494;</code>
@@ -4159,7 +5138,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       network_ = getDefaultInstance().getNetwork();
       onChanged();
       return this;
@@ -4168,7 +5147,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
      * </pre>
      *
      * <code>string network = 232872494;</code>
@@ -4181,7 +5160,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       network_ = value;
       onChanged();
       return this;
@@ -4201,7 +5180,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPrivateIpGoogleAccess() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      *
@@ -4231,7 +5210,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPrivateIpGoogleAccess(boolean value) {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       privateIpGoogleAccess_ = value;
       onChanged();
       return this;
@@ -4248,7 +5227,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrivateIpGoogleAccess() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       privateIpGoogleAccess_ = false;
       onChanged();
       return this;
@@ -4259,8 +5238,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-     * This field can be both set at resource creation time and updated using patch.
+     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
      * </pre>
      *
      * <code>
@@ -4271,14 +5249,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPrivateIpv6GoogleAccess() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-     * This field can be both set at resource creation time and updated using patch.
+     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
      * </pre>
      *
      * <code>
@@ -4295,8 +5272,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-     * This field can be both set at resource creation time and updated using patch.
+     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
      * </pre>
      *
      * <code>
@@ -4307,7 +5283,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPrivateIpv6GoogleAccessValue(int value) {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       privateIpv6GoogleAccess_ = value;
       onChanged();
       return this;
@@ -4316,8 +5292,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-     * This field can be both set at resource creation time and updated using patch.
+     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
      * </pre>
      *
      * <code>
@@ -4341,8 +5316,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-     * This field can be both set at resource creation time and updated using patch.
+     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
      * </pre>
      *
      * <code>
@@ -4357,7 +5331,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       privateIpv6GoogleAccess_ = value.getNumber();
       onChanged();
       return this;
@@ -4366,8 +5340,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-     * This field can be both set at resource creation time and updated using patch.
+     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
      * </pre>
      *
      * <code>
@@ -4377,7 +5350,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPrivateIpv6GoogleAccess() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       privateIpv6GoogleAccess_ = 0;
       onChanged();
       return this;
@@ -4397,7 +5370,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPurpose() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4427,7 +5400,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setPurposeValue(int value) {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       purpose_ = value;
       onChanged();
       return this;
@@ -4466,7 +5439,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       purpose_ = value.getNumber();
       onChanged();
       return this;
@@ -4483,7 +5456,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPurpose() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       purpose_ = 0;
       onChanged();
       return this;
@@ -4502,7 +5475,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4564,7 +5537,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       region_ = value;
       onChanged();
       return this;
@@ -4581,7 +5554,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRegion() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
@@ -4603,7 +5576,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       region_ = value;
       onChanged();
       return this;
@@ -4623,7 +5596,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasRole() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -4653,7 +5626,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setRoleValue(int value) {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       role_ = value;
       onChanged();
       return this;
@@ -4692,7 +5665,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       role_ = value.getNumber();
       onChanged();
       return this;
@@ -4709,7 +5682,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRole() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       role_ = 0;
       onChanged();
       return this;
@@ -4719,11 +5692,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         secondaryIpRanges_ = java.util.Collections.emptyList();
 
     private void ensureSecondaryIpRangesIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!((bitField0_ & 0x00080000) != 0)) {
         secondaryIpRanges_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.SubnetworkSecondaryRange>(
                 secondaryIpRanges_);
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
       }
     }
 
@@ -4965,7 +5938,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSecondaryIpRanges() {
       if (secondaryIpRangesBuilder_ == null) {
         secondaryIpRanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
       } else {
         secondaryIpRangesBuilder_.clear();
@@ -5107,7 +6080,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SubnetworkSecondaryRange.Builder,
                 com.google.cloud.compute.v1.SubnetworkSecondaryRangeOrBuilder>(
                 secondaryIpRanges_,
-                ((bitField0_ & 0x00020000) != 0),
+                ((bitField0_ & 0x00080000) != 0),
                 getParentForChildren(),
                 isClean());
         secondaryIpRanges_ = null;
@@ -5128,7 +6101,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      *
@@ -5190,7 +6163,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       selfLink_ = value;
       onChanged();
       return this;
@@ -5207,7 +6180,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSelfLink() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
@@ -5229,8 +6202,116 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       selfLink_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int stackType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+     *
+     * @return Whether the stackType field is set.
+     */
+    @java.lang.Override
+    public boolean hasStackType() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+     *
+     * @return The enum numeric value on the wire for stackType.
+     */
+    @java.lang.Override
+    public int getStackTypeValue() {
+      return stackType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+     *
+     * @param value The enum numeric value on the wire for stackType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStackTypeValue(int value) {
+      bitField0_ |= 0x00200000;
+      stackType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+     *
+     * @return The stackType.
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.Subnetwork.StackType getStackType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.compute.v1.Subnetwork.StackType result =
+          com.google.cloud.compute.v1.Subnetwork.StackType.valueOf(stackType_);
+      return result == null
+          ? com.google.cloud.compute.v1.Subnetwork.StackType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+     *
+     * @param value The stackType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStackType(com.google.cloud.compute.v1.Subnetwork.StackType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00200000;
+      stackType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStackType() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      stackType_ = 0;
       onChanged();
       return this;
     }
@@ -5249,7 +6330,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasState() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -5279,7 +6360,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00400000;
       state_ = value;
       onChanged();
       return this;
@@ -5318,7 +6399,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00400000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -5335,7 +6416,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       state_ = 0;
       onChanged();
       return this;

@@ -179,6 +179,7 @@ public class RegionBackendServicesClientTest {
             .setSecurityPolicy("securityPolicy-788621166")
             .setSecuritySettings(SecuritySettings.newBuilder().build())
             .setSelfLink("selfLink1191800166")
+            .setSubsetting(Subsetting.newBuilder().build())
             .setTimeoutSec(-2067488653)
             .build();
     mockService.addResponse(expectedResponse);

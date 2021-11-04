@@ -27,6 +27,68 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * </pre>
+   *
+   * <code>string external_ipv6 = 532703707;</code>
+   *
+   * @return Whether the externalIpv6 field is set.
+   */
+  boolean hasExternalIpv6();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * </pre>
+   *
+   * <code>string external_ipv6 = 532703707;</code>
+   *
+   * @return The externalIpv6.
+   */
+  java.lang.String getExternalIpv6();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * </pre>
+   *
+   * <code>string external_ipv6 = 532703707;</code>
+   *
+   * @return The bytes for externalIpv6.
+   */
+  com.google.protobuf.ByteString getExternalIpv6Bytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The prefix length of the external IPv6 range.
+   * </pre>
+   *
+   * <code>int32 external_ipv6_prefix_length = 425672143;</code>
+   *
+   * @return Whether the externalIpv6PrefixLength field is set.
+   */
+  boolean hasExternalIpv6PrefixLength();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The prefix length of the external IPv6 range.
+   * </pre>
+   *
+   * <code>int32 external_ipv6_prefix_length = 425672143;</code>
+   *
+   * @return The externalIpv6PrefixLength.
+   */
+  int getExternalIpv6PrefixLength();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Type of the resource. Always compute#accessConfig for access configs.
    * </pre>
    *
@@ -138,9 +200,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD.
-   * If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier.
-   * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
@@ -152,9 +212,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD.
-   * If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier.
-   * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
@@ -166,9 +224,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD.
-   * If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier.
-   * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>

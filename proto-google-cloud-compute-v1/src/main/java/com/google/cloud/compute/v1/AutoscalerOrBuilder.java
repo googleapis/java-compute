@@ -27,8 +27,7 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-   * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -40,8 +39,7 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-   * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -53,8 +51,7 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization.
-   * If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
+   * The configuration parameters for the autoscaling algorithm. You can define one or more signals for an autoscaler: cpuUtilization, customMetricUtilizations, and loadBalancingUtilization. If none of these are specified, the default will be to autoscale based on cpuUtilization to 0.6 or 60%.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.AutoscalingPolicy autoscaling_policy = 221950041;</code>
@@ -405,11 +402,7 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-   * - DELETING: Configuration is being deleted.
-   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
@@ -421,11 +414,7 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-   * - DELETING: Configuration is being deleted.
-   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
@@ -437,11 +426,7 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the autoscaler configuration. Current set of possible values:
-   * - PENDING: Autoscaler backend hasn't read new/updated configuration.
-   * - DELETING: Configuration is being deleted.
-   * - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field.
-   * - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field.  New values might be added in the future.
+   * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>

@@ -22,6 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
+ * A transient resource used in compute.instances.bulkInsert and compute.regionInstances.bulkInsert . This resource is not persisted anywhere, it is used only for processing the requests.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.BulkInsertInstanceResource}
@@ -367,7 +368,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
+   * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern must contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: a name_pattern of inst-#### generates instance names such as inst-0001 and inst-0002. If existing instances in the same project and zone have names that match the name pattern then the generated instance numbers start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### begin with inst-0051. The name pattern placeholder #...# can contain up to 18 characters.
    * </pre>
    *
    * <code>string name_pattern = 413815260;</code>
@@ -382,7 +383,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
+   * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern must contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: a name_pattern of inst-#### generates instance names such as inst-0001 and inst-0002. If existing instances in the same project and zone have names that match the name pattern then the generated instance numbers start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### begin with inst-0051. The name pattern placeholder #...# can contain up to 18 characters.
    * </pre>
    *
    * <code>string name_pattern = 413815260;</code>
@@ -405,7 +406,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
+   * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern must contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: a name_pattern of inst-#### generates instance names such as inst-0001 and inst-0002. If existing instances in the same project and zone have names that match the name pattern then the generated instance numbers start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### begin with inst-0051. The name pattern placeholder #...# can contain up to 18 characters.
    * </pre>
    *
    * <code>string name_pattern = 413815260;</code>
@@ -568,12 +569,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396.
-   * It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-   * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-   * - projects/project/global/instanceTemplates/instanceTemplate
-   * - global/instanceTemplates/instanceTemplate
-   * This field is optional.
+   * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate This field is optional.
    * </pre>
    *
    * <code>string source_instance_template = 332423616;</code>
@@ -588,12 +584,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396.
-   * It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-   * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-   * - projects/project/global/instanceTemplates/instanceTemplate
-   * - global/instanceTemplates/instanceTemplate
-   * This field is optional.
+   * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate This field is optional.
    * </pre>
    *
    * <code>string source_instance_template = 332423616;</code>
@@ -616,12 +607,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396.
-   * It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-   * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-   * - projects/project/global/instanceTemplates/instanceTemplate
-   * - global/instanceTemplates/instanceTemplate
-   * This field is optional.
+   * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate This field is optional.
    * </pre>
    *
    * <code>string source_instance_template = 332423616;</code>
@@ -914,6 +900,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
+   * A transient resource used in compute.instances.bulkInsert and compute.regionInstances.bulkInsert . This resource is not persisted anywhere, it is used only for processing the requests.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.BulkInsertInstanceResource}
@@ -1682,7 +1669,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
+     * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern must contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: a name_pattern of inst-#### generates instance names such as inst-0001 and inst-0002. If existing instances in the same project and zone have names that match the name pattern then the generated instance numbers start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### begin with inst-0051. The name pattern placeholder #...# can contain up to 18 characters.
      * </pre>
      *
      * <code>string name_pattern = 413815260;</code>
@@ -1696,7 +1683,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
+     * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern must contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: a name_pattern of inst-#### generates instance names such as inst-0001 and inst-0002. If existing instances in the same project and zone have names that match the name pattern then the generated instance numbers start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### begin with inst-0051. The name pattern placeholder #...# can contain up to 18 characters.
      * </pre>
      *
      * <code>string name_pattern = 413815260;</code>
@@ -1718,7 +1705,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
+     * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern must contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: a name_pattern of inst-#### generates instance names such as inst-0001 and inst-0002. If existing instances in the same project and zone have names that match the name pattern then the generated instance numbers start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### begin with inst-0051. The name pattern placeholder #...# can contain up to 18 characters.
      * </pre>
      *
      * <code>string name_pattern = 413815260;</code>
@@ -1740,7 +1727,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
+     * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern must contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: a name_pattern of inst-#### generates instance names such as inst-0001 and inst-0002. If existing instances in the same project and zone have names that match the name pattern then the generated instance numbers start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### begin with inst-0051. The name pattern placeholder #...# can contain up to 18 characters.
      * </pre>
      *
      * <code>string name_pattern = 413815260;</code>
@@ -1761,7 +1748,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
+     * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern must contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: a name_pattern of inst-#### generates instance names such as inst-0001 and inst-0002. If existing instances in the same project and zone have names that match the name pattern then the generated instance numbers start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### begin with inst-0051. The name pattern placeholder #...# can contain up to 18 characters.
      * </pre>
      *
      * <code>string name_pattern = 413815260;</code>
@@ -1778,7 +1765,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern should contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: name_pattern of inst-#### will generate instance names such as inst-0001, inst-0002, ... . If there already exist instance(s) whose names match the name pattern in the same project and zone, then the generated instance numbers will start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### will be inst-0051, inst-0052, etc. The name pattern placeholder #...# can contain up to 18 characters.
+     * The string pattern used for the names of the VMs. Either name_pattern or per_instance_properties must be set. The pattern must contain one continuous sequence of placeholder hash characters (#) with each character corresponding to one digit of the generated instance name. Example: a name_pattern of inst-#### generates instance names such as inst-0001 and inst-0002. If existing instances in the same project and zone have names that match the name pattern then the generated instance numbers start after the biggest existing number. For example, if there exists an instance with name inst-0050, then instance names generated using the pattern inst-#### begin with inst-0051. The name pattern placeholder #...# can contain up to 18 characters.
      * </pre>
      *
      * <code>string name_pattern = 413815260;</code>
@@ -2009,12 +1996,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396.
-     * It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-     * - projects/project/global/instanceTemplates/instanceTemplate
-     * - global/instanceTemplates/instanceTemplate
-     * This field is optional.
+     * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate This field is optional.
      * </pre>
      *
      * <code>string source_instance_template = 332423616;</code>
@@ -2028,12 +2010,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396.
-     * It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-     * - projects/project/global/instanceTemplates/instanceTemplate
-     * - global/instanceTemplates/instanceTemplate
-     * This field is optional.
+     * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate This field is optional.
      * </pre>
      *
      * <code>string source_instance_template = 332423616;</code>
@@ -2055,12 +2032,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396.
-     * It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-     * - projects/project/global/instanceTemplates/instanceTemplate
-     * - global/instanceTemplates/instanceTemplate
-     * This field is optional.
+     * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate This field is optional.
      * </pre>
      *
      * <code>string source_instance_template = 332423616;</code>
@@ -2082,12 +2054,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396.
-     * It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-     * - projects/project/global/instanceTemplates/instanceTemplate
-     * - global/instanceTemplates/instanceTemplate
-     * This field is optional.
+     * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate This field is optional.
      * </pre>
      *
      * <code>string source_instance_template = 332423616;</code>
@@ -2108,12 +2075,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396.
-     * It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-     * - projects/project/global/instanceTemplates/instanceTemplate
-     * - global/instanceTemplates/instanceTemplate
-     * This field is optional.
+     * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate This field is optional.
      * </pre>
      *
      * <code>string source_instance_template = 332423616;</code>
@@ -2130,12 +2092,7 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396.
-     * It can be a full or partial URL. For example, the following are all valid URLs to an instance template:
-     * - https://www.googleapis.com/compute/v1/projects/project/global/instanceTemplates/instanceTemplate
-     * - projects/project/global/instanceTemplates/instanceTemplate
-     * - global/instanceTemplates/instanceTemplate
-     * This field is optional.
+     * Specifies the instance template from which to create instances. You may combine sourceInstanceTemplate with instanceProperties to override specific values from an existing instance template. Bulk API follows the semantics of JSON Merge Patch described by RFC 7396. It can be a full or partial URL. For example, the following are all valid URLs to an instance template: - https://www.googleapis.com/compute/v1/projects/project /global/instanceTemplates/instanceTemplate - projects/project/global/instanceTemplates/instanceTemplate - global/instanceTemplates/instanceTemplate This field is optional.
      * </pre>
      *
      * <code>string source_instance_template = 332423616;</code>

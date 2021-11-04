@@ -218,6 +218,9 @@ public class SecurityPoliciesClientTest {
   public void getTest() throws Exception {
     SecurityPolicy expectedResponse =
         SecurityPolicy.newBuilder()
+            .setAdaptiveProtectionConfig(
+                SecurityPolicyAdaptiveProtectionConfig.newBuilder().build())
+            .setAdvancedOptionsConfig(SecurityPolicyAdvancedOptionsConfig.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setFingerprint("fingerprint-1375934236")

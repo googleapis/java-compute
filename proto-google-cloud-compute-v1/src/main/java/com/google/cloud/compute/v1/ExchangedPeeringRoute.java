@@ -159,11 +159,35 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>DYNAMIC_PEERING_ROUTE = 469794858;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For routes exported from local network.
+     * </pre>
+     *
+     * <code>DYNAMIC_PEERING_ROUTE = 469794858;</code>
+     */
     DYNAMIC_PEERING_ROUTE(469794858),
-    /** <code>STATIC_PEERING_ROUTE = 473407545;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The peering route.
+     * </pre>
+     *
+     * <code>STATIC_PEERING_ROUTE = 473407545;</code>
+     */
     STATIC_PEERING_ROUTE(473407545),
-    /** <code>SUBNET_PEERING_ROUTE = 465782504;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The peering route corresponding to subnetwork range.
+     * </pre>
+     *
+     * <code>SUBNET_PEERING_ROUTE = 465782504;</code>
+     */
     SUBNET_PEERING_ROUTE(465782504),
     UNRECOGNIZED(-1),
     ;
@@ -178,11 +202,35 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>DYNAMIC_PEERING_ROUTE = 469794858;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For routes exported from local network.
+     * </pre>
+     *
+     * <code>DYNAMIC_PEERING_ROUTE = 469794858;</code>
+     */
     public static final int DYNAMIC_PEERING_ROUTE_VALUE = 469794858;
-    /** <code>STATIC_PEERING_ROUTE = 473407545;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The peering route.
+     * </pre>
+     *
+     * <code>STATIC_PEERING_ROUTE = 473407545;</code>
+     */
     public static final int STATIC_PEERING_ROUTE_VALUE = 473407545;
-    /** <code>SUBNET_PEERING_ROUTE = 465782504;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The peering route corresponding to subnetwork range.
+     * </pre>
+     *
+     * <code>SUBNET_PEERING_ROUTE = 465782504;</code>
+     */
     public static final int SUBNET_PEERING_ROUTE_VALUE = 465782504;
 
     public final int getNumber() {

@@ -64,8 +64,7 @@ public interface ReferenceOrBuilder
    *
    *
    * <pre>
-   * A description of the reference type with no implied semantics. Possible values include:
-   * - MEMBER_OF
+   * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
    * </pre>
    *
    * <code>string reference_type = 247521198;</code>
@@ -77,8 +76,7 @@ public interface ReferenceOrBuilder
    *
    *
    * <pre>
-   * A description of the reference type with no implied semantics. Possible values include:
-   * - MEMBER_OF
+   * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
    * </pre>
    *
    * <code>string reference_type = 247521198;</code>
@@ -90,8 +88,7 @@ public interface ReferenceOrBuilder
    *
    *
    * <pre>
-   * A description of the reference type with no implied semantics. Possible values include:
-   * - MEMBER_OF
+   * A description of the reference type with no implied semantics. Possible values include: 1. MEMBER_OF
    * </pre>
    *
    * <code>string reference_type = 247521198;</code>

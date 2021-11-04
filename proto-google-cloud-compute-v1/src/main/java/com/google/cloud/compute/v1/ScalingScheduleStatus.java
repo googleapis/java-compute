@@ -147,13 +147,45 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The current autoscaling recommendation is influenced by this scaling schedule.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     ACTIVE(314733318),
-    /** <code>DISABLED = 516696700;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This scaling schedule has been disabled by the user.
+     * </pre>
+     *
+     * <code>DISABLED = 516696700;</code>
+     */
     DISABLED(516696700),
-    /** <code>OBSOLETE = 66532761;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This scaling schedule will never become active again.
+     * </pre>
+     *
+     * <code>OBSOLETE = 66532761;</code>
+     */
     OBSOLETE(66532761),
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The current autoscaling recommendation is not influenced by this scaling schedule.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     READY(77848963),
     UNRECOGNIZED(-1),
     ;
@@ -168,13 +200,45 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The current autoscaling recommendation is influenced by this scaling schedule.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     public static final int ACTIVE_VALUE = 314733318;
-    /** <code>DISABLED = 516696700;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This scaling schedule has been disabled by the user.
+     * </pre>
+     *
+     * <code>DISABLED = 516696700;</code>
+     */
     public static final int DISABLED_VALUE = 516696700;
-    /** <code>OBSOLETE = 66532761;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This scaling schedule will never become active again.
+     * </pre>
+     *
+     * <code>OBSOLETE = 66532761;</code>
+     */
     public static final int OBSOLETE_VALUE = 66532761;
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The current autoscaling recommendation is not influenced by this scaling schedule.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     public static final int READY_VALUE = 77848963;
 
     public final int getNumber() {

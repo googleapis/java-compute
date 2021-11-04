@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Instance Template resource.
- * You can use instance templates to create VM instances and managed instance groups. For more information, read Instance Templates. (== resource_for {$api_version}.instanceTemplates ==)
+ * Represents an Instance Template resource. You can use instance templates to create VM instances and managed instance groups. For more information, read Instance Templates.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InstanceTemplate}
@@ -601,9 +600,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-   * - projects/project/zones/zone/instances/instance
+   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>string source_instance = 396315705;</code>
@@ -618,9 +615,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-   * - projects/project/zones/zone/instances/instance
+   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>string source_instance = 396315705;</code>
@@ -643,9 +638,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-   * - projects/project/zones/zone/instances/instance
+   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>string source_instance = 396315705;</code>
@@ -999,8 +992,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Represents an Instance Template resource.
-   * You can use instance templates to create VM instances and managed instance groups. For more information, read Instance Templates. (== resource_for {$api_version}.instanceTemplates ==)
+   * Represents an Instance Template resource. You can use instance templates to create VM instances and managed instance groups. For more information, read Instance Templates.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InstanceTemplate}
@@ -2122,9 +2114,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-     * - projects/project/zones/zone/instances/instance
+     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>string source_instance = 396315705;</code>
@@ -2138,9 +2128,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-     * - projects/project/zones/zone/instances/instance
+     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>string source_instance = 396315705;</code>
@@ -2162,9 +2150,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-     * - projects/project/zones/zone/instances/instance
+     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>string source_instance = 396315705;</code>
@@ -2186,9 +2172,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-     * - projects/project/zones/zone/instances/instance
+     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>string source_instance = 396315705;</code>
@@ -2209,9 +2193,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-     * - projects/project/zones/zone/instances/instance
+     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>string source_instance = 396315705;</code>
@@ -2228,9 +2210,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values:
-     * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-     * - projects/project/zones/zone/instances/instance
+     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>string source_instance = 396315705;</code>

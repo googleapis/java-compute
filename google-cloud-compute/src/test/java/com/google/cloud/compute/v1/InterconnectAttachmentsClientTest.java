@@ -226,6 +226,7 @@ public class InterconnectAttachmentsClientTest {
             .setPrivateInterconnectInfo(InterconnectAttachmentPrivateInfo.newBuilder().build())
             .setRegion("region-934795532")
             .setRouter("router-925132983")
+            .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
             .setVlanTag8021Q(1730540572)
             .build();

@@ -164,7 +164,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * <code>UNDEFINED_VERSIONED_EXPR = 0;</code>
      */
     UNDEFINED_VERSIONED_EXPR(0),
-    /** <code>SRC_IPS_V1 = 70925961;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Matches the source IP address of a request to the IP ranges supplied in config.
+     * </pre>
+     *
+     * <code>SRC_IPS_V1 = 70925961;</code>
+     */
     SRC_IPS_V1(70925961),
     UNRECOGNIZED(-1),
     ;
@@ -179,7 +187,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * <code>UNDEFINED_VERSIONED_EXPR = 0;</code>
      */
     public static final int UNDEFINED_VERSIONED_EXPR_VALUE = 0;
-    /** <code>SRC_IPS_V1 = 70925961;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Matches the source IP address of a request to the IP ranges supplied in config.
+     * </pre>
+     *
+     * <code>SRC_IPS_V1 = 70925961;</code>
+     */
     public static final int SRC_IPS_V1_VALUE = 70925961;
 
     public final int getNumber() {

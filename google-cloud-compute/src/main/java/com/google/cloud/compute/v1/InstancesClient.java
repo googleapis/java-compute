@@ -352,7 +352,9 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
+   * Retrieves an aggregated list of all of the instances in your project across all regions and
+   * zones. The performance of this method degrades when a filter is specified on a project that has
+   * a very large number of instances.
    *
    * <p>Sample code:
    *
@@ -377,7 +379,9 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
+   * Retrieves an aggregated list of all of the instances in your project across all regions and
+   * zones. The performance of this method degrades when a filter is specified on a project that has
+   * a very large number of instances.
    *
    * <p>Sample code:
    *
@@ -409,7 +413,9 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
+   * Retrieves an aggregated list of all of the instances in your project across all regions and
+   * zones. The performance of this method degrades when a filter is specified on a project that has
+   * a very large number of instances.
    *
    * <p>Sample code:
    *
@@ -441,7 +447,9 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves aggregated list of all of the instances in your project across all regions and zones.
+   * Retrieves an aggregated list of all of the instances in your project across all regions and
+   * zones. The performance of this method degrades when a filter is specified on a project that has
+   * a very large number of instances.
    *
    * <p>Sample code:
    *
@@ -2048,6 +2056,92 @@ public class InstancesClient implements BackgroundResource {
    */
   public final UnaryCallable<ResetInstanceRequest, Operation> resetCallable() {
     return stub.resetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sends diagnostic interrupt to the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   SendDiagnosticInterruptInstanceResponse response =
+   *       instancesClient.sendDiagnosticInterrupt(project, zone, instance);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param instance Name of the instance scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendDiagnosticInterruptInstanceResponse sendDiagnosticInterrupt(
+      String project, String zone, String instance) {
+    SendDiagnosticInterruptInstanceRequest request =
+        SendDiagnosticInterruptInstanceRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstance(instance)
+            .build();
+    return sendDiagnosticInterrupt(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sends diagnostic interrupt to the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SendDiagnosticInterruptInstanceRequest request =
+   *       SendDiagnosticInterruptInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   SendDiagnosticInterruptInstanceResponse response =
+   *       instancesClient.sendDiagnosticInterrupt(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendDiagnosticInterruptInstanceResponse sendDiagnosticInterrupt(
+      SendDiagnosticInterruptInstanceRequest request) {
+    return sendDiagnosticInterruptCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sends diagnostic interrupt to the instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SendDiagnosticInterruptInstanceRequest request =
+   *       SendDiagnosticInterruptInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setProject("project-309310695")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<SendDiagnosticInterruptInstanceResponse> future =
+   *       instancesClient.sendDiagnosticInterruptCallable().futureCall(request);
+   *   // Do something.
+   *   SendDiagnosticInterruptInstanceResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptCallable() {
+    return stub.sendDiagnosticInterruptCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

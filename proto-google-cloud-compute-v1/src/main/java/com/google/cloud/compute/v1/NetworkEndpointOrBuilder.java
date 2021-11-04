@@ -118,8 +118,7 @@ public interface NetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
-   * The name must be 1-63 characters long, and comply with RFC1035.
+   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
    * <code>string instance = 18257045;</code>
@@ -131,8 +130,7 @@ public interface NetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
-   * The name must be 1-63 characters long, and comply with RFC1035.
+   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
    * <code>string instance = 18257045;</code>
@@ -144,8 +142,7 @@ public interface NetworkEndpointOrBuilder
    *
    *
    * <pre>
-   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group.
-   * The name must be 1-63 characters long, and comply with RFC1035.
+   * The name for a specific VM instance that the IP address belongs to. This is required for network endpoints of type GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
    * <code>string instance = 18257045;</code>

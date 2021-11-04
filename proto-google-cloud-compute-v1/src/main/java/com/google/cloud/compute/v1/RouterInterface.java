@@ -42,6 +42,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     linkedVpnTunnel_ = "";
     managementType_ = 0;
     name_ = "";
+    privateIpAddress_ = "";
+    redundantInterface_ = "";
+    subnetwork_ = "";
   }
 
   @java.lang.Override
@@ -81,6 +84,13 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
               name_ = s;
               break;
             }
+          case 806832322:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000020;
+              privateIpAddress_ = s;
+              break;
+            }
           case 1160741162:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -95,6 +105,13 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
               managementType_ = rawValue;
               break;
             }
+          case -1832345742:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              subnetwork_ = s;
+              break;
+            }
           case -1476591670:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -107,6 +124,13 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               linkedInterconnectAttachment_ = s;
+              break;
+            }
+          case -109468870:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              redundantInterface_ = s;
               break;
             }
           default:
@@ -147,9 +171,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this interface.
-   * - MANAGED_BY_USER is the default value and can be managed directly by users.
-   * - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.RouterInterface.ManagementType}
@@ -165,9 +187,25 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_MANAGEMENT_TYPE = 0;</code>
      */
     UNDEFINED_MANAGEMENT_TYPE(0),
-    /** <code>MANAGED_BY_ATTACHMENT = 458926411;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The interface is automatically created for PARTNER type InterconnectAttachment, Google will automatically create/update/delete this interface when the PARTNER InterconnectAttachment is created/provisioned/deleted. This type of interface cannot be manually managed by user.
+     * </pre>
+     *
+     * <code>MANAGED_BY_ATTACHMENT = 458926411;</code>
+     */
     MANAGED_BY_ATTACHMENT(458926411),
-    /** <code>MANAGED_BY_USER = 317294067;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Default value, the interface is manually created and managed by user.
+     * </pre>
+     *
+     * <code>MANAGED_BY_USER = 317294067;</code>
+     */
     MANAGED_BY_USER(317294067),
     UNRECOGNIZED(-1),
     ;
@@ -182,9 +220,25 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_MANAGEMENT_TYPE = 0;</code>
      */
     public static final int UNDEFINED_MANAGEMENT_TYPE_VALUE = 0;
-    /** <code>MANAGED_BY_ATTACHMENT = 458926411;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The interface is automatically created for PARTNER type InterconnectAttachment, Google will automatically create/update/delete this interface when the PARTNER InterconnectAttachment is created/provisioned/deleted. This type of interface cannot be manually managed by user.
+     * </pre>
+     *
+     * <code>MANAGED_BY_ATTACHMENT = 458926411;</code>
+     */
     public static final int MANAGED_BY_ATTACHMENT_VALUE = 458926411;
-    /** <code>MANAGED_BY_USER = 317294067;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Default value, the interface is manually created and managed by user.
+     * </pre>
+     *
+     * <code>MANAGED_BY_USER = 317294067;</code>
+     */
     public static final int MANAGED_BY_USER_VALUE = 317294067;
 
     public final int getNumber() {
@@ -469,9 +523,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this interface.
-   * - MANAGED_BY_USER is the default value and can be managed directly by users.
-   * - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;
@@ -487,9 +539,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this interface.
-   * - MANAGED_BY_USER is the default value and can be managed directly by users.
-   * - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;
@@ -505,9 +555,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this interface.
-   * - MANAGED_BY_USER is the default value and can be managed directly by users.
-   * - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;
@@ -589,6 +637,198 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int PRIVATE_IP_ADDRESS_FIELD_NUMBER = 100854040;
+  private volatile java.lang.Object privateIpAddress_;
+  /**
+   *
+   *
+   * <pre>
+   * The regional private internal IP address that is used to establish BGP sessions to a VM instance acting as a third-party Router Appliance, such as a Next Gen Firewall, a Virtual Router, or an SD-WAN VM.
+   * </pre>
+   *
+   * <code>string private_ip_address = 100854040;</code>
+   *
+   * @return Whether the privateIpAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivateIpAddress() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The regional private internal IP address that is used to establish BGP sessions to a VM instance acting as a third-party Router Appliance, such as a Next Gen Firewall, a Virtual Router, or an SD-WAN VM.
+   * </pre>
+   *
+   * <code>string private_ip_address = 100854040;</code>
+   *
+   * @return The privateIpAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getPrivateIpAddress() {
+    java.lang.Object ref = privateIpAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      privateIpAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The regional private internal IP address that is used to establish BGP sessions to a VM instance acting as a third-party Router Appliance, such as a Next Gen Firewall, a Virtual Router, or an SD-WAN VM.
+   * </pre>
+   *
+   * <code>string private_ip_address = 100854040;</code>
+   *
+   * @return The bytes for privateIpAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPrivateIpAddressBytes() {
+    java.lang.Object ref = privateIpAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      privateIpAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REDUNDANT_INTERFACE_FIELD_NUMBER = 523187303;
+  private volatile java.lang.Object redundantInterface_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the interface that will be redundant with the current interface you are creating. The redundantInterface must belong to the same Cloud Router as the interface here. To establish the BGP session to a Router Appliance VM, you must create two BGP peers. The two BGP peers must be attached to two separate interfaces that are redundant with each other. The redundant_interface must be 1-63 characters long, and comply with RFC1035. Specifically, the redundant_interface must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string redundant_interface = 523187303;</code>
+   *
+   * @return Whether the redundantInterface field is set.
+   */
+  @java.lang.Override
+  public boolean hasRedundantInterface() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the interface that will be redundant with the current interface you are creating. The redundantInterface must belong to the same Cloud Router as the interface here. To establish the BGP session to a Router Appliance VM, you must create two BGP peers. The two BGP peers must be attached to two separate interfaces that are redundant with each other. The redundant_interface must be 1-63 characters long, and comply with RFC1035. Specifically, the redundant_interface must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string redundant_interface = 523187303;</code>
+   *
+   * @return The redundantInterface.
+   */
+  @java.lang.Override
+  public java.lang.String getRedundantInterface() {
+    java.lang.Object ref = redundantInterface_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      redundantInterface_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the interface that will be redundant with the current interface you are creating. The redundantInterface must belong to the same Cloud Router as the interface here. To establish the BGP session to a Router Appliance VM, you must create two BGP peers. The two BGP peers must be attached to two separate interfaces that are redundant with each other. The redundant_interface must be 1-63 characters long, and comply with RFC1035. Specifically, the redundant_interface must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * </pre>
+   *
+   * <code>string redundant_interface = 523187303;</code>
+   *
+   * @return The bytes for redundantInterface.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRedundantInterfaceBytes() {
+    java.lang.Object ref = redundantInterface_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      redundantInterface_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
+  private volatile java.lang.Object subnetwork_;
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the subnetwork resource that this interface belongs to, which must be in the same region as the Cloud Router. When you establish a BGP session to a VM instance using this interface, the VM instance must belong to the same subnetwork as the subnetwork specified here.
+   * </pre>
+   *
+   * <code>string subnetwork = 307827694;</code>
+   *
+   * @return Whether the subnetwork field is set.
+   */
+  @java.lang.Override
+  public boolean hasSubnetwork() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the subnetwork resource that this interface belongs to, which must be in the same region as the Cloud Router. When you establish a BGP session to a VM instance using this interface, the VM instance must belong to the same subnetwork as the subnetwork specified here.
+   * </pre>
+   *
+   * <code>string subnetwork = 307827694;</code>
+   *
+   * @return The subnetwork.
+   */
+  @java.lang.Override
+  public java.lang.String getSubnetwork() {
+    java.lang.Object ref = subnetwork_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      subnetwork_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The URI of the subnetwork resource that this interface belongs to, which must be in the same region as the Cloud Router. When you establish a BGP session to a VM instance using this interface, the VM instance must belong to the same subnetwork as the subnetwork specified here.
+   * </pre>
+   *
+   * <code>string subnetwork = 307827694;</code>
+   *
+   * @return The bytes for subnetwork.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSubnetworkBytes() {
+    java.lang.Object ref = subnetwork_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      subnetwork_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -606,11 +846,17 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 100854040, privateIpAddress_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 145092645, ipRange_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeEnum(173703606, managementType_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 352296953, linkedVpnTunnel_);
@@ -618,6 +864,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 501085518, linkedInterconnectAttachment_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 523187303, redundantInterface_);
     }
     unknownFields.writeTo(output);
   }
@@ -631,11 +880,18 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(100854040, privateIpAddress_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(145092645, ipRange_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(173703606, managementType_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(352296953, linkedVpnTunnel_);
@@ -644,6 +900,10 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               501085518, linkedInterconnectAttachment_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(523187303, redundantInterface_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -682,6 +942,18 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
     }
+    if (hasPrivateIpAddress() != other.hasPrivateIpAddress()) return false;
+    if (hasPrivateIpAddress()) {
+      if (!getPrivateIpAddress().equals(other.getPrivateIpAddress())) return false;
+    }
+    if (hasRedundantInterface() != other.hasRedundantInterface()) return false;
+    if (hasRedundantInterface()) {
+      if (!getRedundantInterface().equals(other.getRedundantInterface())) return false;
+    }
+    if (hasSubnetwork() != other.hasSubnetwork()) return false;
+    if (hasSubnetwork()) {
+      if (!getSubnetwork().equals(other.getSubnetwork())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -712,6 +984,18 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasPrivateIpAddress()) {
+      hash = (37 * hash) + PRIVATE_IP_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivateIpAddress().hashCode();
+    }
+    if (hasRedundantInterface()) {
+      hash = (37 * hash) + REDUNDANT_INTERFACE_FIELD_NUMBER;
+      hash = (53 * hash) + getRedundantInterface().hashCode();
+    }
+    if (hasSubnetwork()) {
+      hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getSubnetwork().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -867,6 +1151,12 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       bitField0_ = (bitField0_ & ~0x00000008);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
+      privateIpAddress_ = "";
+      bitField0_ = (bitField0_ & ~0x00000020);
+      redundantInterface_ = "";
+      bitField0_ = (bitField0_ & ~0x00000040);
+      subnetwork_ = "";
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -916,6 +1206,18 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000010;
       }
       result.name_ = name_;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        to_bitField0_ |= 0x00000020;
+      }
+      result.privateIpAddress_ = privateIpAddress_;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        to_bitField0_ |= 0x00000040;
+      }
+      result.redundantInterface_ = redundantInterface_;
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        to_bitField0_ |= 0x00000080;
+      }
+      result.subnetwork_ = subnetwork_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -987,6 +1289,21 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       if (other.hasName()) {
         bitField0_ |= 0x00000010;
         name_ = other.name_;
+        onChanged();
+      }
+      if (other.hasPrivateIpAddress()) {
+        bitField0_ |= 0x00000020;
+        privateIpAddress_ = other.privateIpAddress_;
+        onChanged();
+      }
+      if (other.hasRedundantInterface()) {
+        bitField0_ |= 0x00000040;
+        redundantInterface_ = other.redundantInterface_;
+        onChanged();
+      }
+      if (other.hasSubnetwork()) {
+        bitField0_ |= 0x00000080;
+        subnetwork_ = other.subnetwork_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1385,9 +1702,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this interface.
-     * - MANAGED_BY_USER is the default value and can be managed directly by users.
-     * - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;
@@ -1403,9 +1718,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this interface.
-     * - MANAGED_BY_USER is the default value and can be managed directly by users.
-     * - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;
@@ -1421,9 +1734,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this interface.
-     * - MANAGED_BY_USER is the default value and can be managed directly by users.
-     * - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;
@@ -1442,9 +1753,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this interface.
-     * - MANAGED_BY_USER is the default value and can be managed directly by users.
-     * - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;
@@ -1465,9 +1774,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this interface.
-     * - MANAGED_BY_USER is the default value and can be managed directly by users.
-     * - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;
@@ -1490,9 +1797,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this interface.
-     * - MANAGED_BY_USER is the default value and can be managed directly by users.
-     * - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;
@@ -1623,6 +1928,366 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       bitField0_ |= 0x00000010;
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object privateIpAddress_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The regional private internal IP address that is used to establish BGP sessions to a VM instance acting as a third-party Router Appliance, such as a Next Gen Firewall, a Virtual Router, or an SD-WAN VM.
+     * </pre>
+     *
+     * <code>string private_ip_address = 100854040;</code>
+     *
+     * @return Whether the privateIpAddress field is set.
+     */
+    public boolean hasPrivateIpAddress() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The regional private internal IP address that is used to establish BGP sessions to a VM instance acting as a third-party Router Appliance, such as a Next Gen Firewall, a Virtual Router, or an SD-WAN VM.
+     * </pre>
+     *
+     * <code>string private_ip_address = 100854040;</code>
+     *
+     * @return The privateIpAddress.
+     */
+    public java.lang.String getPrivateIpAddress() {
+      java.lang.Object ref = privateIpAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        privateIpAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The regional private internal IP address that is used to establish BGP sessions to a VM instance acting as a third-party Router Appliance, such as a Next Gen Firewall, a Virtual Router, or an SD-WAN VM.
+     * </pre>
+     *
+     * <code>string private_ip_address = 100854040;</code>
+     *
+     * @return The bytes for privateIpAddress.
+     */
+    public com.google.protobuf.ByteString getPrivateIpAddressBytes() {
+      java.lang.Object ref = privateIpAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        privateIpAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The regional private internal IP address that is used to establish BGP sessions to a VM instance acting as a third-party Router Appliance, such as a Next Gen Firewall, a Virtual Router, or an SD-WAN VM.
+     * </pre>
+     *
+     * <code>string private_ip_address = 100854040;</code>
+     *
+     * @param value The privateIpAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrivateIpAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      privateIpAddress_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The regional private internal IP address that is used to establish BGP sessions to a VM instance acting as a third-party Router Appliance, such as a Next Gen Firewall, a Virtual Router, or an SD-WAN VM.
+     * </pre>
+     *
+     * <code>string private_ip_address = 100854040;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrivateIpAddress() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      privateIpAddress_ = getDefaultInstance().getPrivateIpAddress();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The regional private internal IP address that is used to establish BGP sessions to a VM instance acting as a third-party Router Appliance, such as a Next Gen Firewall, a Virtual Router, or an SD-WAN VM.
+     * </pre>
+     *
+     * <code>string private_ip_address = 100854040;</code>
+     *
+     * @param value The bytes for privateIpAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrivateIpAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000020;
+      privateIpAddress_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object redundantInterface_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the interface that will be redundant with the current interface you are creating. The redundantInterface must belong to the same Cloud Router as the interface here. To establish the BGP session to a Router Appliance VM, you must create two BGP peers. The two BGP peers must be attached to two separate interfaces that are redundant with each other. The redundant_interface must be 1-63 characters long, and comply with RFC1035. Specifically, the redundant_interface must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string redundant_interface = 523187303;</code>
+     *
+     * @return Whether the redundantInterface field is set.
+     */
+    public boolean hasRedundantInterface() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the interface that will be redundant with the current interface you are creating. The redundantInterface must belong to the same Cloud Router as the interface here. To establish the BGP session to a Router Appliance VM, you must create two BGP peers. The two BGP peers must be attached to two separate interfaces that are redundant with each other. The redundant_interface must be 1-63 characters long, and comply with RFC1035. Specifically, the redundant_interface must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string redundant_interface = 523187303;</code>
+     *
+     * @return The redundantInterface.
+     */
+    public java.lang.String getRedundantInterface() {
+      java.lang.Object ref = redundantInterface_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        redundantInterface_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the interface that will be redundant with the current interface you are creating. The redundantInterface must belong to the same Cloud Router as the interface here. To establish the BGP session to a Router Appliance VM, you must create two BGP peers. The two BGP peers must be attached to two separate interfaces that are redundant with each other. The redundant_interface must be 1-63 characters long, and comply with RFC1035. Specifically, the redundant_interface must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string redundant_interface = 523187303;</code>
+     *
+     * @return The bytes for redundantInterface.
+     */
+    public com.google.protobuf.ByteString getRedundantInterfaceBytes() {
+      java.lang.Object ref = redundantInterface_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        redundantInterface_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the interface that will be redundant with the current interface you are creating. The redundantInterface must belong to the same Cloud Router as the interface here. To establish the BGP session to a Router Appliance VM, you must create two BGP peers. The two BGP peers must be attached to two separate interfaces that are redundant with each other. The redundant_interface must be 1-63 characters long, and comply with RFC1035. Specifically, the redundant_interface must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string redundant_interface = 523187303;</code>
+     *
+     * @param value The redundantInterface to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRedundantInterface(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      redundantInterface_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the interface that will be redundant with the current interface you are creating. The redundantInterface must belong to the same Cloud Router as the interface here. To establish the BGP session to a Router Appliance VM, you must create two BGP peers. The two BGP peers must be attached to two separate interfaces that are redundant with each other. The redundant_interface must be 1-63 characters long, and comply with RFC1035. Specifically, the redundant_interface must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string redundant_interface = 523187303;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRedundantInterface() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      redundantInterface_ = getDefaultInstance().getRedundantInterface();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the interface that will be redundant with the current interface you are creating. The redundantInterface must belong to the same Cloud Router as the interface here. To establish the BGP session to a Router Appliance VM, you must create two BGP peers. The two BGP peers must be attached to two separate interfaces that are redundant with each other. The redundant_interface must be 1-63 characters long, and comply with RFC1035. Specifically, the redundant_interface must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * </pre>
+     *
+     * <code>string redundant_interface = 523187303;</code>
+     *
+     * @param value The bytes for redundantInterface to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRedundantInterfaceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000040;
+      redundantInterface_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object subnetwork_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the subnetwork resource that this interface belongs to, which must be in the same region as the Cloud Router. When you establish a BGP session to a VM instance using this interface, the VM instance must belong to the same subnetwork as the subnetwork specified here.
+     * </pre>
+     *
+     * <code>string subnetwork = 307827694;</code>
+     *
+     * @return Whether the subnetwork field is set.
+     */
+    public boolean hasSubnetwork() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the subnetwork resource that this interface belongs to, which must be in the same region as the Cloud Router. When you establish a BGP session to a VM instance using this interface, the VM instance must belong to the same subnetwork as the subnetwork specified here.
+     * </pre>
+     *
+     * <code>string subnetwork = 307827694;</code>
+     *
+     * @return The subnetwork.
+     */
+    public java.lang.String getSubnetwork() {
+      java.lang.Object ref = subnetwork_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subnetwork_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the subnetwork resource that this interface belongs to, which must be in the same region as the Cloud Router. When you establish a BGP session to a VM instance using this interface, the VM instance must belong to the same subnetwork as the subnetwork specified here.
+     * </pre>
+     *
+     * <code>string subnetwork = 307827694;</code>
+     *
+     * @return The bytes for subnetwork.
+     */
+    public com.google.protobuf.ByteString getSubnetworkBytes() {
+      java.lang.Object ref = subnetwork_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        subnetwork_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the subnetwork resource that this interface belongs to, which must be in the same region as the Cloud Router. When you establish a BGP session to a VM instance using this interface, the VM instance must belong to the same subnetwork as the subnetwork specified here.
+     * </pre>
+     *
+     * <code>string subnetwork = 307827694;</code>
+     *
+     * @param value The subnetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubnetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      subnetwork_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the subnetwork resource that this interface belongs to, which must be in the same region as the Cloud Router. When you establish a BGP session to a VM instance using this interface, the VM instance must belong to the same subnetwork as the subnetwork specified here.
+     * </pre>
+     *
+     * <code>string subnetwork = 307827694;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSubnetwork() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      subnetwork_ = getDefaultInstance().getSubnetwork();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the subnetwork resource that this interface belongs to, which must be in the same region as the Cloud Router. When you establish a BGP session to a VM instance using this interface, the VM instance must belong to the same subnetwork as the subnetwork specified here.
+     * </pre>
+     *
+     * <code>string subnetwork = 307827694;</code>
+     *
+     * @param value The bytes for subnetwork to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubnetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000080;
+      subnetwork_ = value;
       onChanged();
       return this;
     }

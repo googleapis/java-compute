@@ -149,11 +149,35 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_TARGET_SHAPE = 0;</code>
      */
     UNDEFINED_TARGET_SHAPE(0),
-    /** <code>ANY = 64972;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The group picks zones for creating VM instances to fulfill the requested number of VMs within present resource constraints and to maximize utilization of unused zonal reservations. Recommended for batch workloads that do not require high availability.
+     * </pre>
+     *
+     * <code>ANY = 64972;</code>
+     */
     ANY(64972),
-    /** <code>BALANCED = 468409608;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The group prioritizes acquisition of resources, scheduling VMs in zones where resources are available while distributing VMs as evenly as possible across selected zones to minimize the impact of zonal failure. Recommended for highly available serving workloads.
+     * </pre>
+     *
+     * <code>BALANCED = 468409608;</code>
+     */
     BALANCED(468409608),
-    /** <code>EVEN = 2140442;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The group schedules VM instance creation and deletion to achieve and maintain an even number of managed instances across the selected zones. The distribution is even when the number of managed instances does not differ by more than 1 between any two zones. Recommended for highly available serving workloads.
+     * </pre>
+     *
+     * <code>EVEN = 2140442;</code>
+     */
     EVEN(2140442),
     UNRECOGNIZED(-1),
     ;
@@ -168,11 +192,35 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_TARGET_SHAPE = 0;</code>
      */
     public static final int UNDEFINED_TARGET_SHAPE_VALUE = 0;
-    /** <code>ANY = 64972;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The group picks zones for creating VM instances to fulfill the requested number of VMs within present resource constraints and to maximize utilization of unused zonal reservations. Recommended for batch workloads that do not require high availability.
+     * </pre>
+     *
+     * <code>ANY = 64972;</code>
+     */
     public static final int ANY_VALUE = 64972;
-    /** <code>BALANCED = 468409608;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The group prioritizes acquisition of resources, scheduling VMs in zones where resources are available while distributing VMs as evenly as possible across selected zones to minimize the impact of zonal failure. Recommended for highly available serving workloads.
+     * </pre>
+     *
+     * <code>BALANCED = 468409608;</code>
+     */
     public static final int BALANCED_VALUE = 468409608;
-    /** <code>EVEN = 2140442;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The group schedules VM instance creation and deletion to achieve and maintain an even number of managed instances across the selected zones. The distribution is even when the number of managed instances does not differ by more than 1 between any two zones. Recommended for highly available serving workloads.
+     * </pre>
+     *
+     * <code>EVEN = 2140442;</code>
+     */
     public static final int EVEN_VALUE = 2140442;
 
     public final int getNumber() {

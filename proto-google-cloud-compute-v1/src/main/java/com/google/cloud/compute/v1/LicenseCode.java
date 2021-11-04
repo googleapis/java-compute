@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a License Code resource.
- * A License Code is a unique identifier used to represent a license resource.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images. (== resource_for {$api_version}.licenseCodes ==)
+ * Represents a License Code resource. A License Code is a unique identifier used to represent a license resource. *Caution* This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.LicenseCode}
@@ -202,15 +201,47 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>DISABLED = 516696700;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Machines are not allowed to attach boot disks with this License Code. Requests to create new resources with this license will be rejected.
+     * </pre>
+     *
+     * <code>DISABLED = 516696700;</code>
+     */
     DISABLED(516696700),
-    /** <code>ENABLED = 182130465;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Use is allowed for anyone with USE_READ_ONLY access to this License Code.
+     * </pre>
+     *
+     * <code>ENABLED = 182130465;</code>
+     */
     ENABLED(182130465),
-    /** <code>RESTRICTED = 261551195;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Use of this license is limited to a project whitelist.
+     * </pre>
+     *
+     * <code>RESTRICTED = 261551195;</code>
+     */
     RESTRICTED(261551195),
     /** <code>STATE_UNSPECIFIED = 470755401;</code> */
     STATE_UNSPECIFIED(470755401),
-    /** <code>TERMINATED = 250018339;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reserved state.
+     * </pre>
+     *
+     * <code>TERMINATED = 250018339;</code>
+     */
     TERMINATED(250018339),
     UNRECOGNIZED(-1),
     ;
@@ -225,15 +256,47 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>DISABLED = 516696700;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Machines are not allowed to attach boot disks with this License Code. Requests to create new resources with this license will be rejected.
+     * </pre>
+     *
+     * <code>DISABLED = 516696700;</code>
+     */
     public static final int DISABLED_VALUE = 516696700;
-    /** <code>ENABLED = 182130465;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Use is allowed for anyone with USE_READ_ONLY access to this License Code.
+     * </pre>
+     *
+     * <code>ENABLED = 182130465;</code>
+     */
     public static final int ENABLED_VALUE = 182130465;
-    /** <code>RESTRICTED = 261551195;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Use of this license is limited to a project whitelist.
+     * </pre>
+     *
+     * <code>RESTRICTED = 261551195;</code>
+     */
     public static final int RESTRICTED_VALUE = 261551195;
     /** <code>STATE_UNSPECIFIED = 470755401;</code> */
     public static final int STATE_UNSPECIFIED_VALUE = 470755401;
-    /** <code>TERMINATED = 250018339;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Reserved state.
+     * </pre>
+     *
+     * <code>TERMINATED = 250018339;</code>
+     */
     public static final int TERMINATED_VALUE = 250018339;
 
     public final int getNumber() {
@@ -1116,8 +1179,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a License Code resource.
-   * A License Code is a unique identifier used to represent a license resource.  Caution This resource is intended for use only by third-party partners who are creating Cloud Marketplace images. (== resource_for {$api_version}.licenseCodes ==)
+   * Represents a License Code resource. A License Code is a unique identifier used to represent a license resource. *Caution* This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.LicenseCode}

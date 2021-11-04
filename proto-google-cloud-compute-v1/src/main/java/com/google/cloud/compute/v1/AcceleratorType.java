@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Accelerator Type resource.
- * Google Cloud Platform provides graphics processing units (accelerators) that you can add to VM instances to improve or accelerate performance when working with intensive workloads. For more information, read GPUs on Compute Engine. (== resource_for {$api_version}.acceleratorTypes ==)
+ * Represents an Accelerator Type resource. Google Cloud Platform provides graphics processing units (accelerators) that you can add to VM instances to improve or accelerate performance when working with intensive workloads. For more information, read GPUs on Compute Engine.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AcceleratorType}
@@ -965,8 +964,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Represents an Accelerator Type resource.
-   * Google Cloud Platform provides graphics processing units (accelerators) that you can add to VM instances to improve or accelerate performance when working with intensive workloads. For more information, read GPUs on Compute Engine. (== resource_for {$api_version}.acceleratorTypes ==)
+   * Represents an Accelerator Type resource. Google Cloud Platform provides graphics processing units (accelerators) that you can add to VM instances to improve or accelerate performance when working with intensive workloads. For more information, read GPUs on Compute Engine.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AcceleratorType}

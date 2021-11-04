@@ -27,7 +27,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -40,7 +40,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -52,7 +52,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -64,7 +64,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -77,7 +77,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * Custom fields.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -91,7 +91,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * The field value to attribute.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>string field = 97427706;</code>
@@ -103,7 +103,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * The field value to attribute.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>string field = 97427706;</code>
@@ -115,7 +115,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * The field value to attribute.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>string field = 97427706;</code>
@@ -128,7 +128,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * The metric to update.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>string metric = 533067184;</code>
@@ -140,7 +140,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * The metric to update.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>string metric = 533067184;</code>
@@ -152,7 +152,7 @@ public interface LogConfigCounterOptionsOrBuilder
    *
    *
    * <pre>
-   * The metric to update.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>string metric = 533067184;</code>

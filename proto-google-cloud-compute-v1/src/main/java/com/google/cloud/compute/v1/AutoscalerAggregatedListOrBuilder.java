@@ -235,7 +235,7 @@ public interface AutoscalerAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * [Output Only] Unreachable resources. end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -247,7 +247,7 @@ public interface AutoscalerAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * [Output Only] Unreachable resources. end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -259,7 +259,7 @@ public interface AutoscalerAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * [Output Only] Unreachable resources. end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -272,7 +272,7 @@ public interface AutoscalerAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * [Output Only] Unreachable resources. end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>

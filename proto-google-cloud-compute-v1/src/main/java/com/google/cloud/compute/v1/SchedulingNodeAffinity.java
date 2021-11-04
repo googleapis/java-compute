@@ -154,9 +154,25 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_OPERATOR = 0;</code>
      */
     UNDEFINED_OPERATOR(0),
-    /** <code>IN = 2341;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Requires Compute Engine to seek for matched nodes.
+     * </pre>
+     *
+     * <code>IN = 2341;</code>
+     */
     IN(2341),
-    /** <code>NOT_IN = 161144369;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Requires Compute Engine to avoid certain nodes.
+     * </pre>
+     *
+     * <code>NOT_IN = 161144369;</code>
+     */
     NOT_IN(161144369),
     /** <code>OPERATOR_UNSPECIFIED = 128892924;</code> */
     OPERATOR_UNSPECIFIED(128892924),
@@ -173,9 +189,25 @@ public final class SchedulingNodeAffinity extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_OPERATOR = 0;</code>
      */
     public static final int UNDEFINED_OPERATOR_VALUE = 0;
-    /** <code>IN = 2341;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Requires Compute Engine to seek for matched nodes.
+     * </pre>
+     *
+     * <code>IN = 2341;</code>
+     */
     public static final int IN_VALUE = 2341;
-    /** <code>NOT_IN = 161144369;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Requires Compute Engine to avoid certain nodes.
+     * </pre>
+     *
+     * <code>NOT_IN = 161144369;</code>
+     */
     public static final int NOT_IN_VALUE = 161144369;
     /** <code>OPERATOR_UNSPECIFIED = 128892924;</code> */
     public static final int OPERATOR_UNSPECIFIED_VALUE = 128892924;

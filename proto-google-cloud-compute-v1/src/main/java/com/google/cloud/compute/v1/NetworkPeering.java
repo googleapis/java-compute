@@ -198,9 +198,25 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Matching configuration exists on the peer.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     ACTIVE(314733318),
-    /** <code>INACTIVE = 270421099;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * There is no matching configuration on the peer, including the case when peer does not exist.
+     * </pre>
+     *
+     * <code>INACTIVE = 270421099;</code>
+     */
     INACTIVE(270421099),
     UNRECOGNIZED(-1),
     ;
@@ -215,9 +231,25 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Matching configuration exists on the peer.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     public static final int ACTIVE_VALUE = 314733318;
-    /** <code>INACTIVE = 270421099;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * There is no matching configuration on the peer, including the case when peer does not exist.
+     * </pre>
+     *
+     * <code>INACTIVE = 270421099;</code>
+     */
     public static final int INACTIVE_VALUE = 270421099;
 
     public final int getNumber() {
@@ -409,7 +441,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
    * </pre>
    *
    * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
@@ -424,7 +456,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
    * </pre>
    *
    * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
@@ -475,7 +507,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
    * </pre>
    *
    * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
@@ -490,7 +522,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
    * </pre>
    *
    * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
@@ -1561,7 +1593,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
      * </pre>
      *
      * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
@@ -1576,7 +1608,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
      * </pre>
      *
      * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
@@ -1591,7 +1623,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
      * </pre>
      *
      * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
@@ -1609,7 +1641,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
      * </pre>
      *
      * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
@@ -1695,7 +1727,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
      * </pre>
      *
      * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
@@ -1710,7 +1742,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
      * </pre>
      *
      * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
@@ -1725,7 +1757,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
      * </pre>
      *
      * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
@@ -1743,7 +1775,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+     * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
      * </pre>
      *
      * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>

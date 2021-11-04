@@ -150,9 +150,7 @@ public class SnapshotsClient implements BackgroundResource {
    * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
    * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
-   * corresponding snapshot.
-   *
-   * <p>For more information, see Deleting snapshots.
+   * corresponding snapshot. For more information, see Deleting snapshots.
    *
    * <p>Sample code:
    *
@@ -179,9 +177,7 @@ public class SnapshotsClient implements BackgroundResource {
    * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
    * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
-   * corresponding snapshot.
-   *
-   * <p>For more information, see Deleting snapshots.
+   * corresponding snapshot. For more information, see Deleting snapshots.
    *
    * <p>Sample code:
    *
@@ -209,9 +205,7 @@ public class SnapshotsClient implements BackgroundResource {
    * Deletes the specified Snapshot resource. Keep in mind that deleting a single snapshot might not
    * necessarily delete all the data on that snapshot. If any data on the snapshot that is marked
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
-   * corresponding snapshot.
-   *
-   * <p>For more information, see Deleting snapshots.
+   * corresponding snapshot. For more information, see Deleting snapshots.
    *
    * <p>Sample code:
    *

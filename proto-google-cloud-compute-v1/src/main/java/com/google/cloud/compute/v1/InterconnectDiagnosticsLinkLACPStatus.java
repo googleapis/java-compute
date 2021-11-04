@@ -133,9 +133,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
    *
    *
    * <pre>
-   * The state of a LACP link, which can take one of the following values:
-   * - ACTIVE: The link is configured and active within the bundle.
-   * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State}
@@ -151,9 +149,25 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The link is configured and active within the bundle.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     ACTIVE(314733318),
-    /** <code>DETACHED = 216562546;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The link is not configured within the bundle, this means the rest of the object should be empty.
+     * </pre>
+     *
+     * <code>DETACHED = 216562546;</code>
+     */
     DETACHED(216562546),
     UNRECOGNIZED(-1),
     ;
@@ -168,9 +182,25 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The link is configured and active within the bundle.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     public static final int ACTIVE_VALUE = 314733318;
-    /** <code>DETACHED = 216562546;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The link is not configured within the bundle, this means the rest of the object should be empty.
+     * </pre>
+     *
+     * <code>DETACHED = 216562546;</code>
+     */
     public static final int DETACHED_VALUE = 216562546;
 
     public final int getNumber() {
@@ -393,9 +423,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
    *
    *
    * <pre>
-   * The state of a LACP link, which can take one of the following values:
-   * - ACTIVE: The link is configured and active within the bundle.
-   * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
@@ -411,9 +439,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
    *
    *
    * <pre>
-   * The state of a LACP link, which can take one of the following values:
-   * - ACTIVE: The link is configured and active within the bundle.
-   * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
@@ -429,9 +455,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
    *
    *
    * <pre>
-   * The state of a LACP link, which can take one of the following values:
-   * - ACTIVE: The link is configured and active within the bundle.
-   * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+   * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
@@ -1081,9 +1105,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      *
      *
      * <pre>
-     * The state of a LACP link, which can take one of the following values:
-     * - ACTIVE: The link is configured and active within the bundle.
-     * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
@@ -1099,9 +1121,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      *
      *
      * <pre>
-     * The state of a LACP link, which can take one of the following values:
-     * - ACTIVE: The link is configured and active within the bundle.
-     * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
@@ -1117,9 +1137,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      *
      *
      * <pre>
-     * The state of a LACP link, which can take one of the following values:
-     * - ACTIVE: The link is configured and active within the bundle.
-     * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
@@ -1138,9 +1156,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      *
      *
      * <pre>
-     * The state of a LACP link, which can take one of the following values:
-     * - ACTIVE: The link is configured and active within the bundle.
-     * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
@@ -1161,9 +1177,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      *
      *
      * <pre>
-     * The state of a LACP link, which can take one of the following values:
-     * - ACTIVE: The link is configured and active within the bundle.
-     * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;
@@ -1186,9 +1200,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      *
      *
      * <pre>
-     * The state of a LACP link, which can take one of the following values:
-     * - ACTIVE: The link is configured and active within the bundle.
-     * - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;

@@ -243,6 +243,8 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     DELETING(528602024),
     /** <code>INITIALIZING = 306588749;</code> */
     INITIALIZING(306588749),
+    /** <code>READY_TO_ANNOUNCE = 64641265;</code> */
+    READY_TO_ANNOUNCE(64641265),
     UNRECOGNIZED(-1),
     ;
 
@@ -262,6 +264,8 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     public static final int DELETING_VALUE = 528602024;
     /** <code>INITIALIZING = 306588749;</code> */
     public static final int INITIALIZING_VALUE = 306588749;
+    /** <code>READY_TO_ANNOUNCE = 64641265;</code> */
+    public static final int READY_TO_ANNOUNCE_VALUE = 64641265;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -295,6 +299,8 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
           return DELETING;
         case 306588749:
           return INITIALIZING;
+        case 64641265:
+          return READY_TO_ANNOUNCE;
         default:
           return null;
       }
@@ -485,8 +491,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -501,8 +506,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -525,8 +529,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -2040,8 +2043,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -2055,8 +2057,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -2078,8 +2079,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -2101,8 +2101,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -2123,8 +2122,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -2141,8 +2139,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update the PublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>

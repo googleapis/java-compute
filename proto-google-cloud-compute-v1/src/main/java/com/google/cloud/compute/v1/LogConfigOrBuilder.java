@@ -27,7 +27,7 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Cloud audit options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
@@ -39,7 +39,7 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Cloud audit options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
@@ -51,7 +51,7 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Cloud audit options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
@@ -62,7 +62,7 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Counter options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
@@ -74,7 +74,7 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Counter options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
@@ -86,7 +86,7 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Counter options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
@@ -97,7 +97,7 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Data access options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
@@ -109,7 +109,7 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Data access options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
@@ -121,7 +121,7 @@ public interface LogConfigOrBuilder
    *
    *
    * <pre>
-   * Data access options.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>

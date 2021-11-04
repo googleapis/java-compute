@@ -24,18 +24,36 @@ public interface LogConfigDataAccessOptionsOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
    * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
    *
    * @return Whether the logMode field is set.
    */
   boolean hasLogMode();
   /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
    * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
    *
    * @return The enum numeric value on the wire for logMode.
    */
   int getLogModeValue();
   /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
    * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
    *
    * @return The logMode.

@@ -137,11 +137,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.GRPCHealthCheck.PortSpecification}
@@ -157,11 +153,35 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_PORT_SPECIFICATION = 0;</code>
      */
     UNDEFINED_PORT_SPECIFICATION(0),
-    /** <code>USE_FIXED_PORT = 190235748;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The port number in port is used for health checking.
+     * </pre>
+     *
+     * <code>USE_FIXED_PORT = 190235748;</code>
+     */
     USE_FIXED_PORT(190235748),
-    /** <code>USE_NAMED_PORT = 349300671;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The portName is used for health checking.
+     * </pre>
+     *
+     * <code>USE_NAMED_PORT = 349300671;</code>
+     */
     USE_NAMED_PORT(349300671),
-    /** <code>USE_SERVING_PORT = 362637516;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
+     * </pre>
+     *
+     * <code>USE_SERVING_PORT = 362637516;</code>
+     */
     USE_SERVING_PORT(362637516),
     UNRECOGNIZED(-1),
     ;
@@ -176,11 +196,35 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_PORT_SPECIFICATION = 0;</code>
      */
     public static final int UNDEFINED_PORT_SPECIFICATION_VALUE = 0;
-    /** <code>USE_FIXED_PORT = 190235748;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The port number in port is used for health checking.
+     * </pre>
+     *
+     * <code>USE_FIXED_PORT = 190235748;</code>
+     */
     public static final int USE_FIXED_PORT_VALUE = 190235748;
-    /** <code>USE_NAMED_PORT = 349300671;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The portName is used for health checking.
+     * </pre>
+     *
+     * <code>USE_NAMED_PORT = 349300671;</code>
+     */
     public static final int USE_NAMED_PORT_VALUE = 349300671;
-    /** <code>USE_SERVING_PORT = 362637516;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
+     * </pre>
+     *
+     * <code>USE_SERVING_PORT = 362637516;</code>
+     */
     public static final int USE_SERVING_PORT_VALUE = 362637516;
 
     public final int getNumber() {
@@ -278,10 +322,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-   * - Empty service_name means the overall status of all services at the backend.
-   * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-   * The grpc_service_name can only be ASCII.
+   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
    * </pre>
    *
    * <code>string grpc_service_name = 136533078;</code>
@@ -296,10 +337,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-   * - Empty service_name means the overall status of all services at the backend.
-   * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-   * The grpc_service_name can only be ASCII.
+   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
    * </pre>
    *
    * <code>string grpc_service_name = 136533078;</code>
@@ -322,10 +360,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-   * - Empty service_name means the overall status of all services at the backend.
-   * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-   * The grpc_service_name can only be ASCII.
+   * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
    * </pre>
    *
    * <code>string grpc_service_name = 136533078;</code>
@@ -448,11 +483,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
@@ -468,11 +499,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
@@ -488,11 +515,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how port is selected for health checking, can be one of following values:
-   * USE_FIXED_PORT: The port number in port is used for health checking.
-   * USE_NAMED_PORT: The portName is used for health checking.
-   * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-   * If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;
@@ -915,10 +938,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-     * - Empty service_name means the overall status of all services at the backend.
-     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-     * The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
      * </pre>
      *
      * <code>string grpc_service_name = 136533078;</code>
@@ -932,10 +952,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-     * - Empty service_name means the overall status of all services at the backend.
-     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-     * The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
      * </pre>
      *
      * <code>string grpc_service_name = 136533078;</code>
@@ -957,10 +974,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-     * - Empty service_name means the overall status of all services at the backend.
-     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-     * The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
      * </pre>
      *
      * <code>string grpc_service_name = 136533078;</code>
@@ -982,10 +996,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-     * - Empty service_name means the overall status of all services at the backend.
-     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-     * The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
      * </pre>
      *
      * <code>string grpc_service_name = 136533078;</code>
@@ -1006,10 +1017,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-     * - Empty service_name means the overall status of all services at the backend.
-     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-     * The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
      * </pre>
      *
      * <code>string grpc_service_name = 136533078;</code>
@@ -1026,10 +1034,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention:
-     * - Empty service_name means the overall status of all services at the backend.
-     * - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service.
-     * The grpc_service_name can only be ASCII.
+     * The gRPC service name for the health check. This field is optional. The value of grpc_service_name has the following meanings by convention: - Empty service_name means the overall status of all services at the backend. - Non-empty service_name means the health of that gRPC service, as defined by the owner of the service. The grpc_service_name can only be ASCII.
      * </pre>
      *
      * <code>string grpc_service_name = 136533078;</code>
@@ -1240,11 +1245,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
      * </pre>
      *
      * <code>
@@ -1261,11 +1262,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
      * </pre>
      *
      * <code>
@@ -1282,11 +1279,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
      * </pre>
      *
      * <code>
@@ -1306,11 +1299,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
      * </pre>
      *
      * <code>
@@ -1332,11 +1321,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
      * </pre>
      *
      * <code>
@@ -1360,11 +1345,7 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how port is selected for health checking, can be one of following values:
-     * USE_FIXED_PORT: The port number in port is used for health checking.
-     * USE_NAMED_PORT: The portName is used for health checking.
-     * USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking.
-     * If not specified, gRPC health check follows behavior specified in port and portName fields.
+     * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
      * </pre>
      *
      * <code>

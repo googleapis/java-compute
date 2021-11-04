@@ -154,7 +154,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments by region.
    *
    * <p>Sample code:
    *
@@ -179,7 +179,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments by region.
    *
    * <p>Sample code:
    *
@@ -212,7 +212,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments by region.
    *
    * <p>Sample code:
    *
@@ -244,7 +244,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of commitments.
+   * Retrieves an aggregated list of commitments by region.
    *
    * <p>Sample code:
    *

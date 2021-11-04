@@ -286,6 +286,7 @@ public class SubnetworksClientTest {
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setEnableFlowLogs(true)
+            .setExternalIpv6Prefix("externalIpv6Prefix-219545212")
             .setFingerprint("fingerprint-1375934236")
             .setGatewayAddress("gatewayAddress1860901136")
             .setId(3355)

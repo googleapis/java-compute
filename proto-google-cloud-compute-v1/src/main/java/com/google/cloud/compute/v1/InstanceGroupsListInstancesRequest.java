@@ -132,9 +132,25 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      * <code>UNDEFINED_INSTANCE_STATE = 0;</code>
      */
     UNDEFINED_INSTANCE_STATE(0),
-    /** <code>ALL = 64897;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Includes all instances in the generated list regardless of their state.
+     * </pre>
+     *
+     * <code>ALL = 64897;</code>
+     */
     ALL(64897),
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Includes instances in the generated list only if they have a RUNNING state.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     RUNNING(121282975),
     UNRECOGNIZED(-1),
     ;
@@ -149,9 +165,25 @@ public final class InstanceGroupsListInstancesRequest extends com.google.protobu
      * <code>UNDEFINED_INSTANCE_STATE = 0;</code>
      */
     public static final int UNDEFINED_INSTANCE_STATE_VALUE = 0;
-    /** <code>ALL = 64897;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Includes all instances in the generated list regardless of their state.
+     * </pre>
+     *
+     * <code>ALL = 64897;</code>
+     */
     public static final int ALL_VALUE = 64897;
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Includes instances in the generated list only if they have a RUNNING state.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     public static final int RUNNING_VALUE = 121282975;
 
     public final int getNumber() {

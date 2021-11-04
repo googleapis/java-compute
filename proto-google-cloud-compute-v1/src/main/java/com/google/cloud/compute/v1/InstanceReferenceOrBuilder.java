@@ -27,7 +27,7 @@ public interface InstanceReferenceOrBuilder
    *
    *
    * <pre>
-   * The URL for a specific instance.
+   * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
    * </pre>
    *
    * <code>string instance = 18257045;</code>
@@ -39,7 +39,7 @@ public interface InstanceReferenceOrBuilder
    *
    *
    * <pre>
-   * The URL for a specific instance.
+   * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
    * </pre>
    *
    * <code>string instance = 18257045;</code>
@@ -51,7 +51,7 @@ public interface InstanceReferenceOrBuilder
    *
    *
    * <pre>
-   * The URL for a specific instance.
+   * The URL for a specific instance. &#64;required compute.instancegroups.addInstances/removeInstances
    * </pre>
    *
    * <code>string instance = 18257045;</code>

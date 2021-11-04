@@ -133,9 +133,25 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     UNDEFINED_NETWORK_TIER(0),
-    /** <code>PREMIUM = 399530551;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * High quality, Google-grade network tier, support for all networking products.
+     * </pre>
+     *
+     * <code>PREMIUM = 399530551;</code>
+     */
     PREMIUM(399530551),
-    /** <code>STANDARD = 484642493;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality, only limited support for other networking products.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
     STANDARD(484642493),
     UNRECOGNIZED(-1),
     ;
@@ -150,9 +166,25 @@ public final class ProjectsSetDefaultNetworkTierRequest
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
-    /** <code>PREMIUM = 399530551;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * High quality, Google-grade network tier, support for all networking products.
+     * </pre>
+     *
+     * <code>PREMIUM = 399530551;</code>
+     */
     public static final int PREMIUM_VALUE = 399530551;
-    /** <code>STANDARD = 484642493;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality, only limited support for other networking products.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
     public static final int STANDARD_VALUE = 484642493;
 
     public final int getNumber() {

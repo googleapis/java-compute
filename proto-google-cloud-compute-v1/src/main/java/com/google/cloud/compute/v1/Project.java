@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Project resource.
- * A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the  Resource Hierarchy. (== resource_for {$api_version}.projects ==)
+ * Represents a Project resource. A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the Resource Hierarchy.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Project}
@@ -255,9 +254,25 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_DEFAULT_NETWORK_TIER = 0;</code>
      */
     UNDEFINED_DEFAULT_NETWORK_TIER(0),
-    /** <code>PREMIUM = 399530551;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * High quality, Google-grade network tier, support for all networking products.
+     * </pre>
+     *
+     * <code>PREMIUM = 399530551;</code>
+     */
     PREMIUM(399530551),
-    /** <code>STANDARD = 484642493;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality, only limited support for other networking products.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
     STANDARD(484642493),
     UNRECOGNIZED(-1),
     ;
@@ -272,9 +287,25 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_DEFAULT_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_DEFAULT_NETWORK_TIER_VALUE = 0;
-    /** <code>PREMIUM = 399530551;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * High quality, Google-grade network tier, support for all networking products.
+     * </pre>
+     *
+     * <code>PREMIUM = 399530551;</code>
+     */
     public static final int PREMIUM_VALUE = 399530551;
-    /** <code>STANDARD = 484642493;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality, only limited support for other networking products.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
     public static final int STANDARD_VALUE = 484642493;
 
     public final int getNumber() {
@@ -856,7 +887,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
    * </pre>
    *
    * <code>uint64 id = 3355;</code>
@@ -871,7 +902,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
    * </pre>
    *
    * <code>uint64 id = 3355;</code>
@@ -1589,8 +1620,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Project resource.
-   * A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the  Resource Hierarchy. (== resource_for {$api_version}.projects ==)
+   * Represents a Project resource. A project is used to organize resources in a Google Cloud Platform environment. For more information, read about the Resource Hierarchy.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Project}
@@ -2766,7 +2796,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
      * </pre>
      *
      * <code>uint64 id = 3355;</code>
@@ -2781,7 +2811,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
      * </pre>
      *
      * <code>uint64 id = 3355;</code>
@@ -2796,7 +2826,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
      * </pre>
      *
      * <code>uint64 id = 3355;</code>
@@ -2814,7 +2844,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is not the project ID, and is just a unique ID used by Compute Engine to identify resources.
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
      * </pre>
      *
      * <code>uint64 id = 3355;</code>

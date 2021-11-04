@@ -51,6 +51,8 @@ import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
+import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceRequest;
+import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceResponse;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest;
 import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceRequest;
@@ -188,6 +190,12 @@ public abstract class InstancesStub implements BackgroundResource {
 
   public UnaryCallable<ResetInstanceRequest, Operation> resetCallable() {
     throw new UnsupportedOperationException("Not implemented: resetCallable()");
+  }
+
+  public UnaryCallable<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptCallable() {
+    throw new UnsupportedOperationException("Not implemented: sendDiagnosticInterruptCallable()");
   }
 
   public UnaryCallable<SetDeletionProtectionInstanceRequest, Operation>

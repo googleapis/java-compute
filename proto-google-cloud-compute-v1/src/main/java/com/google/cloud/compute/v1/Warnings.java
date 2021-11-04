@@ -153,55 +153,255 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_CODE = 0;</code>
      */
     UNDEFINED_CODE(0),
-    /** <code>CLEANUP_FAILED = 150308440;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Warning about failed cleanup of transient changes made by a failed operation.
+     * </pre>
+     *
+     * <code>CLEANUP_FAILED = 150308440;</code>
+     */
     CLEANUP_FAILED(150308440),
-    /** <code>DEPRECATED_RESOURCE_USED = 391835586;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A link to a deprecated resource was created.
+     * </pre>
+     *
+     * <code>DEPRECATED_RESOURCE_USED = 391835586;</code>
+     */
     DEPRECATED_RESOURCE_USED(391835586),
-    /** <code>DEPRECATED_TYPE_USED = 346526230;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When deploying and at least one of the resources has a type marked as deprecated
+     * </pre>
+     *
+     * <code>DEPRECATED_TYPE_USED = 346526230;</code>
+     */
     DEPRECATED_TYPE_USED(346526230),
-    /** <code>DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 369442967;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The user created a boot disk that is larger than image size.
+     * </pre>
+     *
+     * <code>DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 369442967;</code>
+     */
     DISK_SIZE_LARGER_THAN_IMAGE_SIZE(369442967),
-    /** <code>EXPERIMENTAL_TYPE_USED = 451954443;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When deploying and at least one of the resources has a type marked as experimental
+     * </pre>
+     *
+     * <code>EXPERIMENTAL_TYPE_USED = 451954443;</code>
+     */
     EXPERIMENTAL_TYPE_USED(451954443),
-    /** <code>EXTERNAL_API_WARNING = 175546307;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Warning that is present in an external api call
+     * </pre>
+     *
+     * <code>EXTERNAL_API_WARNING = 175546307;</code>
+     */
     EXTERNAL_API_WARNING(175546307),
-    /** <code>FIELD_VALUE_OVERRIDEN = 329669423;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Warning that value of a field has been overridden. Deprecated unused field.
+     * </pre>
+     *
+     * <code>FIELD_VALUE_OVERRIDEN = 329669423;</code>
+     */
     FIELD_VALUE_OVERRIDEN(329669423),
-    /** <code>INJECTED_KERNELS_DEPRECATED = 417377419;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The operation involved use of an injected kernel, which is deprecated.
+     * </pre>
+     *
+     * <code>INJECTED_KERNELS_DEPRECATED = 417377419;</code>
+     */
     INJECTED_KERNELS_DEPRECATED(417377419),
-    /** <code>LARGE_DEPLOYMENT_WARNING = 481440678;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When deploying a deployment with a exceedingly large number of resources
+     * </pre>
+     *
+     * <code>LARGE_DEPLOYMENT_WARNING = 481440678;</code>
+     */
     LARGE_DEPLOYMENT_WARNING(481440678),
-    /** <code>MISSING_TYPE_DEPENDENCY = 344505463;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A resource depends on a missing type
+     * </pre>
+     *
+     * <code>MISSING_TYPE_DEPENDENCY = 344505463;</code>
+     */
     MISSING_TYPE_DEPENDENCY(344505463),
-    /** <code>NEXT_HOP_ADDRESS_NOT_ASSIGNED = 324964999;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The route's nextHopIp address is not assigned to an instance on the network.
+     * </pre>
+     *
+     * <code>NEXT_HOP_ADDRESS_NOT_ASSIGNED = 324964999;</code>
+     */
     NEXT_HOP_ADDRESS_NOT_ASSIGNED(324964999),
-    /** <code>NEXT_HOP_CANNOT_IP_FORWARD = 383382887;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The route's next hop instance cannot ip forward.
+     * </pre>
+     *
+     * <code>NEXT_HOP_CANNOT_IP_FORWARD = 383382887;</code>
+     */
     NEXT_HOP_CANNOT_IP_FORWARD(383382887),
-    /** <code>NEXT_HOP_INSTANCE_NOT_FOUND = 464250446;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The route's nextHopInstance URL refers to an instance that does not exist.
+     * </pre>
+     *
+     * <code>NEXT_HOP_INSTANCE_NOT_FOUND = 464250446;</code>
+     */
     NEXT_HOP_INSTANCE_NOT_FOUND(464250446),
-    /** <code>NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 243758146;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The route's nextHopInstance URL refers to an instance that is not on the same network as the route.
+     * </pre>
+     *
+     * <code>NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 243758146;</code>
+     */
     NEXT_HOP_INSTANCE_NOT_ON_NETWORK(243758146),
-    /** <code>NEXT_HOP_NOT_RUNNING = 417081265;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The route's next hop instance does not have a status of RUNNING.
+     * </pre>
+     *
+     * <code>NEXT_HOP_NOT_RUNNING = 417081265;</code>
+     */
     NEXT_HOP_NOT_RUNNING(417081265),
-    /** <code>NOT_CRITICAL_ERROR = 105763924;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Error which is not critical. We decided to continue the process despite the mentioned error.
+     * </pre>
+     *
+     * <code>NOT_CRITICAL_ERROR = 105763924;</code>
+     */
     NOT_CRITICAL_ERROR(105763924),
-    /** <code>NO_RESULTS_ON_PAGE = 30036744;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * No results are present on a particular list page.
+     * </pre>
+     *
+     * <code>NO_RESULTS_ON_PAGE = 30036744;</code>
+     */
     NO_RESULTS_ON_PAGE(30036744),
-    /** <code>PARTIAL_SUCCESS = 39966469;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Success is reported, but some results may be missing due to errors
+     * </pre>
+     *
+     * <code>PARTIAL_SUCCESS = 39966469;</code>
+     */
     PARTIAL_SUCCESS(39966469),
-    /** <code>REQUIRED_TOS_AGREEMENT = 3745539;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The user attempted to use a resource that requires a TOS they have not accepted.
+     * </pre>
+     *
+     * <code>REQUIRED_TOS_AGREEMENT = 3745539;</code>
+     */
     REQUIRED_TOS_AGREEMENT(3745539),
-    /** <code>RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 496728641;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Warning that a resource is in use.
+     * </pre>
+     *
+     * <code>RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 496728641;</code>
+     */
     RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING(496728641),
-    /** <code>RESOURCE_NOT_DELETED = 168598460;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * One or more of the resources set to auto-delete could not be deleted because they were in use.
+     * </pre>
+     *
+     * <code>RESOURCE_NOT_DELETED = 168598460;</code>
+     */
     RESOURCE_NOT_DELETED(168598460),
-    /** <code>SCHEMA_VALIDATION_IGNORED = 275245642;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When a resource schema validation is ignored.
+     * </pre>
+     *
+     * <code>SCHEMA_VALIDATION_IGNORED = 275245642;</code>
+     */
     SCHEMA_VALIDATION_IGNORED(275245642),
-    /** <code>SINGLE_INSTANCE_PROPERTY_TEMPLATE = 268305617;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Instance template used in instance group manager is valid as such, but its application does not make a lot of sense, because it allows only single instance in instance group.
+     * </pre>
+     *
+     * <code>SINGLE_INSTANCE_PROPERTY_TEMPLATE = 268305617;</code>
+     */
     SINGLE_INSTANCE_PROPERTY_TEMPLATE(268305617),
-    /** <code>UNDECLARED_PROPERTIES = 390513439;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When undeclared properties in the schema are present
+     * </pre>
+     *
+     * <code>UNDECLARED_PROPERTIES = 390513439;</code>
+     */
     UNDECLARED_PROPERTIES(390513439),
-    /** <code>UNREACHABLE = 13328052;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A given scope cannot be reached.
+     * </pre>
+     *
+     * <code>UNREACHABLE = 13328052;</code>
+     */
     UNREACHABLE(13328052),
     UNRECOGNIZED(-1),
     ;
@@ -216,55 +416,255 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_CODE = 0;</code>
      */
     public static final int UNDEFINED_CODE_VALUE = 0;
-    /** <code>CLEANUP_FAILED = 150308440;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Warning about failed cleanup of transient changes made by a failed operation.
+     * </pre>
+     *
+     * <code>CLEANUP_FAILED = 150308440;</code>
+     */
     public static final int CLEANUP_FAILED_VALUE = 150308440;
-    /** <code>DEPRECATED_RESOURCE_USED = 391835586;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A link to a deprecated resource was created.
+     * </pre>
+     *
+     * <code>DEPRECATED_RESOURCE_USED = 391835586;</code>
+     */
     public static final int DEPRECATED_RESOURCE_USED_VALUE = 391835586;
-    /** <code>DEPRECATED_TYPE_USED = 346526230;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When deploying and at least one of the resources has a type marked as deprecated
+     * </pre>
+     *
+     * <code>DEPRECATED_TYPE_USED = 346526230;</code>
+     */
     public static final int DEPRECATED_TYPE_USED_VALUE = 346526230;
-    /** <code>DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 369442967;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The user created a boot disk that is larger than image size.
+     * </pre>
+     *
+     * <code>DISK_SIZE_LARGER_THAN_IMAGE_SIZE = 369442967;</code>
+     */
     public static final int DISK_SIZE_LARGER_THAN_IMAGE_SIZE_VALUE = 369442967;
-    /** <code>EXPERIMENTAL_TYPE_USED = 451954443;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When deploying and at least one of the resources has a type marked as experimental
+     * </pre>
+     *
+     * <code>EXPERIMENTAL_TYPE_USED = 451954443;</code>
+     */
     public static final int EXPERIMENTAL_TYPE_USED_VALUE = 451954443;
-    /** <code>EXTERNAL_API_WARNING = 175546307;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Warning that is present in an external api call
+     * </pre>
+     *
+     * <code>EXTERNAL_API_WARNING = 175546307;</code>
+     */
     public static final int EXTERNAL_API_WARNING_VALUE = 175546307;
-    /** <code>FIELD_VALUE_OVERRIDEN = 329669423;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Warning that value of a field has been overridden. Deprecated unused field.
+     * </pre>
+     *
+     * <code>FIELD_VALUE_OVERRIDEN = 329669423;</code>
+     */
     public static final int FIELD_VALUE_OVERRIDEN_VALUE = 329669423;
-    /** <code>INJECTED_KERNELS_DEPRECATED = 417377419;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The operation involved use of an injected kernel, which is deprecated.
+     * </pre>
+     *
+     * <code>INJECTED_KERNELS_DEPRECATED = 417377419;</code>
+     */
     public static final int INJECTED_KERNELS_DEPRECATED_VALUE = 417377419;
-    /** <code>LARGE_DEPLOYMENT_WARNING = 481440678;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When deploying a deployment with a exceedingly large number of resources
+     * </pre>
+     *
+     * <code>LARGE_DEPLOYMENT_WARNING = 481440678;</code>
+     */
     public static final int LARGE_DEPLOYMENT_WARNING_VALUE = 481440678;
-    /** <code>MISSING_TYPE_DEPENDENCY = 344505463;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A resource depends on a missing type
+     * </pre>
+     *
+     * <code>MISSING_TYPE_DEPENDENCY = 344505463;</code>
+     */
     public static final int MISSING_TYPE_DEPENDENCY_VALUE = 344505463;
-    /** <code>NEXT_HOP_ADDRESS_NOT_ASSIGNED = 324964999;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The route's nextHopIp address is not assigned to an instance on the network.
+     * </pre>
+     *
+     * <code>NEXT_HOP_ADDRESS_NOT_ASSIGNED = 324964999;</code>
+     */
     public static final int NEXT_HOP_ADDRESS_NOT_ASSIGNED_VALUE = 324964999;
-    /** <code>NEXT_HOP_CANNOT_IP_FORWARD = 383382887;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The route's next hop instance cannot ip forward.
+     * </pre>
+     *
+     * <code>NEXT_HOP_CANNOT_IP_FORWARD = 383382887;</code>
+     */
     public static final int NEXT_HOP_CANNOT_IP_FORWARD_VALUE = 383382887;
-    /** <code>NEXT_HOP_INSTANCE_NOT_FOUND = 464250446;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The route's nextHopInstance URL refers to an instance that does not exist.
+     * </pre>
+     *
+     * <code>NEXT_HOP_INSTANCE_NOT_FOUND = 464250446;</code>
+     */
     public static final int NEXT_HOP_INSTANCE_NOT_FOUND_VALUE = 464250446;
-    /** <code>NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 243758146;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The route's nextHopInstance URL refers to an instance that is not on the same network as the route.
+     * </pre>
+     *
+     * <code>NEXT_HOP_INSTANCE_NOT_ON_NETWORK = 243758146;</code>
+     */
     public static final int NEXT_HOP_INSTANCE_NOT_ON_NETWORK_VALUE = 243758146;
-    /** <code>NEXT_HOP_NOT_RUNNING = 417081265;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The route's next hop instance does not have a status of RUNNING.
+     * </pre>
+     *
+     * <code>NEXT_HOP_NOT_RUNNING = 417081265;</code>
+     */
     public static final int NEXT_HOP_NOT_RUNNING_VALUE = 417081265;
-    /** <code>NOT_CRITICAL_ERROR = 105763924;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Error which is not critical. We decided to continue the process despite the mentioned error.
+     * </pre>
+     *
+     * <code>NOT_CRITICAL_ERROR = 105763924;</code>
+     */
     public static final int NOT_CRITICAL_ERROR_VALUE = 105763924;
-    /** <code>NO_RESULTS_ON_PAGE = 30036744;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * No results are present on a particular list page.
+     * </pre>
+     *
+     * <code>NO_RESULTS_ON_PAGE = 30036744;</code>
+     */
     public static final int NO_RESULTS_ON_PAGE_VALUE = 30036744;
-    /** <code>PARTIAL_SUCCESS = 39966469;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Success is reported, but some results may be missing due to errors
+     * </pre>
+     *
+     * <code>PARTIAL_SUCCESS = 39966469;</code>
+     */
     public static final int PARTIAL_SUCCESS_VALUE = 39966469;
-    /** <code>REQUIRED_TOS_AGREEMENT = 3745539;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The user attempted to use a resource that requires a TOS they have not accepted.
+     * </pre>
+     *
+     * <code>REQUIRED_TOS_AGREEMENT = 3745539;</code>
+     */
     public static final int REQUIRED_TOS_AGREEMENT_VALUE = 3745539;
-    /** <code>RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 496728641;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Warning that a resource is in use.
+     * </pre>
+     *
+     * <code>RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING = 496728641;</code>
+     */
     public static final int RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING_VALUE = 496728641;
-    /** <code>RESOURCE_NOT_DELETED = 168598460;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * One or more of the resources set to auto-delete could not be deleted because they were in use.
+     * </pre>
+     *
+     * <code>RESOURCE_NOT_DELETED = 168598460;</code>
+     */
     public static final int RESOURCE_NOT_DELETED_VALUE = 168598460;
-    /** <code>SCHEMA_VALIDATION_IGNORED = 275245642;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When a resource schema validation is ignored.
+     * </pre>
+     *
+     * <code>SCHEMA_VALIDATION_IGNORED = 275245642;</code>
+     */
     public static final int SCHEMA_VALIDATION_IGNORED_VALUE = 275245642;
-    /** <code>SINGLE_INSTANCE_PROPERTY_TEMPLATE = 268305617;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Instance template used in instance group manager is valid as such, but its application does not make a lot of sense, because it allows only single instance in instance group.
+     * </pre>
+     *
+     * <code>SINGLE_INSTANCE_PROPERTY_TEMPLATE = 268305617;</code>
+     */
     public static final int SINGLE_INSTANCE_PROPERTY_TEMPLATE_VALUE = 268305617;
-    /** <code>UNDECLARED_PROPERTIES = 390513439;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When undeclared properties in the schema are present
+     * </pre>
+     *
+     * <code>UNDECLARED_PROPERTIES = 390513439;</code>
+     */
     public static final int UNDECLARED_PROPERTIES_VALUE = 390513439;
-    /** <code>UNREACHABLE = 13328052;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A given scope cannot be reached.
+     * </pre>
+     *
+     * <code>UNREACHABLE = 13328052;</code>
+     */
     public static final int UNREACHABLE_VALUE = 13328052;
 
     public final int getNumber() {
@@ -454,8 +854,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example:
-   * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -468,8 +867,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example:
-   * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -483,8 +881,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example:
-   * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -497,8 +894,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example:
-   * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -511,8 +907,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Metadata about this warning in key: value format. For example:
-   * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1116,8 +1511,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1133,8 +1527,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1150,8 +1543,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1167,8 +1559,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1190,8 +1581,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1210,8 +1600,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1233,8 +1622,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1256,8 +1644,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1276,8 +1663,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1296,8 +1682,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1317,8 +1702,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1337,8 +1721,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1357,8 +1740,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1370,8 +1752,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1387,8 +1768,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1405,8 +1785,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1419,8 +1798,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -1433,8 +1811,7 @@ public final class Warnings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Metadata about this warning in key: value format. For example:
-     * "data": [ { "key": "scope", "value": "zones/us-east1-d" }
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" }
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>

@@ -135,7 +135,7 @@ public interface ExternalVpnGatewayListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#externalVpnGatewayList  for lists of externalVpnGateways.
+   * [Output Only] Type of resource. Always compute#externalVpnGatewayList for lists of externalVpnGateways.
    * </pre>
    *
    * <code>string kind = 3292052;</code>
@@ -147,7 +147,7 @@ public interface ExternalVpnGatewayListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#externalVpnGatewayList  for lists of externalVpnGateways.
+   * [Output Only] Type of resource. Always compute#externalVpnGatewayList for lists of externalVpnGateways.
    * </pre>
    *
    * <code>string kind = 3292052;</code>
@@ -159,7 +159,7 @@ public interface ExternalVpnGatewayListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#externalVpnGatewayList  for lists of externalVpnGateways.
+   * [Output Only] Type of resource. Always compute#externalVpnGatewayList for lists of externalVpnGateways.
    * </pre>
    *
    * <code>string kind = 3292052;</code>

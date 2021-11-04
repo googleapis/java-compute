@@ -630,4 +630,41 @@ public interface CommitmentOrBuilder
    * @return The bytes for statusMessage.
    */
   com.google.protobuf.ByteString getStatusMessageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  boolean hasType();
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+   *
+   * @return The type.
+   */
+  com.google.cloud.compute.v1.Commitment.Type getType();
 }

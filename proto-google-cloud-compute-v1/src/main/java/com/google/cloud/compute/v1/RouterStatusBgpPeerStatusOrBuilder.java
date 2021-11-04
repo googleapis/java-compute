@@ -252,6 +252,43 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
+   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * </pre>
+   *
+   * <code>string router_appliance_instance = 468312989;</code>
+   *
+   * @return Whether the routerApplianceInstance field is set.
+   */
+  boolean hasRouterApplianceInstance();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * </pre>
+   *
+   * <code>string router_appliance_instance = 468312989;</code>
+   *
+   * @return The routerApplianceInstance.
+   */
+  java.lang.String getRouterApplianceInstance();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * </pre>
+   *
+   * <code>string router_appliance_instance = 468312989;</code>
+   *
+   * @return The bytes for routerApplianceInstance.
+   */
+  com.google.protobuf.ByteString getRouterApplianceInstanceBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * BGP state as specified in RFC1771.
    * </pre>
    *

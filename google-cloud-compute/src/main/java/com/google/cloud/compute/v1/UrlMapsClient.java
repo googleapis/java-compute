@@ -502,9 +502,7 @@ public class UrlMapsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
-   * specified UrlMap.
-   *
-   * <p>For more information, see [Invalidating cached
+   * specified UrlMap. For more information, see [Invalidating cached
    * content](/cdn/docs/invalidating-cached-content).
    *
    * <p>Sample code:
@@ -539,9 +537,7 @@ public class UrlMapsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
-   * specified UrlMap.
-   *
-   * <p>For more information, see [Invalidating cached
+   * specified UrlMap. For more information, see [Invalidating cached
    * content](/cdn/docs/invalidating-cached-content).
    *
    * <p>Sample code:
@@ -569,9 +565,7 @@ public class UrlMapsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
-   * specified UrlMap.
-   *
-   * <p>For more information, see [Invalidating cached
+   * specified UrlMap. For more information, see [Invalidating cached
    * content](/cdn/docs/invalidating-cached-content).
    *
    * <p>Sample code:

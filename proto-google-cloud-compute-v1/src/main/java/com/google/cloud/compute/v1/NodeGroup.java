@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represent a sole-tenant Node Group resource.
- * A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes. (== resource_for {$api_version}.nodeGroups ==)
+ * Represents a sole-tenant Node Group resource. A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NodeGroup}
@@ -243,7 +242,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NodeGroup.MaintenancePolicy}
@@ -259,13 +258,37 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MAINTENANCE_POLICY = 0;</code>
      */
     UNDEFINED_MAINTENANCE_POLICY(0),
-    /** <code>DEFAULT = 115302945;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Allow the node and corresponding instances to retain default maintenance behavior.
+     * </pre>
+     *
+     * <code>DEFAULT = 115302945;</code>
+     */
     DEFAULT(115302945),
     /** <code>MAINTENANCE_POLICY_UNSPECIFIED = 72964182;</code> */
     MAINTENANCE_POLICY_UNSPECIFIED(72964182),
-    /** <code>MIGRATE_WITHIN_NODE_GROUP = 153483394;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When maintenance must be done on a node, the instances on that node will be moved to other nodes in the group. Instances with onHostMaintenance = MIGRATE will live migrate to their destinations while instances with onHostMaintenance = TERMINATE will terminate and then restart on their destination nodes if automaticRestart = true.
+     * </pre>
+     *
+     * <code>MIGRATE_WITHIN_NODE_GROUP = 153483394;</code>
+     */
     MIGRATE_WITHIN_NODE_GROUP(153483394),
-    /** <code>RESTART_IN_PLACE = 228647325;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Instances in this group will restart on the same node when maintenance has completed. Instances must have onHostMaintenance = TERMINATE, and they will only restart if automaticRestart = true.
+     * </pre>
+     *
+     * <code>RESTART_IN_PLACE = 228647325;</code>
+     */
     RESTART_IN_PLACE(228647325),
     UNRECOGNIZED(-1),
     ;
@@ -280,13 +303,37 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_MAINTENANCE_POLICY = 0;</code>
      */
     public static final int UNDEFINED_MAINTENANCE_POLICY_VALUE = 0;
-    /** <code>DEFAULT = 115302945;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Allow the node and corresponding instances to retain default maintenance behavior.
+     * </pre>
+     *
+     * <code>DEFAULT = 115302945;</code>
+     */
     public static final int DEFAULT_VALUE = 115302945;
     /** <code>MAINTENANCE_POLICY_UNSPECIFIED = 72964182;</code> */
     public static final int MAINTENANCE_POLICY_UNSPECIFIED_VALUE = 72964182;
-    /** <code>MIGRATE_WITHIN_NODE_GROUP = 153483394;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * When maintenance must be done on a node, the instances on that node will be moved to other nodes in the group. Instances with onHostMaintenance = MIGRATE will live migrate to their destinations while instances with onHostMaintenance = TERMINATE will terminate and then restart on their destination nodes if automaticRestart = true.
+     * </pre>
+     *
+     * <code>MIGRATE_WITHIN_NODE_GROUP = 153483394;</code>
+     */
     public static final int MIGRATE_WITHIN_NODE_GROUP_VALUE = 153483394;
-    /** <code>RESTART_IN_PLACE = 228647325;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Instances in this group will restart on the same node when maintenance has completed. Instances must have onHostMaintenance = TERMINATE, and they will only restart if automaticRestart = true.
+     * </pre>
+     *
+     * <code>RESTART_IN_PLACE = 228647325;</code>
+     */
     public static final int RESTART_IN_PLACE_VALUE = 228647325;
 
     public final int getNumber() {
@@ -911,7 +958,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
@@ -927,7 +974,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
@@ -943,7 +990,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
@@ -1686,8 +1733,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represent a sole-tenant Node Group resource.
-   * A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes. (== resource_for {$api_version}.nodeGroups ==)
+   * Represents a sole-tenant Node Group resource. A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NodeGroup}
@@ -2847,7 +2893,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
@@ -2863,7 +2909,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
@@ -2879,7 +2925,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
@@ -2898,7 +2944,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
@@ -2919,7 +2965,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
@@ -2942,7 +2988,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;

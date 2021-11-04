@@ -27,7 +27,7 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    *
    *
    * <pre>
-   * Information used by the Cloud Audit Logging pipeline.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    *
    *
    * <pre>
-   * Information used by the Cloud Audit Logging pipeline.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -55,7 +55,7 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    *
    *
    * <pre>
-   * Information used by the Cloud Audit Logging pipeline.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -69,7 +69,7 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
@@ -81,7 +81,7 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
@@ -93,7 +93,7 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>

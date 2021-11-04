@@ -22,7 +22,6 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Messages
  * A specification of the type and number of accelerator cards attached to the instance.
  * </pre>
  *
@@ -399,7 +398,6 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Messages
    * A specification of the type and number of accelerator cards attached to the instance.
    * </pre>
    *

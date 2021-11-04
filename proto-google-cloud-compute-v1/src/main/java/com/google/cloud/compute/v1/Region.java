@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Region resource.
- * A region is a geographical area where a resource is located. For more information, read Regions and Zones. (== resource_for {$api_version}.regions ==)
+ * Represents a Region resource. A region is a geographical area where a resource is located. For more information, read Regions and Zones.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Region}
@@ -1258,8 +1257,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Region resource.
-   * A region is a geographical area where a resource is located. For more information, read Regions and Zones. (== resource_for {$api_version}.regions ==)
+   * Represents a Region resource. A region is a geographical area where a resource is located. For more information, read Regions and Zones.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Region}

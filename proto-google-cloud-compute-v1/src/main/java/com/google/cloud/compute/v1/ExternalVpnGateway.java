@@ -22,10 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an external VPN gateway.
- * External VPN gateway is the on-premises VPN gateway(s) or another cloud provider's VPN gateway that connects to your Google Cloud VPN gateway.
- * To create a highly available VPN from Google Cloud Platform to your VPN gateway or another cloud provider's VPN gateway, you must create a external VPN gateway resource with information about the other gateway.
- * For more information about using external VPN gateways, see  Creating an HA VPN gateway and tunnel pair to a peer VPN. (== resource_for {$api_version}.externalVpnGateways ==)
+ * Represents an external VPN gateway. External VPN gateway is the on-premises VPN gateway(s) or another cloud provider's VPN gateway that connects to your Google Cloud VPN gateway. To create a highly available VPN from Google Cloud Platform to your VPN gateway or another cloud provider's VPN gateway, you must create a external VPN gateway resource with information about the other gateway. For more information about using external VPN gateways, see Creating an HA VPN gateway and tunnel pair to a peer VPN.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ExternalVpnGateway}
@@ -231,11 +228,35 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_REDUNDANCY_TYPE = 0;</code>
      */
     UNDEFINED_REDUNDANCY_TYPE(0),
-    /** <code>FOUR_IPS_REDUNDANCY = 520087913;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The external VPN gateway has four public IP addresses; at the time of writing this API, the AWS virtual private gateway is an example which has four public IP addresses for high availability connections; there should be two VPN connections in the AWS virtual private gateway , each AWS VPN connection has two public IP addresses; please make sure to put two public IP addresses from one AWS VPN connection into interfaces 0 and 1 of this external VPN gateway, and put the other two public IP addresses from another AWS VPN connection into interfaces 2 and 3 of this external VPN gateway. When displaying highly available configuration status for the VPN tunnels connected to FOUR_IPS_REDUNDANCY external VPN gateway, Google will always detect whether interfaces 0 and 1 are connected on one interface of HA Cloud VPN gateway, and detect whether interfaces 2 and 3 are connected to another interface of the HA Cloud VPN gateway.
+     * </pre>
+     *
+     * <code>FOUR_IPS_REDUNDANCY = 520087913;</code>
+     */
     FOUR_IPS_REDUNDANCY(520087913),
-    /** <code>SINGLE_IP_INTERNALLY_REDUNDANT = 133914873;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The external VPN gateway has only one public IP address which internally provide redundancy or failover.
+     * </pre>
+     *
+     * <code>SINGLE_IP_INTERNALLY_REDUNDANT = 133914873;</code>
+     */
     SINGLE_IP_INTERNALLY_REDUNDANT(133914873),
-    /** <code>TWO_IPS_REDUNDANCY = 367049635;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The external VPN gateway has two public IP addresses which are redundant with each other, the following two types of setup on your on-premises side would have this type of redundancy: (1) Two separate on-premises gateways, each with one public IP address, the two on-premises gateways are redundant with each other. (2) A single on-premise gateway with two public IP addresses that are redundant with eatch other.
+     * </pre>
+     *
+     * <code>TWO_IPS_REDUNDANCY = 367049635;</code>
+     */
     TWO_IPS_REDUNDANCY(367049635),
     UNRECOGNIZED(-1),
     ;
@@ -250,11 +271,35 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_REDUNDANCY_TYPE = 0;</code>
      */
     public static final int UNDEFINED_REDUNDANCY_TYPE_VALUE = 0;
-    /** <code>FOUR_IPS_REDUNDANCY = 520087913;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The external VPN gateway has four public IP addresses; at the time of writing this API, the AWS virtual private gateway is an example which has four public IP addresses for high availability connections; there should be two VPN connections in the AWS virtual private gateway , each AWS VPN connection has two public IP addresses; please make sure to put two public IP addresses from one AWS VPN connection into interfaces 0 and 1 of this external VPN gateway, and put the other two public IP addresses from another AWS VPN connection into interfaces 2 and 3 of this external VPN gateway. When displaying highly available configuration status for the VPN tunnels connected to FOUR_IPS_REDUNDANCY external VPN gateway, Google will always detect whether interfaces 0 and 1 are connected on one interface of HA Cloud VPN gateway, and detect whether interfaces 2 and 3 are connected to another interface of the HA Cloud VPN gateway.
+     * </pre>
+     *
+     * <code>FOUR_IPS_REDUNDANCY = 520087913;</code>
+     */
     public static final int FOUR_IPS_REDUNDANCY_VALUE = 520087913;
-    /** <code>SINGLE_IP_INTERNALLY_REDUNDANT = 133914873;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The external VPN gateway has only one public IP address which internally provide redundancy or failover.
+     * </pre>
+     *
+     * <code>SINGLE_IP_INTERNALLY_REDUNDANT = 133914873;</code>
+     */
     public static final int SINGLE_IP_INTERNALLY_REDUNDANT_VALUE = 133914873;
-    /** <code>TWO_IPS_REDUNDANCY = 367049635;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The external VPN gateway has two public IP addresses which are redundant with each other, the following two types of setup on your on-premises side would have this type of redundancy: (1) Two separate on-premises gateways, each with one public IP address, the two on-premises gateways are redundant with each other. (2) A single on-premise gateway with two public IP addresses that are redundant with eatch other.
+     * </pre>
+     *
+     * <code>TWO_IPS_REDUNDANCY = 367049635;</code>
+     */
     public static final int TWO_IPS_REDUNDANCY_VALUE = 367049635;
 
     public final int getNumber() {
@@ -510,7 +555,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of interfaces for this external VPN gateway.
+   * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -525,7 +570,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of interfaces for this external VPN gateway.
+   * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -540,7 +585,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of interfaces for this external VPN gateway.
+   * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -554,7 +599,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of interfaces for this external VPN gateway.
+   * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -568,7 +613,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of interfaces for this external VPN gateway.
+   * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -650,8 +695,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
    * </pre>
    *
    * <code>string label_fingerprint = 178124825;</code>
@@ -666,8 +710,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
    * </pre>
    *
    * <code>string label_fingerprint = 178124825;</code>
@@ -690,8 +733,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+   * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
    * </pre>
    *
    * <code>string label_fingerprint = 178124825;</code>
@@ -1290,10 +1332,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Represents an external VPN gateway.
-   * External VPN gateway is the on-premises VPN gateway(s) or another cloud provider's VPN gateway that connects to your Google Cloud VPN gateway.
-   * To create a highly available VPN from Google Cloud Platform to your VPN gateway or another cloud provider's VPN gateway, you must create a external VPN gateway resource with information about the other gateway.
-   * For more information about using external VPN gateways, see  Creating an HA VPN gateway and tunnel pair to a peer VPN. (== resource_for {$api_version}.externalVpnGateways ==)
+   * Represents an external VPN gateway. External VPN gateway is the on-premises VPN gateway(s) or another cloud provider's VPN gateway that connects to your Google Cloud VPN gateway. To create a highly available VPN from Google Cloud Platform to your VPN gateway or another cloud provider's VPN gateway, you must create a external VPN gateway resource with information about the other gateway. For more information about using external VPN gateways, see Creating an HA VPN gateway and tunnel pair to a peer VPN.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ExternalVpnGateway}
@@ -1925,7 +1964,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -1943,7 +1982,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -1960,7 +1999,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -1977,7 +2016,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2001,7 +2040,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2023,7 +2062,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2046,7 +2085,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2070,7 +2109,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2091,7 +2130,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2113,7 +2152,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2135,7 +2174,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2155,7 +2194,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2175,7 +2214,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2189,7 +2228,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2207,7 +2246,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2226,7 +2265,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2240,7 +2279,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2256,7 +2295,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of interfaces for this external VPN gateway.
+     * A list of interfaces for this external VPN gateway. If your peer-side gateway is an on-premises gateway and non-AWS cloud providers' gateway, at most two interfaces can be provided for an external VPN gateway. If your peer side is an AWS virtual private gateway, four interfaces should be provided for an external VPN gateway.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ExternalVpnGatewayInterface interfaces = 12073562;
@@ -2409,8 +2448,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -2424,8 +2462,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -2447,8 +2484,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -2470,8 +2506,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -2492,8 +2527,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -2510,8 +2544,7 @@ public final class ExternalVpnGateway extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-     * To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
+     * A fingerprint for the labels being applied to this ExternalVpnGateway, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an ExternalVpnGateway.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>

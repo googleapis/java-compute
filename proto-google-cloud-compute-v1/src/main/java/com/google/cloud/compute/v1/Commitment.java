@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a regional Commitment resource.
- * Creating a commitment resource means that you are purchasing a committed use contract with an explicit start and end time. You can create commitments based on vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for Committed Use Discounts. (== resource_for {$api_version}.regionCommitments ==)
+ * Represents a regional Commitment resource. Creating a commitment resource means that you are purchasing a committed use contract with an explicit start and end time. You can create commitments based on vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for Committed Use Discounts.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Commitment}
@@ -53,6 +52,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     startTimestamp_ = "";
     status_ = 0;
     statusMessage_ = "";
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -110,6 +110,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
               int rawValue = input.readEnum();
               bitField0_ |= 0x00000100;
               plan_ = rawValue;
+              break;
+            }
+          case 28604880:
+            {
+              int rawValue = input.readEnum();
+              bitField0_ |= 0x00004000;
+              type_ = rawValue;
               break;
             }
           case 244202930:
@@ -652,6 +659,167 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Commitment.Status)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Commitment.Type}
+   */
+  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TYPE = 0;</code>
+     */
+    UNDEFINED_TYPE(0),
+    /** <code>ACCELERATOR_OPTIMIZED = 280848403;</code> */
+    ACCELERATOR_OPTIMIZED(280848403),
+    /** <code>COMPUTE_OPTIMIZED = 158349023;</code> */
+    COMPUTE_OPTIMIZED(158349023),
+    /** <code>GENERAL_PURPOSE = 299793543;</code> */
+    GENERAL_PURPOSE(299793543),
+    /** <code>GENERAL_PURPOSE_E2 = 301911877;</code> */
+    GENERAL_PURPOSE_E2(301911877),
+    /** <code>GENERAL_PURPOSE_N2 = 301912156;</code> */
+    GENERAL_PURPOSE_N2(301912156),
+    /** <code>GENERAL_PURPOSE_N2D = 232471400;</code> */
+    GENERAL_PURPOSE_N2D(232471400),
+    /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
+    MEMORY_OPTIMIZED(281753417),
+    /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
+    TYPE_UNSPECIFIED(437714322),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_TYPE_VALUE = 0;
+    /** <code>ACCELERATOR_OPTIMIZED = 280848403;</code> */
+    public static final int ACCELERATOR_OPTIMIZED_VALUE = 280848403;
+    /** <code>COMPUTE_OPTIMIZED = 158349023;</code> */
+    public static final int COMPUTE_OPTIMIZED_VALUE = 158349023;
+    /** <code>GENERAL_PURPOSE = 299793543;</code> */
+    public static final int GENERAL_PURPOSE_VALUE = 299793543;
+    /** <code>GENERAL_PURPOSE_E2 = 301911877;</code> */
+    public static final int GENERAL_PURPOSE_E2_VALUE = 301911877;
+    /** <code>GENERAL_PURPOSE_N2 = 301912156;</code> */
+    public static final int GENERAL_PURPOSE_N2_VALUE = 301912156;
+    /** <code>GENERAL_PURPOSE_N2D = 232471400;</code> */
+    public static final int GENERAL_PURPOSE_N2D_VALUE = 232471400;
+    /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
+    public static final int MEMORY_OPTIMIZED_VALUE = 281753417;
+    /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
+    public static final int TYPE_UNSPECIFIED_VALUE = 437714322;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_TYPE;
+        case 280848403:
+          return ACCELERATOR_OPTIMIZED;
+        case 158349023:
+          return COMPUTE_OPTIMIZED;
+        case 299793543:
+          return GENERAL_PURPOSE;
+        case 301911877:
+          return GENERAL_PURPOSE_E2;
+        case 301912156:
+          return GENERAL_PURPOSE_N2;
+        case 232471400:
+          return GENERAL_PURPOSE_N2D;
+        case 281753417:
+          return MEMORY_OPTIMIZED;
+        case 437714322:
+          return TYPE_UNSPECIFIED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+          public Type findValueByNumber(int number) {
+            return Type.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Commitment.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Commitment.Type)
   }
 
   private int bitField0_;
@@ -1606,6 +1774,57 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int TYPE_FIELD_NUMBER = 3575610;
+  private int type_;
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+   *
+   * @return Whether the type field is set.
+   */
+  @java.lang.Override
+  public boolean hasType() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+   *
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override
+  public int getTypeValue() {
+    return type_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+   *
+   * @return The type.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.Commitment.Type getType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.compute.v1.Commitment.Type result =
+        com.google.cloud.compute.v1.Commitment.Type.valueOf(type_);
+    return result == null ? com.google.cloud.compute.v1.Commitment.Type.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1631,6 +1850,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeEnum(3443497, plan_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeEnum(3575610, type_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
@@ -1688,6 +1910,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3443497, plan_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size +=
@@ -1802,6 +2027,10 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     if (hasStatusMessage()) {
       if (!getStatusMessage().equals(other.getStatusMessage())) return false;
     }
+    if (hasType() != other.hasType()) return false;
+    if (hasType()) {
+      if (type_ != other.type_) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1876,6 +2105,10 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     if (hasStatusMessage()) {
       hash = (37 * hash) + STATUS_MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getStatusMessage().hashCode();
+    }
+    if (hasType()) {
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1981,8 +2214,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a regional Commitment resource.
-   * Creating a commitment resource means that you are purchasing a committed use contract with an explicit start and end time. You can create commitments based on vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for Committed Use Discounts. (== resource_for {$api_version}.regionCommitments ==)
+   * Represents a regional Commitment resource. Creating a commitment resource means that you are purchasing a committed use contract with an explicit start and end time. You can create commitments based on vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for Committed Use Discounts.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Commitment}
@@ -2071,6 +2303,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00004000);
       statusMessage_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
+      type_ = 0;
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
 
@@ -2178,6 +2412,10 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00002000;
       }
       result.statusMessage_ = statusMessage_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        to_bitField0_ |= 0x00004000;
+      }
+      result.type_ = type_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -2341,6 +2579,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00008000;
         statusMessage_ = other.statusMessage_;
         onChanged();
+      }
+      if (other.hasType()) {
+        setType(other.getType());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4728,6 +4969,112 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       bitField0_ |= 0x00008000;
       statusMessage_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+     *
+     * @return Whether the type field is set.
+     */
+    @java.lang.Override
+    public boolean hasType() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+     *
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      bitField0_ |= 0x00010000;
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.Commitment.Type getType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.compute.v1.Commitment.Type result =
+          com.google.cloud.compute.v1.Commitment.Type.valueOf(type_);
+      return result == null ? com.google.cloud.compute.v1.Commitment.Type.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+     *
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.google.cloud.compute.v1.Commitment.Type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00010000;
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      type_ = 0;
       onChanged();
       return this;
     }

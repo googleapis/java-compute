@@ -27,8 +27,7 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-   * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
    * <code>bool automatic_restart = 350821371;</code>
@@ -40,8 +39,7 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
-   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-   * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
    * <code>bool automatic_restart = 350821371;</code>

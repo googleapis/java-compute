@@ -222,16 +222,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
-   * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
-   * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
-   * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
-   * - RECREATING The managed instance group is recreating this instance.
-   * - DELETING The managed instance group is permanently deleting this instance.
-   * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
-   * - RESTARTING The managed instance group is restarting the instance.
-   * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
-   * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ManagedInstance.CurrentAction}
@@ -247,23 +238,95 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_CURRENT_ACTION = 0;</code>
      */
     UNDEFINED_CURRENT_ACTION(0),
-    /** <code>ABANDONING = 388244813;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
+     * </pre>
+     *
+     * <code>ABANDONING = 388244813;</code>
+     */
     ABANDONING(388244813),
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     CREATING(455564985),
-    /** <code>CREATING_WITHOUT_RETRIES = 428843785;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased.
+     * </pre>
+     *
+     * <code>CREATING_WITHOUT_RETRIES = 428843785;</code>
+     */
     CREATING_WITHOUT_RETRIES(428843785),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is permanently deleting this instance.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
-    /** <code>NONE = 2402104;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group has not scheduled any actions for this instance.
+     * </pre>
+     *
+     * <code>NONE = 2402104;</code>
+     */
     NONE(2402104),
-    /** <code>RECREATING = 287278572;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is recreating this instance.
+     * </pre>
+     *
+     * <code>RECREATING = 287278572;</code>
+     */
     RECREATING(287278572),
-    /** <code>REFRESHING = 163266343;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
+     * </pre>
+     *
+     * <code>REFRESHING = 163266343;</code>
+     */
     REFRESHING(163266343),
-    /** <code>RESTARTING = 320534387;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is restarting this instance.
+     * </pre>
+     *
+     * <code>RESTARTING = 320534387;</code>
+     */
     RESTARTING(320534387),
-    /** <code>VERIFYING = 16982185;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is verifying this already created instance. Verification happens every time the instance is (re)created or restarted and consists of: 1. Waiting until health check specified as part of this managed instance group's autohealing policy reports HEALTHY. Note: Applies only if autohealing policy has a health check specified 2. Waiting for addition verification steps performed as post-instance creation (subject to future extensions).
+     * </pre>
+     *
+     * <code>VERIFYING = 16982185;</code>
+     */
     VERIFYING(16982185),
     UNRECOGNIZED(-1),
     ;
@@ -278,23 +341,95 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_CURRENT_ACTION = 0;</code>
      */
     public static final int UNDEFINED_CURRENT_ACTION_VALUE = 0;
-    /** <code>ABANDONING = 388244813;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
+     * </pre>
+     *
+     * <code>ABANDONING = 388244813;</code>
+     */
     public static final int ABANDONING_VALUE = 388244813;
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     public static final int CREATING_VALUE = 455564985;
-    /** <code>CREATING_WITHOUT_RETRIES = 428843785;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased.
+     * </pre>
+     *
+     * <code>CREATING_WITHOUT_RETRIES = 428843785;</code>
+     */
     public static final int CREATING_WITHOUT_RETRIES_VALUE = 428843785;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is permanently deleting this instance.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
-    /** <code>NONE = 2402104;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group has not scheduled any actions for this instance.
+     * </pre>
+     *
+     * <code>NONE = 2402104;</code>
+     */
     public static final int NONE_VALUE = 2402104;
-    /** <code>RECREATING = 287278572;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is recreating this instance.
+     * </pre>
+     *
+     * <code>RECREATING = 287278572;</code>
+     */
     public static final int RECREATING_VALUE = 287278572;
-    /** <code>REFRESHING = 163266343;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
+     * </pre>
+     *
+     * <code>REFRESHING = 163266343;</code>
+     */
     public static final int REFRESHING_VALUE = 163266343;
-    /** <code>RESTARTING = 320534387;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is restarting this instance.
+     * </pre>
+     *
+     * <code>RESTARTING = 320534387;</code>
+     */
     public static final int RESTARTING_VALUE = 320534387;
-    /** <code>VERIFYING = 16982185;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance group is verifying this already created instance. Verification happens every time the instance is (re)created or restarted and consists of: 1. Waiting until health check specified as part of this managed instance group's autohealing policy reports HEALTHY. Note: Applies only if autohealing policy has a health check specified 2. Waiting for addition verification steps performed as post-instance creation (subject to future extensions).
+     * </pre>
+     *
+     * <code>VERIFYING = 16982185;</code>
+     */
     public static final int VERIFYING_VALUE = 16982185;
 
     public final int getNumber() {
@@ -414,25 +549,105 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_INSTANCE_STATUS = 0;</code>
      */
     UNDEFINED_INSTANCE_STATUS(0),
-    /** <code>DEPROVISIONING = 428935662;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The Nanny is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * </pre>
+     *
+     * <code>DEPROVISIONING = 428935662;</code>
+     */
     DEPROVISIONING(428935662),
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated for the instance.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     PROVISIONING(290896621),
-    /** <code>REPAIRING = 413483285;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is in repair.
+     * </pre>
+     *
+     * <code>REPAIRING = 413483285;</code>
+     */
     REPAIRING(413483285),
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is running.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     RUNNING(121282975),
-    /** <code>STAGING = 431072283;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * All required resources have been allocated and the instance is being started.
+     * </pre>
+     *
+     * <code>STAGING = 431072283;</code>
+     */
     STAGING(431072283),
-    /** <code>STOPPED = 444276141;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped successfully.
+     * </pre>
+     *
+     * <code>STOPPED = 444276141;</code>
+     */
     STOPPED(444276141),
-    /** <code>STOPPING = 350791796;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is currently stopping (either being deleted or killed).
+     * </pre>
+     *
+     * <code>STOPPING = 350791796;</code>
+     */
     STOPPING(350791796),
-    /** <code>SUSPENDED = 51223995;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has suspended.
+     * </pre>
+     *
+     * <code>SUSPENDED = 51223995;</code>
+     */
     SUSPENDED(51223995),
-    /** <code>SUSPENDING = 514206246;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 514206246;</code>
+     */
     SUSPENDING(514206246),
-    /** <code>TERMINATED = 250018339;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped (either by explicit action or underlying failure).
+     * </pre>
+     *
+     * <code>TERMINATED = 250018339;</code>
+     */
     TERMINATED(250018339),
     UNRECOGNIZED(-1),
     ;
@@ -447,25 +662,105 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_INSTANCE_STATUS = 0;</code>
      */
     public static final int UNDEFINED_INSTANCE_STATUS_VALUE = 0;
-    /** <code>DEPROVISIONING = 428935662;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The Nanny is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * </pre>
+     *
+     * <code>DEPROVISIONING = 428935662;</code>
+     */
     public static final int DEPROVISIONING_VALUE = 428935662;
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated for the instance.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     public static final int PROVISIONING_VALUE = 290896621;
-    /** <code>REPAIRING = 413483285;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is in repair.
+     * </pre>
+     *
+     * <code>REPAIRING = 413483285;</code>
+     */
     public static final int REPAIRING_VALUE = 413483285;
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is running.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     public static final int RUNNING_VALUE = 121282975;
-    /** <code>STAGING = 431072283;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * All required resources have been allocated and the instance is being started.
+     * </pre>
+     *
+     * <code>STAGING = 431072283;</code>
+     */
     public static final int STAGING_VALUE = 431072283;
-    /** <code>STOPPED = 444276141;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped successfully.
+     * </pre>
+     *
+     * <code>STOPPED = 444276141;</code>
+     */
     public static final int STOPPED_VALUE = 444276141;
-    /** <code>STOPPING = 350791796;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is currently stopping (either being deleted or killed).
+     * </pre>
+     *
+     * <code>STOPPING = 350791796;</code>
+     */
     public static final int STOPPING_VALUE = 350791796;
-    /** <code>SUSPENDED = 51223995;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has suspended.
+     * </pre>
+     *
+     * <code>SUSPENDED = 51223995;</code>
+     */
     public static final int SUSPENDED_VALUE = 51223995;
-    /** <code>SUSPENDING = 514206246;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 514206246;</code>
+     */
     public static final int SUSPENDING_VALUE = 514206246;
-    /** <code>TERMINATED = 250018339;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped (either by explicit action or underlying failure).
+     * </pre>
+     *
+     * <code>TERMINATED = 250018339;</code>
+     */
     public static final int TERMINATED_VALUE = 250018339;
 
     public final int getNumber() {
@@ -574,16 +869,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
-   * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
-   * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
-   * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
-   * - RECREATING The managed instance group is recreating this instance.
-   * - DELETING The managed instance group is permanently deleting this instance.
-   * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
-   * - RESTARTING The managed instance group is restarting the instance.
-   * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
-   * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
@@ -598,16 +884,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
-   * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
-   * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
-   * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
-   * - RECREATING The managed instance group is recreating this instance.
-   * - DELETING The managed instance group is permanently deleting this instance.
-   * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
-   * - RESTARTING The managed instance group is restarting the instance.
-   * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
-   * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
@@ -622,16 +899,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
-   * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
-   * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
-   * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
-   * - RECREATING The managed instance group is recreating this instance.
-   * - DELETING The managed instance group is permanently deleting this instance.
-   * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
-   * - RESTARTING The managed instance group is restarting the instance.
-   * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
-   * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
@@ -1678,16 +1946,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
-     * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
-     * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
-     * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
-     * - RECREATING The managed instance group is recreating this instance.
-     * - DELETING The managed instance group is permanently deleting this instance.
-     * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
-     * - RESTARTING The managed instance group is restarting the instance.
-     * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
-     * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;
@@ -1703,16 +1962,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
-     * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
-     * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
-     * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
-     * - RECREATING The managed instance group is recreating this instance.
-     * - DELETING The managed instance group is permanently deleting this instance.
-     * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
-     * - RESTARTING The managed instance group is restarting the instance.
-     * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
-     * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;
@@ -1728,16 +1978,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
-     * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
-     * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
-     * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
-     * - RECREATING The managed instance group is recreating this instance.
-     * - DELETING The managed instance group is permanently deleting this instance.
-     * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
-     * - RESTARTING The managed instance group is restarting the instance.
-     * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
-     * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;
@@ -1756,16 +1997,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
-     * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
-     * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
-     * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
-     * - RECREATING The managed instance group is recreating this instance.
-     * - DELETING The managed instance group is permanently deleting this instance.
-     * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
-     * - RESTARTING The managed instance group is restarting the instance.
-     * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
-     * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;
@@ -1786,16 +2018,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
-     * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
-     * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
-     * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
-     * - RECREATING The managed instance group is recreating this instance.
-     * - DELETING The managed instance group is permanently deleting this instance.
-     * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
-     * - RESTARTING The managed instance group is restarting the instance.
-     * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
-     * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;
@@ -1818,16 +2041,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values:
-     * - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance.
-     * - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
-     * - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead.
-     * - RECREATING The managed instance group is recreating this instance.
-     * - DELETING The managed instance group is permanently deleting this instance.
-     * - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
-     * - RESTARTING The managed instance group is restarting the instance.
-     * - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
-     * - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;

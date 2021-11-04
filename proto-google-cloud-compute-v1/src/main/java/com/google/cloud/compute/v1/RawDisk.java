@@ -369,7 +369,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+   * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source = 177235995;</code>
@@ -384,7 +384,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+   * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source = 177235995;</code>
@@ -407,7 +407,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+   * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source = 177235995;</code>
@@ -1035,7 +1035,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+     * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source = 177235995;</code>
@@ -1049,7 +1049,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+     * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source = 177235995;</code>
@@ -1071,7 +1071,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+     * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source = 177235995;</code>
@@ -1093,7 +1093,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+     * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source = 177235995;</code>
@@ -1114,7 +1114,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+     * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source = 177235995;</code>
@@ -1131,7 +1131,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full Google Cloud Storage URL where the disk image is stored. You must provide either this property or the sourceDisk property but not both.
+     * The full Google Cloud Storage URL where the raw disk image archive is stored. The following are valid formats for the URL: - https://storage.googleapis.com/bucket_name/image_archive_name - https://storage.googleapis.com/bucket_name/folder_name/ image_archive_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
      * </pre>
      *
      * <code>string source = 177235995;</code>

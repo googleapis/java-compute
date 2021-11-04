@@ -809,7 +809,7 @@ public class FirewallPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all the policies that have been configured for the specified project.
+   * Lists all the policies that have been configured for the specified folder or organization.
    *
    * <p>Sample code:
    *
@@ -831,7 +831,7 @@ public class FirewallPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all the policies that have been configured for the specified project.
+   * Lists all the policies that have been configured for the specified folder or organization.
    *
    * <p>Sample code:
    *
@@ -861,7 +861,7 @@ public class FirewallPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all the policies that have been configured for the specified project.
+   * Lists all the policies that have been configured for the specified folder or organization.
    *
    * <p>Sample code:
    *
@@ -891,7 +891,7 @@ public class FirewallPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all the policies that have been configured for the specified project.
+   * Lists all the policies that have been configured for the specified folder or organization.
    *
    * <p>Sample code:
    *

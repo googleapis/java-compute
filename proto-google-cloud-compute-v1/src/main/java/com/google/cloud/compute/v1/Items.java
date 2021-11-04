@@ -22,6 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
+ * Metadata
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Items}
@@ -428,6 +429,7 @@ public final class Items extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Metadata
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Items}

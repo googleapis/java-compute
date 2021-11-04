@@ -154,25 +154,105 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>DEPROVISIONING = 428935662;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The Nanny is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * </pre>
+     *
+     * <code>DEPROVISIONING = 428935662;</code>
+     */
     DEPROVISIONING(428935662),
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated for the instance.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     PROVISIONING(290896621),
-    /** <code>REPAIRING = 413483285;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is in repair.
+     * </pre>
+     *
+     * <code>REPAIRING = 413483285;</code>
+     */
     REPAIRING(413483285),
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is running.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     RUNNING(121282975),
-    /** <code>STAGING = 431072283;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * All required resources have been allocated and the instance is being started.
+     * </pre>
+     *
+     * <code>STAGING = 431072283;</code>
+     */
     STAGING(431072283),
-    /** <code>STOPPED = 444276141;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped successfully.
+     * </pre>
+     *
+     * <code>STOPPED = 444276141;</code>
+     */
     STOPPED(444276141),
-    /** <code>STOPPING = 350791796;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is currently stopping (either being deleted or killed).
+     * </pre>
+     *
+     * <code>STOPPING = 350791796;</code>
+     */
     STOPPING(350791796),
-    /** <code>SUSPENDED = 51223995;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has suspended.
+     * </pre>
+     *
+     * <code>SUSPENDED = 51223995;</code>
+     */
     SUSPENDED(51223995),
-    /** <code>SUSPENDING = 514206246;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 514206246;</code>
+     */
     SUSPENDING(514206246),
-    /** <code>TERMINATED = 250018339;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped (either by explicit action or underlying failure).
+     * </pre>
+     *
+     * <code>TERMINATED = 250018339;</code>
+     */
     TERMINATED(250018339),
     UNRECOGNIZED(-1),
     ;
@@ -187,25 +267,105 @@ public final class InstanceWithNamedPorts extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>DEPROVISIONING = 428935662;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The Nanny is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * </pre>
+     *
+     * <code>DEPROVISIONING = 428935662;</code>
+     */
     public static final int DEPROVISIONING_VALUE = 428935662;
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated for the instance.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     public static final int PROVISIONING_VALUE = 290896621;
-    /** <code>REPAIRING = 413483285;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is in repair.
+     * </pre>
+     *
+     * <code>REPAIRING = 413483285;</code>
+     */
     public static final int REPAIRING_VALUE = 413483285;
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is running.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     public static final int RUNNING_VALUE = 121282975;
-    /** <code>STAGING = 431072283;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * All required resources have been allocated and the instance is being started.
+     * </pre>
+     *
+     * <code>STAGING = 431072283;</code>
+     */
     public static final int STAGING_VALUE = 431072283;
-    /** <code>STOPPED = 444276141;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped successfully.
+     * </pre>
+     *
+     * <code>STOPPED = 444276141;</code>
+     */
     public static final int STOPPED_VALUE = 444276141;
-    /** <code>STOPPING = 350791796;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is currently stopping (either being deleted or killed).
+     * </pre>
+     *
+     * <code>STOPPING = 350791796;</code>
+     */
     public static final int STOPPING_VALUE = 350791796;
-    /** <code>SUSPENDED = 51223995;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has suspended.
+     * </pre>
+     *
+     * <code>SUSPENDED = 51223995;</code>
+     */
     public static final int SUSPENDED_VALUE = 51223995;
-    /** <code>SUSPENDING = 514206246;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 514206246;</code>
+     */
     public static final int SUSPENDING_VALUE = 514206246;
-    /** <code>TERMINATED = 250018339;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped (either by explicit action or underlying failure).
+     * </pre>
+     *
+     * <code>TERMINATED = 250018339;</code>
+     */
     public static final int TERMINATED_VALUE = 250018339;
 
     public final int getNumber() {

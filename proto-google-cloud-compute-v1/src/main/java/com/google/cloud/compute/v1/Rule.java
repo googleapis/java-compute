@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A rule to be applied in a Policy.
+ * This is deprecated and has no effect. Do not use.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Rule}
@@ -195,7 +195,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Rule.Action}
@@ -211,17 +211,65 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ACTION = 0;</code>
      */
     UNDEFINED_ACTION(0),
-    /** <code>ALLOW = 62368553;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ALLOW = 62368553;</code>
+     */
     ALLOW(62368553),
-    /** <code>ALLOW_WITH_LOG = 76034177;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ALLOW_WITH_LOG = 76034177;</code>
+     */
     ALLOW_WITH_LOG(76034177),
-    /** <code>DENY = 2094604;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DENY = 2094604;</code>
+     */
     DENY(2094604),
-    /** <code>DENY_WITH_LOG = 351433982;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DENY_WITH_LOG = 351433982;</code>
+     */
     DENY_WITH_LOG(351433982),
-    /** <code>LOG = 75556;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>LOG = 75556;</code>
+     */
     LOG(75556),
-    /** <code>NO_ACTION = 260643444;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>NO_ACTION = 260643444;</code>
+     */
     NO_ACTION(260643444),
     UNRECOGNIZED(-1),
     ;
@@ -236,17 +284,65 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ACTION = 0;</code>
      */
     public static final int UNDEFINED_ACTION_VALUE = 0;
-    /** <code>ALLOW = 62368553;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ALLOW = 62368553;</code>
+     */
     public static final int ALLOW_VALUE = 62368553;
-    /** <code>ALLOW_WITH_LOG = 76034177;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ALLOW_WITH_LOG = 76034177;</code>
+     */
     public static final int ALLOW_WITH_LOG_VALUE = 76034177;
-    /** <code>DENY = 2094604;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DENY = 2094604;</code>
+     */
     public static final int DENY_VALUE = 2094604;
-    /** <code>DENY_WITH_LOG = 351433982;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DENY_WITH_LOG = 351433982;</code>
+     */
     public static final int DENY_WITH_LOG_VALUE = 351433982;
-    /** <code>LOG = 75556;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>LOG = 75556;</code>
+     */
     public static final int LOG_VALUE = 75556;
-    /** <code>NO_ACTION = 260643444;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>NO_ACTION = 260643444;</code>
+     */
     public static final int NO_ACTION_VALUE = 260643444;
 
     public final int getNumber() {
@@ -347,7 +443,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
@@ -362,7 +458,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
@@ -377,7 +473,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
@@ -398,7 +494,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Additional restrictions that must be met. All conditions must pass for the rule to match.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -411,7 +507,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Additional restrictions that must be met. All conditions must pass for the rule to match.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -425,7 +521,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Additional restrictions that must be met. All conditions must pass for the rule to match.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -438,7 +534,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Additional restrictions that must be met. All conditions must pass for the rule to match.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -451,7 +547,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Additional restrictions that must be met. All conditions must pass for the rule to match.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -467,7 +563,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Human-readable description of the rule.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>string description = 422937596;</code>
@@ -482,7 +578,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Human-readable description of the rule.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>string description = 422937596;</code>
@@ -505,7 +601,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Human-readable description of the rule.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>string description = 422937596;</code>
@@ -531,7 +627,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string ins = 104430;</code>
@@ -545,7 +641,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string ins = 104430;</code>
@@ -559,7 +655,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string ins = 104430;</code>
@@ -574,7 +670,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string ins = 104430;</code>
@@ -592,7 +688,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -605,7 +701,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -619,7 +715,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -632,7 +728,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -645,7 +741,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -661,7 +757,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string not_ins = 518443138;</code>
@@ -675,7 +771,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string not_ins = 518443138;</code>
@@ -689,7 +785,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string not_ins = 518443138;</code>
@@ -704,7 +800,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string not_ins = 518443138;</code>
@@ -722,7 +818,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -736,7 +832,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -750,7 +846,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -765,7 +861,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -1029,7 +1125,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A rule to be applied in a Policy.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Rule}
@@ -1342,7 +1438,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
@@ -1357,7 +1453,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
@@ -1372,7 +1468,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
@@ -1390,7 +1486,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
@@ -1408,7 +1504,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
@@ -1429,7 +1525,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
@@ -1463,7 +1559,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1479,7 +1575,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1495,7 +1591,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1511,7 +1607,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1533,7 +1629,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1553,7 +1649,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1575,7 +1671,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1597,7 +1693,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1616,7 +1712,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1636,7 +1732,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1656,7 +1752,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1675,7 +1771,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1694,7 +1790,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1706,7 +1802,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1722,7 +1818,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1739,7 +1835,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1752,7 +1848,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1765,7 +1861,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Additional restrictions that must be met. All conditions must pass for the rule to match.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -1797,7 +1893,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable description of the rule.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>string description = 422937596;</code>
@@ -1811,7 +1907,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable description of the rule.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>string description = 422937596;</code>
@@ -1833,7 +1929,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable description of the rule.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>string description = 422937596;</code>
@@ -1855,7 +1951,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable description of the rule.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>string description = 422937596;</code>
@@ -1876,7 +1972,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable description of the rule.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>string description = 422937596;</code>
@@ -1893,7 +1989,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable description of the rule.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>string description = 422937596;</code>
@@ -1924,7 +2020,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string ins = 104430;</code>
@@ -1938,7 +2034,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string ins = 104430;</code>
@@ -1952,7 +2048,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string ins = 104430;</code>
@@ -1967,7 +2063,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string ins = 104430;</code>
@@ -1982,7 +2078,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string ins = 104430;</code>
@@ -2004,7 +2100,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string ins = 104430;</code>
@@ -2025,7 +2121,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string ins = 104430;</code>
@@ -2043,7 +2139,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string ins = 104430;</code>
@@ -2060,7 +2156,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string ins = 104430;</code>
@@ -2099,7 +2195,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2115,7 +2211,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2131,7 +2227,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2147,7 +2243,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2169,7 +2265,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2189,7 +2285,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2211,7 +2307,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2233,7 +2329,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2252,7 +2348,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2272,7 +2368,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2292,7 +2388,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2311,7 +2407,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2330,7 +2426,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2342,7 +2438,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2358,7 +2454,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2375,7 +2471,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2388,7 +2484,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2401,7 +2497,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -2441,7 +2537,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string not_ins = 518443138;</code>
@@ -2455,7 +2551,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string not_ins = 518443138;</code>
@@ -2469,7 +2565,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string not_ins = 518443138;</code>
@@ -2484,7 +2580,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string not_ins = 518443138;</code>
@@ -2499,7 +2595,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string not_ins = 518443138;</code>
@@ -2521,7 +2617,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string not_ins = 518443138;</code>
@@ -2542,7 +2638,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string not_ins = 518443138;</code>
@@ -2560,7 +2656,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string not_ins = 518443138;</code>
@@ -2577,7 +2673,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string not_ins = 518443138;</code>
@@ -2609,7 +2705,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string permissions = 59962500;</code>
@@ -2623,7 +2719,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string permissions = 59962500;</code>
@@ -2637,7 +2733,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string permissions = 59962500;</code>
@@ -2652,7 +2748,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string permissions = 59962500;</code>
@@ -2667,7 +2763,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string permissions = 59962500;</code>
@@ -2689,7 +2785,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string permissions = 59962500;</code>
@@ -2710,7 +2806,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string permissions = 59962500;</code>
@@ -2728,7 +2824,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string permissions = 59962500;</code>
@@ -2745,7 +2841,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>repeated string permissions = 59962500;</code>

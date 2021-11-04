@@ -126,10 +126,7 @@ public interface TargetInstanceOrBuilder
    *
    *
    * <pre>
-   * A URL to the virtual machine instance that handles traffic for this target instance. When creating a target instance, you can provide the fully-qualified URL or a valid partial URL to the desired virtual machine. For example, the following are all valid URLs:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-   * - projects/project/zones/zone/instances/instance
-   * - zones/zone/instances/instance
+   * A URL to the virtual machine instance that handles traffic for this target instance. When creating a target instance, you can provide the fully-qualified URL or a valid partial URL to the desired virtual machine. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
    * </pre>
    *
    * <code>string instance = 18257045;</code>
@@ -141,10 +138,7 @@ public interface TargetInstanceOrBuilder
    *
    *
    * <pre>
-   * A URL to the virtual machine instance that handles traffic for this target instance. When creating a target instance, you can provide the fully-qualified URL or a valid partial URL to the desired virtual machine. For example, the following are all valid URLs:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-   * - projects/project/zones/zone/instances/instance
-   * - zones/zone/instances/instance
+   * A URL to the virtual machine instance that handles traffic for this target instance. When creating a target instance, you can provide the fully-qualified URL or a valid partial URL to the desired virtual machine. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
    * </pre>
    *
    * <code>string instance = 18257045;</code>
@@ -156,10 +150,7 @@ public interface TargetInstanceOrBuilder
    *
    *
    * <pre>
-   * A URL to the virtual machine instance that handles traffic for this target instance. When creating a target instance, you can provide the fully-qualified URL or a valid partial URL to the desired virtual machine. For example, the following are all valid URLs:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
-   * - projects/project/zones/zone/instances/instance
-   * - zones/zone/instances/instance
+   * A URL to the virtual machine instance that handles traffic for this target instance. When creating a target instance, you can provide the fully-qualified URL or a valid partial URL to the desired virtual machine. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
    * </pre>
    *
    * <code>string instance = 18257045;</code>
@@ -278,6 +269,43 @@ public interface TargetInstanceOrBuilder
    * @return The natPolicy.
    */
   com.google.cloud.compute.v1.TargetInstance.NatPolicy getNatPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
+   * @return Whether the network field is set.
+   */
+  boolean hasNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
+   * @return The network.
+   */
+  java.lang.String getNetwork();
+  /**
+   *
+   *
+   * <pre>
+   * The URL of the network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to.
+   * </pre>
+   *
+   * <code>string network = 232872494;</code>
+   *
+   * @return The bytes for network.
+   */
+  com.google.protobuf.ByteString getNetworkBytes();
 
   /**
    *

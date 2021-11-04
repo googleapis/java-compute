@@ -147,6 +147,7 @@ public class RoutesClientTest {
   public void getTest() throws Exception {
     Route expectedResponse =
         Route.newBuilder()
+            .addAllAsPaths(new ArrayList<RouteAsPath>())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setDestRange("destRange1956782011")

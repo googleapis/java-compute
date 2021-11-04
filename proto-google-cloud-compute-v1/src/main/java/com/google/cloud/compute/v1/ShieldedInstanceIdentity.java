@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A shielded Instance identity entry.
+ * A Shielded Instance Identity.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ShieldedInstanceIdentity}
@@ -510,7 +510,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A shielded Instance identity entry.
+   * A Shielded Instance Identity.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ShieldedInstanceIdentity}

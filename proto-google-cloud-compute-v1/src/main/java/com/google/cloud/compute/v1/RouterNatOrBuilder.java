@@ -213,9 +213,7 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the NatIpAllocateOption, which can take one of the following values:
-   * - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs.
-   * - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
    * </pre>
    *
    * <code>
@@ -229,9 +227,7 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the NatIpAllocateOption, which can take one of the following values:
-   * - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs.
-   * - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
    * </pre>
    *
    * <code>
@@ -245,9 +241,7 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the NatIpAllocateOption, which can take one of the following values:
-   * - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs.
-   * - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
    * </pre>
    *
    * <code>
@@ -313,10 +307,59 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values:
-   * - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat.
-   * - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat.
-   * - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * A list of rules associated with this NAT.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.RouterNatRule> getRulesList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of rules associated with this NAT.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
+   */
+  com.google.cloud.compute.v1.RouterNatRule getRules(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of rules associated with this NAT.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
+   */
+  int getRulesCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of rules associated with this NAT.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.RouterNatRuleOrBuilder>
+      getRulesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of rules associated with this NAT.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouterNatRule rules = 108873975;</code>
+   */
+  com.google.cloud.compute.v1.RouterNatRuleOrBuilder getRulesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
    * </pre>
    *
    * <code>
@@ -330,10 +373,7 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values:
-   * - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat.
-   * - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat.
-   * - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
    * </pre>
    *
    * <code>
@@ -347,10 +387,7 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
-   * Specify the Nat option, which can take one of the following values:
-   * - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat.
-   * - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat.
-   * - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
    * </pre>
    *
    * <code>
@@ -443,6 +480,31 @@ public interface RouterNatOrBuilder
    * @return The tcpEstablishedIdleTimeoutSec.
    */
   int getTcpEstablishedIdleTimeoutSec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Timeout (in seconds) for TCP connections that are in TIME_WAIT state. Defaults to 120s if not set.
+   * </pre>
+   *
+   * <code>int32 tcp_time_wait_timeout_sec = 513596925;</code>
+   *
+   * @return Whether the tcpTimeWaitTimeoutSec field is set.
+   */
+  boolean hasTcpTimeWaitTimeoutSec();
+  /**
+   *
+   *
+   * <pre>
+   * Timeout (in seconds) for TCP connections that are in TIME_WAIT state. Defaults to 120s if not set.
+   * </pre>
+   *
+   * <code>int32 tcp_time_wait_timeout_sec = 513596925;</code>
+   *
+   * @return The tcpTimeWaitTimeoutSec.
+   */
+  int getTcpTimeWaitTimeoutSec();
 
   /**
    *

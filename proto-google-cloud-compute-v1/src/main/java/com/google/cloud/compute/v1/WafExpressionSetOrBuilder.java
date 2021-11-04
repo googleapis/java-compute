@@ -136,7 +136,7 @@ public interface WafExpressionSetOrBuilder
    *
    *
    * <pre>
-   * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+   * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
    * </pre>
    *
    * <code>string id = 3355;</code>
@@ -148,7 +148,7 @@ public interface WafExpressionSetOrBuilder
    *
    *
    * <pre>
-   * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+   * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
    * </pre>
    *
    * <code>string id = 3355;</code>
@@ -160,7 +160,7 @@ public interface WafExpressionSetOrBuilder
    *
    *
    * <pre>
-   * Google specified expression set ID. The format should be: - E.g. XSS-20170329
+   * Google specified expression set ID. The format should be: - E.g. XSS-20170329 required
    * </pre>
    *
    * <code>string id = 3355;</code>

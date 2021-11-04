@@ -742,7 +742,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * For more information, see Backend services overview.
+   * For more information, see Backend services overview .
    *
    * <p>Sample code:
    *
@@ -780,7 +780,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * For more information, see Backend services overview.
+   * For more information, see Backend services overview .
    *
    * <p>Sample code:
    *
@@ -809,7 +809,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified regional BackendService resource with the data included in the request.
-   * For more information, see Backend services overview.
+   * For more information, see Backend services overview .
    *
    * <p>Sample code:
    *

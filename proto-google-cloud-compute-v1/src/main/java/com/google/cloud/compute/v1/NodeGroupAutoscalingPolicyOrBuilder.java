@@ -77,7 +77,7 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
@@ -89,7 +89,7 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
@@ -101,7 +101,7 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    *
    *
    * <pre>
-   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see  Autoscaler modes.
+   * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>

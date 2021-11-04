@@ -115,7 +115,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.LocationPolicyLocation.Preference}
@@ -131,11 +131,35 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_PREFERENCE = 0;</code>
      */
     UNDEFINED_PREFERENCE(0),
-    /** <code>ALLOW = 62368553;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Location is allowed for use.
+     * </pre>
+     *
+     * <code>ALLOW = 62368553;</code>
+     */
     ALLOW(62368553),
-    /** <code>DENY = 2094604;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Location is prohibited.
+     * </pre>
+     *
+     * <code>DENY = 2094604;</code>
+     */
     DENY(2094604),
-    /** <code>PREFERENCE_UNSPECIFIED = 496219571;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Default value, unused.
+     * </pre>
+     *
+     * <code>PREFERENCE_UNSPECIFIED = 496219571;</code>
+     */
     PREFERENCE_UNSPECIFIED(496219571),
     UNRECOGNIZED(-1),
     ;
@@ -150,11 +174,35 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_PREFERENCE = 0;</code>
      */
     public static final int UNDEFINED_PREFERENCE_VALUE = 0;
-    /** <code>ALLOW = 62368553;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Location is allowed for use.
+     * </pre>
+     *
+     * <code>ALLOW = 62368553;</code>
+     */
     public static final int ALLOW_VALUE = 62368553;
-    /** <code>DENY = 2094604;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Location is prohibited.
+     * </pre>
+     *
+     * <code>DENY = 2094604;</code>
+     */
     public static final int DENY_VALUE = 2094604;
-    /** <code>PREFERENCE_UNSPECIFIED = 496219571;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Default value, unused.
+     * </pre>
+     *
+     * <code>PREFERENCE_UNSPECIFIED = 496219571;</code>
+     */
     public static final int PREFERENCE_UNSPECIFIED_VALUE = 496219571;
 
     public final int getNumber() {
@@ -251,7 +299,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
@@ -266,7 +314,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
@@ -281,7 +329,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
@@ -632,7 +680,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given locaction: ALLOW or DENY.
+     * Preference for a given location: ALLOW or DENY.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;
@@ -648,7 +696,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given locaction: ALLOW or DENY.
+     * Preference for a given location: ALLOW or DENY.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;
@@ -664,7 +712,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given locaction: ALLOW or DENY.
+     * Preference for a given location: ALLOW or DENY.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;
@@ -683,7 +731,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given locaction: ALLOW or DENY.
+     * Preference for a given location: ALLOW or DENY.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;
@@ -704,7 +752,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given locaction: ALLOW or DENY.
+     * Preference for a given location: ALLOW or DENY.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;
@@ -727,7 +775,7 @@ public final class LocationPolicyLocation extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Preference for a given locaction: ALLOW or DENY.
+     * Preference for a given location: ALLOW or DENY.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;

@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represent a sole-tenant Node Template resource.
- * You can use a template to define properties for nodes in a node group. For more information, read Creating node groups and instances. (== resource_for {$api_version}.nodeTemplates ==)
+ * Represent a sole-tenant Node Template resource. You can use a template to define properties for nodes in a node group. For more information, read Creating node groups and instances.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NodeTemplate}
@@ -438,13 +437,45 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     CREATING(455564985),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The node template is currently being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
-    /** <code>INVALID = 530283991;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Invalid status.
+     * </pre>
+     *
+     * <code>INVALID = 530283991;</code>
+     */
     INVALID(530283991),
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The node template is ready.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     READY(77848963),
     UNRECOGNIZED(-1),
     ;
@@ -459,13 +490,45 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     public static final int CREATING_VALUE = 455564985;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The node template is currently being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
-    /** <code>INVALID = 530283991;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Invalid status.
+     * </pre>
+     *
+     * <code>INVALID = 530283991;</code>
+     */
     public static final int INVALID_VALUE = 530283991;
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The node template is ready.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     public static final int READY_VALUE = 77848963;
 
     public final int getNumber() {
@@ -1133,8 +1196,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-   * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
    * </pre>
    *
    * <code>
@@ -1151,8 +1213,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-   * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
    * </pre>
    *
    * <code>
@@ -1171,8 +1232,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-   * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
    * </pre>
    *
    * <code>
@@ -1321,10 +1381,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sets the binding properties for the physical server. Valid values include:
-   * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-   * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-   * See Sole-tenant node options for more information.
+   * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
@@ -1339,10 +1396,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sets the binding properties for the physical server. Valid values include:
-   * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-   * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-   * See Sole-tenant node options for more information.
+   * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
@@ -1359,10 +1413,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sets the binding properties for the physical server. Valid values include:
-   * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-   * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-   * See Sole-tenant node options for more information.
+   * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
@@ -1873,8 +1924,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represent a sole-tenant Node Template resource.
-   * You can use a template to define properties for nodes in a node group. For more information, read Creating node groups and instances. (== resource_for {$api_version}.nodeTemplates ==)
+   * Represent a sole-tenant Node Template resource. You can use a template to define properties for nodes in a node group. For more information, read Creating node groups and instances.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NodeTemplate}
@@ -3697,8 +3747,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
@@ -3714,8 +3763,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
@@ -3737,8 +3785,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
@@ -3763,8 +3810,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
@@ -3786,8 +3832,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
@@ -3821,8 +3866,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
@@ -3843,8 +3887,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
@@ -3861,8 +3904,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
@@ -3883,8 +3925,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties.
-     * This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+     * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
      * </pre>
      *
      * <code>
@@ -4158,10 +4199,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
@@ -4175,10 +4213,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
@@ -4198,10 +4233,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
@@ -4223,10 +4255,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
@@ -4246,10 +4275,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
@@ -4277,10 +4303,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
@@ -4299,10 +4322,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
@@ -4316,10 +4336,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>
@@ -4337,10 +4354,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Sets the binding properties for the physical server. Valid values include:
-     * - [Default] RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server
-     * - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible
-     * See Sole-tenant node options for more information.
+     * Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.ServerBinding server_binding = 208179593;</code>

@@ -22,14 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an SSL Certificate resource.
- * Google Compute Engine has two SSL Certificate resources:
- * * [Global](/compute/docs/reference/rest/{$api_version}/sslCertificates) * [Regional](/compute/docs/reference/rest/{$api_version}/regionSslCertificates)
- * The sslCertificates are used by:
- * - external HTTPS load balancers
- * - SSL proxy load balancers
- * The regionSslCertificates are used by internal HTTPS load balancers.
- * Optionally, certificate file contents that you upload can contain a set of up to five PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this data. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read  Creating and using SSL certificates, SSL certificates quotas and limits, and  Troubleshooting SSL certificates. (== resource_for {$api_version}.sslCertificates ==) (== resource_for {$api_version}.regionSslCertificates ==)
+ * Represents an SSL Certificate resource. Google Compute Engine has two SSL Certificate resources: * [Global](/compute/docs/reference/rest/v1/sslCertificates) * [Regional](/compute/docs/reference/rest/v1/regionSslCertificates) The sslCertificates are used by: - external HTTPS load balancers - SSL proxy load balancers The regionSslCertificates are used by internal HTTPS load balancers. Optionally, certificate file contents that you upload can contain a set of up to five PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this data. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read Creating and using SSL certificates, SSL certificates quotas and limits, and Troubleshooting SSL certificates.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SslCertificate}
@@ -267,9 +260,25 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>MANAGED = 479501183;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Google-managed SSLCertificate.
+     * </pre>
+     *
+     * <code>MANAGED = 479501183;</code>
+     */
     MANAGED(479501183),
-    /** <code>SELF_MANAGED = 434437516;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Certificate uploaded by user.
+     * </pre>
+     *
+     * <code>SELF_MANAGED = 434437516;</code>
+     */
     SELF_MANAGED(434437516),
     /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
     TYPE_UNSPECIFIED(437714322),
@@ -286,9 +295,25 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>MANAGED = 479501183;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Google-managed SSLCertificate.
+     * </pre>
+     *
+     * <code>MANAGED = 479501183;</code>
+     */
     public static final int MANAGED_VALUE = 479501183;
-    /** <code>SELF_MANAGED = 434437516;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Certificate uploaded by user.
+     * </pre>
+     *
+     * <code>SELF_MANAGED = 434437516;</code>
+     */
     public static final int SELF_MANAGED_VALUE = 434437516;
     /** <code>TYPE_UNSPECIFIED = 437714322;</code> */
     public static final int TYPE_UNSPECIFIED_VALUE = 437714322;
@@ -1563,14 +1588,7 @@ public final class SslCertificate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an SSL Certificate resource.
-   * Google Compute Engine has two SSL Certificate resources:
-   * * [Global](/compute/docs/reference/rest/{$api_version}/sslCertificates) * [Regional](/compute/docs/reference/rest/{$api_version}/regionSslCertificates)
-   * The sslCertificates are used by:
-   * - external HTTPS load balancers
-   * - SSL proxy load balancers
-   * The regionSslCertificates are used by internal HTTPS load balancers.
-   * Optionally, certificate file contents that you upload can contain a set of up to five PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this data. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read  Creating and using SSL certificates, SSL certificates quotas and limits, and  Troubleshooting SSL certificates. (== resource_for {$api_version}.sslCertificates ==) (== resource_for {$api_version}.regionSslCertificates ==)
+   * Represents an SSL Certificate resource. Google Compute Engine has two SSL Certificate resources: * [Global](/compute/docs/reference/rest/v1/sslCertificates) * [Regional](/compute/docs/reference/rest/v1/regionSslCertificates) The sslCertificates are used by: - external HTTPS load balancers - SSL proxy load balancers The regionSslCertificates are used by internal HTTPS load balancers. Optionally, certificate file contents that you upload can contain a set of up to five PEM-encoded certificates. The API call creates an object (sslCertificate) that holds this data. You can use SSL keys and certificates to secure connections to a load balancer. For more information, read Creating and using SSL certificates, SSL certificates quotas and limits, and Troubleshooting SSL certificates.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SslCertificate}

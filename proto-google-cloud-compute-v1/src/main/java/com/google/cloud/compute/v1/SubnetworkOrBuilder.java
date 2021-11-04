@@ -126,8 +126,44 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+   * </pre>
+   *
+   * <code>string external_ipv6_prefix = 139299190;</code>
+   *
+   * @return Whether the externalIpv6Prefix field is set.
+   */
+  boolean hasExternalIpv6Prefix();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+   * </pre>
+   *
+   * <code>string external_ipv6_prefix = 139299190;</code>
+   *
+   * @return The externalIpv6Prefix.
+   */
+  java.lang.String getExternalIpv6Prefix();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The range of external IPv6 addresses that are owned by this subnetwork.
+   * </pre>
+   *
+   * <code>string external_ipv6_prefix = 139299190;</code>
+   *
+   * @return The bytes for externalIpv6Prefix.
+   */
+  com.google.protobuf.ByteString getExternalIpv6PrefixBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -139,8 +175,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -152,8 +187,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -260,6 +294,43 @@ public interface SubnetworkOrBuilder
    * @return The bytes for ipCidrRange.
    */
   com.google.protobuf.ByteString getIpCidrRangeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+   *
+   * @return Whether the ipv6AccessType field is set.
+   */
+  boolean hasIpv6AccessType();
+  /**
+   *
+   *
+   * <pre>
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+   *
+   * @return The enum numeric value on the wire for ipv6AccessType.
+   */
+  int getIpv6AccessTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+   *
+   * @return The ipv6AccessType.
+   */
+  com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType getIpv6AccessType();
 
   /**
    *
@@ -411,7 +482,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
    * </pre>
    *
    * <code>string network = 232872494;</code>
@@ -423,7 +494,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
    * </pre>
    *
    * <code>string network = 232872494;</code>
@@ -435,7 +506,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. Only networks that are in the distributed mode can have subnetworks. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
    * </pre>
    *
    * <code>string network = 232872494;</code>
@@ -473,8 +544,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-   * This field can be both set at resource creation time and updated using patch.
+   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
    * </pre>
    *
    * <code>
@@ -488,8 +558,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-   * This field can be both set at resource creation time and updated using patch.
+   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
    * </pre>
    *
    * <code>
@@ -503,8 +572,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority.
-   * This field can be both set at resource creation time and updated using patch.
+   * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
    * </pre>
    *
    * <code>
@@ -725,6 +793,43 @@ public interface SubnetworkOrBuilder
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+   *
+   * @return Whether the stackType field is set.
+   */
+  boolean hasStackType();
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+   *
+   * @return The enum numeric value on the wire for stackType.
+   */
+  int getStackTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+   *
+   * @return The stackType.
+   */
+  com.google.cloud.compute.v1.Subnetwork.StackType getStackType();
 
   /**
    *

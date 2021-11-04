@@ -253,13 +253,45 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_MODE = 0;</code>
      */
     UNDEFINED_MODE(0),
-    /** <code>OFF = 78159;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Do not automatically scale the MIG in or out. The recommended_size field contains the size of MIG that would be set if the actuation mode was enabled.
+     * </pre>
+     *
+     * <code>OFF = 78159;</code>
+     */
     OFF(78159),
-    /** <code>ON = 2527;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Automatically scale the MIG in and out according to the policy.
+     * </pre>
+     *
+     * <code>ON = 2527;</code>
+     */
     ON(2527),
-    /** <code>ONLY_SCALE_OUT = 152713670;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Automatically create VMs according to the policy, but do not scale the MIG in.
+     * </pre>
+     *
+     * <code>ONLY_SCALE_OUT = 152713670;</code>
+     */
     ONLY_SCALE_OUT(152713670),
-    /** <code>ONLY_UP = 478095374;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Automatically create VMs according to the policy, but do not scale the MIG in.
+     * </pre>
+     *
+     * <code>ONLY_UP = 478095374;</code>
+     */
     ONLY_UP(478095374),
     UNRECOGNIZED(-1),
     ;
@@ -274,13 +306,45 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_MODE = 0;</code>
      */
     public static final int UNDEFINED_MODE_VALUE = 0;
-    /** <code>OFF = 78159;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Do not automatically scale the MIG in or out. The recommended_size field contains the size of MIG that would be set if the actuation mode was enabled.
+     * </pre>
+     *
+     * <code>OFF = 78159;</code>
+     */
     public static final int OFF_VALUE = 78159;
-    /** <code>ON = 2527;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Automatically scale the MIG in and out according to the policy.
+     * </pre>
+     *
+     * <code>ON = 2527;</code>
+     */
     public static final int ON_VALUE = 2527;
-    /** <code>ONLY_SCALE_OUT = 152713670;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Automatically create VMs according to the policy, but do not scale the MIG in.
+     * </pre>
+     *
+     * <code>ONLY_SCALE_OUT = 152713670;</code>
+     */
     public static final int ONLY_SCALE_OUT_VALUE = 152713670;
-    /** <code>ONLY_UP = 478095374;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Automatically create VMs according to the policy, but do not scale the MIG in.
+     * </pre>
+     *
+     * <code>ONLY_UP = 478095374;</code>
+     */
     public static final int ONLY_UP_VALUE = 478095374;
 
     public final int getNumber() {
@@ -377,8 +441,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-   * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+   * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
    * </pre>
    *
    * <code>int32 cool_down_period_sec = 107692954;</code>
@@ -393,8 +456,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-   * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+   * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
    * </pre>
    *
    * <code>int32 cool_down_period_sec = 107692954;</code>
@@ -1492,8 +1554,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-     * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
      * </pre>
      *
      * <code>int32 cool_down_period_sec = 107692954;</code>
@@ -1508,8 +1569,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-     * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
      * </pre>
      *
      * <code>int32 cool_down_period_sec = 107692954;</code>
@@ -1524,8 +1584,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-     * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
      * </pre>
      *
      * <code>int32 cool_down_period_sec = 107692954;</code>
@@ -1543,8 +1602,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds.
-     * Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
+     * The number of seconds that the autoscaler waits before it starts collecting information from a new instance. This prevents the autoscaler from collecting information when the instance is initializing, during which the collected usage would not be reliable. The default time autoscaler waits is 60 seconds. Virtual machine initialization times might vary because of numerous factors. We recommend that you test how long an instance may take to initialize. To do this, create an instance and time the startup process.
      * </pre>
      *
      * <code>int32 cool_down_period_sec = 107692954;</code>

@@ -223,7 +223,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -233,7 +233,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -243,7 +243,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -253,7 +253,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -264,7 +264,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read  Enabling guest operating system features to see a list of available options.
+   * A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -300,10 +300,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * Encrypts the image using a customer-supplied encryption key.
-   * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-   * Customer-supplied encryption keys do not protect access to metadata of the disk.
-   * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+   * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -315,10 +312,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * Encrypts the image using a customer-supplied encryption key.
-   * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-   * Customer-supplied encryption keys do not protect access to metadata of the disk.
-   * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+   * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -330,10 +324,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * Encrypts the image using a customer-supplied encryption key.
-   * After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image).
-   * Customer-supplied encryption keys do not protect access to metadata of the disk.
-   * If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+   * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;</code>
@@ -381,8 +372,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an image.
+   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
    * </pre>
    *
    * <code>string label_fingerprint = 178124825;</code>
@@ -394,8 +384,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an image.
+   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
    * </pre>
    *
    * <code>string label_fingerprint = 178124825;</code>
@@ -407,8 +396,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet.
-   * To see the latest fingerprint, make a get() request to retrieve an image.
+   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
    * </pre>
    *
    * <code>string label_fingerprint = 178124825;</code>
@@ -737,10 +725,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - zones/zone/disks/disk
+   * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_disk = 451753793;</code>
@@ -752,10 +737,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - zones/zone/disks/disk
+   * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_disk = 451753793;</code>
@@ -767,10 +749,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source disk used to create this image. This can be a full or valid partial URL. You must provide either this property or the rawDisk.source property but not both to create an image. For example, the following are valid values:
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
-   * - projects/project/zones/zone/disks/disk
-   * - zones/zone/disks/disk
+   * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_disk = 451753793;</code>
@@ -858,12 +837,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source image used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_image = 50443319;</code>
@@ -875,12 +849,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source image used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_image = 50443319;</code>
@@ -892,12 +861,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source image used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_image = 50443319;</code>
@@ -985,13 +949,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source snapshot used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The sourceImage URL
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_snapshot = 126061928;</code>
@@ -1003,13 +961,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source snapshot used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The sourceImage URL
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_snapshot = 126061928;</code>
@@ -1021,13 +973,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * URL of the source snapshot used to create this image.
-   * In order to create an image, you must provide the full or partial URL of one of the following:
-   * - The selfLink URL
-   * - This property
-   * - The sourceImage URL
-   * - The rawDisk.source URL
-   * - The sourceDisk URL
+   * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
    * </pre>
    *
    * <code>string source_snapshot = 126061928;</code>

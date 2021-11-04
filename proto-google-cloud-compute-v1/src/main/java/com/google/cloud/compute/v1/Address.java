@@ -22,14 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Use global external addresses for GFE-based external HTTP(S) load balancers in Premium Tier.
- * Use global internal addresses for reserved peering network range.
- * Use regional external addresses for the following resources:
- * - External IP addresses for VM instances - Regional external forwarding rules - Cloud NAT external IP addresses - GFE based LBs in Standard Tier - Network LBs in Premium or Standard Tier - Cloud VPN gateways (both Classic and HA)
- * Use regional internal IP addresses for subnet IP ranges (primary and secondary). This includes:
- * - Internal IP addresses for VM instances - Alias IP ranges of VM instances (/32 only) - Regional internal forwarding rules - Internal TCP/UDP load balancer addresses - Internal HTTP(S) load balancer addresses - Cloud DNS inbound forwarding IP addresses
- * For more information, read reserved IP address.
- * (== resource_for {$api_version}.addresses ==) (== resource_for {$api_version}.globalAddresses ==)
+ * Represents an IP Address resource. Google Compute Engine has two IP Address resources: * [Global (external and internal)](https://cloud.google.com/compute/docs/reference/rest/v1/globalAddresses) * [Regional (external and internal)](https://cloud.google.com/compute/docs/reference/rest/v1/addresses) For more information, see Reserving a static external IP address.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Address}
@@ -269,9 +262,25 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADDRESS_TYPE = 0;</code>
      */
     UNDEFINED_ADDRESS_TYPE(0),
-    /** <code>EXTERNAL = 35607499;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A publicly visible external IP address.
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
     EXTERNAL(35607499),
-    /** <code>INTERNAL = 279295677;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address, for use with an Instance or Internal Load Balancer forwarding rule.
+     * </pre>
+     *
+     * <code>INTERNAL = 279295677;</code>
+     */
     INTERNAL(279295677),
     /** <code>UNSPECIFIED_TYPE = 53933922;</code> */
     UNSPECIFIED_TYPE(53933922),
@@ -288,9 +297,25 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADDRESS_TYPE = 0;</code>
      */
     public static final int UNDEFINED_ADDRESS_TYPE_VALUE = 0;
-    /** <code>EXTERNAL = 35607499;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A publicly visible external IP address.
+     * </pre>
+     *
+     * <code>EXTERNAL = 35607499;</code>
+     */
     public static final int EXTERNAL_VALUE = 35607499;
-    /** <code>INTERNAL = 279295677;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address, for use with an Instance or Internal Load Balancer forwarding rule.
+     * </pre>
+     *
+     * <code>INTERNAL = 279295677;</code>
+     */
     public static final int INTERNAL_VALUE = 279295677;
     /** <code>UNSPECIFIED_TYPE = 53933922;</code> */
     public static final int UNSPECIFIED_TYPE_VALUE = 53933922;
@@ -515,8 +540,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-   * If this field is not specified, it is assumed to be PREMIUM.
+   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Address.NetworkTier}
@@ -532,9 +556,25 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     UNDEFINED_NETWORK_TIER(0),
-    /** <code>PREMIUM = 399530551;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * High quality, Google-grade network tier, support for all networking products.
+     * </pre>
+     *
+     * <code>PREMIUM = 399530551;</code>
+     */
     PREMIUM(399530551),
-    /** <code>STANDARD = 484642493;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality, only limited support for other networking products.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
     STANDARD(484642493),
     UNRECOGNIZED(-1),
     ;
@@ -549,9 +589,25 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
-    /** <code>PREMIUM = 399530551;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * High quality, Google-grade network tier, support for all networking products.
+     * </pre>
+     *
+     * <code>PREMIUM = 399530551;</code>
+     */
     public static final int PREMIUM_VALUE = 399530551;
-    /** <code>STANDARD = 484642493;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Public internet quality, only limited support for other networking products.
+     * </pre>
+     *
+     * <code>STANDARD = 484642493;</code>
+     */
     public static final int STANDARD_VALUE = 484642493;
 
     public final int getNumber() {
@@ -641,12 +697,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The purpose of this resource, which can be one of the following values:
-   * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-   * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-   * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-   * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Address.Purpose}
@@ -662,19 +713,75 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PURPOSE = 0;</code>
      */
     UNDEFINED_PURPOSE(0),
-    /** <code>DNS_RESOLVER = 476114556;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * DNS resolver address in the subnetwork.
+     * </pre>
+     *
+     * <code>DNS_RESOLVER = 476114556;</code>
+     */
     DNS_RESOLVER(476114556),
-    /** <code>GCE_ENDPOINT = 230515243;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * VM internal/alias IP, Internal LB service IP, etc.
+     * </pre>
+     *
+     * <code>GCE_ENDPOINT = 230515243;</code>
+     */
     GCE_ENDPOINT(230515243),
-    /** <code>IPSEC_INTERCONNECT = 340437251;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A regional internal IP address range reserved for the VLAN attachment that is used in IPsec-encrypted Cloud Interconnect. This regional internal IP address range must not overlap with any IP address range of subnet/route in the VPC network and its peering networks. After the VLAN attachment is created with the reserved IP address range, when creating a new VPN gateway, its interface IP address is allocated from the associated VLAN attachment���s IP address range.
+     * </pre>
+     *
+     * <code>IPSEC_INTERCONNECT = 340437251;</code>
+     */
     IPSEC_INTERCONNECT(340437251),
-    /** <code>NAT_AUTO = 163666477;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * External IP automatically reserved for Cloud NAT.
+     * </pre>
+     *
+     * <code>NAT_AUTO = 163666477;</code>
+     */
     NAT_AUTO(163666477),
-    /** <code>PRIVATE_SERVICE_CONNECT = 48134724;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address that can be used to configure Private Service Connect. This purpose can be specified only for GLOBAL addresses of Type INTERNAL
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
+     */
     PRIVATE_SERVICE_CONNECT(48134724),
-    /** <code>SHARED_LOADBALANCER_VIP = 294447572;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address that can be shared by multiple Internal Load Balancer forwarding rules.
+     * </pre>
+     *
+     * <code>SHARED_LOADBALANCER_VIP = 294447572;</code>
+     */
     SHARED_LOADBALANCER_VIP(294447572),
-    /** <code>VPC_PEERING = 400800170;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * IP range for peer networks.
+     * </pre>
+     *
+     * <code>VPC_PEERING = 400800170;</code>
+     */
     VPC_PEERING(400800170),
     UNRECOGNIZED(-1),
     ;
@@ -689,19 +796,75 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PURPOSE = 0;</code>
      */
     public static final int UNDEFINED_PURPOSE_VALUE = 0;
-    /** <code>DNS_RESOLVER = 476114556;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * DNS resolver address in the subnetwork.
+     * </pre>
+     *
+     * <code>DNS_RESOLVER = 476114556;</code>
+     */
     public static final int DNS_RESOLVER_VALUE = 476114556;
-    /** <code>GCE_ENDPOINT = 230515243;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * VM internal/alias IP, Internal LB service IP, etc.
+     * </pre>
+     *
+     * <code>GCE_ENDPOINT = 230515243;</code>
+     */
     public static final int GCE_ENDPOINT_VALUE = 230515243;
-    /** <code>IPSEC_INTERCONNECT = 340437251;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A regional internal IP address range reserved for the VLAN attachment that is used in IPsec-encrypted Cloud Interconnect. This regional internal IP address range must not overlap with any IP address range of subnet/route in the VPC network and its peering networks. After the VLAN attachment is created with the reserved IP address range, when creating a new VPN gateway, its interface IP address is allocated from the associated VLAN attachment���s IP address range.
+     * </pre>
+     *
+     * <code>IPSEC_INTERCONNECT = 340437251;</code>
+     */
     public static final int IPSEC_INTERCONNECT_VALUE = 340437251;
-    /** <code>NAT_AUTO = 163666477;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * External IP automatically reserved for Cloud NAT.
+     * </pre>
+     *
+     * <code>NAT_AUTO = 163666477;</code>
+     */
     public static final int NAT_AUTO_VALUE = 163666477;
-    /** <code>PRIVATE_SERVICE_CONNECT = 48134724;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address that can be used to configure Private Service Connect. This purpose can be specified only for GLOBAL addresses of Type INTERNAL
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
+     */
     public static final int PRIVATE_SERVICE_CONNECT_VALUE = 48134724;
-    /** <code>SHARED_LOADBALANCER_VIP = 294447572;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address that can be shared by multiple Internal Load Balancer forwarding rules.
+     * </pre>
+     *
+     * <code>SHARED_LOADBALANCER_VIP = 294447572;</code>
+     */
     public static final int SHARED_LOADBALANCER_VIP_VALUE = 294447572;
-    /** <code>VPC_PEERING = 400800170;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * IP range for peer networks.
+     * </pre>
+     *
+     * <code>VPC_PEERING = 400800170;</code>
+     */
     public static final int VPC_PEERING_VALUE = 400800170;
 
     public final int getNumber() {
@@ -817,11 +980,35 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>IN_USE = 17393485;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Address is being used by another resource and is not available.
+     * </pre>
+     *
+     * <code>IN_USE = 17393485;</code>
+     */
     IN_USE(17393485),
-    /** <code>RESERVED = 432241448;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Address is reserved and available to use.
+     * </pre>
+     *
+     * <code>RESERVED = 432241448;</code>
+     */
     RESERVED(432241448),
-    /** <code>RESERVING = 514587225;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Address is being reserved.
+     * </pre>
+     *
+     * <code>RESERVING = 514587225;</code>
+     */
     RESERVING(514587225),
     UNRECOGNIZED(-1),
     ;
@@ -836,11 +1023,35 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>IN_USE = 17393485;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Address is being used by another resource and is not available.
+     * </pre>
+     *
+     * <code>IN_USE = 17393485;</code>
+     */
     public static final int IN_USE_VALUE = 17393485;
-    /** <code>RESERVED = 432241448;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Address is reserved and available to use.
+     * </pre>
+     *
+     * <code>RESERVED = 432241448;</code>
+     */
     public static final int RESERVED_VALUE = 432241448;
-    /** <code>RESERVING = 514587225;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Address is being reserved.
+     * </pre>
+     *
+     * <code>RESERVING = 514587225;</code>
+     */
     public static final int RESERVING_VALUE = 514587225;
 
     public final int getNumber() {
@@ -1454,8 +1665,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-   * If this field is not specified, it is assumed to be PREMIUM.
+   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
@@ -1470,8 +1680,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-   * If this field is not specified, it is assumed to be PREMIUM.
+   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
@@ -1486,8 +1695,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-   * If this field is not specified, it is assumed to be PREMIUM.
+   * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
@@ -1541,12 +1749,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The purpose of this resource, which can be one of the following values:
-   * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-   * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-   * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-   * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -1561,12 +1764,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The purpose of this resource, which can be one of the following values:
-   * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-   * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-   * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-   * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -1581,12 +1779,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The purpose of this resource, which can be one of the following values:
-   * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-   * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-   * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-   * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -1607,7 +1800,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
    * </pre>
    *
    * <code>string region = 138946292;</code>
@@ -1622,7 +1815,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
    * </pre>
    *
    * <code>string region = 138946292;</code>
@@ -1645,7 +1838,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+   * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
    * </pre>
    *
    * <code>string region = 138946292;</code>
@@ -2298,14 +2491,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Use global external addresses for GFE-based external HTTP(S) load balancers in Premium Tier.
-   * Use global internal addresses for reserved peering network range.
-   * Use regional external addresses for the following resources:
-   * - External IP addresses for VM instances - Regional external forwarding rules - Cloud NAT external IP addresses - GFE based LBs in Standard Tier - Network LBs in Premium or Standard Tier - Cloud VPN gateways (both Classic and HA)
-   * Use regional internal IP addresses for subnet IP ranges (primary and secondary). This includes:
-   * - Internal IP addresses for VM instances - Alias IP ranges of VM instances (/32 only) - Regional internal forwarding rules - Internal TCP/UDP load balancer addresses - Internal HTTP(S) load balancer addresses - Cloud DNS inbound forwarding IP addresses
-   * For more information, read reserved IP address.
-   * (== resource_for {$api_version}.addresses ==) (== resource_for {$api_version}.globalAddresses ==)
+   * Represents an IP Address resource. Google Compute Engine has two IP Address resources: * [Global (external and internal)](https://cloud.google.com/compute/docs/reference/rest/v1/globalAddresses) * [Regional (external and internal)](https://cloud.google.com/compute/docs/reference/rest/v1/addresses) For more information, see Reserving a static external IP address.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Address}
@@ -3638,8 +3824,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
@@ -3654,8 +3839,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
@@ -3670,8 +3854,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
@@ -3689,8 +3872,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
@@ -3708,8 +3890,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
@@ -3730,8 +3911,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
@@ -3817,12 +3997,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -3837,12 +4012,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -3857,12 +4027,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -3880,12 +4045,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -3903,12 +4063,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -3929,12 +4084,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec-encrypted Cloud Interconnect configuration. These addresses are regional resources.
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
@@ -3953,7 +4103,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      * </pre>
      *
      * <code>string region = 138946292;</code>
@@ -3967,7 +4117,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      * </pre>
      *
      * <code>string region = 138946292;</code>
@@ -3989,7 +4139,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      * </pre>
      *
      * <code>string region = 138946292;</code>
@@ -4011,7 +4161,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      * </pre>
      *
      * <code>string region = 138946292;</code>
@@ -4032,7 +4182,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      * </pre>
      *
      * <code>string region = 138946292;</code>
@@ -4049,7 +4199,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. This field is not applicable to global addresses.
+     * [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      * </pre>
      *
      * <code>string region = 138946292;</code>

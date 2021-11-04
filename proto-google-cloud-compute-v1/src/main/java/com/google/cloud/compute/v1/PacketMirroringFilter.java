@@ -159,11 +159,35 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_DIRECTION = 0;</code>
      */
     UNDEFINED_DIRECTION(0),
-    /** <code>BOTH = 2044801;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Default, both directions are mirrored.
+     * </pre>
+     *
+     * <code>BOTH = 2044801;</code>
+     */
     BOTH(2044801),
-    /** <code>EGRESS = 432880501;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Only egress traffic is mirrored.
+     * </pre>
+     *
+     * <code>EGRESS = 432880501;</code>
+     */
     EGRESS(432880501),
-    /** <code>INGRESS = 516931221;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Only ingress traffic is mirrored.
+     * </pre>
+     *
+     * <code>INGRESS = 516931221;</code>
+     */
     INGRESS(516931221),
     UNRECOGNIZED(-1),
     ;
@@ -178,11 +202,35 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_DIRECTION = 0;</code>
      */
     public static final int UNDEFINED_DIRECTION_VALUE = 0;
-    /** <code>BOTH = 2044801;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Default, both directions are mirrored.
+     * </pre>
+     *
+     * <code>BOTH = 2044801;</code>
+     */
     public static final int BOTH_VALUE = 2044801;
-    /** <code>EGRESS = 432880501;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Only egress traffic is mirrored.
+     * </pre>
+     *
+     * <code>EGRESS = 432880501;</code>
+     */
     public static final int EGRESS_VALUE = 432880501;
-    /** <code>INGRESS = 516931221;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Only ingress traffic is mirrored.
+     * </pre>
+     *
+     * <code>INGRESS = 516931221;</code>
+     */
     public static final int INGRESS_VALUE = 516931221;
 
     public final int getNumber() {

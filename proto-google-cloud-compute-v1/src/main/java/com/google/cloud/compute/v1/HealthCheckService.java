@@ -23,7 +23,6 @@ package com.google.cloud.compute.v1;
  *
  * <pre>
  * Represents a Health-Check as a Service resource.
- * (== resource_for {$api_version}.regionHealthCheckServices ==)
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.HealthCheckService}
@@ -221,9 +220,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified.
-   * - NO_AGGREGATION. An EndpointHealth message is returned for each backend in the health check service.
-   * - AND. If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY. .
+   * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy}
@@ -239,9 +236,25 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_HEALTH_STATUS_AGGREGATION_POLICY = 0;</code>
      */
     UNDEFINED_HEALTH_STATUS_AGGREGATION_POLICY(0),
-    /** <code>AND = 64951;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY.
+     * </pre>
+     *
+     * <code>AND = 64951;</code>
+     */
     AND(64951),
-    /** <code>NO_AGGREGATION = 426445124;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * An EndpointHealth message is returned for each backend in the health check service.
+     * </pre>
+     *
+     * <code>NO_AGGREGATION = 426445124;</code>
+     */
     NO_AGGREGATION(426445124),
     UNRECOGNIZED(-1),
     ;
@@ -256,9 +269,25 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_HEALTH_STATUS_AGGREGATION_POLICY = 0;</code>
      */
     public static final int UNDEFINED_HEALTH_STATUS_AGGREGATION_POLICY_VALUE = 0;
-    /** <code>AND = 64951;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY.
+     * </pre>
+     *
+     * <code>AND = 64951;</code>
+     */
     public static final int AND_VALUE = 64951;
-    /** <code>NO_AGGREGATION = 426445124;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * An EndpointHealth message is returned for each backend in the health check service.
+     * </pre>
+     *
+     * <code>NO_AGGREGATION = 426445124;</code>
+     */
     public static final int NO_AGGREGATION_VALUE = 426445124;
 
     public final int getNumber() {
@@ -546,7 +575,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+   * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -560,7 +589,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+   * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -574,7 +603,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+   * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -589,7 +618,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+   * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
    * </pre>
    *
    * <code>repeated string health_checks = 448370606;</code>
@@ -607,9 +636,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified.
-   * - NO_AGGREGATION. An EndpointHealth message is returned for each backend in the health check service.
-   * - AND. If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY. .
+   * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
    * </pre>
    *
    * <code>
@@ -626,9 +653,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified.
-   * - NO_AGGREGATION. An EndpointHealth message is returned for each backend in the health check service.
-   * - AND. If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY. .
+   * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
    * </pre>
    *
    * <code>
@@ -645,9 +670,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified.
-   * - NO_AGGREGATION. An EndpointHealth message is returned for each backend in the health check service.
-   * - AND. If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY. .
+   * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
    * </pre>
    *
    * <code>
@@ -835,7 +858,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+   * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
    * </pre>
    *
    * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -849,7 +872,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+   * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
    * </pre>
    *
    * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -863,7 +886,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+   * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
    * </pre>
    *
    * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -878,7 +901,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+   * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
    * </pre>
    *
    * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -896,7 +919,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+   * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
    * <code>repeated string notification_endpoints = 406728490;</code>
@@ -910,7 +933,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+   * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
    * <code>repeated string notification_endpoints = 406728490;</code>
@@ -924,7 +947,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+   * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
    * <code>repeated string notification_endpoints = 406728490;</code>
@@ -939,7 +962,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+   * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
    * <code>repeated string notification_endpoints = 406728490;</code>
@@ -1415,7 +1438,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Represents a Health-Check as a Service resource.
-   * (== resource_for {$api_version}.regionHealthCheckServices ==)
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.HealthCheckService}
@@ -2085,7 +2107,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+     * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2099,7 +2121,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+     * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2113,7 +2135,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+     * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2128,7 +2150,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+     * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2143,7 +2165,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+     * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2165,7 +2187,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+     * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2186,7 +2208,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+     * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2204,7 +2226,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+     * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2221,7 +2243,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
+     * A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
      * </pre>
      *
      * <code>repeated string health_checks = 448370606;</code>
@@ -2245,9 +2267,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified.
-     * - NO_AGGREGATION. An EndpointHealth message is returned for each backend in the health check service.
-     * - AND. If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY. .
+     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
      * </pre>
      *
      * <code>
@@ -2264,9 +2284,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified.
-     * - NO_AGGREGATION. An EndpointHealth message is returned for each backend in the health check service.
-     * - AND. If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY. .
+     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
      * </pre>
      *
      * <code>
@@ -2283,9 +2301,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified.
-     * - NO_AGGREGATION. An EndpointHealth message is returned for each backend in the health check service.
-     * - AND. If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY. .
+     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
      * </pre>
      *
      * <code>
@@ -2305,9 +2321,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified.
-     * - NO_AGGREGATION. An EndpointHealth message is returned for each backend in the health check service.
-     * - AND. If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY. .
+     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
      * </pre>
      *
      * <code>
@@ -2332,9 +2346,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified.
-     * - NO_AGGREGATION. An EndpointHealth message is returned for each backend in the health check service.
-     * - AND. If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY. .
+     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
      * </pre>
      *
      * <code>
@@ -2358,9 +2370,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified.
-     * - NO_AGGREGATION. An EndpointHealth message is returned for each backend in the health check service.
-     * - AND. If any backend's health check reports UNHEALTHY, then UNHEALTHY is the HealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY. .
+     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
      * </pre>
      *
      * <code>
@@ -2697,7 +2707,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+     * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
      * </pre>
      *
      * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -2711,7 +2721,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+     * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
      * </pre>
      *
      * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -2725,7 +2735,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+     * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
      * </pre>
      *
      * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -2740,7 +2750,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+     * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
      * </pre>
      *
      * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -2755,7 +2765,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+     * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
      * </pre>
      *
      * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -2777,7 +2787,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+     * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
      * </pre>
      *
      * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -2798,7 +2808,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+     * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
      * </pre>
      *
      * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -2816,7 +2826,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+     * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
      * </pre>
      *
      * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -2833,7 +2843,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
+     * A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regional HealthCheckService, NEGs must be in zones in the region of the HealthCheckService.
      * </pre>
      *
      * <code>repeated string network_endpoint_groups = 29346733;</code>
@@ -2866,7 +2876,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+     * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
      * <code>repeated string notification_endpoints = 406728490;</code>
@@ -2880,7 +2890,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+     * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
      * <code>repeated string notification_endpoints = 406728490;</code>
@@ -2894,7 +2904,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+     * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
      * <code>repeated string notification_endpoints = 406728490;</code>
@@ -2909,7 +2919,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+     * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
      * <code>repeated string notification_endpoints = 406728490;</code>
@@ -2924,7 +2934,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+     * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
      * <code>repeated string notification_endpoints = 406728490;</code>
@@ -2946,7 +2956,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+     * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
      * <code>repeated string notification_endpoints = 406728490;</code>
@@ -2967,7 +2977,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+     * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
      * <code>repeated string notification_endpoints = 406728490;</code>
@@ -2985,7 +2995,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+     * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
      * <code>repeated string notification_endpoints = 406728490;</code>
@@ -3002,7 +3012,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
+     * A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
      * <code>repeated string notification_endpoints = 406728490;</code>

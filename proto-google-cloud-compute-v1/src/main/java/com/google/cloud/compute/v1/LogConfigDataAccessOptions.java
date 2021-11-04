@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Write a Data Access (Gin) log
+ * This is deprecated and has no effect. Do not use.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.LogConfigDataAccessOptions}
@@ -116,6 +116,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode}
@@ -131,9 +132,25 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_MODE = 0;</code>
      */
     UNDEFINED_LOG_MODE(0),
-    /** <code>LOG_FAIL_CLOSED = 360469778;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>LOG_FAIL_CLOSED = 360469778;</code>
+     */
     LOG_FAIL_CLOSED(360469778),
-    /** <code>LOG_MODE_UNSPECIFIED = 88160822;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>LOG_MODE_UNSPECIFIED = 88160822;</code>
+     */
     LOG_MODE_UNSPECIFIED(88160822),
     UNRECOGNIZED(-1),
     ;
@@ -148,9 +165,25 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_MODE = 0;</code>
      */
     public static final int UNDEFINED_LOG_MODE_VALUE = 0;
-    /** <code>LOG_FAIL_CLOSED = 360469778;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>LOG_FAIL_CLOSED = 360469778;</code>
+     */
     public static final int LOG_FAIL_CLOSED_VALUE = 360469778;
-    /** <code>LOG_MODE_UNSPECIFIED = 88160822;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>LOG_MODE_UNSPECIFIED = 88160822;</code>
+     */
     public static final int LOG_MODE_UNSPECIFIED_VALUE = 88160822;
 
     public final int getNumber() {
@@ -242,6 +275,12 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
   public static final int LOG_MODE_FIELD_NUMBER = 402897342;
   private int logMode_;
   /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
    * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
    *
    * @return Whether the logMode field is set.
@@ -251,6 +290,12 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
    * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
    *
    * @return The enum numeric value on the wire for logMode.
@@ -260,6 +305,12 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     return logMode_;
   }
   /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
    * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
    *
    * @return The logMode.
@@ -443,7 +494,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Write a Data Access (Gin) log
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.LogConfigDataAccessOptions}
@@ -607,6 +658,12 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
 
     private int logMode_ = 0;
     /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
      * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
      * </code>
      *
@@ -617,6 +674,12 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
      * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
      * </code>
      *
@@ -627,6 +690,12 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       return logMode_;
     }
     /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
      * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
      * </code>
      *
@@ -640,6 +709,12 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
      * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
      * </code>
      *
@@ -655,6 +730,12 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
           : result;
     }
     /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
      * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
      * </code>
      *
@@ -672,6 +753,12 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
      * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
      * </code>
      *

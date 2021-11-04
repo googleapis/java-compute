@@ -122,10 +122,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-   * - ERRORS_ONLY: Export logs only for connection failures.
-   * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-   * - ALL: Export logs for all connections, successful and unsuccessful.
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.RouterNatLogConfig.Filter}
@@ -141,11 +138,35 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_FILTER = 0;</code>
      */
     UNDEFINED_FILTER(0),
-    /** <code>ALL = 64897;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Export logs for all (successful and unsuccessful) connections.
+     * </pre>
+     *
+     * <code>ALL = 64897;</code>
+     */
     ALL(64897),
-    /** <code>ERRORS_ONLY = 307484672;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Export logs for connection failures only.
+     * </pre>
+     *
+     * <code>ERRORS_ONLY = 307484672;</code>
+     */
     ERRORS_ONLY(307484672),
-    /** <code>TRANSLATIONS_ONLY = 357212649;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Export logs for successful connections only.
+     * </pre>
+     *
+     * <code>TRANSLATIONS_ONLY = 357212649;</code>
+     */
     TRANSLATIONS_ONLY(357212649),
     UNRECOGNIZED(-1),
     ;
@@ -160,11 +181,35 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_FILTER = 0;</code>
      */
     public static final int UNDEFINED_FILTER_VALUE = 0;
-    /** <code>ALL = 64897;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Export logs for all (successful and unsuccessful) connections.
+     * </pre>
+     *
+     * <code>ALL = 64897;</code>
+     */
     public static final int ALL_VALUE = 64897;
-    /** <code>ERRORS_ONLY = 307484672;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Export logs for connection failures only.
+     * </pre>
+     *
+     * <code>ERRORS_ONLY = 307484672;</code>
+     */
     public static final int ERRORS_ONLY_VALUE = 307484672;
-    /** <code>TRANSLATIONS_ONLY = 357212649;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Export logs for successful connections only.
+     * </pre>
+     *
+     * <code>TRANSLATIONS_ONLY = 357212649;</code>
+     */
     public static final int TRANSLATIONS_ONLY_VALUE = 357212649;
 
     public final int getNumber() {
@@ -292,10 +337,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-   * - ERRORS_ONLY: Export logs only for connection failures.
-   * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-   * - ALL: Export logs for all connections, successful and unsuccessful.
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
@@ -310,10 +352,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-   * - ERRORS_ONLY: Export logs only for connection failures.
-   * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-   * - ALL: Export logs for all connections, successful and unsuccessful.
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
@@ -328,10 +367,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-   * - ERRORS_ONLY: Export logs only for connection failures.
-   * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-   * - ALL: Export logs for all connections, successful and unsuccessful.
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
@@ -771,10 +807,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-     * - ERRORS_ONLY: Export logs only for connection failures.
-     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-     * - ALL: Export logs for all connections, successful and unsuccessful.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
@@ -789,10 +822,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-     * - ERRORS_ONLY: Export logs only for connection failures.
-     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-     * - ALL: Export logs for all connections, successful and unsuccessful.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
@@ -807,10 +837,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-     * - ERRORS_ONLY: Export logs only for connection failures.
-     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-     * - ALL: Export logs for all connections, successful and unsuccessful.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
@@ -828,10 +855,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-     * - ERRORS_ONLY: Export logs only for connection failures.
-     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-     * - ALL: Export logs for all connections, successful and unsuccessful.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
@@ -851,10 +875,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-     * - ERRORS_ONLY: Export logs only for connection failures.
-     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-     * - ALL: Export logs for all connections, successful and unsuccessful.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
@@ -875,10 +896,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values:
-     * - ERRORS_ONLY: Export logs only for connection failures.
-     * - TRANSLATIONS_ONLY: Export logs only for successful connections.
-     * - ALL: Export logs for all connections, successful and unsuccessful.
+     * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>

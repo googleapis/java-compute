@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Instance resource.
- * An instance is a virtual machine that is hosted on Google Cloud Platform. For more information, read Virtual Machine Instances. (== resource_for {$api_version}.instances ==)
+ * Represents an Instance resource. An instance is a virtual machine that is hosted on Google Cloud Platform. For more information, read Virtual Machine Instances.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Instance}
@@ -532,7 +531,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess}
@@ -548,11 +547,35 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS(0),
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional private IPv6 access to/from Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * </pre>
+     *
+     * <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
+     */
     ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE(427975994),
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Outbound private IPv6 access from VMs in this subnet to Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * </pre>
+     *
+     * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
+     */
     ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE(288210263),
-    /** <code>INHERIT_FROM_SUBNETWORK = 530256959;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Each network interface inherits PrivateIpv6GoogleAccess from its subnetwork.
+     * </pre>
+     *
+     * <code>INHERIT_FROM_SUBNETWORK = 530256959;</code>
+     */
     INHERIT_FROM_SUBNETWORK(530256959),
     UNRECOGNIZED(-1),
     ;
@@ -567,11 +590,35 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     public static final int UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS_VALUE = 0;
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional private IPv6 access to/from Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * </pre>
+     *
+     * <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
+     */
     public static final int ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE_VALUE = 427975994;
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Outbound private IPv6 access from VMs in this subnet to Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * </pre>
+     *
+     * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
+     */
     public static final int ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE_VALUE = 288210263;
-    /** <code>INHERIT_FROM_SUBNETWORK = 530256959;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Each network interface inherits PrivateIpv6GoogleAccess from its subnetwork.
+     * </pre>
+     *
+     * <code>INHERIT_FROM_SUBNETWORK = 530256959;</code>
+     */
     public static final int INHERIT_FROM_SUBNETWORK_VALUE = 530256959;
 
     public final int getNumber() {
@@ -666,7 +713,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Instance.Status}
@@ -682,25 +729,105 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>DEPROVISIONING = 428935662;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The Nanny is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * </pre>
+     *
+     * <code>DEPROVISIONING = 428935662;</code>
+     */
     DEPROVISIONING(428935662),
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated for the instance.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     PROVISIONING(290896621),
-    /** <code>REPAIRING = 413483285;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is in repair.
+     * </pre>
+     *
+     * <code>REPAIRING = 413483285;</code>
+     */
     REPAIRING(413483285),
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is running.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     RUNNING(121282975),
-    /** <code>STAGING = 431072283;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * All required resources have been allocated and the instance is being started.
+     * </pre>
+     *
+     * <code>STAGING = 431072283;</code>
+     */
     STAGING(431072283),
-    /** <code>STOPPED = 444276141;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped successfully.
+     * </pre>
+     *
+     * <code>STOPPED = 444276141;</code>
+     */
     STOPPED(444276141),
-    /** <code>STOPPING = 350791796;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is currently stopping (either being deleted or killed).
+     * </pre>
+     *
+     * <code>STOPPING = 350791796;</code>
+     */
     STOPPING(350791796),
-    /** <code>SUSPENDED = 51223995;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has suspended.
+     * </pre>
+     *
+     * <code>SUSPENDED = 51223995;</code>
+     */
     SUSPENDED(51223995),
-    /** <code>SUSPENDING = 514206246;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 514206246;</code>
+     */
     SUSPENDING(514206246),
-    /** <code>TERMINATED = 250018339;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped (either by explicit action or underlying failure).
+     * </pre>
+     *
+     * <code>TERMINATED = 250018339;</code>
+     */
     TERMINATED(250018339),
     UNRECOGNIZED(-1),
     ;
@@ -715,25 +842,105 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>DEPROVISIONING = 428935662;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The Nanny is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * </pre>
+     *
+     * <code>DEPROVISIONING = 428935662;</code>
+     */
     public static final int DEPROVISIONING_VALUE = 428935662;
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resources are being allocated for the instance.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     public static final int PROVISIONING_VALUE = 290896621;
-    /** <code>REPAIRING = 413483285;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is in repair.
+     * </pre>
+     *
+     * <code>REPAIRING = 413483285;</code>
+     */
     public static final int REPAIRING_VALUE = 413483285;
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is running.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     public static final int RUNNING_VALUE = 121282975;
-    /** <code>STAGING = 431072283;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * All required resources have been allocated and the instance is being started.
+     * </pre>
+     *
+     * <code>STAGING = 431072283;</code>
+     */
     public static final int STAGING_VALUE = 431072283;
-    /** <code>STOPPED = 444276141;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped successfully.
+     * </pre>
+     *
+     * <code>STOPPED = 444276141;</code>
+     */
     public static final int STOPPED_VALUE = 444276141;
-    /** <code>STOPPING = 350791796;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is currently stopping (either being deleted or killed).
+     * </pre>
+     *
+     * <code>STOPPING = 350791796;</code>
+     */
     public static final int STOPPING_VALUE = 350791796;
-    /** <code>SUSPENDED = 51223995;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has suspended.
+     * </pre>
+     *
+     * <code>SUSPENDED = 51223995;</code>
+     */
     public static final int SUSPENDED_VALUE = 51223995;
-    /** <code>SUSPENDING = 514206246;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 514206246;</code>
+     */
     public static final int SUSPENDING_VALUE = 514206246;
-    /** <code>TERMINATED = 250018339;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance has stopped (either by explicit action or underlying failure).
+     * </pre>
+     *
+     * <code>TERMINATED = 250018339;</code>
+     */
     public static final int TERMINATED_VALUE = 250018339;
 
     public final int getNumber() {
@@ -896,7 +1103,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
+   * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
    * </pre>
    *
    * <code>bool can_ip_forward = 467731324;</code>
@@ -911,7 +1118,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
+   * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
    * </pre>
    *
    * <code>bool can_ip_forward = 467731324;</code>
@@ -1312,8 +1519,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance.
-   * To see the latest fingerprint, make get() request to the instance.
+   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -1328,8 +1534,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance.
-   * To see the latest fingerprint, make get() request to the instance.
+   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -1352,8 +1557,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance.
-   * To see the latest fingerprint, make get() request to the instance.
+   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
    * </pre>
    *
    * <code>string fingerprint = 234678500;</code>
@@ -1615,8 +1819,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels.
-   * To see the latest fingerprint, make get() request to the instance.
+   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
    * </pre>
    *
    * <code>string label_fingerprint = 178124825;</code>
@@ -1631,8 +1834,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels.
-   * To see the latest fingerprint, make get() request to the instance.
+   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
    * </pre>
    *
    * <code>string label_fingerprint = 178124825;</code>
@@ -1655,8 +1857,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels.
-   * To see the latest fingerprint, make get() request to the instance.
+   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
    * </pre>
    *
    * <code>string label_fingerprint = 178124825;</code>
@@ -1972,12 +2173,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
-   * zones/us-central1-f/machineTypes/n1-standard-1
-   * To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB):
-   * zones/zone/machineTypes/custom-CPUS-MEMORY
-   * For example: zones/us-central1-f/machineTypes/custom-4-5120
-   * For a full list of restrictions, read the Specifications for custom machine types.
+   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
    * </pre>
    *
    * <code>string machine_type = 227711026;</code>
@@ -1992,12 +2188,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
-   * zones/us-central1-f/machineTypes/n1-standard-1
-   * To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB):
-   * zones/zone/machineTypes/custom-CPUS-MEMORY
-   * For example: zones/us-central1-f/machineTypes/custom-4-5120
-   * For a full list of restrictions, read the Specifications for custom machine types.
+   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
    * </pre>
    *
    * <code>string machine_type = 227711026;</code>
@@ -2020,12 +2211,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
-   * zones/us-central1-f/machineTypes/n1-standard-1
-   * To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB):
-   * zones/zone/machineTypes/custom-CPUS-MEMORY
-   * For example: zones/us-central1-f/machineTypes/custom-4-5120
-   * For a full list of restrictions, read the Specifications for custom machine types.
+   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
    * </pre>
    *
    * <code>string machine_type = 227711026;</code>
@@ -2299,7 +2485,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * <code>
@@ -2316,7 +2502,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * <code>
@@ -2333,7 +2519,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * <code>
@@ -2618,8 +2804,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-   * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -2632,8 +2817,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-   * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -2647,8 +2831,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-   * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -2661,8 +2844,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-   * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -2675,8 +2857,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-   * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -2803,7 +2984,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
@@ -2818,7 +2999,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
@@ -2833,7 +3014,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
@@ -3728,8 +3909,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an Instance resource.
-   * An instance is a virtual machine that is hosted on Google Cloud Platform. For more information, read Virtual Machine Instances. (== resource_for {$api_version}.instances ==)
+   * Represents an Instance resource. An instance is a virtual machine that is hosted on Google Cloud Platform. For more information, read Virtual Machine Instances.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Instance}
@@ -4703,7 +4883,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
+     * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
      * </pre>
      *
      * <code>bool can_ip_forward = 467731324;</code>
@@ -4718,7 +4898,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
+     * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
      * </pre>
      *
      * <code>bool can_ip_forward = 467731324;</code>
@@ -4733,7 +4913,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
+     * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
      * </pre>
      *
      * <code>bool can_ip_forward = 467731324;</code>
@@ -4751,7 +4931,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
+     * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
      * </pre>
      *
      * <code>bool can_ip_forward = 467731324;</code>
@@ -5889,8 +6069,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance.
-     * To see the latest fingerprint, make get() request to the instance.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -5904,8 +6083,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance.
-     * To see the latest fingerprint, make get() request to the instance.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -5927,8 +6105,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance.
-     * To see the latest fingerprint, make get() request to the instance.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -5950,8 +6127,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance.
-     * To see the latest fingerprint, make get() request to the instance.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -5972,8 +6148,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance.
-     * To see the latest fingerprint, make get() request to the instance.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -5990,8 +6165,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance.
-     * To see the latest fingerprint, make get() request to the instance.
+     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
      * </pre>
      *
      * <code>string fingerprint = 234678500;</code>
@@ -6701,8 +6875,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels.
-     * To see the latest fingerprint, make get() request to the instance.
+     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -6716,8 +6889,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels.
-     * To see the latest fingerprint, make get() request to the instance.
+     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -6739,8 +6911,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels.
-     * To see the latest fingerprint, make get() request to the instance.
+     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -6762,8 +6933,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels.
-     * To see the latest fingerprint, make get() request to the instance.
+     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -6784,8 +6954,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels.
-     * To see the latest fingerprint, make get() request to the instance.
+     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -6802,8 +6971,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels.
-     * To see the latest fingerprint, make get() request to the instance.
+     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
      * </pre>
      *
      * <code>string label_fingerprint = 178124825;</code>
@@ -7344,12 +7512,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
-     * zones/us-central1-f/machineTypes/n1-standard-1
-     * To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB):
-     * zones/zone/machineTypes/custom-CPUS-MEMORY
-     * For example: zones/us-central1-f/machineTypes/custom-4-5120
-     * For a full list of restrictions, read the Specifications for custom machine types.
+     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
      * </pre>
      *
      * <code>string machine_type = 227711026;</code>
@@ -7363,12 +7526,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
-     * zones/us-central1-f/machineTypes/n1-standard-1
-     * To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB):
-     * zones/zone/machineTypes/custom-CPUS-MEMORY
-     * For example: zones/us-central1-f/machineTypes/custom-4-5120
-     * For a full list of restrictions, read the Specifications for custom machine types.
+     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
      * </pre>
      *
      * <code>string machine_type = 227711026;</code>
@@ -7390,12 +7548,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
-     * zones/us-central1-f/machineTypes/n1-standard-1
-     * To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB):
-     * zones/zone/machineTypes/custom-CPUS-MEMORY
-     * For example: zones/us-central1-f/machineTypes/custom-4-5120
-     * For a full list of restrictions, read the Specifications for custom machine types.
+     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
      * </pre>
      *
      * <code>string machine_type = 227711026;</code>
@@ -7417,12 +7570,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
-     * zones/us-central1-f/machineTypes/n1-standard-1
-     * To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB):
-     * zones/zone/machineTypes/custom-CPUS-MEMORY
-     * For example: zones/us-central1-f/machineTypes/custom-4-5120
-     * For a full list of restrictions, read the Specifications for custom machine types.
+     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
      * </pre>
      *
      * <code>string machine_type = 227711026;</code>
@@ -7443,12 +7591,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
-     * zones/us-central1-f/machineTypes/n1-standard-1
-     * To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB):
-     * zones/zone/machineTypes/custom-CPUS-MEMORY
-     * For example: zones/us-central1-f/machineTypes/custom-4-5120
-     * For a full list of restrictions, read the Specifications for custom machine types.
+     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
      * </pre>
      *
      * <code>string machine_type = 227711026;</code>
@@ -7465,12 +7608,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type:
-     * zones/us-central1-f/machineTypes/n1-standard-1
-     * To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB):
-     * zones/zone/machineTypes/custom-CPUS-MEMORY
-     * For example: zones/us-central1-f/machineTypes/custom-4-5120
-     * For a full list of restrictions, read the Specifications for custom machine types.
+     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
      * </pre>
      *
      * <code>string machine_type = 227711026;</code>
@@ -8298,7 +8436,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
      * </pre>
      *
      * <code>
@@ -8315,7 +8453,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
      * </pre>
      *
      * <code>
@@ -8332,7 +8470,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
      * </pre>
      *
      * <code>
@@ -8352,7 +8490,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
      * </pre>
      *
      * <code>
@@ -8376,7 +8514,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
      * </pre>
      *
      * <code>
@@ -8400,7 +8538,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VM. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
      * </pre>
      *
      * <code>
@@ -9167,8 +9305,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9184,8 +9321,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9201,8 +9337,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9218,8 +9353,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9241,8 +9375,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9262,8 +9395,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9285,8 +9417,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9308,8 +9439,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9329,8 +9459,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9350,8 +9479,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9371,8 +9499,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9391,8 +9518,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9411,8 +9537,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9424,8 +9549,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9442,8 +9566,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9460,8 +9583,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9474,8 +9596,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9488,8 +9609,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported.
-     * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -9898,7 +10018,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
@@ -9913,7 +10033,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
@@ -9928,7 +10048,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
@@ -9946,7 +10066,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
@@ -9964,7 +10084,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>
@@ -9985,7 +10105,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see  Instance life cycle.
+     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Instance.Status status = 181260274;</code>

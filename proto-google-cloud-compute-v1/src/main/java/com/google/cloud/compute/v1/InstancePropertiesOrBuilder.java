@@ -494,7 +494,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * <code>
@@ -508,7 +508,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * <code>
@@ -522,7 +522,7 @@ public interface InstancePropertiesOrBuilder
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * <code>

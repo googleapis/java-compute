@@ -609,11 +609,8 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the most recent health check results for this BackendService.
-   *
-   * <p>Example request body:
-   *
-   * <p>{ "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
+   * Gets the most recent health check results for this BackendService. Example request body: {
+   * "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
    *
    * <p>Sample code:
    *
@@ -649,11 +646,8 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the most recent health check results for this BackendService.
-   *
-   * <p>Example request body:
-   *
-   * <p>{ "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
+   * Gets the most recent health check results for this BackendService. Example request body: {
+   * "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
    *
    * <p>Sample code:
    *
@@ -678,11 +672,8 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets the most recent health check results for this BackendService.
-   *
-   * <p>Example request body:
-   *
-   * <p>{ "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
+   * Gets the most recent health check results for this BackendService. Example request body: {
+   * "group": "/zones/us-east1-b/instanceGroups/lb-backend-example" }
    *
    * <p>Sample code:
    *
@@ -709,7 +700,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendService resource in the specified project using the data included in the
-   * request. For more information, see Backend services overview.
+   * request. For more information, see Backend services overview .
    *
    * <p>Sample code:
    *
@@ -737,7 +728,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendService resource in the specified project using the data included in the
-   * request. For more information, see Backend services overview.
+   * request. For more information, see Backend services overview .
    *
    * <p>Sample code:
    *
@@ -763,7 +754,7 @@ public class BackendServicesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a BackendService resource in the specified project using the data included in the
-   * request. For more information, see Backend services overview.
+   * request. For more information, see Backend services overview .
    *
    * <p>Sample code:
    *

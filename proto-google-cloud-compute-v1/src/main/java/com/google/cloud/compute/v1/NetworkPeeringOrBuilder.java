@@ -102,7 +102,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
    * </pre>
    *
    * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
@@ -114,7 +114,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always exported to peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
    * </pre>
    *
    * <code>bool export_subnet_routes_with_public_ip = 97940834;</code>
@@ -152,7 +152,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
    * </pre>
    *
    * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>
@@ -164,7 +164,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are imported. The default value is false. The IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported from peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
    * </pre>
    *
    * <code>bool import_subnet_routes_with_public_ip = 14419729;</code>

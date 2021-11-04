@@ -27,6 +27,58 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
+   * [Output Only] AS path.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.RouteAsPath> getAsPathsList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] AS path.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
+   */
+  com.google.cloud.compute.v1.RouteAsPath getAsPaths(int index);
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] AS path.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
+   */
+  int getAsPathsCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] AS path.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.RouteAsPathOrBuilder>
+      getAsPathsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] AS path.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
+   */
+  com.google.cloud.compute.v1.RouteAsPathOrBuilder getAsPathsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
@@ -274,7 +326,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
+   * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
    * </pre>
    *
    * <code>string next_hop_gateway = 377175298;</code>
@@ -286,7 +338,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
+   * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
    * </pre>
    *
    * <code>string next_hop_gateway = 377175298;</code>
@@ -298,7 +350,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
+   * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
    * </pre>
    *
    * <code>string next_hop_gateway = 377175298;</code>
@@ -311,10 +363,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:
-   * - 10.128.0.56
-   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
-   * - regions/region/forwardingRules/forwardingRule
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
    * </pre>
    *
    * <code>string next_hop_ilb = 198679901;</code>
@@ -326,10 +375,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:
-   * - 10.128.0.56
-   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
-   * - regions/region/forwardingRules/forwardingRule
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
    * </pre>
    *
    * <code>string next_hop_ilb = 198679901;</code>
@@ -341,10 +387,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:
-   * - 10.128.0.56
-   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
-   * - regions/region/forwardingRules/forwardingRule
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - 10.128.0.56 - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule
    * </pre>
    *
    * <code>string next_hop_ilb = 198679901;</code>
@@ -357,8 +400,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example:
-   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+   * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
    * </pre>
    *
    * <code>string next_hop_instance = 393508247;</code>
@@ -370,8 +412,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example:
-   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+   * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
    * </pre>
    *
    * <code>string next_hop_instance = 393508247;</code>
@@ -383,8 +424,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example:
-   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+   * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
    * </pre>
    *
    * <code>string next_hop_instance = 393508247;</code>
@@ -565,6 +605,43 @@ public interface RouteOrBuilder
    * @return The priority.
    */
   int getPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
+   *
+   * @return Whether the routeType field is set.
+   */
+  boolean hasRouteType();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
+   *
+   * @return The enum numeric value on the wire for routeType.
+   */
+  int getRouteTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
+   *
+   * @return The routeType.
+   */
+  com.google.cloud.compute.v1.Route.RouteType getRouteType();
 
   /**
    *

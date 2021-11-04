@@ -64,7 +64,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+   * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
    * </pre>
    *
    * <code>string query_path = 368591164;</code>
@@ -76,7 +76,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+   * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
    * </pre>
    *
    * <code>string query_path = 368591164;</code>
@@ -88,7 +88,7 @@ public interface GuestAttributesOrBuilder
    *
    *
    * <pre>
-   * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
+   * The path to be queried. This can be the default namespace ('') or a nested namespace ('&#92;/') or a specified key ('&#92;/&#92;').
    * </pre>
    *
    * <code>string query_path = 368591164;</code>

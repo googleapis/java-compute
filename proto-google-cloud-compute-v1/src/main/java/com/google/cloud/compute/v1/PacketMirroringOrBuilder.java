@@ -139,8 +139,7 @@ public interface PacketMirroringOrBuilder
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
@@ -152,8 +151,7 @@ public interface PacketMirroringOrBuilder
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
@@ -165,8 +163,7 @@ public interface PacketMirroringOrBuilder
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network.
-   * The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
@@ -390,8 +387,7 @@ public interface PacketMirroringOrBuilder
    *
    *
    * <pre>
-   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-   * Default value is 1000. Valid range is 0 through 65535.
+   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
    * </pre>
    *
    * <code>uint32 priority = 445151652;</code>
@@ -403,8 +399,7 @@ public interface PacketMirroringOrBuilder
    *
    *
    * <pre>
-   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins.
-   * Default value is 1000. Valid range is 0 through 65535.
+   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
    * </pre>
    *
    * <code>uint32 priority = 445151652;</code>

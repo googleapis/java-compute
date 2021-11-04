@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Sets the scheduling options for an Instance. NextID: 20
+ * Sets the scheduling options for an Instance. NextID: 21
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Scheduling}
@@ -175,9 +175,25 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ON_HOST_MAINTENANCE = 0;</code>
      */
     UNDEFINED_ON_HOST_MAINTENANCE(0),
-    /** <code>MIGRATE = 165699979;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* Allows Compute Engine to automatically migrate instances out of the way of maintenance events.
+     * </pre>
+     *
+     * <code>MIGRATE = 165699979;</code>
+     */
     MIGRATE(165699979),
-    /** <code>TERMINATE = 527617601;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Tells Compute Engine to terminate and (optionally) restart the instance away from the maintenance activity. If you would like your instance to be restarted, set the automaticRestart flag to true. Your instance may be restarted more than once, and it may be restarted outside the window of maintenance events.
+     * </pre>
+     *
+     * <code>TERMINATE = 527617601;</code>
+     */
     TERMINATE(527617601),
     UNRECOGNIZED(-1),
     ;
@@ -192,9 +208,25 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ON_HOST_MAINTENANCE = 0;</code>
      */
     public static final int UNDEFINED_ON_HOST_MAINTENANCE_VALUE = 0;
-    /** <code>MIGRATE = 165699979;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* Allows Compute Engine to automatically migrate instances out of the way of maintenance events.
+     * </pre>
+     *
+     * <code>MIGRATE = 165699979;</code>
+     */
     public static final int MIGRATE_VALUE = 165699979;
-    /** <code>TERMINATE = 527617601;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Tells Compute Engine to terminate and (optionally) restart the instance away from the maintenance activity. If you would like your instance to be restarted, set the automaticRestart flag to true. Your instance may be restarted more than once, and it may be restarted outside the window of maintenance events.
+     * </pre>
+     *
+     * <code>TERMINATE = 527617601;</code>
+     */
     public static final int TERMINATE_VALUE = 527617601;
 
     public final int getNumber() {
@@ -290,8 +322,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-   * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
    * <code>bool automatic_restart = 350821371;</code>
@@ -306,8 +337,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-   * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+   * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
    * <code>bool automatic_restart = 350821371;</code>
@@ -817,7 +847,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Sets the scheduling options for an Instance. NextID: 20
+   * Sets the scheduling options for an Instance. NextID: 21
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Scheduling}
@@ -1064,8 +1094,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-     * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
      * <code>bool automatic_restart = 350821371;</code>
@@ -1080,8 +1109,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-     * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
      * <code>bool automatic_restart = 350821371;</code>
@@ -1096,8 +1124,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-     * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
      * <code>bool automatic_restart = 350821371;</code>
@@ -1115,8 +1142,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted.
-     * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+     * Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
      * </pre>
      *
      * <code>bool automatic_restart = 350821371;</code>

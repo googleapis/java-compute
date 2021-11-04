@@ -27,7 +27,7 @@ public interface AuthorizationLoggingOptionsOrBuilder
    *
    *
    * <pre>
-   * The type of the permission that was checked.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface AuthorizationLoggingOptionsOrBuilder
    *
    *
    * <pre>
-   * The type of the permission that was checked.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -55,7 +55,7 @@ public interface AuthorizationLoggingOptionsOrBuilder
    *
    *
    * <pre>
-   * The type of the permission that was checked.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>

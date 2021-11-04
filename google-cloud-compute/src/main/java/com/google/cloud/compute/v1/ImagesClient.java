@@ -219,9 +219,8 @@ public class ImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the deprecation status of an image.
-   *
-   * <p>If an empty request body is given, clears the deprecation status instead.
+   * Sets the deprecation status of an image. If an empty request body is given, clears the
+   * deprecation status instead.
    *
    * <p>Sample code:
    *
@@ -252,9 +251,8 @@ public class ImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the deprecation status of an image.
-   *
-   * <p>If an empty request body is given, clears the deprecation status instead.
+   * Sets the deprecation status of an image. If an empty request body is given, clears the
+   * deprecation status instead.
    *
    * <p>Sample code:
    *
@@ -280,9 +278,8 @@ public class ImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the deprecation status of an image.
-   *
-   * <p>If an empty request body is given, clears the deprecation status instead.
+   * Sets the deprecation status of an image. If an empty request body is given, clears the
+   * deprecation status instead.
    *
    * <p>Sample code:
    *

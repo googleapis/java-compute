@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Interconnect Attachment (VLAN) Location resource.
- * You can use this resource to find location details about an Interconnect attachment (VLAN). For more information about interconnect attachments, read  Creating VLAN Attachments.
+ * Represents an Interconnect Attachment (VLAN) Location resource. You can use this resource to find location details about an Interconnect attachment (VLAN). For more information about interconnect attachments, read Creating VLAN Attachments.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectLocation}
@@ -117,6 +116,12 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
               java.lang.String s = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               creationTimestamp_ = s;
+              break;
+            }
+          case 671865712:
+            {
+              bitField0_ |= 0x00004000;
+              supportsPzs_ = input.readBool();
               break;
             }
           case 698153002:
@@ -237,12 +242,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values:
-   * - AFRICA
-   * - ASIA_PAC
-   * - EUROPE
-   * - NORTH_AMERICA
-   * - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectLocation.Continent}
@@ -415,9 +415,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-   * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-   * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectLocation.Status}
@@ -433,9 +431,25 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>AVAILABLE = 442079913;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The InterconnectLocation is available for provisioning new Interconnects.
+     * </pre>
+     *
+     * <code>AVAILABLE = 442079913;</code>
+     */
     AVAILABLE(442079913),
-    /** <code>CLOSED = 380163436;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The InterconnectLocation is closed for provisioning new Interconnects.
+     * </pre>
+     *
+     * <code>CLOSED = 380163436;</code>
+     */
     CLOSED(380163436),
     UNRECOGNIZED(-1),
     ;
@@ -450,9 +464,25 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>AVAILABLE = 442079913;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The InterconnectLocation is available for provisioning new Interconnects.
+     * </pre>
+     *
+     * <code>AVAILABLE = 442079913;</code>
+     */
     public static final int AVAILABLE_VALUE = 442079913;
-    /** <code>CLOSED = 380163436;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The InterconnectLocation is closed for provisioning new Interconnects.
+     * </pre>
+     *
+     * <code>CLOSED = 380163436;</code>
+     */
     public static final int CLOSED_VALUE = 380163436;
 
     public final int getNumber() {
@@ -737,12 +767,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values:
-   * - AFRICA
-   * - ASIA_PAC
-   * - EUROPE
-   * - NORTH_AMERICA
-   * - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
@@ -757,12 +782,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values:
-   * - AFRICA
-   * - ASIA_PAC
-   * - EUROPE
-   * - NORTH_AMERICA
-   * - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
@@ -777,12 +797,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values:
-   * - AFRICA
-   * - ASIA_PAC
-   * - EUROPE
-   * - NORTH_AMERICA
-   * - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
@@ -1432,9 +1447,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-   * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-   * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
@@ -1449,9 +1462,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-   * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-   * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
@@ -1466,9 +1477,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-   * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-   * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
@@ -1483,6 +1492,39 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     return result == null
         ? com.google.cloud.compute.v1.InterconnectLocation.Status.UNRECOGNIZED
         : result;
+  }
+
+  public static final int SUPPORTS_PZS_FIELD_NUMBER = 83983214;
+  private boolean supportsPzs_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
+   * </pre>
+   *
+   * <code>bool supports_pzs = 83983214;</code>
+   *
+   * @return Whether the supportsPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSupportsPzs() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
+   * </pre>
+   *
+   * <code>bool supports_pzs = 83983214;</code>
+   *
+   * @return The supportsPzs.
+   */
+  @java.lang.Override
+  public boolean getSupportsPzs() {
+    return supportsPzs_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1513,6 +1555,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeBool(83983214, supportsPzs_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
@@ -1569,6 +1614,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(83983214, supportsPzs_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size +=
@@ -1680,6 +1728,10 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     if (hasStatus()) {
       if (status_ != other.status_) return false;
     }
+    if (hasSupportsPzs() != other.hasSupportsPzs()) return false;
+    if (hasSupportsPzs()) {
+      if (getSupportsPzs() != other.getSupportsPzs()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1750,6 +1802,10 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
+    }
+    if (hasSupportsPzs()) {
+      hash = (37 * hash) + SUPPORTS_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSupportsPzs());
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1855,8 +1911,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Represents an Interconnect Attachment (VLAN) Location resource.
-   * You can use this resource to find location details about an Interconnect attachment (VLAN). For more information about interconnect attachments, read  Creating VLAN Attachments.
+   * Represents an Interconnect Attachment (VLAN) Location resource. You can use this resource to find location details about an Interconnect attachment (VLAN). For more information about interconnect attachments, read Creating VLAN Attachments.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectLocation}
@@ -1933,6 +1988,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       bitField0_ = (bitField0_ & ~0x00002000);
       status_ = 0;
       bitField0_ = (bitField0_ & ~0x00004000);
+      supportsPzs_ = false;
+      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -2027,6 +2084,10 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         to_bitField0_ |= 0x00002000;
       }
       result.status_ = status_;
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.supportsPzs_ = supportsPzs_;
+        to_bitField0_ |= 0x00004000;
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -2168,6 +2229,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       if (other.hasStatus()) {
         setStatus(other.getStatus());
+      }
+      if (other.hasSupportsPzs()) {
+        setSupportsPzs(other.getSupportsPzs());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2565,12 +2629,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Continent for this location, which can take one of the following values:
-     * - AFRICA
-     * - ASIA_PAC
-     * - EUROPE
-     * - NORTH_AMERICA
-     * - SOUTH_AMERICA
+     * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
@@ -2585,12 +2644,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Continent for this location, which can take one of the following values:
-     * - AFRICA
-     * - ASIA_PAC
-     * - EUROPE
-     * - NORTH_AMERICA
-     * - SOUTH_AMERICA
+     * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
@@ -2605,12 +2659,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Continent for this location, which can take one of the following values:
-     * - AFRICA
-     * - ASIA_PAC
-     * - EUROPE
-     * - NORTH_AMERICA
-     * - SOUTH_AMERICA
+     * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
@@ -2628,12 +2677,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Continent for this location, which can take one of the following values:
-     * - AFRICA
-     * - ASIA_PAC
-     * - EUROPE
-     * - NORTH_AMERICA
-     * - SOUTH_AMERICA
+     * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
@@ -2653,12 +2697,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Continent for this location, which can take one of the following values:
-     * - AFRICA
-     * - ASIA_PAC
-     * - EUROPE
-     * - NORTH_AMERICA
-     * - SOUTH_AMERICA
+     * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
@@ -2679,12 +2718,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Continent for this location, which can take one of the following values:
-     * - AFRICA
-     * - ASIA_PAC
-     * - EUROPE
-     * - NORTH_AMERICA
-     * - SOUTH_AMERICA
+     * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
@@ -4133,9 +4167,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-     * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-     * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+     * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
@@ -4150,9 +4182,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-     * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-     * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+     * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
@@ -4167,9 +4197,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-     * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-     * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+     * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
@@ -4187,9 +4215,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-     * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-     * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+     * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
@@ -4209,9 +4235,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-     * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-     * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+     * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
@@ -4232,9 +4256,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-     * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-     * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+     * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
@@ -4244,6 +4266,73 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public Builder clearStatus() {
       bitField0_ = (bitField0_ & ~0x00004000);
       status_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean supportsPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
+     * </pre>
+     *
+     * <code>bool supports_pzs = 83983214;</code>
+     *
+     * @return Whether the supportsPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSupportsPzs() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
+     * </pre>
+     *
+     * <code>bool supports_pzs = 83983214;</code>
+     *
+     * @return The supportsPzs.
+     */
+    @java.lang.Override
+    public boolean getSupportsPzs() {
+      return supportsPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
+     * </pre>
+     *
+     * <code>bool supports_pzs = 83983214;</code>
+     *
+     * @param value The supportsPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportsPzs(boolean value) {
+      bitField0_ |= 0x00008000;
+      supportsPzs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
+     * </pre>
+     *
+     * <code>bool supports_pzs = 83983214;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportsPzs() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      supportsPzs_ = false;
       onChanged();
       return this;
     }

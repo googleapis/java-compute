@@ -1361,6 +1361,53 @@ public class InstancesClientTest {
   }
 
   @Test
+  public void sendDiagnosticInterruptTest() throws Exception {
+    SendDiagnosticInterruptInstanceResponse expectedResponse =
+        SendDiagnosticInterruptInstanceResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-309310695";
+    String zone = "zone3744684";
+    String instance = "instance555127957";
+
+    SendDiagnosticInterruptInstanceResponse actualResponse =
+        client.sendDiagnosticInterrupt(project, zone, instance);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void sendDiagnosticInterruptExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-309310695";
+      String zone = "zone3744684";
+      String instance = "instance555127957";
+      client.sendDiagnosticInterrupt(project, zone, instance);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void setDeletionProtectionTest() throws Exception {
     Operation expectedResponse =
         Operation.newBuilder()

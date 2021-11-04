@@ -116,6 +116,12 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
+          case -2080795168:
+            {
+              bitField0_ |= 0x00000004;
+              keepaliveInterval_ = input.readUInt32();
+              break;
+            }
           case -1797892648:
             {
               int rawValue = input.readEnum();
@@ -307,7 +313,15 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADVERTISED_GROUPS = 0;</code>
      */
     UNDEFINED_ADVERTISED_GROUPS(0),
-    /** <code>ALL_SUBNETS = 3622872;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Advertise all available subnets (including peer VPC subnets).
+     * </pre>
+     *
+     * <code>ALL_SUBNETS = 3622872;</code>
+     */
     ALL_SUBNETS(3622872),
     UNRECOGNIZED(-1),
     ;
@@ -322,7 +336,15 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADVERTISED_GROUPS = 0;</code>
      */
     public static final int UNDEFINED_ADVERTISED_GROUPS_VALUE = 0;
-    /** <code>ALL_SUBNETS = 3622872;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Advertise all available subnets (including peer VPC subnets).
+     * </pre>
+     *
+     * <code>ALL_SUBNETS = 3622872;</code>
+     */
     public static final int ALL_SUBNETS_VALUE = 3622872;
 
     public final int getNumber() {
@@ -686,6 +708,39 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     return asn_;
   }
 
+  public static final int KEEPALIVE_INTERVAL_FIELD_NUMBER = 276771516;
+  private int keepaliveInterval_;
+  /**
+   *
+   *
+   * <pre>
+   * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+   * </pre>
+   *
+   * <code>uint32 keepalive_interval = 276771516;</code>
+   *
+   * @return Whether the keepaliveInterval field is set.
+   */
+  @java.lang.Override
+  public boolean hasKeepaliveInterval() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+   * </pre>
+   *
+   * <code>uint32 keepalive_interval = 276771516;</code>
+   *
+   * @return The keepaliveInterval.
+   */
+  @java.lang.Override
+  public int getKeepaliveInterval() {
+    return keepaliveInterval_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -713,6 +768,9 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < advertisedIpRanges_.size(); i++) {
       output.writeMessage(35449932, advertisedIpRanges_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeUInt32(276771516, keepaliveInterval_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(312134331, advertiseMode_);
@@ -747,6 +805,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               35449932, advertisedIpRanges_.get(i));
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeUInt32Size(276771516, keepaliveInterval_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(312134331, advertiseMode_);
     }
@@ -775,6 +837,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     if (hasAsn()) {
       if (getAsn() != other.getAsn()) return false;
     }
+    if (hasKeepaliveInterval() != other.hasKeepaliveInterval()) return false;
+    if (hasKeepaliveInterval()) {
+      if (getKeepaliveInterval() != other.getKeepaliveInterval()) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -801,6 +867,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     if (hasAsn()) {
       hash = (37 * hash) + ASN_FIELD_NUMBER;
       hash = (53 * hash) + getAsn();
+    }
+    if (hasKeepaliveInterval()) {
+      hash = (37 * hash) + KEEPALIVE_INTERVAL_FIELD_NUMBER;
+      hash = (53 * hash) + getKeepaliveInterval();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -959,6 +1029,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       asn_ = 0;
       bitField0_ = (bitField0_ & ~0x00000008);
+      keepaliveInterval_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -1009,6 +1081,10 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.asn_ = asn_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.keepaliveInterval_ = keepaliveInterval_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1102,6 +1178,9 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasAsn()) {
         setAsn(other.getAsn());
+      }
+      if (other.hasKeepaliveInterval()) {
+        setKeepaliveInterval(other.getKeepaliveInterval());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1954,6 +2033,73 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAsn() {
       bitField0_ = (bitField0_ & ~0x00000008);
       asn_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int keepaliveInterval_;
+    /**
+     *
+     *
+     * <pre>
+     * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+     * </pre>
+     *
+     * <code>uint32 keepalive_interval = 276771516;</code>
+     *
+     * @return Whether the keepaliveInterval field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeepaliveInterval() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+     * </pre>
+     *
+     * <code>uint32 keepalive_interval = 276771516;</code>
+     *
+     * @return The keepaliveInterval.
+     */
+    @java.lang.Override
+    public int getKeepaliveInterval() {
+      return keepaliveInterval_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+     * </pre>
+     *
+     * <code>uint32 keepalive_interval = 276771516;</code>
+     *
+     * @param value The keepaliveInterval to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeepaliveInterval(int value) {
+      bitField0_ |= 0x00000010;
+      keepaliveInterval_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+     * </pre>
+     *
+     * <code>uint32 keepalive_interval = 276771516;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKeepaliveInterval() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      keepaliveInterval_ = 0;
       onChanged();
       return this;
     }

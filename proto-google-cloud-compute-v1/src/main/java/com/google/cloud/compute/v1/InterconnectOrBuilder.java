@@ -434,9 +434,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values:
-   * - PARTNER: A partner-managed interconnection shared between customers though a partner.
-   * - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;
@@ -449,9 +447,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values:
-   * - PARTNER: A partner-managed interconnection shared between customers though a partner.
-   * - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;
@@ -464,9 +460,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values:
-   * - PARTNER: A partner-managed interconnection shared between customers though a partner.
-   * - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;
@@ -517,9 +511,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values:
-   * - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
-   * - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
@@ -531,9 +523,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values:
-   * - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
-   * - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
@@ -545,9 +535,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values:
-   * - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
-   * - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
@@ -671,10 +659,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values:
-   * - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect.
-   * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect.
-   * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;
@@ -687,10 +672,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values:
-   * - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect.
-   * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect.
-   * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;
@@ -703,10 +685,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values:
-   * - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect.
-   * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect.
-   * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;
@@ -807,6 +786,31 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 480964267;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
@@ -844,10 +848,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values:
-   * - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect.
-   * - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect.
-   * - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
@@ -859,10 +860,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values:
-   * - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect.
-   * - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect.
-   * - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
@@ -874,10 +872,7 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values:
-   * - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect.
-   * - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect.
-   * - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Interconnect.State state = 109757585;</code>

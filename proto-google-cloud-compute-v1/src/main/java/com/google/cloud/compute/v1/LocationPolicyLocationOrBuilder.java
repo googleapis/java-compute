@@ -27,7 +27,7 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
@@ -39,7 +39,7 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
@@ -51,7 +51,7 @@ public interface LocationPolicyLocationOrBuilder
    *
    *
    * <pre>
-   * Preference for a given locaction: ALLOW or DENY.
+   * Preference for a given location: ALLOW or DENY.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>

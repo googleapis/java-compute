@@ -144,9 +144,25 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>CONNECTION_REDUNDANCY_MET = 505242907;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * VPN tunnels are configured with adequate redundancy from Cloud VPN gateway to the peer VPN gateway. For both GCP-to-non-GCP and GCP-to-GCP connections, the adequate redundancy is a pre-requirement for users to get 99.99% availability on GCP side; please note that for any connection, end-to-end 99.99% availability is subject to proper configuration on the peer VPN gateway.
+     * </pre>
+     *
+     * <code>CONNECTION_REDUNDANCY_MET = 505242907;</code>
+     */
     CONNECTION_REDUNDANCY_MET(505242907),
-    /** <code>CONNECTION_REDUNDANCY_NOT_MET = 511863311;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * VPN tunnels are not configured with adequate redundancy from the Cloud VPN gateway to the peer gateway
+     * </pre>
+     *
+     * <code>CONNECTION_REDUNDANCY_NOT_MET = 511863311;</code>
+     */
     CONNECTION_REDUNDANCY_NOT_MET(511863311),
     UNRECOGNIZED(-1),
     ;
@@ -161,9 +177,25 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>CONNECTION_REDUNDANCY_MET = 505242907;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * VPN tunnels are configured with adequate redundancy from Cloud VPN gateway to the peer VPN gateway. For both GCP-to-non-GCP and GCP-to-GCP connections, the adequate redundancy is a pre-requirement for users to get 99.99% availability on GCP side; please note that for any connection, end-to-end 99.99% availability is subject to proper configuration on the peer VPN gateway.
+     * </pre>
+     *
+     * <code>CONNECTION_REDUNDANCY_MET = 505242907;</code>
+     */
     public static final int CONNECTION_REDUNDANCY_MET_VALUE = 505242907;
-    /** <code>CONNECTION_REDUNDANCY_NOT_MET = 511863311;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * VPN tunnels are not configured with adequate redundancy from the Cloud VPN gateway to the peer gateway
+     * </pre>
+     *
+     * <code>CONNECTION_REDUNDANCY_NOT_MET = 511863311;</code>
+     */
     public static final int CONNECTION_REDUNDANCY_NOT_MET_VALUE = 511863311;
 
     public final int getNumber() {

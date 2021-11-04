@@ -134,11 +134,35 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      * <code>UNDEFINED_QUIC_OVERRIDE = 0;</code>
      */
     UNDEFINED_QUIC_OVERRIDE(0),
-    /** <code>DISABLE = 241807048;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The load balancer will not attempt to negotiate QUIC with clients.
+     * </pre>
+     *
+     * <code>DISABLE = 241807048;</code>
+     */
     DISABLE(241807048),
-    /** <code>ENABLE = 438835587;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The load balancer will attempt to negotiate QUIC with clients.
+     * </pre>
+     *
+     * <code>ENABLE = 438835587;</code>
+     */
     ENABLE(438835587),
-    /** <code>NONE = 2402104;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * No overrides to the default QUIC policy. This option is implicit if no QUIC override has been specified in the request.
+     * </pre>
+     *
+     * <code>NONE = 2402104;</code>
+     */
     NONE(2402104),
     UNRECOGNIZED(-1),
     ;
@@ -153,11 +177,35 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest
      * <code>UNDEFINED_QUIC_OVERRIDE = 0;</code>
      */
     public static final int UNDEFINED_QUIC_OVERRIDE_VALUE = 0;
-    /** <code>DISABLE = 241807048;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The load balancer will not attempt to negotiate QUIC with clients.
+     * </pre>
+     *
+     * <code>DISABLE = 241807048;</code>
+     */
     public static final int DISABLE_VALUE = 241807048;
-    /** <code>ENABLE = 438835587;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The load balancer will attempt to negotiate QUIC with clients.
+     * </pre>
+     *
+     * <code>ENABLE = 438835587;</code>
+     */
     public static final int ENABLE_VALUE = 438835587;
-    /** <code>NONE = 2402104;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * No overrides to the default QUIC policy. This option is implicit if no QUIC override has been specified in the request.
+     * </pre>
+     *
+     * <code>NONE = 2402104;</code>
+     */
     public static final int NONE_VALUE = 2402104;
 
     public final int getNumber() {

@@ -22,7 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Write a Cloud Audit log
+ * This is deprecated and has no effect. Do not use.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.LogConfigCloudAuditOptions}
@@ -133,7 +133,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName}
@@ -149,11 +149,35 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_NAME = 0;</code>
      */
     UNDEFINED_LOG_NAME(0),
-    /** <code>ADMIN_ACTIVITY = 427503135;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ADMIN_ACTIVITY = 427503135;</code>
+     */
     ADMIN_ACTIVITY(427503135),
-    /** <code>DATA_ACCESS = 238070681;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DATA_ACCESS = 238070681;</code>
+     */
     DATA_ACCESS(238070681),
-    /** <code>UNSPECIFIED_LOG_NAME = 410515182;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>UNSPECIFIED_LOG_NAME = 410515182;</code>
+     */
     UNSPECIFIED_LOG_NAME(410515182),
     UNRECOGNIZED(-1),
     ;
@@ -168,11 +192,35 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_NAME = 0;</code>
      */
     public static final int UNDEFINED_LOG_NAME_VALUE = 0;
-    /** <code>ADMIN_ACTIVITY = 427503135;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>ADMIN_ACTIVITY = 427503135;</code>
+     */
     public static final int ADMIN_ACTIVITY_VALUE = 427503135;
-    /** <code>DATA_ACCESS = 238070681;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>DATA_ACCESS = 238070681;</code>
+     */
     public static final int DATA_ACCESS_VALUE = 238070681;
-    /** <code>UNSPECIFIED_LOG_NAME = 410515182;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * </pre>
+     *
+     * <code>UNSPECIFIED_LOG_NAME = 410515182;</code>
+     */
     public static final int UNSPECIFIED_LOG_NAME_VALUE = 410515182;
 
     public final int getNumber() {
@@ -269,7 +317,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Information used by the Cloud Audit Logging pipeline.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -286,7 +334,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Information used by the Cloud Audit Logging pipeline.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -305,7 +353,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Information used by the Cloud Audit Logging pipeline.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>
@@ -326,7 +374,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
@@ -341,7 +389,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
@@ -356,7 +404,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The log_name to populate in the Cloud Audit Record.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
@@ -559,7 +607,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Write a Cloud Audit log
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.LogConfigCloudAuditOptions}
@@ -750,7 +798,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -766,7 +814,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -789,7 +837,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -814,7 +862,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -836,7 +884,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -869,7 +917,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -890,7 +938,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -907,7 +955,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -928,7 +976,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Information used by the Cloud Audit Logging pipeline.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>
@@ -957,7 +1005,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The log_name to populate in the Cloud Audit Record.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
@@ -973,7 +1021,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The log_name to populate in the Cloud Audit Record.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
@@ -989,7 +1037,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The log_name to populate in the Cloud Audit Record.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
@@ -1008,7 +1056,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The log_name to populate in the Cloud Audit Record.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
@@ -1029,7 +1077,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The log_name to populate in the Cloud Audit Record.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
@@ -1052,7 +1100,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The log_name to populate in the Cloud Audit Record.
+     * This is deprecated and has no effect. Do not use.
      * </pre>
      *
      * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;

@@ -220,4 +220,29 @@ public interface RouterBgpOrBuilder
    * @return The asn.
    */
   int getAsn();
+
+  /**
+   *
+   *
+   * <pre>
+   * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+   * </pre>
+   *
+   * <code>uint32 keepalive_interval = 276771516;</code>
+   *
+   * @return Whether the keepaliveInterval field is set.
+   */
+  boolean hasKeepaliveInterval();
+  /**
+   *
+   *
+   * <pre>
+   * The interval in seconds between BGP keepalive messages that are sent to the peer. Hold time is three times the interval at which keepalive messages are sent, and the hold time is the maximum number of seconds allowed to elapse between successive keepalive messages that BGP receives from a peer. BGP will use the smaller of either the local hold time value or the peer's hold time value as the hold time for the BGP connection between the two peers. If set, this value must be between 20 and 60. The default is 20.
+   * </pre>
+   *
+   * <code>uint32 keepalive_interval = 276771516;</code>
+   *
+   * @return The keepaliveInterval.
+   */
+  int getKeepaliveInterval();
 }

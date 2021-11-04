@@ -22,13 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Instance Group resource.
- * Instance Groups can be used to configure a target for load balancing.
- * Instance groups can either be managed or unmanaged.
- * To create  managed instance groups, use the instanceGroupManager or regionInstanceGroupManager resource instead.
- * Use zonal unmanaged instance groups if you need to apply load balancing to groups of heterogeneous instances or if you need to manage the instances yourself. You cannot create regional unmanaged instance groups.
- * For more information, read Instance groups.
- * (== resource_for {$api_version}.instanceGroups ==) (== resource_for {$api_version}.regionInstanceGroups ==)
+ * Represents an Instance Group resource. Instance Groups can be used to configure a target for load balancing. Instance groups can either be managed or unmanaged. To create managed instance groups, use the instanceGroupManager or regionInstanceGroupManager resource instead. Use zonal unmanaged instance groups if you need to apply load balancing to groups of heterogeneous instances or if you need to manage the instances yourself. You cannot create regional unmanaged instance groups. For more information, read Instance groups.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InstanceGroup}
@@ -577,9 +571,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assigns a name to a port number. For example: {name: "http", port: 80}
-   * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-   * Named ports apply to all instances in this instance group.
+   *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -592,9 +584,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assigns a name to a port number. For example: {name: "http", port: 80}
-   * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-   * Named ports apply to all instances in this instance group.
+   *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -608,9 +598,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assigns a name to a port number. For example: {name: "http", port: 80}
-   * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-   * Named ports apply to all instances in this instance group.
+   *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -623,9 +611,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assigns a name to a port number. For example: {name: "http", port: 80}
-   * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-   * Named ports apply to all instances in this instance group.
+   *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -638,9 +624,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Assigns a name to a port number. For example: {name: "http", port: 80}
-   * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-   * Named ports apply to all instances in this instance group.
+   *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -1338,13 +1322,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an Instance Group resource.
-   * Instance Groups can be used to configure a target for load balancing.
-   * Instance groups can either be managed or unmanaged.
-   * To create  managed instance groups, use the instanceGroupManager or regionInstanceGroupManager resource instead.
-   * Use zonal unmanaged instance groups if you need to apply load balancing to groups of heterogeneous instances or if you need to manage the instances yourself. You cannot create regional unmanaged instance groups.
-   * For more information, read Instance groups.
-   * (== resource_for {$api_version}.instanceGroups ==) (== resource_for {$api_version}.regionInstanceGroups ==)
+   * Represents an Instance Group resource. Instance Groups can be used to configure a target for load balancing. Instance groups can either be managed or unmanaged. To create managed instance groups, use the instanceGroupManager or regionInstanceGroupManager resource instead. Use zonal unmanaged instance groups if you need to apply load balancing to groups of heterogeneous instances or if you need to manage the instances yourself. You cannot create regional unmanaged instance groups. For more information, read Instance groups.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InstanceGroup}
@@ -2354,9 +2332,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2372,9 +2348,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2390,9 +2364,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2408,9 +2380,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2432,9 +2402,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2454,9 +2422,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2478,9 +2444,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2502,9 +2466,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2523,9 +2485,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2545,9 +2505,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2567,9 +2525,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2588,9 +2544,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2609,9 +2563,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2623,9 +2575,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2641,9 +2591,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2660,9 +2608,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2675,9 +2621,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -2690,9 +2634,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Assigns a name to a port number. For example: {name: "http", port: 80}
-     * This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}]
-     * Named ports apply to all instances in this instance group.
+     *  Assigns a name to a port number. For example: {name: "http", port: 80} This allows the system to reference ports by the assigned name instead of a port number. Named ports can also contain multiple ports. For example: [{name: "http", port: 80},{name: "http", port: 8080}] Named ports apply to all instances in this instance group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>

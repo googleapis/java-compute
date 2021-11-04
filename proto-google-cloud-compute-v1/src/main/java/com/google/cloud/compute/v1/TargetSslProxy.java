@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Target SSL Proxy resource.
- * A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules reference a target SSL proxy, and the target proxy then references an external backend service. For more information, read Using Target Proxies. (== resource_for {$api_version}.targetSslProxies ==)
+ * Represents a Target SSL Proxy resource. A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules reference a target SSL proxy, and the target proxy then references an external backend service. For more information, read Using Target Proxies.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.TargetSslProxy}
@@ -791,7 +790,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -805,7 +804,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -819,7 +818,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -834,7 +833,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+   * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -1208,8 +1207,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Target SSL Proxy resource.
-   * A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules reference a target SSL proxy, and the target proxy then references an external backend service. For more information, read Using Target Proxies. (== resource_for {$api_version}.targetSslProxies ==)
+   * Represents a Target SSL Proxy resource. A target SSL proxy is a component of a SSL Proxy load balancer. Global forwarding rules reference a target SSL proxy, and the target proxy then references an external backend service. For more information, read Using Target Proxies.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.TargetSslProxy}
@@ -2380,7 +2378,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2394,7 +2392,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2408,7 +2406,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2423,7 +2421,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2438,7 +2436,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2460,7 +2458,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2481,7 +2479,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2499,7 +2497,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>
@@ -2516,7 +2514,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
+     * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
      * <code>repeated string ssl_certificates = 366006543;</code>

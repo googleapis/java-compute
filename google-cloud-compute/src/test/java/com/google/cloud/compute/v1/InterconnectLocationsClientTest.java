@@ -93,6 +93,7 @@ public class InterconnectLocationsClientTest {
             .setPeeringdbFacilityId("peeringdbFacilityId1154838908")
             .addAllRegionInfos(new ArrayList<InterconnectLocationRegionInfo>())
             .setSelfLink("selfLink1191800166")
+            .setSupportsPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -22,8 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a collection of network endpoints.
- * A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see  Setting up external HTTP(S) Load Balancing with internet NEGs,  Setting up zonal NEGs, or  Setting up external HTTP(S) Load Balancing with serverless NEGs. (== resource_for {$api_version}.networkEndpointGroups ==) (== resource_for {$api_version}.globalNetworkEndpointGroups ==) (== resource_for {$api_version}.regionNetworkEndpointGroups ==)
+ * Represents a collection of network endpoints. A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see Setting up external HTTP(S) Load Balancing with internet NEGs, Setting up zonal NEGs, or Setting up external HTTP(S) Load Balancing with serverless NEGs.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NetworkEndpointGroup}
@@ -285,7 +284,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType}
@@ -301,17 +300,65 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_NETWORK_ENDPOINT_TYPE = 0;</code>
      */
     UNDEFINED_NETWORK_ENDPOINT_TYPE(0),
-    /** <code>GCE_VM_IP = 401880793;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint is represented by an IP address.
+     * </pre>
+     *
+     * <code>GCE_VM_IP = 401880793;</code>
+     */
     GCE_VM_IP(401880793),
-    /** <code>GCE_VM_IP_PORT = 501838375;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint is represented by IP address and port pair.
+     * </pre>
+     *
+     * <code>GCE_VM_IP_PORT = 501838375;</code>
+     */
     GCE_VM_IP_PORT(501838375),
-    /** <code>INTERNET_FQDN_PORT = 404154477;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint is represented by fully qualified domain name and port.
+     * </pre>
+     *
+     * <code>INTERNET_FQDN_PORT = 404154477;</code>
+     */
     INTERNET_FQDN_PORT(404154477),
-    /** <code>INTERNET_IP_PORT = 477719963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint is represented by an internet IP address and port.
+     * </pre>
+     *
+     * <code>INTERNET_IP_PORT = 477719963;</code>
+     */
     INTERNET_IP_PORT(477719963),
-    /** <code>NON_GCP_PRIVATE_IP_PORT = 336447968;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint is represented by an IP address and port. The endpoint belongs to a VM or pod running in a customer's on-premises.
+     * </pre>
+     *
+     * <code>NON_GCP_PRIVATE_IP_PORT = 336447968;</code>
+     */
     NON_GCP_PRIVATE_IP_PORT(336447968),
-    /** <code>SERVERLESS = 270492508;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint is handled by specified serverless infrastructure.
+     * </pre>
+     *
+     * <code>SERVERLESS = 270492508;</code>
+     */
     SERVERLESS(270492508),
     UNRECOGNIZED(-1),
     ;
@@ -326,17 +373,65 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_NETWORK_ENDPOINT_TYPE = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_ENDPOINT_TYPE_VALUE = 0;
-    /** <code>GCE_VM_IP = 401880793;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint is represented by an IP address.
+     * </pre>
+     *
+     * <code>GCE_VM_IP = 401880793;</code>
+     */
     public static final int GCE_VM_IP_VALUE = 401880793;
-    /** <code>GCE_VM_IP_PORT = 501838375;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint is represented by IP address and port pair.
+     * </pre>
+     *
+     * <code>GCE_VM_IP_PORT = 501838375;</code>
+     */
     public static final int GCE_VM_IP_PORT_VALUE = 501838375;
-    /** <code>INTERNET_FQDN_PORT = 404154477;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint is represented by fully qualified domain name and port.
+     * </pre>
+     *
+     * <code>INTERNET_FQDN_PORT = 404154477;</code>
+     */
     public static final int INTERNET_FQDN_PORT_VALUE = 404154477;
-    /** <code>INTERNET_IP_PORT = 477719963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint is represented by an internet IP address and port.
+     * </pre>
+     *
+     * <code>INTERNET_IP_PORT = 477719963;</code>
+     */
     public static final int INTERNET_IP_PORT_VALUE = 477719963;
-    /** <code>NON_GCP_PRIVATE_IP_PORT = 336447968;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint is represented by an IP address and port. The endpoint belongs to a VM or pod running in a customer's on-premises.
+     * </pre>
+     *
+     * <code>NON_GCP_PRIVATE_IP_PORT = 336447968;</code>
+     */
     public static final int NON_GCP_PRIVATE_IP_PORT_VALUE = 336447968;
-    /** <code>SERVERLESS = 270492508;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint is handled by specified serverless infrastructure.
+     * </pre>
+     *
+     * <code>SERVERLESS = 270492508;</code>
+     */
     public static final int SERVERLESS_VALUE = 270492508;
 
     public final int getNumber() {
@@ -1081,7 +1176,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
    * </pre>
    *
    * <code>
@@ -1098,7 +1193,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
    * </pre>
    *
    * <code>
@@ -1115,7 +1210,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+   * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
    * </pre>
    *
    * <code>
@@ -1823,8 +1918,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Represents a collection of network endpoints.
-   * A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see  Setting up external HTTP(S) Load Balancing with internet NEGs,  Setting up zonal NEGs, or  Setting up external HTTP(S) Load Balancing with serverless NEGs. (== resource_for {$api_version}.networkEndpointGroups ==) (== resource_for {$api_version}.globalNetworkEndpointGroups ==) (== resource_for {$api_version}.regionNetworkEndpointGroups ==)
+   * Represents a collection of network endpoints. A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see Setting up external HTTP(S) Load Balancing with internet NEGs, Setting up zonal NEGs, or Setting up external HTTP(S) Load Balancing with serverless NEGs.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NetworkEndpointGroup}
@@ -3670,7 +3764,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
      * </pre>
      *
      * <code>
@@ -3687,7 +3781,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
      * </pre>
      *
      * <code>
@@ -3704,7 +3798,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
      * </pre>
      *
      * <code>
@@ -3724,7 +3818,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
      * </pre>
      *
      * <code>
@@ -3748,7 +3842,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
      * </pre>
      *
      * <code>
@@ -3772,7 +3866,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, or SERVERLESS.
+     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
      * </pre>
      *
      * <code>

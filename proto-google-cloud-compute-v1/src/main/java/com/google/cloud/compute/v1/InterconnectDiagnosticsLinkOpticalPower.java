@@ -123,12 +123,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
    *
    *
    * <pre>
-   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-   * - OK: The value has not crossed a warning threshold.
-   * - LOW_WARNING: The value has crossed below the low warning threshold.
-   * - HIGH_WARNING: The value has crossed above the high warning threshold.
-   * - LOW_ALARM: The value has crossed below the low alarm threshold.
-   * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State}
@@ -144,15 +139,55 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>HIGH_ALARM = 305363284;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value has crossed above the high alarm threshold.
+     * </pre>
+     *
+     * <code>HIGH_ALARM = 305363284;</code>
+     */
     HIGH_ALARM(305363284),
-    /** <code>HIGH_WARNING = 220984799;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has crossed above the high warning threshold.
+     * </pre>
+     *
+     * <code>HIGH_WARNING = 220984799;</code>
+     */
     HIGH_WARNING(220984799),
-    /** <code>LOW_ALARM = 316659046;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has crossed below the low alarm threshold.
+     * </pre>
+     *
+     * <code>LOW_ALARM = 316659046;</code>
+     */
     LOW_ALARM(316659046),
-    /** <code>LOW_WARNING = 338793841;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has crossed below the low warning threshold.
+     * </pre>
+     *
+     * <code>LOW_WARNING = 338793841;</code>
+     */
     LOW_WARNING(338793841),
-    /** <code>OK = 2524;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has not crossed a warning threshold.
+     * </pre>
+     *
+     * <code>OK = 2524;</code>
+     */
     OK(2524),
     UNRECOGNIZED(-1),
     ;
@@ -167,15 +202,55 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>HIGH_ALARM = 305363284;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value has crossed above the high alarm threshold.
+     * </pre>
+     *
+     * <code>HIGH_ALARM = 305363284;</code>
+     */
     public static final int HIGH_ALARM_VALUE = 305363284;
-    /** <code>HIGH_WARNING = 220984799;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has crossed above the high warning threshold.
+     * </pre>
+     *
+     * <code>HIGH_WARNING = 220984799;</code>
+     */
     public static final int HIGH_WARNING_VALUE = 220984799;
-    /** <code>LOW_ALARM = 316659046;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has crossed below the low alarm threshold.
+     * </pre>
+     *
+     * <code>LOW_ALARM = 316659046;</code>
+     */
     public static final int LOW_ALARM_VALUE = 316659046;
-    /** <code>LOW_WARNING = 338793841;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has crossed below the low warning threshold.
+     * </pre>
+     *
+     * <code>LOW_WARNING = 338793841;</code>
+     */
     public static final int LOW_WARNING_VALUE = 338793841;
-    /** <code>OK = 2524;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The value of the current optical power has not crossed a warning threshold.
+     * </pre>
+     *
+     * <code>OK = 2524;</code>
+     */
     public static final int OK_VALUE = 2524;
 
     public final int getNumber() {
@@ -276,12 +351,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
    *
    *
    * <pre>
-   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-   * - OK: The value has not crossed a warning threshold.
-   * - LOW_WARNING: The value has crossed below the low warning threshold.
-   * - HIGH_WARNING: The value has crossed above the high warning threshold.
-   * - LOW_ALARM: The value has crossed below the low alarm threshold.
-   * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
@@ -297,12 +367,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
    *
    *
    * <pre>
-   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-   * - OK: The value has not crossed a warning threshold.
-   * - LOW_WARNING: The value has crossed below the low warning threshold.
-   * - HIGH_WARNING: The value has crossed above the high warning threshold.
-   * - LOW_ALARM: The value has crossed below the low alarm threshold.
-   * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
@@ -318,12 +383,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
    *
    *
    * <pre>
-   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-   * - OK: The value has not crossed a warning threshold.
-   * - LOW_WARNING: The value has crossed below the low warning threshold.
-   * - HIGH_WARNING: The value has crossed above the high warning threshold.
-   * - LOW_ALARM: The value has crossed below the low alarm threshold.
-   * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+   * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower.State state = 109757585;
@@ -741,12 +801,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      *
      *
      * <pre>
-     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-     * - OK: The value has not crossed a warning threshold.
-     * - LOW_WARNING: The value has crossed below the low warning threshold.
-     * - HIGH_WARNING: The value has crossed above the high warning threshold.
-     * - LOW_ALARM: The value has crossed below the low alarm threshold.
-     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
      * </pre>
      *
      * <code>
@@ -763,12 +818,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      *
      *
      * <pre>
-     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-     * - OK: The value has not crossed a warning threshold.
-     * - LOW_WARNING: The value has crossed below the low warning threshold.
-     * - HIGH_WARNING: The value has crossed above the high warning threshold.
-     * - LOW_ALARM: The value has crossed below the low alarm threshold.
-     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
      * </pre>
      *
      * <code>
@@ -785,12 +835,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      *
      *
      * <pre>
-     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-     * - OK: The value has not crossed a warning threshold.
-     * - LOW_WARNING: The value has crossed below the low warning threshold.
-     * - HIGH_WARNING: The value has crossed above the high warning threshold.
-     * - LOW_ALARM: The value has crossed below the low alarm threshold.
-     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
      * </pre>
      *
      * <code>
@@ -810,12 +855,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      *
      *
      * <pre>
-     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-     * - OK: The value has not crossed a warning threshold.
-     * - LOW_WARNING: The value has crossed below the low warning threshold.
-     * - HIGH_WARNING: The value has crossed above the high warning threshold.
-     * - LOW_ALARM: The value has crossed below the low alarm threshold.
-     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
      * </pre>
      *
      * <code>
@@ -837,12 +877,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      *
      *
      * <pre>
-     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-     * - OK: The value has not crossed a warning threshold.
-     * - LOW_WARNING: The value has crossed below the low warning threshold.
-     * - HIGH_WARNING: The value has crossed above the high warning threshold.
-     * - LOW_ALARM: The value has crossed below the low alarm threshold.
-     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
      * </pre>
      *
      * <code>
@@ -866,12 +901,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      *
      *
      * <pre>
-     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include:
-     * - OK: The value has not crossed a warning threshold.
-     * - LOW_WARNING: The value has crossed below the low warning threshold.
-     * - HIGH_WARNING: The value has crossed above the high warning threshold.
-     * - LOW_ALARM: The value has crossed below the low alarm threshold.
-     * - HIGH_ALARM: The value has crossed above the high alarm threshold.
+     * The status of the current value when compared to the warning and alarm levels for the receiving or transmitting transceiver. Possible states include: - OK: The value has not crossed a warning threshold. - LOW_WARNING: The value has crossed below the low warning threshold. - HIGH_WARNING: The value has crossed above the high warning threshold. - LOW_ALARM: The value has crossed below the low alarm threshold. - HIGH_ALARM: The value has crossed above the high alarm threshold.
      * </pre>
      *
      * <code>

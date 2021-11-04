@@ -139,15 +139,55 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * <code>UNDEFINED_DETAILED_HEALTH_STATE = 0;</code>
      */
     UNDEFINED_DETAILED_HEALTH_STATE(0),
-    /** <code>DRAINING = 480455402;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is being drained. The existing connections to the instance have time to complete, but the new ones are being refused.
+     * </pre>
+     *
+     * <code>DRAINING = 480455402;</code>
+     */
     DRAINING(480455402),
-    /** <code>HEALTHY = 439801213;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is reachable i.e. a connection to the application health checking endpoint can be established, and conforms to the requirements defined by the health check.
+     * </pre>
+     *
+     * <code>HEALTHY = 439801213;</code>
+     */
     HEALTHY(439801213),
-    /** <code>TIMEOUT = 477813057;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is unreachable i.e. a connection to the application health checking endpoint cannot be established, or the server does not respond within the specified timeout.
+     * </pre>
+     *
+     * <code>TIMEOUT = 477813057;</code>
+     */
     TIMEOUT(477813057),
-    /** <code>UNHEALTHY = 462118084;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is reachable, but does not conform to the requirements defined by the health check.
+     * </pre>
+     *
+     * <code>UNHEALTHY = 462118084;</code>
+     */
     UNHEALTHY(462118084),
-    /** <code>UNKNOWN = 433141802;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The health checking system is aware of the instance but its health is not known at the moment.
+     * </pre>
+     *
+     * <code>UNKNOWN = 433141802;</code>
+     */
     UNKNOWN(433141802),
     UNRECOGNIZED(-1),
     ;
@@ -162,15 +202,55 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * <code>UNDEFINED_DETAILED_HEALTH_STATE = 0;</code>
      */
     public static final int UNDEFINED_DETAILED_HEALTH_STATE_VALUE = 0;
-    /** <code>DRAINING = 480455402;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is being drained. The existing connections to the instance have time to complete, but the new ones are being refused.
+     * </pre>
+     *
+     * <code>DRAINING = 480455402;</code>
+     */
     public static final int DRAINING_VALUE = 480455402;
-    /** <code>HEALTHY = 439801213;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is reachable i.e. a connection to the application health checking endpoint can be established, and conforms to the requirements defined by the health check.
+     * </pre>
+     *
+     * <code>HEALTHY = 439801213;</code>
+     */
     public static final int HEALTHY_VALUE = 439801213;
-    /** <code>TIMEOUT = 477813057;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is unreachable i.e. a connection to the application health checking endpoint cannot be established, or the server does not respond within the specified timeout.
+     * </pre>
+     *
+     * <code>TIMEOUT = 477813057;</code>
+     */
     public static final int TIMEOUT_VALUE = 477813057;
-    /** <code>UNHEALTHY = 462118084;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is reachable, but does not conform to the requirements defined by the health check.
+     * </pre>
+     *
+     * <code>UNHEALTHY = 462118084;</code>
+     */
     public static final int UNHEALTHY_VALUE = 462118084;
-    /** <code>UNKNOWN = 433141802;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The health checking system is aware of the instance but its health is not known at the moment.
+     * </pre>
+     *
+     * <code>UNKNOWN = 433141802;</code>
+     */
     public static final int UNKNOWN_VALUE = 433141802;
 
     public final int getNumber() {

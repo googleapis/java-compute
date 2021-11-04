@@ -174,11 +174,35 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * <code>UNDEFINED_SOURCE_IP_RANGES_TO_NAT = 0;</code>
      */
     UNDEFINED_SOURCE_IP_RANGES_TO_NAT(0),
-    /** <code>ALL_IP_RANGES = 35608496;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The primary and all the secondary ranges are allowed to Nat.
+     * </pre>
+     *
+     * <code>ALL_IP_RANGES = 35608496;</code>
+     */
     ALL_IP_RANGES(35608496),
-    /** <code>LIST_OF_SECONDARY_IP_RANGES = 192289308;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A list of secondary ranges are allowed to Nat.
+     * </pre>
+     *
+     * <code>LIST_OF_SECONDARY_IP_RANGES = 192289308;</code>
+     */
     LIST_OF_SECONDARY_IP_RANGES(192289308),
-    /** <code>PRIMARY_IP_RANGE = 297109954;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The primary range is allowed to Nat.
+     * </pre>
+     *
+     * <code>PRIMARY_IP_RANGE = 297109954;</code>
+     */
     PRIMARY_IP_RANGE(297109954),
     UNRECOGNIZED(-1),
     ;
@@ -193,11 +217,35 @@ public final class RouterNatSubnetworkToNat extends com.google.protobuf.Generate
      * <code>UNDEFINED_SOURCE_IP_RANGES_TO_NAT = 0;</code>
      */
     public static final int UNDEFINED_SOURCE_IP_RANGES_TO_NAT_VALUE = 0;
-    /** <code>ALL_IP_RANGES = 35608496;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The primary and all the secondary ranges are allowed to Nat.
+     * </pre>
+     *
+     * <code>ALL_IP_RANGES = 35608496;</code>
+     */
     public static final int ALL_IP_RANGES_VALUE = 35608496;
-    /** <code>LIST_OF_SECONDARY_IP_RANGES = 192289308;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A list of secondary ranges are allowed to Nat.
+     * </pre>
+     *
+     * <code>LIST_OF_SECONDARY_IP_RANGES = 192289308;</code>
+     */
     public static final int LIST_OF_SECONDARY_IP_RANGES_VALUE = 192289308;
-    /** <code>PRIMARY_IP_RANGE = 297109954;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The primary range is allowed to Nat.
+     * </pre>
+     *
+     * <code>PRIMARY_IP_RANGE = 297109954;</code>
+     */
     public static final int PRIMARY_IP_RANGE_VALUE = 297109954;
 
     public final int getNumber() {

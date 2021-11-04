@@ -27,8 +27,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -39,8 +38,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -51,8 +49,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -63,8 +60,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -76,8 +72,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria
-   * This list must not be empty and can have at the most 64 entries.
+   * The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.MetadataFilterLabelMatch filter_labels = 307903142;
@@ -89,10 +84,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-   * Supported values are:
-   * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-   * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
    * </pre>
    *
    * <code>
@@ -106,10 +98,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-   * Supported values are:
-   * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-   * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
    * </pre>
    *
    * <code>
@@ -123,10 +112,7 @@ public interface MetadataFilterOrBuilder
    *
    *
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match.
-   * Supported values are:
-   * - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata.
-   * - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
    * </pre>
    *
    * <code>

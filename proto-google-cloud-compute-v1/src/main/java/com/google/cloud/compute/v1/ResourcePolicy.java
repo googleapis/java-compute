@@ -23,7 +23,6 @@ package com.google.cloud.compute.v1;
  *
  * <pre>
  * Represents a Resource Policy resource. You can use resource policies to schedule actions for some Compute Engine resources. For example, you can use them to schedule persistent disk snapshots.
- * (== resource_for {$api_version}.resourcePolicies ==)
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ResourcePolicy}
@@ -258,15 +257,47 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy is being created.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     CREATING(455564985),
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy is being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     DELETING(528602024),
-    /** <code>EXPIRED = 482489093;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy is expired and will not run again.
+     * </pre>
+     *
+     * <code>EXPIRED = 482489093;</code>
+     */
     EXPIRED(482489093),
     /** <code>INVALID = 530283991;</code> */
     INVALID(530283991),
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy is ready to be used.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     READY(77848963),
     UNRECOGNIZED(-1),
     ;
@@ -281,15 +312,47 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 455564985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy is being created.
+     * </pre>
+     *
+     * <code>CREATING = 455564985;</code>
+     */
     public static final int CREATING_VALUE = 455564985;
-    /** <code>DELETING = 528602024;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy is being deleted.
+     * </pre>
+     *
+     * <code>DELETING = 528602024;</code>
+     */
     public static final int DELETING_VALUE = 528602024;
-    /** <code>EXPIRED = 482489093;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy is expired and will not run again.
+     * </pre>
+     *
+     * <code>EXPIRED = 482489093;</code>
+     */
     public static final int EXPIRED_VALUE = 482489093;
     /** <code>INVALID = 530283991;</code> */
     public static final int INVALID_VALUE = 530283991;
-    /** <code>READY = 77848963;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policy is ready to be used.
+     * </pre>
+     *
+     * <code>READY = 77848963;</code>
+     */
     public static final int READY_VALUE = 77848963;
 
     public final int getNumber() {
@@ -1369,7 +1432,6 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents a Resource Policy resource. You can use resource policies to schedule actions for some Compute Engine resources. For example, you can use them to schedule persistent disk snapshots.
-   * (== resource_for {$api_version}.resourcePolicies ==)
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ResourcePolicy}

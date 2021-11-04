@@ -360,7 +360,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess}
@@ -376,11 +376,35 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS(0),
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional private IPv6 access to/from Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * </pre>
+     *
+     * <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
+     */
     ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE(427975994),
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Outbound private IPv6 access from VMs in this subnet to Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * </pre>
+     *
+     * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
+     */
     ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE(288210263),
-    /** <code>INHERIT_FROM_SUBNETWORK = 530256959;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Each network interface inherits PrivateIpv6GoogleAccess from its subnetwork.
+     * </pre>
+     *
+     * <code>INHERIT_FROM_SUBNETWORK = 530256959;</code>
+     */
     INHERIT_FROM_SUBNETWORK(530256959),
     UNRECOGNIZED(-1),
     ;
@@ -395,11 +419,35 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     public static final int UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS_VALUE = 0;
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional private IPv6 access to/from Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * </pre>
+     *
+     * <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
+     */
     public static final int ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE_VALUE = 427975994;
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Outbound private IPv6 access from VMs in this subnet to Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * </pre>
+     *
+     * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
+     */
     public static final int ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE_VALUE = 288210263;
-    /** <code>INHERIT_FROM_SUBNETWORK = 530256959;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Each network interface inherits PrivateIpv6GoogleAccess from its subnetwork.
+     * </pre>
+     *
+     * <code>INHERIT_FROM_SUBNETWORK = 530256959;</code>
+     */
     public static final int INHERIT_FROM_SUBNETWORK_VALUE = 530256959;
 
     public final int getNumber() {
@@ -1195,7 +1243,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * <code>
@@ -1212,7 +1260,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * <code>
@@ -1229,7 +1277,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * <code>
@@ -4814,7 +4862,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
      * </pre>
      *
      * <code>
@@ -4831,7 +4879,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
      * </pre>
      *
      * <code>
@@ -4848,7 +4896,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
      * </pre>
      *
      * <code>
@@ -4868,7 +4916,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
      * </pre>
      *
      * <code>
@@ -4892,7 +4940,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
      * </pre>
      *
      * <code>
@@ -4916,7 +4964,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use  INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
      * </pre>
      *
      * <code>

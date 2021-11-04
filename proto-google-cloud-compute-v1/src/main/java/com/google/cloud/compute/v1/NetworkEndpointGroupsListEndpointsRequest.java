@@ -134,9 +134,25 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      * <code>UNDEFINED_HEALTH_STATUS = 0;</code>
      */
     UNDEFINED_HEALTH_STATUS(0),
-    /** <code>SHOW = 2544381;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Show the health status for each network endpoint. Impacts latency of the call.
+     * </pre>
+     *
+     * <code>SHOW = 2544381;</code>
+     */
     SHOW(2544381),
-    /** <code>SKIP = 2547071;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Health status for network endpoints will not be provided.
+     * </pre>
+     *
+     * <code>SKIP = 2547071;</code>
+     */
     SKIP(2547071),
     UNRECOGNIZED(-1),
     ;
@@ -151,9 +167,25 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      * <code>UNDEFINED_HEALTH_STATUS = 0;</code>
      */
     public static final int UNDEFINED_HEALTH_STATUS_VALUE = 0;
-    /** <code>SHOW = 2544381;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Show the health status for each network endpoint. Impacts latency of the call.
+     * </pre>
+     *
+     * <code>SHOW = 2544381;</code>
+     */
     public static final int SHOW_VALUE = 2544381;
-    /** <code>SKIP = 2547071;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Health status for network endpoints will not be provided.
+     * </pre>
+     *
+     * <code>SKIP = 2547071;</code>
+     */
     public static final int SKIP_VALUE = 2547071;
 
     public final int getNumber() {

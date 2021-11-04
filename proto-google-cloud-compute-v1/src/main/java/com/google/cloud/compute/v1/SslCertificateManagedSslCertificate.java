@@ -174,17 +174,57 @@ public final class SslCertificateManagedSslCertificate
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The certificate management is working, and a certificate has been provisioned.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     ACTIVE(314733318),
     /** <code>MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 474800850;</code> */
     MANAGED_CERTIFICATE_STATUS_UNSPECIFIED(474800850),
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The certificate management is working. GCP will attempt to provision the first certificate.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     PROVISIONING(290896621),
-    /** <code>PROVISIONING_FAILED = 76813775;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Certificate provisioning failed due to an issue with the DNS or load balancing configuration. For details of which domain failed, consult domain_status field.
+     * </pre>
+     *
+     * <code>PROVISIONING_FAILED = 76813775;</code>
+     */
     PROVISIONING_FAILED(76813775),
-    /** <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Certificate provisioning failed due to an issue with the DNS or load balancing configuration. It won't be retried. To try again delete and create a new managed SslCertificate resource. For details of which domain failed, consult domain_status field.
+     * </pre>
+     *
+     * <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code>
+     */
     PROVISIONING_FAILED_PERMANENTLY(275036203),
-    /** <code>RENEWAL_FAILED = 434659076;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Renewal of the certificate has failed due to an issue with the DNS or load balancing configuration. The existing cert is still serving; however, it will expire shortly. To provision a renewed certificate, delete and create a new managed SslCertificate resource. For details on which domain failed, consult domain_status field.
+     * </pre>
+     *
+     * <code>RENEWAL_FAILED = 434659076;</code>
+     */
     RENEWAL_FAILED(434659076),
     UNRECOGNIZED(-1),
     ;
@@ -199,17 +239,57 @@ public final class SslCertificateManagedSslCertificate
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The certificate management is working, and a certificate has been provisioned.
+     * </pre>
+     *
+     * <code>ACTIVE = 314733318;</code>
+     */
     public static final int ACTIVE_VALUE = 314733318;
     /** <code>MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 474800850;</code> */
     public static final int MANAGED_CERTIFICATE_STATUS_UNSPECIFIED_VALUE = 474800850;
-    /** <code>PROVISIONING = 290896621;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The certificate management is working. GCP will attempt to provision the first certificate.
+     * </pre>
+     *
+     * <code>PROVISIONING = 290896621;</code>
+     */
     public static final int PROVISIONING_VALUE = 290896621;
-    /** <code>PROVISIONING_FAILED = 76813775;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Certificate provisioning failed due to an issue with the DNS or load balancing configuration. For details of which domain failed, consult domain_status field.
+     * </pre>
+     *
+     * <code>PROVISIONING_FAILED = 76813775;</code>
+     */
     public static final int PROVISIONING_FAILED_VALUE = 76813775;
-    /** <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Certificate provisioning failed due to an issue with the DNS or load balancing configuration. It won't be retried. To try again delete and create a new managed SslCertificate resource. For details of which domain failed, consult domain_status field.
+     * </pre>
+     *
+     * <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code>
+     */
     public static final int PROVISIONING_FAILED_PERMANENTLY_VALUE = 275036203;
-    /** <code>RENEWAL_FAILED = 434659076;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Renewal of the certificate has failed due to an issue with the DNS or load balancing configuration. The existing cert is still serving; however, it will expire shortly. To provision a renewed certificate, delete and create a new managed SslCertificate resource. For details on which domain failed, consult domain_status field.
+     * </pre>
+     *
+     * <code>RENEWAL_FAILED = 434659076;</code>
+     */
     public static final int RENEWAL_FAILED_VALUE = 434659076;
 
     public final int getNumber() {

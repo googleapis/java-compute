@@ -267,6 +267,70 @@ public interface RouterStatusNatStatusOrBuilder
    *
    *
    * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus>
+      getRuleStatusList();
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus getRuleStatus(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  int getRuleStatusCount();
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatusOrBuilder>
+      getRuleStatusOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Status of rules in this NAT.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus rule_status = 140223125;
+   * </code>
+   */
+  com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatusOrBuilder getRuleStatusOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * A list of fully qualified URLs of reserved IP address resources.
    * </pre>
    *

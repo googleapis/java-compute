@@ -470,10 +470,8 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified zonal instance group. Get a list of available zonal instance groups by
-   * making a list() request.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * making a list() request. For managed instance groups, use the instanceGroupManagers or
+   * regionInstanceGroupManagers methods instead.
    *
    * <p>Sample code:
    *
@@ -504,10 +502,8 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified zonal instance group. Get a list of available zonal instance groups by
-   * making a list() request.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * making a list() request. For managed instance groups, use the instanceGroupManagers or
+   * regionInstanceGroupManagers methods instead.
    *
    * <p>Sample code:
    *
@@ -533,10 +529,8 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified zonal instance group. Get a list of available zonal instance groups by
-   * making a list() request.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * making a list() request. For managed instance groups, use the instanceGroupManagers or
+   * regionInstanceGroupManagers methods instead.
    *
    * <p>Sample code:
    *
@@ -644,10 +638,9 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of zonal instance group resources contained within the specified zone.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * Retrieves the list of zonal instance group resources contained within the specified zone. For
+   * managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods
+   * instead.
    *
    * <p>Sample code:
    *
@@ -673,10 +666,9 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of zonal instance group resources contained within the specified zone.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * Retrieves the list of zonal instance group resources contained within the specified zone. For
+   * managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods
+   * instead.
    *
    * <p>Sample code:
    *
@@ -707,10 +699,9 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of zonal instance group resources contained within the specified zone.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * Retrieves the list of zonal instance group resources contained within the specified zone. For
+   * managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods
+   * instead.
    *
    * <p>Sample code:
    *
@@ -741,10 +732,9 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of zonal instance group resources contained within the specified zone.
-   *
-   * <p>For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers
-   * methods instead.
+   * Retrieves the list of zonal instance group resources contained within the specified zone. For
+   * managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods
+   * instead.
    *
    * <p>Sample code:
    *
@@ -945,11 +935,9 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
-   * instances.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration before the VM instance is removed or
-   * deleted.
+   * instances. If the group is part of a backend service that has enabled connection draining, it
+   * can take up to 60 seconds after the connection draining duration before the VM instance is
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -992,11 +980,9 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
-   * instances.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration before the VM instance is removed or
-   * deleted.
+   * instances. If the group is part of a backend service that has enabled connection draining, it
+   * can take up to 60 seconds after the connection draining duration before the VM instance is
+   * removed or deleted.
    *
    * <p>Sample code:
    *
@@ -1025,11 +1011,9 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
-   * instances.
-   *
-   * <p>If the group is part of a backend service that has enabled connection draining, it can take
-   * up to 60 seconds after the connection draining duration before the VM instance is removed or
-   * deleted.
+   * instances. If the group is part of a backend service that has enabled connection draining, it
+   * can take up to 60 seconds after the connection draining duration before the VM instance is
+   * removed or deleted.
    *
    * <p>Sample code:
    *

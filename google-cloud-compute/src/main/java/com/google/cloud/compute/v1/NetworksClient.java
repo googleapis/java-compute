@@ -1041,9 +1041,9 @@ public class NetworksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the specified network peering with the data included in the request Only the following
-   * fields can be modified: NetworkPeering.export_custom_routes, and
-   * NetworkPeering.import_custom_routes
+   * Updates the specified network peering with the data included in the request. You can only
+   * modify the NetworkPeering.export_custom_routes field and the
+   * NetworkPeering.import_custom_routes field.
    *
    * <p>Sample code:
    *
@@ -1078,9 +1078,9 @@ public class NetworksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the specified network peering with the data included in the request Only the following
-   * fields can be modified: NetworkPeering.export_custom_routes, and
-   * NetworkPeering.import_custom_routes
+   * Updates the specified network peering with the data included in the request. You can only
+   * modify the NetworkPeering.export_custom_routes field and the
+   * NetworkPeering.import_custom_routes field.
    *
    * <p>Sample code:
    *
@@ -1107,9 +1107,9 @@ public class NetworksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the specified network peering with the data included in the request Only the following
-   * fields can be modified: NetworkPeering.export_custom_routes, and
-   * NetworkPeering.import_custom_routes
+   * Updates the specified network peering with the data included in the request. You can only
+   * modify the NetworkPeering.export_custom_routes field and the
+   * NetworkPeering.import_custom_routes field.
    *
    * <p>Sample code:
    *

@@ -62,6 +62,8 @@ import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.RemoveResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.ResetInstanceRequest;
 import com.google.cloud.compute.v1.Screenshot;
+import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceRequest;
+import com.google.cloud.compute.v1.SendDiagnosticInterruptInstanceResponse;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest;
 import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceRequest;
@@ -918,6 +920,43 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   .setDefaultInstance(Operation.getDefaultInstance())
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptMethodDescriptor =
+          ApiMethodDescriptor
+              .<SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+                  newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/SendDiagnosticInterrupt")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SendDiagnosticInterruptInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/sendDiagnosticInterrupt",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SendDiagnosticInterruptInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SendDiagnosticInterruptInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SendDiagnosticInterruptInstanceResponse>newBuilder()
+                      .setDefaultInstance(
+                          SendDiagnosticInterruptInstanceResponse.getDefaultInstance())
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<SetDeletionProtectionInstanceRequest, Operation>
       setDeletionProtectionMethodDescriptor =
@@ -1837,6 +1876,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
   private final UnaryCallable<RemoveResourcePoliciesInstanceRequest, Operation>
       removeResourcePoliciesCallable;
   private final UnaryCallable<ResetInstanceRequest, Operation> resetCallable;
+  private final UnaryCallable<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptCallable;
   private final UnaryCallable<SetDeletionProtectionInstanceRequest, Operation>
       setDeletionProtectionCallable;
   private final UnaryCallable<SetDiskAutoDeleteInstanceRequest, Operation>
@@ -2008,6 +2050,14 @@ public class HttpJsonInstancesStub extends InstancesStub {
         HttpJsonCallSettings.<ResetInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(resetMethodDescriptor)
             .build();
+    HttpJsonCallSettings<
+            SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+        sendDiagnosticInterruptTransportSettings =
+            HttpJsonCallSettings
+                .<SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+                    newBuilder()
+                .setMethodDescriptor(sendDiagnosticInterruptMethodDescriptor)
+                .build();
     HttpJsonCallSettings<SetDeletionProtectionInstanceRequest, Operation>
         setDeletionProtectionTransportSettings =
             HttpJsonCallSettings.<SetDeletionProtectionInstanceRequest, Operation>newBuilder()
@@ -2196,6 +2246,11 @@ public class HttpJsonInstancesStub extends InstancesStub {
     this.resetCallable =
         callableFactory.createUnaryCallable(
             resetTransportSettings, settings.resetSettings(), clientContext);
+    this.sendDiagnosticInterruptCallable =
+        callableFactory.createUnaryCallable(
+            sendDiagnosticInterruptTransportSettings,
+            settings.sendDiagnosticInterruptSettings(),
+            clientContext);
     this.setDeletionProtectionCallable =
         callableFactory.createUnaryCallable(
             setDeletionProtectionTransportSettings,
@@ -2316,6 +2371,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
     methodDescriptors.add(listReferrersMethodDescriptor);
     methodDescriptors.add(removeResourcePoliciesMethodDescriptor);
     methodDescriptors.add(resetMethodDescriptor);
+    methodDescriptors.add(sendDiagnosticInterruptMethodDescriptor);
     methodDescriptors.add(setDeletionProtectionMethodDescriptor);
     methodDescriptors.add(setDiskAutoDeleteMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -2464,6 +2520,13 @@ public class HttpJsonInstancesStub extends InstancesStub {
   @Override
   public UnaryCallable<ResetInstanceRequest, Operation> resetCallable() {
     return resetCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          SendDiagnosticInterruptInstanceRequest, SendDiagnosticInterruptInstanceResponse>
+      sendDiagnosticInterruptCallable() {
+    return sendDiagnosticInterruptCallable;
   }
 
   @Override

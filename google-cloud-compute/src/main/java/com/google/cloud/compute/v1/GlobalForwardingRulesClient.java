@@ -615,7 +615,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on the specified resource. To learn more about labels, read the Labeling
-   * Resources documentation.
+   * resources documentation.
    *
    * <p>Sample code:
    *
@@ -650,7 +650,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on the specified resource. To learn more about labels, read the Labeling
-   * Resources documentation.
+   * resources documentation.
    *
    * <p>Sample code:
    *
@@ -677,7 +677,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the labels on the specified resource. To learn more about labels, read the Labeling
-   * Resources documentation.
+   * resources documentation.
    *
    * <p>Sample code:
    *

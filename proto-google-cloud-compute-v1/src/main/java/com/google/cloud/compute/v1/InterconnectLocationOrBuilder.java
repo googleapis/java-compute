@@ -138,12 +138,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values:
-   * - AFRICA
-   * - ASIA_PAC
-   * - EUROPE
-   * - NORTH_AMERICA
-   * - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
@@ -155,12 +150,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values:
-   * - AFRICA
-   * - ASIA_PAC
-   * - EUROPE
-   * - NORTH_AMERICA
-   * - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
@@ -172,12 +162,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values:
-   * - AFRICA
-   * - ASIA_PAC
-   * - EUROPE
-   * - NORTH_AMERICA
-   * - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
@@ -574,9 +559,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-   * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-   * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
@@ -588,9 +571,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-   * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-   * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
@@ -602,9 +583,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values:
-   * - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects.
-   * - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
@@ -612,4 +591,29 @@ public interface InterconnectLocationOrBuilder
    * @return The status.
    */
   com.google.cloud.compute.v1.InterconnectLocation.Status getStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
+   * </pre>
+   *
+   * <code>bool supports_pzs = 83983214;</code>
+   *
+   * @return Whether the supportsPzs field is set.
+   */
+  boolean hasSupportsPzs();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
+   * </pre>
+   *
+   * <code>bool supports_pzs = 83983214;</code>
+   *
+   * @return The supportsPzs.
+   */
+  boolean getSupportsPzs();
 }

@@ -147,13 +147,45 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * <code>UNDEFINED_LOCATION_PRESENCE = 0;</code>
      */
     UNDEFINED_LOCATION_PRESENCE(0),
-    /** <code>GLOBAL = 494663587;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This region is not in any common network presence with this InterconnectLocation.
+     * </pre>
+     *
+     * <code>GLOBAL = 494663587;</code>
+     */
     GLOBAL(494663587),
-    /** <code>LOCAL_REGION = 403535464;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This region shares the same regional network presence as this InterconnectLocation.
+     * </pre>
+     *
+     * <code>LOCAL_REGION = 403535464;</code>
+     */
     LOCAL_REGION(403535464),
-    /** <code>LP_GLOBAL = 429584062;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] This region is not in any common network presence with this InterconnectLocation.
+     * </pre>
+     *
+     * <code>LP_GLOBAL = 429584062;</code>
+     */
     LP_GLOBAL(429584062),
-    /** <code>LP_LOCAL_REGION = 488598851;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] This region shares the same regional network presence as this InterconnectLocation.
+     * </pre>
+     *
+     * <code>LP_LOCAL_REGION = 488598851;</code>
+     */
     LP_LOCAL_REGION(488598851),
     UNRECOGNIZED(-1),
     ;
@@ -168,13 +200,45 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * <code>UNDEFINED_LOCATION_PRESENCE = 0;</code>
      */
     public static final int UNDEFINED_LOCATION_PRESENCE_VALUE = 0;
-    /** <code>GLOBAL = 494663587;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This region is not in any common network presence with this InterconnectLocation.
+     * </pre>
+     *
+     * <code>GLOBAL = 494663587;</code>
+     */
     public static final int GLOBAL_VALUE = 494663587;
-    /** <code>LOCAL_REGION = 403535464;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * This region shares the same regional network presence as this InterconnectLocation.
+     * </pre>
+     *
+     * <code>LOCAL_REGION = 403535464;</code>
+     */
     public static final int LOCAL_REGION_VALUE = 403535464;
-    /** <code>LP_GLOBAL = 429584062;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] This region is not in any common network presence with this InterconnectLocation.
+     * </pre>
+     *
+     * <code>LP_GLOBAL = 429584062;</code>
+     */
     public static final int LP_GLOBAL_VALUE = 429584062;
-    /** <code>LP_LOCAL_REGION = 488598851;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * [Deprecated] This region shares the same regional network presence as this InterconnectLocation.
+     * </pre>
+     *
+     * <code>LP_LOCAL_REGION = 488598851;</code>
+     */
     public static final int LP_LOCAL_REGION_VALUE = 488598851;
 
     public final int getNumber() {

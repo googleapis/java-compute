@@ -274,9 +274,25 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * <code>UNDEFINED_MODE = 0;</code>
      */
     UNDEFINED_MODE(0),
-    /** <code>READ_ONLY = 91950261;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Attaches this disk in read-only mode. Multiple VM instances can use a disk in READ_ONLY mode at a time.
+     * </pre>
+     *
+     * <code>READ_ONLY = 91950261;</code>
+     */
     READ_ONLY(91950261),
-    /** <code>READ_WRITE = 173607894;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* Attaches this disk in READ_WRITE mode. Only one VM instance at a time can be attached to a disk in READ_WRITE mode.
+     * </pre>
+     *
+     * <code>READ_WRITE = 173607894;</code>
+     */
     READ_WRITE(173607894),
     UNRECOGNIZED(-1),
     ;
@@ -291,9 +307,25 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * <code>UNDEFINED_MODE = 0;</code>
      */
     public static final int UNDEFINED_MODE_VALUE = 0;
-    /** <code>READ_ONLY = 91950261;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Attaches this disk in read-only mode. Multiple VM instances can use a disk in READ_ONLY mode at a time.
+     * </pre>
+     *
+     * <code>READ_ONLY = 91950261;</code>
+     */
     public static final int READ_ONLY_VALUE = 91950261;
-    /** <code>READ_WRITE = 173607894;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * *[Default]* Attaches this disk in READ_WRITE mode. Only one VM instance at a time can be attached to a disk in READ_WRITE mode.
+     * </pre>
+     *
+     * <code>READ_WRITE = 173607894;</code>
+     */
     public static final int READ_WRITE_VALUE = 173607894;
 
     public final int getNumber() {

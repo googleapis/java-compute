@@ -27,7 +27,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Required
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
@@ -39,7 +39,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Required
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
@@ -51,7 +51,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Required
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Rule.Action action = 187661878;</code>
@@ -64,7 +64,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Additional restrictions that must be met. All conditions must pass for the rule to match.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -74,7 +74,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Additional restrictions that must be met. All conditions must pass for the rule to match.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -84,7 +84,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Additional restrictions that must be met. All conditions must pass for the rule to match.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -94,7 +94,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Additional restrictions that must be met. All conditions must pass for the rule to match.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -105,7 +105,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Additional restrictions that must be met. All conditions must pass for the rule to match.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Condition conditions = 142882488;</code>
@@ -116,7 +116,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Human-readable description of the rule.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>string description = 422937596;</code>
@@ -128,7 +128,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Human-readable description of the rule.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>string description = 422937596;</code>
@@ -140,7 +140,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * Human-readable description of the rule.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>string description = 422937596;</code>
@@ -153,7 +153,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string ins = 104430;</code>
@@ -165,7 +165,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string ins = 104430;</code>
@@ -177,7 +177,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string ins = 104430;</code>
@@ -190,7 +190,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string ins = 104430;</code>
@@ -204,7 +204,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -214,7 +214,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -224,7 +224,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -234,7 +234,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -245,7 +245,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG action.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LogConfig log_configs = 152873846;</code>
@@ -256,7 +256,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string not_ins = 518443138;</code>
@@ -268,7 +268,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string not_ins = 518443138;</code>
@@ -280,7 +280,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string not_ins = 518443138;</code>
@@ -293,7 +293,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string not_ins = 518443138;</code>
@@ -307,7 +307,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -319,7 +319,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -331,7 +331,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>
@@ -344,7 +344,7 @@ public interface RuleOrBuilder
    *
    *
    * <pre>
-   * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '*' matches all permissions, and a verb part of '*' (e.g., 'storage.buckets.*') matches all verbs.
+   * This is deprecated and has no effect. Do not use.
    * </pre>
    *
    * <code>repeated string permissions = 59962500;</code>

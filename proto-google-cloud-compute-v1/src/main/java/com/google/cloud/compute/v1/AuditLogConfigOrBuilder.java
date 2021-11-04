@@ -27,7 +27,7 @@ public interface AuditLogConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of [Binding.members][].
+   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
    * </pre>
    *
    * <code>repeated string exempted_members = 232615576;</code>
@@ -39,7 +39,7 @@ public interface AuditLogConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of [Binding.members][].
+   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
    * </pre>
    *
    * <code>repeated string exempted_members = 232615576;</code>
@@ -51,7 +51,7 @@ public interface AuditLogConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of [Binding.members][].
+   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
    * </pre>
    *
    * <code>repeated string exempted_members = 232615576;</code>
@@ -64,7 +64,7 @@ public interface AuditLogConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of [Binding.members][].
+   * Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
    * </pre>
    *
    * <code>repeated string exempted_members = 232615576;</code>
@@ -75,12 +75,24 @@ public interface AuditLogConfigOrBuilder
   com.google.protobuf.ByteString getExemptedMembersBytes(int index);
 
   /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
    * <code>bool ignore_child_exemptions = 70141850;</code>
    *
    * @return Whether the ignoreChildExemptions field is set.
    */
   boolean hasIgnoreChildExemptions();
   /**
+   *
+   *
+   * <pre>
+   * This is deprecated and has no effect. Do not use.
+   * </pre>
+   *
    * <code>bool ignore_child_exemptions = 70141850;</code>
    *
    * @return The ignoreChildExemptions.

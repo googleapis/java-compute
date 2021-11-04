@@ -165,6 +165,7 @@ public class InterconnectsClientTest {
             .setPeerIpAddress("peerIpAddress-1037076085")
             .setProvisionedLinkCount(-1199724171)
             .setRequestedLinkCount(1118793211)
+            .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
             .build();
     mockService.addResponse(expectedResponse);
