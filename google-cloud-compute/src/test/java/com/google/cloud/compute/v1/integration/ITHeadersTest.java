@@ -38,7 +38,7 @@ public class ITHeadersTest {
   @BeforeClass
   public static void setUp() throws IOException {
     server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
-    server.createContext("/", new MyHandler());
+    server.createContext("/", new RequestHandler());
     server.setExecutor(null);
     server.start();
     String address = server.getAddress().toString().replace("/", "http://");
@@ -47,7 +47,7 @@ public class ITHeadersTest {
     addressesClient = AddressesClient.create(addressesSettings);
   }
 
-  static class MyHandler implements HttpHandler {
+  static class RequestHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange t) throws IOException {
       headers = t.getRequestHeaders();
