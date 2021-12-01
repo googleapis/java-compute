@@ -59,6 +59,35 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax</artifactId>
+        <version>2.7.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax</artifactId>
+        <classifier>testlib</classifier>
+        <version>2.7.1-SNAPSHOT</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-grpc</artifactId>
+        <version>2.7.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-httpjson</artifactId>
+        <version>0.92.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.api</groupId>
+        <artifactId>gax-httpjson</artifactId>
+        <classifier>testlib</classifier>
+        <version>0.92.1-SNAPSHOT</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
         <version>1.5.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->

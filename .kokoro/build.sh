@@ -27,6 +27,16 @@ source ${scriptDir}/common.sh
 mvn -version
 echo ${JOB_TYPE}
 
+git clone https://github.com/googleapis/gax-java gax-java-tmp
+cd gax-java-tmp
+pwd
+git checkout canonical-code
+./gradlew pubTML -x test
+cd ..
+rm -rf gax-java-tmp
+
+mvn dependency:tree
+
 # attempt to install 3 times with exponential backoff (starting with 10 seconds)
 retry_with_backoff 3 10 \
   mvn install -B -V -ntp \
