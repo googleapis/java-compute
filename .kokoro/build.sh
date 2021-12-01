@@ -30,12 +30,12 @@ echo ${JOB_TYPE}
 git clone https://github.com/googleapis/gax-java gax-java-tmp
 cd gax-java-tmp
 pwd
-git checkout canonical-code
-./gradlew pubTML -x test
+git checkout canonical-code-fix
+./gradlew --console=plain pubTML -x test
 cd ..
-rm -rf gax-java-tmp
+#rm -rf gax-java-tmp
 
-mvn dependency:tree
+mvn -B -ntp dependency:tree
 
 # attempt to install 3 times with exponential backoff (starting with 10 seconds)
 retry_with_backoff 3 10 \
@@ -57,15 +57,15 @@ set +e
 
 case ${JOB_TYPE} in
 test)
-    mvn test -B -Dclirr.skip=true -Denforcer.skip=true
+    mvn test -B -ntp -Dclirr.skip=true -Denforcer.skip=true
     RETURN_CODE=$?
     ;;
 lint)
-    mvn com.coveo:fmt-maven-plugin:check
+    mvn com.coveo:fmt-maven-plugin:check -B -ntp
     RETURN_CODE=$?
     ;;
 javadoc)
-    mvn javadoc:javadoc javadoc:test-javadoc
+    mvn javadoc:javadoc javadoc:test-javadoc -B -ntp
     RETURN_CODE=$?
     ;;
 integration)
@@ -81,7 +81,7 @@ integration)
     ;;
 graalvm)
     # Run Unit and Integration Tests with Native Image
-    mvn test -Pnative -Penable-integration-tests
+    mvn test -B -ntp -Pnative -Penable-integration-tests
     RETURN_CODE=$?
     ;;
 samples)
@@ -114,7 +114,7 @@ samples)
     fi
     ;;
 clirr)
-    mvn -B -Denforcer.skip=true clirr:check
+    mvn -B -ntp -Denforcer.skip=true clirr:check
     RETURN_CODE=$?
     ;;
 *)
