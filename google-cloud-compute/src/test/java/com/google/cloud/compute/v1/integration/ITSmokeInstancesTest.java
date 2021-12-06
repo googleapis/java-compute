@@ -207,7 +207,7 @@ public class ITSmokeInstancesTest extends BaseTest {
   }
 
   @Test
-  public void testDefaultResource() throws ExecutionException, InterruptedException {
+  public void testDefaultResource() throws InterruptedException {
     Instance instanceResource = Instance.newBuilder().build();
     try {
       instancesClient.insertAsync(DEFAULT_PROJECT, DEFAULT_ZONE, instanceResource).get();

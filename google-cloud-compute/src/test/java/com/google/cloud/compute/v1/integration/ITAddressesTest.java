@@ -54,9 +54,9 @@ public class ITAddressesTest extends BaseTest {
   }
 
   @AfterClass
-  public static void tearDown() {
+  public static void tearDown() throws ExecutionException, InterruptedException {
     for (Address address : addresses) {
-      addressesClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_REGION, address.getName());
+      addressesClient.deleteAsync(DEFAULT_PROJECT, DEFAULT_REGION, address.getName()).get();
     }
     addressesClient.close();
   }
