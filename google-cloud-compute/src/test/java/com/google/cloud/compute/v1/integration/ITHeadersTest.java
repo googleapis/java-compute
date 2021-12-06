@@ -74,7 +74,8 @@ public class ITHeadersTest {
   @Test
   public void testHeaders() {
     OperationFuture<Operation, Operation> future =
-        addressesClient.insertAsync("testProject", "testRegion", Address.newBuilder().setName("testName").build());
+        addressesClient.insertAsync(
+            "testProject", "testRegion", Address.newBuilder().setName("testName").build());
     try {
       future.get(5, TimeUnit.SECONDS);
     } catch (InterruptedException | ExecutionException e) {
