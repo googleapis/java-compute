@@ -90,4 +90,15 @@
     <method>*</method>
     <to>*</to>
   </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>*</method>
+    <to>*</to>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>*</method>
+  </difference>
 </differences>
