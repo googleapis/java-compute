@@ -41,4 +41,9 @@
     <className>com/google/cloud/compute/**</className>
     <field>*MethodDescriptor</field>
   </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/compute/v1/**</className>
+    <method>*</method>
+  </difference>
 </differences>
