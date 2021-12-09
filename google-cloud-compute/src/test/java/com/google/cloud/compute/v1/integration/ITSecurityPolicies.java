@@ -1,8 +1,5 @@
 package com.google.cloud.compute.v1.integration;
 
-import static com.google.cloud.compute.v1.integration.BaseTest.DEFAULT_PROJECT;
-import static com.google.cloud.compute.v1.integration.BaseTest.generateRandomName;
-
 import com.google.cloud.compute.v1.RemoveRuleSecurityPolicyRequest;
 import com.google.cloud.compute.v1.SecurityPoliciesClient;
 import com.google.cloud.compute.v1.SecurityPolicy;
@@ -14,7 +11,7 @@ import java.util.concurrent.ExecutionException;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class ITSecurityPolicies {
+public class ITSecurityPolicies extends BaseTest {
   @Test
   public void testCreateGetDelete() throws IOException, ExecutionException, InterruptedException {
     // we want to test an optional query param field set to 0.
