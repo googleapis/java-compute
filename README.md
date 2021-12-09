@@ -108,7 +108,7 @@ public class ComputeExample {
     // AddressClient#insert()
     System.out.println("\n===============\nAddressClient#insert()\n===============");
     OperationFuture<Operation,Operation> insertResponse =
-        addressesClient.insertAsyncgit status(project, region, Address.newBuilder().setName(address).build());
+        addressesClient.insertAsync(project, region, Address.newBuilder().setName(address).build());
     System.out.println(JsonFormat.printer().print(insertResponse) + "\n");
     Thread.sleep(1000L);
 
