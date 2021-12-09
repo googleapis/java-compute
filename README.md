@@ -107,8 +107,8 @@ public class ComputeExample {
 
     // AddressClient#insert()
     System.out.println("\n===============\nAddressClient#insert()\n===============");
-    Operation insertResponse =
-        addressesClient.insert(project, region, Address.newBuilder().setName(address).build());
+    OperationFuture<Operation,Operation> insertResponse =
+        addressesClient.insertAsyncgit status(project, region, Address.newBuilder().setName(address).build());
     System.out.println(JsonFormat.printer().print(insertResponse) + "\n");
     Thread.sleep(1000L);
 
@@ -128,7 +128,7 @@ public class ComputeExample {
 
     // AddressClient#delete()
     System.out.println("\n===============\nAddressClient#delete()\n===============");
-    Operation deleteResponse = addressesClient.delete(project, region, address);
+    OperationFuture<Operation,Operation> deleteResponse = addressesClient.deleteAsync(project, region, address);
     System.out.println(JsonFormat.printer().print(deleteResponse) + "\n");
   }
 }
