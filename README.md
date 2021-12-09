@@ -109,6 +109,7 @@ public class ComputeExample {
     System.out.println("\n===============\nAddressClient#insert()\n===============");
     OperationFuture<Operation,Operation> insertResponse =
         addressesClient.insertAsync(project, region, Address.newBuilder().setName(address).build());
+    Operation insertResponseOperation = insertResponse.get();
     System.out.println(JsonFormat.printer().print(insertResponse) + "\n");
     Thread.sleep(1000L);
 
@@ -129,6 +130,7 @@ public class ComputeExample {
     // AddressClient#delete()
     System.out.println("\n===============\nAddressClient#delete()\n===============");
     OperationFuture<Operation,Operation> deleteResponse = addressesClient.deleteAsync(project, region, address);
+    Operation deleteResponseOperation = deleteResponse.get();
     System.out.println(JsonFormat.printer().print(deleteResponse) + "\n");
   }
 }
