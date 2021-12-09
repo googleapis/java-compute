@@ -47,6 +47,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITSmokeInstancesTest extends BaseTest {
@@ -229,6 +230,7 @@ public class ITSmokeInstancesTest extends BaseTest {
     }
   }
 
+  @Ignore("Fails if this test was run >6 times in an hour on the same GCP project.")
   @Test
   public void testInt64() throws IOException, ExecutionException, InterruptedException {
     // we want to test a field with format:int64
