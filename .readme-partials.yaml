@@ -37,7 +37,6 @@ custom_content: |
           addressesClient.insertAsync(project, region, Address.newBuilder().setName(address).build());
       Operation insertResponseOperation = insertResponse.get();
       System.out.println(JsonFormat.printer().print(insertResponse) + "\n");
-      Thread.sleep(1000L);
 
       // AddressClient#list()
       System.out.println("\n===============\nAddressClient#list()\n===============");
