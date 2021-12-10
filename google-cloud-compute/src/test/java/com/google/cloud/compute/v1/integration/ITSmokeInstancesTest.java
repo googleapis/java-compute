@@ -230,7 +230,7 @@ public class ITSmokeInstancesTest extends BaseTest {
     }
   }
 
-  @Ignore("Fails if this test was run >6 times in an hour on the same GCP project.")
+  @Ignore("Fails if this test was run more than 6 times in an hour on the same GCP project.")
   @Test
   public void testInt64() throws IOException, ExecutionException, InterruptedException {
     // we want to test a field with format:int64
