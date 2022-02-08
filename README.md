@@ -72,7 +72,7 @@ use this Compute Engine Client Library.
 
 ### Compute alpha to beta migration
 
-Java compute library is GA from version 1.7.0 and is completely distinct from the previous 1.x.0 and 0.x.0 versions. From version 1.6.0-beta `google-cloud-compute` will have the following feature changes: 
+Java compute library is GA from version 1.7.0 and backwards incompatible with 0.x.x. Also it is incompatible with 1.5.x-alpha and prior in a following way:
 - Everything except polling methods which used to return `Operation` now returns `OperationFuture`. 
 - Library automatically polls Operation status.
 - `Operation op = client.myMethod(args)` should be replaced with `OperationFuture<Operation, Operation> opFuture = client.myMethodAsync(args);` 
