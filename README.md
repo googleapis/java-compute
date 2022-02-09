@@ -70,7 +70,7 @@ See the [Compute Engine client library docs][javadocs] to learn how to
 use this Compute Engine Client Library.
 
 
-### Compute alpha to beta migration
+### Compute alpha/beta to GA migration
 
 Java compute library is GA from version 1.7.0 and backwards incompatible with 0.x.x. Also it is incompatible with 1.5.x-alpha and prior in a following way: 
 - Everything except polling methods which used to return `Operation` now returns `OperationFuture`. 
