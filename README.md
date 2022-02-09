@@ -8,9 +8,6 @@ Java idiomatic client for [Compute Engine][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 
 ## Quickstart
 
@@ -22,7 +19,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>1.6.0-beta</version>
+  <version>1.7.1</version>
 </dependency>
 
 ```
@@ -30,13 +27,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-compute:1.6.1-beta'
+implementation 'com.google.cloud:google-cloud-compute:1.7.1'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.6.1-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.7.1"
 ```
 
 ## Authentication
@@ -75,11 +72,11 @@ use this Compute Engine Client Library.
 
 ### Compute alpha to beta migration
 
-From version 1.6.0-beta `google-cloud-compute` will have the following feature changes: 
+Java compute library is GA from version 1.7.0 and backwards incompatible with 0.x.x. Also it is incompatible with 1.5.x-alpha and prior in a following way: 
 - Everything except polling methods which used to return `Operation` now returns `OperationFuture`. 
 - Library automatically polls Operation status.
 - `Operation op = client.myMethod(args)` should be replaced with `OperationFuture<Operation, Operation> opFuture = client.myMethodAsync(args);` 
-- Manual polling now just calls `opFuture.get()` and wait for it to complete polling. 
+- Polling is now done automatically, manual polling is no longer required. Calling `opFuture.get()` will wait for automatic polling to complete. It will return the result of the long running operation once the operation is completed on the server side or throw an exception if an error occurs during polling. 
 - To check for intermediate status on the future use either `opFuture.peekMetadata()` (non-blocking) or `opFuture.getMetadata()` (blocking) 
 - If you wish to stop automatic polling call `opFuture.cancel()` - it will cancel the future on the client side but it will not affect the execution of the operation on the server side in any way (server will keep working on the operation). 
 - The calls still may be done without relying on automatic polling and/or OperationFuture. To do so, use `client.myMethodCallable(MyMethodRequest).call()` semantics instead. Note this semantics does not have flattened method declarations and the request message must be instantiated explicitly by the users code.
@@ -198,9 +195,6 @@ and on [google-cloud-java][g-c-j].
 This library follows [Semantic Versioning](http://semver.org/).
 
 
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time
-and the public API should not be considered stable.
-
 
 ## Contributing
 
@@ -241,7 +235,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-compute/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-compute/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-compute/java11.html
-[stability-image]: https://img.shields.io/badge/stability-beta-yellow
+[stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-compute.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-compute&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
