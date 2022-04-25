@@ -17,6 +17,7 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-compute</site.installationModule>
+    <graalvm.version>22.0.0.2</graalvm.version>
   </properties>
   <dependencies>
     <dependency>
@@ -54,6 +55,14 @@
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java</artifactId>
+    </dependency>
+
+    <!-- Native Image dependencies-->
+    <dependency>
+      <groupId>org.graalvm.nativeimage</groupId>
+      <artifactId>svm</artifactId>
+      <version>${graalvm.version}</version>
+      <scope>provided</scope>
     </dependency>
 
     <!-- Test dependencies -->
