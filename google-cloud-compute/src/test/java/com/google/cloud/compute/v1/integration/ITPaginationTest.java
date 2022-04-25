@@ -123,7 +123,7 @@ public class ITPaginationTest extends BaseTest {
     }
     Assert.assertTrue(
         String.format(
-            "Zone %s was not found for %s in zones list(%d).",
+            "Zone %s was not found for %s in zones list (size: %d).",
             DEFAULT_ZONE, DEFAULT_PROJECT, count),
         presented);
   }
