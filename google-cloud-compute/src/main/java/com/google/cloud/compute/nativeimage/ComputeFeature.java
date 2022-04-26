@@ -42,6 +42,9 @@ class ComputeFeature implements Feature {
   private static final ImmutableList<String> computeClasses;
 
   static {
+    // Registering all GeneratedMessageV3 and builder classes in the proto directory; otherwise
+    // you'll get NoSuchMethodException at native image runtime. Here is how to generate the list:
+    // https://github.com/googleapis/java-compute/issues/685
     ImmutableList.Builder<String> computeClassesBuilder = ImmutableList.builder();
     computeClassesBuilder.add(
         "com.google.cloud.compute.v1.AbandonInstancesInstanceGroupManagerRequest");
