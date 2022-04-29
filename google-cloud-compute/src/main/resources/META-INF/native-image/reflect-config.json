@@ -1,7 +1,0 @@
-[
-  {
-  "name":"com.google.api.client.json.GenericJson",
-  "allDeclaredFields":true,
-  "methods":[{"name":"<init>","parameterTypes":[] }]
-}
-]
