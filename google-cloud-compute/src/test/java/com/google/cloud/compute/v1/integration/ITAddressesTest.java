@@ -122,7 +122,7 @@ public class ITAddressesTest extends BaseTest {
           .insertAsync(DEFAULT_PROJECT, DEFAULT_REGION, address)
           .get(60, TimeUnit.SECONDS);
     } catch (InterruptedException | ExecutionException | TimeoutException e) {
-      fail("Insert operation failed.");
+      fail("Insert operation failed: " + e.getMessage());
     }
     addresses.add(address);
   }
