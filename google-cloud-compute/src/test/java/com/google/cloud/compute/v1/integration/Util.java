@@ -31,15 +31,13 @@ public class Util {
   // Cleans existing test resources if any.
   private static final int DELETION_THRESHOLD_TIME_HOURS = 24;
 
-  /**
-   * Bring down any instances that are older than 24 hours
-   */
+  /** Bring down any instances that are older than 24 hours */
   public static void cleanUpComputeInstances(
       InstancesClient instancesClient, String project, String zone, String prefix) {
     ListPagedResponse listPagedResponse = instancesClient.list(project, zone);
     for (Instance instance : listPagedResponse.iterateAll()) {
       if (isCreatedBeforeThresholdTime(
-          ZonedDateTime.parse(instance.getCreationTimestamp()).toInstant())
+              ZonedDateTime.parse(instance.getCreationTimestamp()).toInstant())
           && instance.getName().startsWith(prefix)) {
         instancesClient.deleteAsync(
             DeleteInstanceRequest.newBuilder()
@@ -51,9 +49,7 @@ public class Util {
     }
   }
 
-  /**
-   * Bring down any addresses that are older than 24 hours
-   */
+  /** Bring down any addresses that are older than 24 hours */
   public static void cleanUpComputeAddresses(
       AddressesClient addressesClient, String project, String region, String prefix) {
     AddressesClient.ListPagedResponse listPagedResponse = addressesClient.list(project, region);
