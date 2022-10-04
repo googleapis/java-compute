@@ -46,6 +46,7 @@ public class ITAddressesTest extends BaseTest {
     addresses = new ArrayList<>();
     AddressesSettings addressesSettings = AddressesSettings.newBuilder().build();
     addressesClient = AddressesClient.create(addressesSettings);
+    Util.cleanUpComputeAddresses(addressesClient, DEFAULT_PROJECT, DEFAULT_REGION, COMPUTE_PREFIX);
   }
 
   @Before
@@ -122,7 +123,7 @@ public class ITAddressesTest extends BaseTest {
           .insertAsync(DEFAULT_PROJECT, DEFAULT_REGION, address)
           .get(60, TimeUnit.SECONDS);
     } catch (InterruptedException | ExecutionException | TimeoutException e) {
-      fail("Insert operation failed.");
+      fail("Insert operation failed: " + e.getMessage());
     }
     addresses.add(address);
   }
