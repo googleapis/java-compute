@@ -140,7 +140,7 @@
             <version>2.22.2</version>
             <configuration>
               <!-- Include all tests during native image testing. -->
-              <excludes combine.self="override" />
+              <excludes combine.self="override"/>
               <includes>
                 <include>**/IT*.java</include>
                 <!-- Enable unit tests in generated libraries for native image testing. -->
