@@ -66,7 +66,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-compute-v1</artifactId>
-        <version>1.13.0</version><!-- {x-version-update:proto-google-cloud-compute-v1:current} -->
+        <version>1.14.0</version><!-- {x-version-update:proto-google-cloud-compute-v1:current} -->
       </dependency>
 
       <dependency>
