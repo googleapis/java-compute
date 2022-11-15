@@ -9,6 +9,13 @@ Java idiomatic client for [Compute Engine][product-docs].
 - [Client Library Documentation][javadocs]
 
 
+:bus: In October 2022, this library has moved to
+[google-cloud-java/java-compute](
+https://github.com/googleapis/google-cloud-java/tree/main/java-compute).
+This repository will be archived in the future.
+Future releases will appear in the new repository (https://github.com/googleapis/google-cloud-java/releases).
+The Maven artifact coordinates (`com.google.cloud:google-cloud-compute`) remain the same.
+
 ## Quickstart
 
 
@@ -27,13 +34,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-compute:1.13.0'
+implementation 'com.google.cloud:google-cloud-compute:1.15.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.13.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.15.0"
 ```
 
 ## Authentication
