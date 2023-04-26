@@ -34,13 +34,13 @@ If you are using Maven, add this to your pom.xml file:
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-compute:1.23.0'
+implementation 'com.google.cloud:google-cloud-compute:1.25.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.23.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.25.0"
 ```
 
 ## Authentication
